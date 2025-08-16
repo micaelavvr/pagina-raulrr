@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPCA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #fff8e7;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .galeria {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .galeria img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+        .volver {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .volver a {
+            background-color: #e6954a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .volver a:hover {
+            background-color: #cc7a33;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galería EPCA</h1>
+
+    <div class="galeria">
+        <img src="img/retiro1.jpeg" alt="EPCA 1">
+        <img src="img/retiro2.jpeg" alt="EPCA 2">
+        <img src="img/retiro3.jpeg" alt="EPCA 3">
+    </div>
+
+    <div class="volver">
+        <a href="index.html">Volver al inicio</a>
+    </div>
+</body>
+</html>
