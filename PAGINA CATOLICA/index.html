@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Todo católico</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<script>
+  // Resaltar pestaña al hacer click
+  document.querySelectorAll('.tabs .tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+    });
+  });
+
+  // Resaltar automáticamente según la sección visible (scroll)
+  const tabsMap = new Map(
+    [...document.querySelectorAll('.tabs .tab')].map(a => [a.getAttribute('href'), a])
+  );
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = '#' + entry.target.id;
+        document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('is-active'));
+        tabsMap.get(id)?.classList.add('is-active');
+      }
+    });
+  }, { rootMargin: '-55% 0px -40% 0px', threshold: 0 });
+
+  document.querySelectorAll('.anchor-section[id]').forEach(sec => observer.observe(sec));
+</script>
+
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <img src="img/emblema.png" alt="Cargando..." />
+  </div>
+
+  <!-- Frase de Santa Teresita -->
+  <section class="frase-teresita">
+    <blockquote>
+      “Me preguntas por un método para alcanzar la perfección. Yo conozco el amor y solo el amor.”
+    </blockquote>
+    <img src="img/santateresita.jpg" alt="Santa Teresita del Niño Jesús" />
+    <div class="santa-nombre">— Santa Teresita del Niño Jesús</div>
+  </section>
+
+  <!-- Navegación -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs">
+      <a class="tab is-active" href="index.html">Inicio</a>
+      <a class="tab" href="epca.html">Sobre EPCA…</a>
+      <a class="tab" href="canales.html">Canales católicos</a>
+      <a class="tab" href="#noticias">Noticias</a>
+      <a class="tab" href="#temas-fe">Temas de Fe</a>
+      <a class="tab" href="#catecismo">Catecismo</a>
+      <a class="tab" href="#rosario">El Rosario</a>
+      <a class="tab" href="#ninos">Para niños</a>
+    </div>
+  </nav>
+
+
+  <!-- Título principal -->
+  <header class="nuevo-header">
+    <img src="img/jesus.jpg" alt="Jesús" class="titulo-img izquierda" />
+    <h1 class="titulo-principal">Páginas Católicas Recomendadas</h1>
+    <img src="img/maria.jpg" alt="María" class="titulo-img derecha" />
+  </header>
+
+  <!-- Logos recomendados -->
+  <section class="paginas-recomendadas">
+    <a href="https://www.romereports.com/en/" target="_blank" rel="noopener">
+      <img src="img/romereports.png" alt="Rome Reports" />
+    </a>
+    <a href="https://www.ewtn.com/es" target="_blank" rel="noopener">
+      <img src="img/ewtn.jpg" alt="EWTN" />
+    </a>
+    <a href="https://www.youtube.com/@LeSanctuaireNotreDamedeLourdes" target="_blank" rel="noopener">
+      <img src="img/santuariolourdes.jpg" alt="Santuario de Lourdes" />
+    </a>
+  </section>
+
+
+  <!-- Parroquia (centrada y con latido) -->
+  <section class="parroquia-hero">
+    <a href="https://www.facebook.com/parroquiacristosalvador.chama/?locale=es_LA" target="_blank" rel="noopener">
+      <img src="img/cristosalvador.jpg" alt="Parroquia Cristo Salvador" class="animacion-pulso" />
+    </a>
+  </section>
+
+  <!-- Banner de sección -->
+  <div class="section-banner">
+    <span>PAPA LEÓN XIV</span>
+  </div>
+
+  <!-- Contenido principal: Papa + escudo + tweet -->
+  <section class="contenido-principal">
+    <figure class="tarjeta">
+      <img src="img/papa.png" alt="El Papa" />
+    </figure>
+    <figure class="tarjeta compacto">
+      <img src="img/emblema.png" alt="Emblema del Vaticano" />
+    </figure>
+    <div class="tarjeta tweet">
+      <blockquote class="twitter-tweet" data-theme="dark">
+        <a href="https://twitter.com/Pontifex_es/status/1950512949623128435"></a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+  </section>
+
+  <!-- Script del preloader -->
+  <script>
+    document.body.classList.add('loading');
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('hide');
+        document.body.classList.remove('loading');
+      }, 650); // latido visible
+    });
+  </script>
+</body>
+
+</html>
