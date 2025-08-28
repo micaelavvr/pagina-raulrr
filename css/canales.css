@@ -1,0 +1,145 @@
+/* ===============================
+   Estilos solo para canales.html
+   =============================== */
+
+/* Contenedor principal */
+.channels-header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #5b3a2a;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: #7a5a4a;
+  margin-top: 0.5rem;
+}
+
+/* Grid de tarjetas */
+.channels-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Tarjeta individual */
+.channel-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.channel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.channel-card iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+}
+
+/* Botón de canal */
+.channel-button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  background: #e6954a;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.channel-button:hover {
+  background: #c77428;
+}
+
+/* ========================
+   Sección especial EWTN
+   ======================== */
+.single-feature {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 1.5rem;
+  color: #5b3a2a;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Video responsivo */
+.video-responsive {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Botón dentro de la tarjeta */
+.card .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #e6954a;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.card .btn:hover {
+  background: #c77428;
+}
+
+/* scroll suave global */
+html { scroll-behavior: smooth; }
+
+/* compensar header fijo */
+#milagros-eucaristicos { scroll-margin-top: 110px; }
+
+

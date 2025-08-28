@@ -1,119 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Canales Católicos</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Canales y Videos Católicos</title>
+
+  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/canales.css?v=2">
+
 </head>
+
 <body>
-    <!-- Navegación -->
+
+  <!-- Navegación -->
   <nav class="tabs-wrap" aria-label="Navegación de secciones">
     <div class="tabs">
       <a class="tab" href="index.html">Inicio</a>
       <a class="tab" href="epca.html">Sobre EPCA…</a>
-      <a class="tab is-active" href="canales.html">Canales católicos</a>
-      <a class="tab" href="#noticias">Noticias</a>
-      <a class="tab" href="#temas-fe">Temas de Fe</a>
-      <a class="tab" href="#catecismo">Catecismo</a>
-      <a class="tab" href="#rosario">El Rosario</a>
-      <a class="tab" href="#ninos">Para niños</a>
+
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas de Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab" href="rosario.html">El Rosario</a>
     </div>
   </nav>
+
 
   <!-- Título -->
   <header class="channels-header">
     <h1 class="page-title">Canales Católicos</h1>
-    <p class="page-subtitle">Últimos videos de tres canales recomendados. Todo en un solo lugar.</p>
+    <p class="page-subtitle">
+      Últimos videos de tres canales recomendados. Todo en un solo lugar.
+    </p>
   </header>
 
-  <!-- Grid de tarjetas -->
+  <!-- Grid de canales -->
   <main class="channels-container">
     <section class="channels-grid">
 
-      <!-- Rosell -->
-      <article class="channel-card">
-        <header class="card-header">
-          <span class="card-avatar">🎥</span>
-          <div class="card-titles">
-            <h3>Padre Carlos Rosell</h3>
-            <small>@cooperadoresdelaverdadcato</small>
-          </div>
-        </header>
+      <!-- Padre Carlos Rosell -->
+      <div class="channel-card">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/7PKkDlu34Hk" title="Padre Carlos Rosell"
+          frameborder="0" allowfullscreen></iframe>
+        <a class="channel-button" target="_blank" rel="noopener"
+          href="https://www.youtube.com/@cooperadoresdelaverdadcato/videos">
+          📺 Canal Rosell
+        </a>
+      </div>
 
-        <figure class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/7PKkDlu34Hk"
-            title="Padre Carlos Rosell"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </figure>
+      <!-- Obispo Munilla -->
+      <div class="channel-card">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/71gpwfdUyHc" title="Obispo Munilla"
+          frameborder="0" allowfullscreen></iframe>
+        <a class="channel-button" target="_blank" rel="noopener"
+          href="https://www.youtube.com/@EnTiConfio_ObispoMunilla/videos">
+          📺 Canal Munilla
+        </a>
+      </div>
 
-        <footer class="card-footer">
-          <a class="youtube-button" target="_blank" rel="noopener"
-             href="https://www.youtube.com/@cooperadoresdelaverdadcato/videos">
-            <span>📺</span> Ver canal
-          </a>
-        </footer>
-      </article>
-
-      <!-- Munilla -->
-      <article class="channel-card">
-        <header class="card-header">
-          <span class="card-avatar">⛪</span>
-          <div class="card-titles">
-            <h3>Monseñor Munilla</h3>
-            <small>@EnTiConfio_ObispoMunilla</small>
-          </div>
-        </header>
-
-        <figure class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/71gpwfdUyHc"
-            title="Obispo Munilla"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </figure>
-
-        <footer class="card-footer">
-          <a class="youtube-button" target="_blank" rel="noopener"
-             href="https://www.youtube.com/@EnTiConfio_ObispoMunilla/videos">
-            <span>📺</span> Ver canal
-          </a>
-        </footer>
-      </article>
-
-      <!-- Magnificat -->
-      <article class="channel-card">
-        <header class="card-header">
-          <span class="card-avatar">🙏</span>
-          <div class="card-titles">
-            <h3>P. Santiago Martín (Magnificat)</h3>
-            <small>@Magnificat.tv-FM</small>
-          </div>
-        </header>
-
-        <figure class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/ySsOuBCtzgk"
-            title="Padre Santiago Martín"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </figure>
-
-        <footer class="card-footer">
-          <a class="youtube-button" target="_blank" rel="noopener"
-             href="https://www.youtube.com/@Magnificat.tv-FM/videos">
-            <span>📺</span> Ver canal
-          </a>
-        </footer>
-      </article>
-
+      <!-- Padre Santiago Martín -->
+      <div class="channel-card">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/ySsOuBCtzgk" title="Padre Santiago Martín"
+          frameborder="0" allowfullscreen></iframe>
+        <a class="channel-button" target="_blank" rel="noopener"
+          href="https://www.youtube.com/@Magnificat.tv-FM/videos">
+          📺 Canal Magnificat
+        </a>
+      </div>
     </section>
   </main>
 
+  <!-- Tarjeta especial EWTN -->
+  <section id="milagros-eucaristicos" class="single-feature">
+    <div class="card">
+      <h3>Documentos EWTN: Los cinco milagros eucarísticos</h3>
+
+      <div class="video-responsive">
+        <iframe src="https://www.youtube.com/embed/dc8jR4ia74U" title="Documentos EWTN: Los cinco milagros eucarísticos"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-dd]').forEach(dd => {
+    const trigger = dd.querySelector('.dd-trigger');
+    const menu    = dd.querySelector('.dd-menu');
+
+    const setOpen = (on) => {
+      dd.classList.toggle('open', on);
+      menu.hidden = !on;
+      trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
+    });
+
+    // cerrar al clicar cualquier opción del menú
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    // cerrar al clicar fuera
+    document.addEventListener('click', (e) => {
+      if (!dd.contains(e.target)) setOpen(false);
+    });
+  });
+});
+</script>
+
+
 </body>
+
 </html>

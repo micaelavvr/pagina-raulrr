@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temas de Fe</title>
+
+  <!-- Estilos globales y locales -->
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/temasfe.css?v=2">
+</head>
+
+<body>
+  <!-- Navegación -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs">
+      <a class="tab is-active" href="index.html">Inicio</a>
+      <a class="tab" href="epca.html">Sobre EPCA…</a>
+
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas de Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab" href="rosario.html">El Rosario</a>
+    </div>
+  </nav>
+
+  <!-- Título -->
+  <header class="section-banner">
+    <span>Temas de Fe — Recursos descargables</span>
+  </header>
+
+  <section class="tf-intro">
+    <p class="muted">
+      Materiales en PDF para profundizar en la fe: celebraciones, devociones y reflexiones.
+      <br>Haz clic en una tarjeta para <strong>descargar</strong>.
+    </p>
+  </section>
+
+  <!-- Grid de descargas -->
+  <section class="tf-grid" id="descargas-temasfe">
+    <!-- Cada tarjeta tiene data-file y data-name. El href es # para no salir de la página. -->
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/adviento2024.pdf"
+       data-name="Adviento-2024.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>Adviento 2024</strong>
+        <small>PDF — adviento2024.pdf</small>
+      </div>
+    </a>
+
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/BXVI EWTN Spain.pdf"
+       data-name="BXVI-EWTN-Spain.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>Benedicto XVI (EWTN España)</strong>
+        <small>PDF — BXVI EWTN Spain.pdf</small>
+      </div>
+    </a>
+
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/EPIFANIA 2024.pdf"
+       data-name="Epifania-2024.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>Epifanía 2024</strong>
+        <small>PDF — EPIFANIA 2024.pdf</small>
+      </div>
+    </a>
+
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/JUBILEO 2025 EWTN ESPAÑA.pdf"
+       data-name="Jubileo-2025-EWTN-ESPAÑA.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>Jubileo 2025 (EWTN España)</strong>
+        <small>PDF — JUBILEO 2025 EWTN ESPAÑA.pdf</small>
+      </div>
+    </a>
+
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/la visitacion de maria.pdf"
+       data-name="La-Visitacion-de-Maria.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>La Visitación de María</strong>
+        <small>PDF — la visitacion de maria.pdf</small>
+      </div>
+    </a>
+
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/MEMORIAL PAPA FRANCISCO.pdf"
+       data-name="Memorial-Papa-Francisco.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>Memorial del Papa Francisco</strong>
+        <small>PDF — MEMORIAL PAPA FRANCISCO.pdf</small>
+      </div>
+    </a>
+
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/Pentecostes2023.pdf"
+       data-name="Pentecostes-2023.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>Pentecostés 2023</strong>
+        <small>PDF — Pentecostes2023.pdf</small>
+      </div>
+    </a>
+
+    <a class="tf-card" href="#"
+       data-file="docs/temasfe/San Pedro y San Pablo.pdf"
+       data-name="San-Pedro-y-San-Pablo.pdf" role="button">
+      <img src="img/epca.png" alt="EPCA">
+      <div class="tf-meta">
+        <strong>San Pedro y San Pablo</strong>
+        <small>PDF — San Pedro y San Pablo.pdf</small>
+      </div>
+    </a>
+  </section>
+
+  <!-- Script para el dropdown del nav -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-dd]').forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu = dd.querySelector('.dd-menu');
+
+        const setOpen = (on) => {
+          dd.classList.toggle('open', on);
+          menu.hidden = !on;
+          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        };
+
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setOpen(!dd.classList.contains('open'));
+        });
+
+        menu.addEventListener('click', (e) => {
+          if (e.target.closest('a')) setOpen(false);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!dd.contains(e.target)) setOpen(false);
+        });
+      });
+    });
+  </script>
+
+  <!-- Forzar DESCARGA (sin salir de la página) -->
+  <script>
+    // Descargador universal para las tarjetas
+    document.addEventListener('click', async (e) => {
+      const card = e.target.closest('.tf-card');
+      if (!card) return;
+
+      e.preventDefault();
+
+      const url = card.getAttribute('data-file');
+      // nombre sugerido para guardar (opcional)
+      let filename = card.getAttribute('data-name') || url.split('/').pop();
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('No se pudo descargar');
+        const blob = await res.blob();
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(link.href);
+      } catch (err) {
+        // Plan B: si fetch falla (rutas/servidor), redirige y usa el atributo download del navegador
+        const fallback = document.createElement('a');
+        fallback.href = url;
+        fallback.download = filename;
+        document.body.appendChild(fallback);
+        fallback.click();
+        fallback.remove();
+      }
+    });
+  </script>
+</body>
+</html>

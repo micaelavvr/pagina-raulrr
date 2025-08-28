@@ -2,52 +2,21 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Todo católico</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
-
-<script>
-  // Resaltar pestaña al hacer click
-  document.querySelectorAll('.tabs .tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('is-active'));
-      tab.classList.add('is-active');
-    });
-  });
-
-  // Resaltar automáticamente según la sección visible (scroll)
-  const tabsMap = new Map(
-    [...document.querySelectorAll('.tabs .tab')].map(a => [a.getAttribute('href'), a])
-  );
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = '#' + entry.target.id;
-        document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('is-active'));
-        tabsMap.get(id)?.classList.add('is-active');
-      }
-    });
-  }, { rootMargin: '-55% 0px -40% 0px', threshold: 0 });
-
-  document.querySelectorAll('.anchor-section[id]').forEach(sec => observer.observe(sec));
-</script>
 
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader" aria-hidden="true">
-    <img src="img/emblema.png" alt="Cargando..." />
-  </div>
-
-  <!-- Frase de Santa Teresita -->
+  <!-- FRASE SANTA TERESITA -->
   <section class="frase-teresita">
     <blockquote>
       “Me preguntas por un método para alcanzar la perfección. Yo conozco el amor y solo el amor.”
     </blockquote>
-    <img src="img/santateresita.jpg" alt="Santa Teresita del Niño Jesús" />
-    <div class="santa-nombre">— Santa Teresita del Niño Jesús</div>
+    <img src="img/santateresita.jpg" alt="Santa Teresita del Niño Jesús">
+    <p class="santa-nombre">— Santa Teresita del Niño Jesús</p>
   </section>
 
   <!-- Navegación -->
@@ -55,76 +24,121 @@
     <div class="tabs">
       <a class="tab is-active" href="index.html">Inicio</a>
       <a class="tab" href="epca.html">Sobre EPCA…</a>
-      <a class="tab" href="canales.html">Canales católicos</a>
-      <a class="tab" href="#noticias">Noticias</a>
-      <a class="tab" href="#temas-fe">Temas de Fe</a>
-      <a class="tab" href="#catecismo">Catecismo</a>
-      <a class="tab" href="#rosario">El Rosario</a>
-      <a class="tab" href="#ninos">Para niños</a>
+
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas de Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab" href="rosario.html">El Rosario</a>
     </div>
   </nav>
+  </nav>
 
-
-  <!-- Título principal -->
+  <!-- TÍTULO PRINCIPAL -->
   <header class="nuevo-header">
-    <img src="img/jesus.jpg" alt="Jesús" class="titulo-img izquierda" />
+    <img src="img/jesus.jpg" alt="Jesús" class="titulo-img izquierda">
     <h1 class="titulo-principal">Páginas Católicas Recomendadas</h1>
-    <img src="img/maria.jpg" alt="María" class="titulo-img derecha" />
+    <img src="img/maria.jpg" alt="Virgen María" class="titulo-img derecha">
   </header>
 
-  <!-- Logos recomendados -->
+  <!-- PÁGINAS RECOMENDADAS -->
   <section class="paginas-recomendadas">
-    <a href="https://www.romereports.com/en/" target="_blank" rel="noopener">
-      <img src="img/romereports.png" alt="Rome Reports" />
+    <a href="https://www.romereports.com/" target="_blank" rel="noopener">
+      <img src="img/romereports.png" alt="Rome Reports">
     </a>
     <a href="https://www.ewtn.com/es" target="_blank" rel="noopener">
-      <img src="img/ewtn.jpg" alt="EWTN" />
+      <img src="img/ewtn.jpg" alt="EWTN">
     </a>
-    <a href="https://www.youtube.com/@LeSanctuaireNotreDamedeLourdes" target="_blank" rel="noopener">
-      <img src="img/santuariolourdes.jpg" alt="Santuario de Lourdes" />
-    </a>
-  </section>
-
-
-  <!-- Parroquia (centrada y con latido) -->
-  <section class="parroquia-hero">
-    <a href="https://www.facebook.com/parroquiacristosalvador.chama/?locale=es_LA" target="_blank" rel="noopener">
-      <img src="img/cristosalvador.jpg" alt="Parroquia Cristo Salvador" class="animacion-pulso" />
+    <a href="https://www.lourdes-france.org/es/" target="_blank" rel="noopener">
+      <img src="img/santuariolourdes.jpg" alt="Lourdes">
     </a>
   </section>
 
-  <!-- Banner de sección -->
-  <div class="section-banner">
-    <span>PAPA LEÓN XIV</span>
-  </div>
+  <!-- PARROQUIA CR -->
+  <section class="parroquia-cr">
+    <a href="https://www.lourdes-france.org/es/" target="_blank" rel="noopener">
+    <img src="img/cristosalvador.jpg" alt="Parroquia Cristo Salvador">
+    </a>
+  </section>
 
-  <!-- Contenido principal: Papa + escudo + tweet -->
-  <section class="contenido-principal">
-    <figure class="tarjeta">
-      <img src="img/papa.png" alt="El Papa" />
+<!-- ========================  PAPA LEÓN XIV  ======================== -->
+<section id="papa" class="anchor-section papa-bloque">
+  <!-- Título (más grande y con separación superior) -->
+  <h2 class="section-banner xl"><span>PAPA LEÓN XIV</span></h2>
+
+  <!-- Grid 3 columnas: foto | escudo | tweet -->
+  <div class="papa-grid">
+    <!-- Foto -->
+    <figure class="papa-card">
+      <img class="papa-foto"
+           src="img/papa.png"
+           alt="Papa León XIV">
     </figure>
-    <figure class="tarjeta compacto">
-      <img src="img/emblema.png" alt="Emblema del Vaticano" />
+
+    <!-- Escudo -->
+    <figure class="papa-card">
+      <img class="papa-escudo"
+           src="img/emblema.png"
+           alt="Escudo del Papa León XIV">
     </figure>
-    <div class="tarjeta tweet">
-      <blockquote class="twitter-tweet" data-theme="dark">
-        <a href="https://twitter.com/Pontifex_es/status/1950512949623128435"></a>
+
+    <!-- Tweet (usa blockquote oficial de Twitter/X) -->
+    <div class="papa-card tweet">
+      <blockquote class="twitter-tweet"
+                  data-theme="light" data-lang="es" data-conversation="none">
+        <p lang="es" dir="ltr">
+          Hoy vuelvo a hacer un fuerte llamamiento tanto a las partes implicadas
+          como a la comunidad internacional para que pongan fin al conflicto en Tierra Santa,
+          que ha causado tanto terror, destrucción y muerte.
+        </p>
+        &mdash; Papa León XIV (@Pontifex_es)
+        <a href="https://twitter.com/Pontifex_es/status/1960674247832944775">27 ago 2025</a>
       </blockquote>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
+  </div>
+</section>
 
-  </section>
 
-  <!-- Script del preloader -->
+
   <script>
-    document.body.classList.add('loading');
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('preloader').classList.add('hide');
-        document.body.classList.remove('loading');
-      }, 650); // latido visible
-    });
-  </script>
-</body>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-dd]').forEach(dd => {
+    const trigger = dd.querySelector('.dd-trigger');
+    const menu    = dd.querySelector('.dd-menu');
 
+    const setOpen = (on) => {
+      dd.classList.toggle('open', on);
+      menu.hidden = !on;
+      trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
+    });
+
+    // cerrar al clicar cualquier opción del menú
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    // cerrar al clicar fuera
+    document.addEventListener('click', (e) => {
+      if (!dd.contains(e.target)) setOpen(false);
+    });
+  });
+});
+</script>
+
+</body>
 </html>

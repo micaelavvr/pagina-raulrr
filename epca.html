@@ -1,60 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPCA</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        body {
-            background-color: #fff8e7;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .galeria {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        .galeria img {
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-        .galeria img:hover {
-            transform: scale(1.05);
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EPCA</title>
+  <link rel="stylesheet" href="css/epca.css?v=3" />
 </head>
+
 <body>
-      <!-- Navegación -->
+  <!-- Barra de navegación -->
   <nav class="tabs-wrap" aria-label="Navegación de secciones">
     <div class="tabs">
       <a class="tab" href="index.html">Inicio</a>
       <a class="tab is-active" href="epca.html">Sobre EPCA…</a>
-      <a class="tab" href="canales.html">Canales católicos</a>
-      <a class="tab" href="#noticias">Noticias</a>
-      <a class="tab" href="#temas-fe">Temas de Fe</a>
-      <a class="tab" href="#catecismo">Catecismo</a>
-      <a class="tab" href="#rosario">El Rosario</a>
-      <a class="tab" href="#ninos">Para niños</a>
+
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas de Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab" href="rosario.html">El Rosario</a>
     </div>
   </nav>
 
-    <h1>Galería EPCA</h1>
+  <!-- ====== Descarga: Manual de Servicio EPCA ====== -->
+  <section class="manual-epca" aria-labelledby="doc-epca-title">
+    <h2 id="doc-epca-title" class="manual-title">Documentos EPCA</h2>
+
+    <!-- Opción 1 (recomendada): renombra el archivo a docs/manual-de-servicio-epca.pptx -->
+    <!-- <a class="manual-card" href="docs/manual-de-servicio-epca.pptx" download> -->
+
+    <!-- Opción 2 (si mantienes el nombre con espacios) -->
+    <a class="manual-card" href="docs/MANUAL%20DE%20SERVICIO.pptx" download
+       aria-label="Descargar Manual de Servicio EPCA">
+      <img src="img/epca.png" alt="Logo EPCA" />
+      <span class="manual-name">Manual de Servicio EPCA</span>
+              <small>PDF manual.pdf</small>
+    </a>
+  </section>
+
+  <!-- ====== Galería ====== -->
+  <section class="galeria-wrap">
+    <h1 class="galeria-title">Galería EPCA</h1>
 
     <div class="galeria">
-        <img src="img/retiro1.jpeg" alt="EPCA 1">
-        <img src="img/retiro2.jpeg" alt="EPCA 2">
-        <img src="img/retiro3.jpeg" alt="EPCA 3">
+      <figure class="gal-item">
+        <img src="img/retiro1.jpeg" alt="Retiro EPCA 1" />
+      </figure>
+      <figure class="gal-item">
+        <img src="img/retiro2.jpeg" alt="Retiro EPCA 2" />
+      </figure>
+      <figure class="gal-item">
+        <img src="img/retiro3.jpeg" alt="Retiro EPCA 3" />
+      </figure>
     </div>
+  </section>
+
+  <!-- JS del dropdown (mismo comportamiento del resto del sitio) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-dd]').forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu    = dd.querySelector('.dd-menu');
+        const setOpen = on => {
+          dd.classList.toggle('open', on);
+          menu.hidden = !on;
+          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        };
+        trigger.addEventListener('click', e => {
+          e.stopPropagation();
+          setOpen(!dd.classList.contains('open'));
+        });
+        menu.addEventListener('click', e => {
+          if (e.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('click', e => {
+          if (!dd.contains(e.target)) setOpen(false);
+        });
+      });
+    });
+  </script>
 </body>
 </html>

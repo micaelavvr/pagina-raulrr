@@ -1,0 +1,82 @@
+/* =====================================================
+   TEMAS DE FE — estilos locales
+   ===================================================== */
+
+.tf-intro{
+  max-width: 900px;
+  margin: .2rem auto 1rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Grid de documentos */
+.tf-grid{
+  max-width: 1100px;
+  margin: 0 auto 2.2rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.tf-card{
+  background: var(--card);
+  border-radius: 16px;
+  padding: 1.1rem;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer; /* Visualmente clickable */
+}
+
+.tf-card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+}
+
+.tf-card img{
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.08));
+  flex-shrink: 0;
+}
+
+.tf-meta{
+  display: grid;
+  gap: .2rem;
+}
+
+.tf-meta strong{
+  font-weight: 800;
+  font-size: 1.02rem;
+}
+
+.tf-meta small{
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+/* Mejora del título común del sitio */
+.section-banner{
+  margin-top: 1.2rem;
+}
+.section-banner span{
+  font-size: 1.6rem;
+  padding: .45rem 1rem;
+}
+
+/* Responsive suave */
+@media (max-width: 720px){
+  .tf-card{
+    padding: .9rem;
+  }
+  .tf-card img{
+    width: 64px; height: 64px;
+  }
+}

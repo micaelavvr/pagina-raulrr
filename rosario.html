@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Rosario</title>
+
+  <!-- Estilos globales del sitio -->
+  <link rel="stylesheet" href="css/rosario.css?v=2" />
+    <link rel="stylesheet" href="css/styles.css?v=2" />
+
+</head>
+<body>
+
+  <!-- =========================
+       Barra de navegación
+       ========================= -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs">
+      <a class="tab" href="index.html">Inicio</a>
+      <a class="tab" href="epca.html">Sobre EPCA…</a>
+
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-rosario">▾</button>
+        <ul id="dd-menu-rosario" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas de Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab is-active" href="rosario.html">El Rosario</a>
+    </div>
+  </nav>
+
+  <!-- =========================
+       Sección: El Rosario
+       ========================= -->
+  <section id="rosario" class="anchor-section rosario">
+    <h1 class="section-banner"><span>El Rosario</span></h1>
+
+    <!-- Acordeón / desplegable -->
+    <details class="rosario-acc" open>
+      <summary>La historia del Rosario</summary>
+      <div class="acc-body">
+        <p><strong>El rosario</strong> probablemente comenzó como una práctica de los laicos para imitar el Oficio Divino monástico (Breviario o Liturgia de las Horas), durante el curso del cual los monjes rezaban los 150 Salmos. Los laicos, muchos de los cuales no sabían leer, sustituyeron los Salmos por 50, o incluso 150, Ave Marías. La primera mitad de esta oración, tan directamente bíblica, parece datar del siglo II, como lo sugieren antiguos grafitis en sitios cristianos. A veces se usaba una cuerda con nudos para llevar un conteo preciso de las Ave Marías.</p>
+
+        <p>Sin embargo, la primera referencia histórica clara al rosario proviene de la vida de Santo Domingo (fallecido en 1221), fundador de la Orden de Predicadores o Dominicos. Predicó una forma del rosario en Francia en la época en que la herejía albigense estaba devastando la fe allí. La tradición cuenta que la misma Santísima Madre pidió la práctica como antídoto contra la herejía y el pecado. A partir de la década de 1400, un fraile dominico, el beato Alain de Roche, estableció las Cofradías del Rosario para promover el rezo del rosario. La forma del rosario que tenemos hoy en día se fija desde su tiempo.</p>
+
+        <p>A lo largo de los siglos, los santos y los papas han recomendado ampliamente el rosario, la mayor oración en la Iglesia después de la Misa y la Liturgia de las Horas. No es sorprendente que sus promotores más activos hayan sido los dominicos. <em>Rosario</em> significa una corona de rosas, un ramo espiritual dado a la Santísima Madre. A veces se le llama <em>Rosario Dominicano</em>, para distinguirlo de otras oraciones similares al rosario (por ejemplo, el Rosario Franciscano de las Siete Alegrías o Corona Franciscana, el Rosario Servita de los Siete Dolores). También es, en un sentido general, una forma de coronilla o corona (<em>corona</em>), de las cuales hay muchas variedades en la Iglesia. Finalmente, en inglés se le ha llamado «Salterio de Nuestra Señora» o «las cuentas». Este último término deriva de una palabra del inglés antiguo que significa «oración» (<em>bede</em>) y «solicitud» (<em>biddan</em> o <em>bid</em>).</p>
+      </div>
+    </details>
+
+    <!-- Descargables (excepto el manual) -->
+    <h2 class="section-banner" style="margin-top:.6rem"><span>Material</span></h2>
+    <div class="doc-grid">
+      <!-- Coronilla de la Divina Misericordia -->
+      <a class="doc-card" href="docs/Coronilla%20de%20la%20Divina%20Misericordia.pptx" download>
+        <img src="img/epca.png" alt="EPCA" />
+        <div class="doc-meta">
+          <strong>Coronilla de la Divina Misericordia</strong>
+          <small>PowerPoint (.pptx)</small>
+        </div>
+      </a>
+
+      <!-- Hora Santa -->
+      <a class="doc-card" href="docs/Hora%20Santa.pdf" download>
+        <img src="img/epca.png" alt="EPCA" />
+        <div class="doc-meta">
+          <strong>Hora Santa</strong>
+          <small>PDF</small>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================
+       JS: comportamiento del dropdown del nav
+       ========================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-dd]').forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu = dd.querySelector('.dd-menu');
+
+        const setOpen = (on) => {
+          dd.classList.toggle('open', on);
+          if (menu) menu.hidden = !on;
+          if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        };
+
+        if (trigger) {
+          trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setOpen(!dd.classList.contains('open'));
+          });
+        }
+
+        // Cerrar al clicar en una opción del menú
+        if (menu) {
+          menu.addEventListener('click', (e) => {
+            if (e.target.closest('a')) setOpen(false);
+          });
+        }
+
+        // Cerrar al clicar fuera
+        document.addEventListener('click', (e) => {
+          if (!dd.contains(e.target)) setOpen(false);
+        });
+      });
+    });
+  </script>
+
+    <!-- JS del dropdown (mismo comportamiento del resto del sitio) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-dd]').forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu    = dd.querySelector('.dd-menu');
+        const setOpen = on => {
+          dd.classList.toggle('open', on);
+          menu.hidden = !on;
+          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        };
+        trigger.addEventListener('click', e => {
+          e.stopPropagation();
+          setOpen(!dd.classList.contains('open'));
+        });
+        menu.addEventListener('click', e => {
+          if (e.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('click', e => {
+          if (!dd.contains(e.target)) setOpen(false);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

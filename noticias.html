@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Noticias </title>
+
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="stylesheet" href="css/noticias.css?v=2">
+    <link rel="stylesheet" href="css/canales.css?v=2">
+
+</head>
+
+<body>
+
+    <!-- Navegación -->
+    <nav class="tabs-wrap" aria-label="Navegación de secciones">
+        <div class="tabs">
+            <a class="tab" href="index.html">Inicio</a>
+            <a class="tab" href="epca.html">Sobre EPCA…</a>
+
+            <!-- Canales con desplegable -->
+            <div class="tab dd" data-dd>
+                <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+                <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+                <ul id="dd-menu-1" class="dd-menu" hidden>
+                    <li><a href="#milagros-eucaristicos">Milagros eucarísticos</a></li>
+                </ul>
+            </div>
+
+
+            <a class="tab is-active" href="noticias.html">Noticias</a>
+            <a class="tab" href="temasfe.html">Temas de Fe</a>
+            <a class="tab" href="catecismo.html">Catecismo</a>
+            <a class="tab" href="rosario.html">El Rosario</a>
+        </div>
+    </nav>
+
+
+    <!-- Título -->
+    <header class="channels-header">
+        <h1 class="page-title">Noticias Católicas</h1>
+        <p class="page-subtitle">
+            Todas las noticias y contenido católico en un solo lugar.
+        </p>
+    </header>
+
+    <!-- Grid de canales -->
+    <main class="channels-container">
+        <section class="channels-grid">
+
+            <!-- Padre Byron -->
+            <div class="channel-card">
+                <iframe width="350" height="200"
+                    src="https://www.youtube.com/watch?v=K4jn1SpGwnc&ab_channel=UnSacerdoteMillennial"
+                    title="Un Sacerdote Millennial" frameborder="0" allowfullscreen></iframe>
+                <a class="channel-button" target="_blank" rel="noopener"
+                    href="https://www.youtube.com/@unsacerdotemillennial">
+                    📺 Un Sacerdote Millenial
+                </a>
+            </div>
+
+            <!-- Padre Pedro Nuñez -->
+            <div class="channel-card">
+                <iframe width="350" height="200"
+                    src="https://www.youtube.com/watch?v=3pK9RlvRwNY&ab_channel=PadrePedroN%C3%BA%C3%B1ez"
+                    title="Padre Pedro Nuñez" frameborder="0" allowfullscreen></iframe>
+                <a class="channel-button" target="_blank" rel="noopener"
+                    href="https://www.youtube.com/c/PadrePedroN%C3%BA%C3%B1ez">
+                    📺 Padre Pedro Nuñez
+                </a>
+            </div>
+
+            <!-- Padre Santiago Martín -->
+            <div class="channel-card">
+                <iframe width="350" height="200"
+                    src="https://www.youtube.com/watch?v=qsSL_14fkDo&ab_channel=FranciscanosdeMar%C3%ADa-Magnificattv"
+                    title="Padre Santiago Martín" frameborder="0" allowfullscreen></iframe>
+                <a class="channel-button" target="_blank" rel="noopener"
+                    href="https://www.youtube.com/@Magnificat.tv-FM">
+                    📺 Franciscanos de María - Magnificat tv
+                </a>
+            </div>
+        </section>
+          <!-- JS del dropdown (mismo comportamiento del resto del sitio) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-dd]').forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu    = dd.querySelector('.dd-menu');
+        const setOpen = on => {
+          dd.classList.toggle('open', on);
+          menu.hidden = !on;
+          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        };
+        trigger.addEventListener('click', e => {
+          e.stopPropagation();
+          setOpen(!dd.classList.contains('open'));
+        });
+        menu.addEventListener('click', e => {
+          if (e.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('click', e => {
+          if (!dd.contains(e.target)) setOpen(false);
+        });
+      });
+    });
+  </script>
+
+</body>
+</main>
