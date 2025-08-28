@@ -8,7 +8,12 @@
   <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 
-<body>
+<body class="loading">
+  <!-- PRELOADER con efecto latido -->
+  <div id="preloader" aria-hidden="true">
+    <!-- Usa la imagen que prefieras: santateresita.jpg, epca.png, etc. -->
+    <img src="img/emblema.png" alt="Cargando…">
+  </div>
 
   <!-- FRASE SANTA TERESITA -->
   <section class="frase-teresita">
@@ -139,6 +144,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+<script>
+  // Ocultar preloader cuando todo esté listo
+  window.addEventListener('load', () => {
+    // pequeño delay para que se aprecie el latido una vez
+    setTimeout(() => {
+      document.getElementById('preloader')?.classList.add('hide');
+      document.body.classList.remove('loading');
+    }, 600);
+  });
+</script>
+</body>
+
 
 </body>
 </html>
