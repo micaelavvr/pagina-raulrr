@@ -81,6 +81,49 @@
     </section>
   </main>
 
+  <main class="channels-container">
+    <section class="channels-grid">
+
+      <!-- Gerardo Aste -->
+      <div class="channel-card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/TjXuE0PvGEE" title="Gerardo Aste" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <a class="channel-button" target="_blank" rel="noopener" href="https://www.youtube.com/@gerardoastesj/featured">
+          📺 Canal Gerardo Aste, SJ
+        </a>
+      </div>
+
+      <!-- Océano de la Misericordia -->
+      <div class="channel-card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/jjo0GEHWthg" title="Océano de la Misericordia"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <a class="channel-button" target="_blank" rel="noopener" href="https://www.youtube.com/@PadreAngelLC">
+          📺 Canal Océano de la Misericordia
+        </a>
+      </div>
+
+      <!-- Voz Católica -->
+      <div class="channel-card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/aTMWlGzYbQM" title="Voz Católica" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <a class="channel-button" target="_blank" rel="noopener" href="https://www.youtube.com/@voz_catolica">
+          📺 Canal Voz Católica
+        </a>
+      </div>
+
+    </section>
+  </main>
+
   <!-- Tarjeta especial EWTN -->
   <section id="milagros-eucaristicos" class="single-feature">
     <div class="card">
@@ -95,35 +138,35 @@
     </div>
   </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-dd]').forEach(dd => {
-    const trigger = dd.querySelector('.dd-trigger');
-    const menu    = dd.querySelector('.dd-menu');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-dd]').forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu = dd.querySelector('.dd-menu');
 
-    const setOpen = (on) => {
-      dd.classList.toggle('open', on);
-      menu.hidden = !on;
-      trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-    };
+        const setOpen = (on) => {
+          dd.classList.toggle('open', on);
+          menu.hidden = !on;
+          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        };
 
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      setOpen(!dd.classList.contains('open'));
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setOpen(!dd.classList.contains('open'));
+        });
+
+        // cerrar al clicar cualquier opción del menú
+        menu.addEventListener('click', (e) => {
+          if (e.target.closest('a')) setOpen(false);
+        });
+
+        // cerrar al clicar fuera
+        document.addEventListener('click', (e) => {
+          if (!dd.contains(e.target)) setOpen(false);
+        });
+      });
     });
-
-    // cerrar al clicar cualquier opción del menú
-    menu.addEventListener('click', (e) => {
-      if (e.target.closest('a')) setOpen(false);
-    });
-
-    // cerrar al clicar fuera
-    document.addEventListener('click', (e) => {
-      if (!dd.contains(e.target)) setOpen(false);
-    });
-  });
-});
-</script>
+  </script>
 
 
 </body>

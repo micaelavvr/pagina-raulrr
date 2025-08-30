@@ -15,26 +15,29 @@
   <!-- =========================
        Barra de navegación
        ========================= -->
-  <nav class="tabs-wrap" aria-label="Navegación de secciones">
-    <div class="tabs">
-      <a class="tab" href="index.html">Inicio</a>
-      <a class="tab" href="epca.html">Sobre EPCA…</a>
+    <!-- Navegación -->
+    <nav class="tabs-wrap" aria-label="Navegación de secciones">
+        <div class="tabs">
+            <a class="tab" href="index.html">Inicio</a>
+            <a class="tab" href="epca.html">Sobre EPCA…</a>
 
-      <!-- Canales con desplegable -->
-      <div class="tab dd" data-dd>
-        <a class="dd-link" href="canales.html">Canales católicos</a>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-rosario">▾</button>
-        <ul id="dd-menu-rosario" class="dd-menu" hidden>
-          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-        </ul>
-      </div>
+            <!-- Canales con desplegable -->
+            <div class="tab dd" data-dd>
+                <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+                <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+                <ul id="dd-menu-1" class="dd-menu" hidden>
+                    <li><a href="#milagros-eucaristicos">Milagros eucarísticos</a></li>
+                </ul>
+            </div>
 
-      <a class="tab" href="noticias.html">Noticias</a>
-      <a class="tab" href="temasfe.html">Temas de Fe</a>
-      <a class="tab" href="catecismo.html">Catecismo</a>
-      <a class="tab is-active" href="rosario.html">El Rosario</a>
-    </div>
-  </nav>
+
+            <a class="tab" href="noticias.html">Noticias</a>
+            <a class="tab" href="temasfe.html">Temas de Fe</a>
+            <a class="tab" href="catecismo.html">Catecismo</a>
+            <a class="tab is-active" href="rosario.html">El Rosario</a>
+        </div>
+    </nav>
+
 
   <!-- =========================
        Sección: El Rosario
@@ -77,67 +80,36 @@
     </div>
   </section>
 
-  <!-- =========================
-       JS: comportamiento del dropdown del nav
-       ========================= -->
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[data-dd]').forEach(dd => {
-        const trigger = dd.querySelector('.dd-trigger');
-        const menu = dd.querySelector('.dd-menu');
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-dd]').forEach(dd => {
+    const trigger = dd.querySelector('.dd-trigger');
+    const menu    = dd.querySelector('.dd-menu');
 
-        const setOpen = (on) => {
-          dd.classList.toggle('open', on);
-          if (menu) menu.hidden = !on;
-          if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-        };
+    const setOpen = (on) => {
+      dd.classList.toggle('open', on);
+      menu.hidden = !on;
+      trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
 
-        if (trigger) {
-          trigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            setOpen(!dd.classList.contains('open'));
-          });
-        }
-
-        // Cerrar al clicar en una opción del menú
-        if (menu) {
-          menu.addEventListener('click', (e) => {
-            if (e.target.closest('a')) setOpen(false);
-          });
-        }
-
-        // Cerrar al clicar fuera
-        document.addEventListener('click', (e) => {
-          if (!dd.contains(e.target)) setOpen(false);
-        });
-      });
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
     });
-  </script>
 
-    <!-- JS del dropdown (mismo comportamiento del resto del sitio) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[data-dd]').forEach(dd => {
-        const trigger = dd.querySelector('.dd-trigger');
-        const menu    = dd.querySelector('.dd-menu');
-        const setOpen = on => {
-          dd.classList.toggle('open', on);
-          menu.hidden = !on;
-          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-        };
-        trigger.addEventListener('click', e => {
-          e.stopPropagation();
-          setOpen(!dd.classList.contains('open'));
-        });
-        menu.addEventListener('click', e => {
-          if (e.target.closest('a')) setOpen(false);
-        });
-        document.addEventListener('click', e => {
-          if (!dd.contains(e.target)) setOpen(false);
-        });
-      });
+    // cerrar al clicar cualquier opción del menú
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setOpen(false);
     });
-  </script>
+
+    // cerrar al clicar fuera
+    document.addEventListener('click', (e) => {
+      if (!dd.contains(e.target)) setOpen(false);
+    });
+  });
+});
+</script>
 
 </body>
 </html>

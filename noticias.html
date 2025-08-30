@@ -47,66 +47,83 @@
     </header>
 
     <!-- Grid de canales -->
-    <main class="channels-container">
-        <section class="channels-grid">
+   <main class="channels-container">
+  <section class="channels-grid">
 
-            <!-- Padre Byron -->
-            <div class="channel-card">
-                <iframe width="350" height="200"
-                    src="https://www.youtube.com/watch?v=K4jn1SpGwnc&ab_channel=UnSacerdoteMillennial"
-                    title="Un Sacerdote Millennial" frameborder="0" allowfullscreen></iframe>
-                <a class="channel-button" target="_blank" rel="noopener"
-                    href="https://www.youtube.com/@unsacerdotemillennial">
-                    📺 Un Sacerdote Millenial
-                </a>
-            </div>
+    <!-- Padre Byron -->
+    <div class="channel-card">
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/K4jn1SpGwnc"
+                title="Padre Byron"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+      <a class="channel-button" target="_blank" rel="noopener"
+         href="https://www.youtube.com/@unsacerdotemillennial">
+        📺 Canal Padre Byron
+      </a>
+    </div>
 
-            <!-- Padre Pedro Nuñez -->
-            <div class="channel-card">
-                <iframe width="350" height="200"
-                    src="https://www.youtube.com/watch?v=3pK9RlvRwNY&ab_channel=PadrePedroN%C3%BA%C3%B1ez"
-                    title="Padre Pedro Nuñez" frameborder="0" allowfullscreen></iframe>
-                <a class="channel-button" target="_blank" rel="noopener"
-                    href="https://www.youtube.com/c/PadrePedroN%C3%BA%C3%B1ez">
-                    📺 Padre Pedro Nuñez
-                </a>
-            </div>
+    <!-- Padre Pedro Núñez -->
+    <div class="channel-card">
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/3pK9RlvRwNY"
+                title="Padre Pedro Núñez"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+      <a class="channel-button" target="_blank" rel="noopener"
+         href="https://www.youtube.com/c/PadrePedroNúñez">
+        📺 Canal Padre Pedro Núñez
+      </a>
+    </div>
 
-            <!-- Padre Santiago Martín -->
-            <div class="channel-card">
-                <iframe width="350" height="200"
-                    src="https://www.youtube.com/watch?v=qsSL_14fkDo&ab_channel=FranciscanosdeMar%C3%ADa-Magnificattv"
-                    title="Padre Santiago Martín" frameborder="0" allowfullscreen></iframe>
-                <a class="channel-button" target="_blank" rel="noopener"
-                    href="https://www.youtube.com/@Magnificat.tv-FM">
-                    📺 Franciscanos de María - Magnificat tv
-                </a>
-            </div>
-        </section>
-          <!-- JS del dropdown (mismo comportamiento del resto del sitio) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[data-dd]').forEach(dd => {
-        const trigger = dd.querySelector('.dd-trigger');
-        const menu    = dd.querySelector('.dd-menu');
-        const setOpen = on => {
-          dd.classList.toggle('open', on);
-          menu.hidden = !on;
-          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-        };
-        trigger.addEventListener('click', e => {
-          e.stopPropagation();
-          setOpen(!dd.classList.contains('open'));
+    <!-- Franciscanos de María -->
+    <div class="channel-card">
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/ruW5JT7LI88"
+                title="Franciscanos de María - Magnificat TV"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+      <a class="channel-button" target="_blank" rel="noopener"
+         href="https://www.youtube.com/@Magnificat.tv-FM">
+        📺 Canal Franciscanos de María - Magnificat tv
+      </a>
+    </div>
+
+  </section>
+</main>
+
+
+
+
+    <!-- JS del dropdown (mismo comportamiento del resto del sitio) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-dd]').forEach(dd => {
+                const trigger = dd.querySelector('.dd-trigger');
+                const menu = dd.querySelector('.dd-menu');
+                const setOpen = on => {
+                    dd.classList.toggle('open', on);
+                    menu.hidden = !on;
+                    trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+                };
+                trigger.addEventListener('click', e => {
+                    e.stopPropagation();
+                    setOpen(!dd.classList.contains('open'));
+                });
+                menu.addEventListener('click', e => {
+                    if (e.target.closest('a')) setOpen(false);
+                });
+                document.addEventListener('click', e => {
+                    if (!dd.contains(e.target)) setOpen(false);
+                });
+            });
         });
-        menu.addEventListener('click', e => {
-          if (e.target.closest('a')) setOpen(false);
-        });
-        document.addEventListener('click', e => {
-          if (!dd.contains(e.target)) setOpen(false);
-        });
-      });
-    });
-  </script>
+    </script>
 
 </body>
-</main>
