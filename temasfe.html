@@ -11,10 +11,11 @@
 </head>
 
 <body>
-  <!-- Navegación -->
+
+    <!-- Barra de navegación -->
   <nav class="tabs-wrap" aria-label="Navegación de secciones">
     <div class="tabs">
-      <a class="tab is-active" href="index.html">Inicio</a>
+      <a class="tab" href="index.html">Inicio</a>
       <a class="tab" href="epca.html">Sobre EPCA…</a>
 
       <!-- Canales con desplegable -->
@@ -26,109 +27,98 @@
         </ul>
       </div>
 
-
       <a class="tab" href="noticias.html">Noticias</a>
-      <a class="tab" href="temasfe.html">Temas de Fe</a>
+      <a class="tab is-active" href="temasfe.html">Temas de Fe</a>
       <a class="tab" href="catecismo.html">Catecismo</a>
       <a class="tab" href="rosario.html">El Rosario</a>
     </div>
   </nav>
 
-  <!-- Título -->
-  <header class="section-banner">
-    <span>Temas de Fe — Recursos descargables</span>
+  <!-- Título estilo “cinta” como el de El Rosario -->
+  <header class="tf-hero">
+    <h1 class="tf-title">Temas y Archivos de Fe</h1>
+    <p class="tf-sub">Materiales en PDF para profundizar en la fe: celebraciones, devociones y reflexiones.
+      <br>Haz clic en una tarjeta para <strong>descargar</strong>.</p>
   </header>
 
-  <section class="tf-intro">
-    <p class="muted">
-      Materiales en PDF para profundizar en la fe: celebraciones, devociones y reflexiones.
-      <br>Haz clic en una tarjeta para <strong>descargar</strong>.
-    </p>
-  </section>
+  <main class="tf-container">
 
-  <!-- Grid de descargas -->
-  <section class="tf-grid" id="descargas-temasfe">
-    <!-- Cada tarjeta tiene data-file y data-name. El href es # para no salir de la página. -->
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/adviento2024.pdf"
-       data-name="Adviento-2024.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>Adviento 2024</strong>
-        <small>PDF — adviento2024.pdf</small>
-      </div>
-    </a>
+  <!-- Adviento 2024 (PDF: abrir en otra pestaña) -->
+  <a class="doc-card" href="docs/temasfe/adviento2024.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/adviento.png" alt="Adviento 2024">
+    <div class="doc-content">
+      <h3>Adviento 2024</h3>
+      <small>PDF — adviento2024.pdf</small>
+    </div>
+  </a>
 
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/BXVI EWTN Spain.pdf"
-       data-name="BXVI-EWTN-Spain.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>Benedicto XVI (EWTN España)</strong>
-        <small>PDF — BXVI EWTN Spain.pdf</small>
-      </div>
-    </a>
+  <!-- Benedicto XVI (EWTN España) -->
+  <a class="doc-card" href="docs/temasfe/BXVI EWTN Spain.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/benedicto.png" alt="Benedicto XVI">
+    <div class="doc-content">
+      <h3>Benedicto XVI (EWTN España)</h3>
+      <small>PDF — BXVI EWTN Spain.pdf</small>
+    </div>
+  </a>
 
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/EPIFANIA 2024.pdf"
-       data-name="Epifania-2024.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>Epifanía 2024</strong>
-        <small>PDF — EPIFANIA 2024.pdf</small>
-      </div>
-    </a>
+  <!-- Epifanía 2024 -->
+  <a class="doc-card" href="docs/temasfe/EPIFANIA 2024.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/epifania.png" alt="Epifanía">
+    <div class="doc-content">
+      <h3>Epifanía 2024</h3>
+      <small>PDF — EPIFANIA 2024.pdf</small>
+    </div>
+  </a>
 
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/JUBILEO 2025 EWTN ESPAÑA.pdf"
-       data-name="Jubileo-2025-EWTN-ESPAÑA.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>Jubileo 2025 (EWTN España)</strong>
-        <small>PDF — JUBILEO 2025 EWTN ESPAÑA.pdf</small>
-      </div>
-    </a>
+  <!-- Jubileo 2025 (EWTN España) -->
+  <a class="doc-card" href="docs/temasfe/JUBILEO 2025 EWTN ESPAÑA.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/jubileo.png" alt="Jubileo 2025">
+    <div class="doc-content">
+      <h3>Jubileo 2025 (EWTN España)</h3>
+      <small>PDF — JUBILEO 2025 EWTN ESPAÑA.pdf</small>
+    </div>
+  </a>
 
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/la visitacion de maria.pdf"
-       data-name="La-Visitacion-de-Maria.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>La Visitación de María</strong>
-        <small>PDF — la visitacion de maria.pdf</small>
-      </div>
-    </a>
+  <!-- La Visitación de María -->
+  <a class="doc-card" href="docs/temasfe/la visitacion de maria.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/visitacion.png" alt="La Visitación de María">
+    <div class="doc-content">
+      <h3>La Visitación de María</h3>
+      <small>PDF — la visitacion de maria.pdf</small>
+    </div>
+  </a>
 
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/MEMORIAL PAPA FRANCISCO.pdf"
-       data-name="Memorial-Papa-Francisco.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>Memorial del Papa Francisco</strong>
-        <small>PDF — MEMORIAL PAPA FRANCISCO.pdf</small>
-      </div>
-    </a>
+  <!-- Memorial del Papa Francisco -->
+  <a class="doc-card" href="docs/temasfe/MEMORIAL PAPA FRANCISCO.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/memorial.png" alt="Memorial Papa Francisco">
+    <div class="doc-content">
+      <h3>Memorial del Papa Francisco</h3>
+      <small>PDF — MEMORIAL PAPA FRANCISCO.pdf</small>
+    </div>
+  </a>
 
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/Pentecostes2023.pdf"
-       data-name="Pentecostes-2023.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>Pentecostés 2023</strong>
-        <small>PDF — Pentecostes2023.pdf</small>
-      </div>
-    </a>
+  <!-- Pentecostés 2023 -->
+  <a class="doc-card" href="docs/temasfe/Pentecostes2023.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/pentecostes.png" alt="Pentecostés 2023">
+    <div class="doc-content">
+      <h3>Pentecostés 2023</h3>
+      <small>PDF — Pentecostes2023.pdf</small>
+    </div>
+  </a>
 
-    <a class="tf-card" href="#"
-       data-file="docs/temasfe/San Pedro y San Pablo.pdf"
-       data-name="San-Pedro-y-San-Pablo.pdf" role="button">
-      <img src="img/epca.png" alt="EPCA">
-      <div class="tf-meta">
-        <strong>San Pedro y San Pablo</strong>
-        <small>PDF — San Pedro y San Pablo.pdf</small>
-      </div>
-    </a>
-  </section>
+  <!-- San Pedro y San Pablo -->
+  <a class="doc-card" href="docs/temasfe/San Pedro y San Pablo.pdf" target="_blank">
+    <img class="doc-icon" src="docs/temasfe/sanpedrosanpablo.png" alt="San Pedro y San Pablo">
+    <div class="doc-content">
+      <h3>San Pedro y San Pablo</h3>
+      <small>PDF — San Pedro y San Pablo.pdf</small>
+    </div>
+  </a>
+
+
+</main>
+
+
 
   <!-- Script para el dropdown del nav -->
   <script>

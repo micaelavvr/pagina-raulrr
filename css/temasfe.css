@@ -1,82 +1,128 @@
-/* =====================================================
-   TEMAS DE FE — estilos locales
-   ===================================================== */
-
-.tf-intro{
-  max-width: 900px;
-  margin: .2rem auto 1rem;
-  padding: 0 1rem;
-  text-align: center;
+/* Paleta (coincide con tu sitio) */
+:root{
+  --bg:          #e7c690;         /* fondo cálido */
+  --bg-2:        #fff1d9;         /* bloques / barra */
+  --card:        #ffffff;
+  --ink:         #4b2f23;         /* texto */
+  --muted:       #7a5a4a;
+  --accent:      #e69a52;
+  --accent-700:  #c7772e;
+  --line:        #e7caa5;
+  --shadow:      0 10px 24px rgba(84,48,23,.10);
+  --shadow-2:    0 16px 34px rgba(84,48,23,.16);
 }
 
-/* Grid de documentos */
-.tf-grid{
-  max-width: 1100px;
-  margin: 0 auto 2.2rem;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.2rem;
+/* Base mínima para esta página */
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  line-height:1.5;
 }
 
-.tf-card{
-  background: var(--card);
-  border-radius: 16px;
-  padding: 1.1rem;
-  text-decoration: none;
-  color: var(--ink);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  transition: transform .2s ease, box-shadow .2s ease;
-  cursor: pointer; /* Visualmente clickable */
+/* ---------- Título estilo cinta (como El Rosario) ---------- */
+.tf-hero{
+  max-width:1200px;
+  margin: 1.25rem auto 0;
+  padding: 0 1rem 1rem;
+  text-align:center;
 }
 
-.tf-card:hover{
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-2);
-}
-
-.tf-card img{
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,.08));
-  flex-shrink: 0;
-}
-
-.tf-meta{
-  display: grid;
-  gap: .2rem;
-}
-
-.tf-meta strong{
+.tf-title{
+  display:inline-block;
+  margin:0 0 .6rem 0;
+  padding:.85rem 1.25rem;
+  font-size: clamp(1.6rem, 1rem + 2.8vw, 2.6rem);
   font-weight: 800;
-  font-size: 1.02rem;
+  color: var(--ink);
+  background: linear-gradient(#f9e9d0, #f6ddbe);
+  border-radius: 8px 8px 14px 14px;
+  box-shadow:
+      inset 0 -8px 0 0 rgba(230,154,82,.50),
+      0 10px 22px rgba(84,48,23,.12);
 }
 
-.tf-meta small{
+.tf-sub{
+  margin:.1rem 0 0 0;
   color: var(--muted);
-  font-size: .86rem;
+  font-size: clamp(.95rem, .9rem + .25vw, 1.05rem);
 }
 
-/* Mejora del título común del sitio */
-.section-banner{
-  margin-top: 1.2rem;
-}
-.section-banner span{
-  font-size: 1.6rem;
-  padding: .45rem 1rem;
+/* ---------- GRID de tarjetas ---------- */
+.tf-container{
+  max-width:1200px;
+  margin: .4rem auto 2rem;
+  padding: 0 1rem;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.1rem;
 }
 
-/* Responsive suave */
-@media (max-width: 720px){
-  .tf-card{
-    padding: .9rem;
-  }
-  .tf-card img{
-    width: 64px; height: 64px;
-  }
+/* Tarjeta */
+.doc-card{
+  display:flex;
+  align-items:center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  text-decoration:none;
+  color: var(--ink);
+  background: var(--bg-2);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s;
+}
+.doc-card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+  background:#fff6e6;
+}
+
+/* Icono/portada del PDF */
+.doc-icon{
+  width:84px; height:84px; flex:0 0 84px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(84,48,23,.20);
+}
+
+/* Textos dentro de la tarjeta */
+.doc-content h3{
+  margin:.1rem 0 .25rem 0;
+  font-size: clamp(1.05rem, .95rem + .6vw, 1.3rem);
+  line-height:1.25;
+}
+.doc-content small{
+  color: var(--muted);
+}
+
+/* Tabs (si las usas en esta página) */
+.tabs-wrap{
+  position: sticky; top:0; z-index:40;
+  background: var(--bg-2);
+  box-shadow: var(--shadow);
+  border-bottom:1px solid var(--line);
+}
+.tabs{
+  max-width:1200px; margin:0 auto; padding:.75rem 1rem;
+  display:flex; gap:.75rem; align-items:center; flex-wrap:wrap;
+}
+.tab{
+  display:inline-flex; align-items:center;
+  padding:.6rem 1rem; border-radius:12px; font-weight:700;
+  color:var(--ink); text-decoration:none;
+}
+.tab:hover{ background:rgba(0,0,0,.05); }
+.tab.is-active{ position:relative; }
+.tab.is-active::after{
+  content:""; position:absolute; left:1rem; right:1rem; bottom:-8px;
+  height:4px; border-radius:999px; background:var(--accent);
+}
+
+/* Responsivo */
+@media (max-width:720px){
+  .doc-icon{ width:72px; height:72px; flex-basis:72px; }
+  .doc-card{ padding: .9rem 1rem; }
 }

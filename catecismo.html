@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catecismo</title>
+
+    <!-- Estilos de esta página -->
+    <link rel="stylesheet" href="css/catecismo.css?v=1" />
+    <!-- Fuente opcional para títulos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="tabs-wrap" aria-label="Navegación de secciones">
+        <div class="tabs">
+            <a class="tab" href="index.html">Inicio</a>
+            <a class="tab" href="epca.html">Sobre EPCA…</a>
+
+            <!-- Canales con desplegable -->
+            <div class="tab dd" data-dd>
+                <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+                <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+                <ul id="dd-menu-1" class="dd-menu" hidden>
+                    <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+                </ul>
+            </div>
+
+            <a class="tab" href="noticias.html">Noticias</a>
+            <a class="tab" href="temasfe.html">Temas de Fe</a>
+            <a class="tab is-active" href="catecismo.html">Catecismo</a>
+            <a class="tab" href="rosario.html">El Rosario</a>
+        </div>
+    </nav>
+
+    <!-- ======= Cabecera ======= -->
+    <header class="hero">
+        <h1><span>Catecismo</span></h1>
+        <p class="subtitle">Todos los documentos y temas relacionados</p>
+    </header>
+
+    <!-- ======= Selector de Papas (chips) ======= -->
+    <section class="popes-wrap">
+        <h2 class="sr-only">Sumos Pontífices</h2>
+
+        <div class="popes-scroll" id="popesBar">
+            <!-- Francisco -->
+            <button class="pope-chip is-active" data-pope="francisco" title="Francisco">
+                <img src="img/francisco.png" alt="Francisco">
+                <span>Francisco</span>
+            </button>
+
+            <!-- Benedicto XVI -->
+            <button class="pope-chip" data-pope="benedicto" title="Benedicto XVI">
+                <img src="img/benedicto_XVI.png" alt="Benedicto XVI">
+                <span>Benedicto XVI</span>
+            </button>
+
+            <!-- Puedes ir agregando más; de momento solo “activos” cuando tengas PDFs -->
+            <button class="pope-chip" data-pope="juanpabloii" title="Juan Pablo II" disabled>
+                <img src="img/francisco.png" alt="Juan Pablo II">
+                <span>Juan Pablo II</span>
+            </button>
+
+            <!-- Agrega más chips cuando quieras -->
+        </div>
+
+        <div class="progress-line"></div>
+    </section>
+
+    <!-- ======= Tarjetas de encíclicas ======= -->
+    <main class="docs-container" id="docsContainer" aria-live="polite" aria-busy="false">
+        <!-- Se llena por JS -->
+    </main>
+
+    <!-- ======= Script ======= -->
+    <script>
+        // --- Menú desplegable del header (tu mismo patrón) ---
+        document.querySelectorAll('[data-dd]').forEach(dd => {
+            const trigger = dd.querySelector('.dd-trigger');
+            const menu = dd.querySelector('.dd-menu');
+            const setOpen = on => { dd.classList.toggle('open', on); menu.hidden = !on; trigger.setAttribute('aria-expanded', on ? 'true' : 'false'); };
+            trigger.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
+            menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+            document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
+        });
+
+        // === Avatares por papa (imagen que se muestra en grande) ===
+        const POPE_AVATAR = {
+            francisco: "img/francisco.png",
+            benedicto: "img/benedicto_XVI.png",
+            juanpabloii: "img/papa.png" // cámbialo por la imagen que quieras para Juan Pablo II
+        };
+
+        // (opcional) nombres bonitos para el alt del avatar
+        const POPE_NAME = {
+            francisco: "Francisco",
+            benedicto: "Benedicto XVI",
+            juanpabloii: "Juan Pablo II"
+        };
+
+        const ENCICLICAS = {
+            francisco: [
+                {
+                    titulo: "Dilexit nos (24 de octubre de 2024)",
+                    file: "docs/catecismo/20241024-enciclica-dilexit-nos.pdf"
+                },
+                {
+                    titulo: "Fratelli tutti (3 de octubre de 2020)",
+                    file: "docs/catecismo/papa-francesco_20201003_enciclica-fratelli-tutti.pdf"
+                },
+                {
+                    titulo: "Laudato si' (24 de mayo de 2015)",
+                    file: "docs/catecismo/papa-francesco_20150524_enciclica-laudato-si_sp.pdf"
+                },
+                {
+                    titulo: "Lumen Fidei (29 de junio de 2013)",
+                    file: "docs/catecismo/papa-francesco_20130629_enciclica-lumen-fidei_sp.pdf"
+                }
+
+            ],
+
+            benedicto: [
+                {
+                    titulo: "Deus caritas est (25 de diciembre de 2005)",
+                    file: "docs/catecismo/deus_caritas_est.pdf"
+                },
+                {
+                    titulo: "Spe salvi (30 de noviembre de 2007)",
+                    file: "docs/catecismo/spe_salvi.pdf"
+                },
+                {
+                    titulo: "Caritas in veritate (29 de junio de 2009)",
+                    file: "docs/catecismo/caritas_in_veritate.pdf"
+                }
+
+
+            ],
+            // Cuando tengas PDFs de Benedicto u otros, solo completa las entradas:
+            juanpabloii: [
+                // …
+            ]
+        };
+
+        // ==============
+        // Render de tarjetas
+        // ==============
+        const docsContainer = document.getElementById('docsContainer');
+
+        function renderDocs(popeKey) {
+            const lista = ENCICLICAS[popeKey] || [];
+            docsContainer.innerHTML = '';
+            docsContainer.setAttribute('aria-busy', 'true');
+
+            if (!lista.length) {
+                docsContainer.innerHTML = `
+        <div class="empty">
+          <p>Aún no hemos añadido encíclicas para este pontífice.</p>
+        </div>`;
+                docsContainer.setAttribute('aria-busy', 'false');
+                return;
+            }
+
+            // Avatar grande del papa (decorativo)
+            const avatar = document.createElement('div');
+            avatar.className = 'pope-hero';
+
+            const src = POPE_AVATAR[popeKey] || 'img/logo-vatican.png';
+            const alt = POPE_NAME[popeKey] || popeKey;
+
+            avatar.innerHTML = `<img src="${src}" alt="${alt}" />`;
+            docsContainer.appendChild(avatar);
+
+
+            // Grid de tarjetas
+            const grid = document.createElement('section');
+            grid.className = 'cards-grid';
+
+            lista.forEach(doc => {
+                const card = document.createElement('a');
+                card.className = 'doc-card';
+                card.href = doc.file;
+                card.target = '_blank';
+                card.rel = 'noopener';
+
+                card.innerHTML = `
+  <div class="doc-icon">
+    <img src="img/logo-vatican.png" alt="Logo Vaticano">
+  </div>
+  <div class="doc-meta">
+    <h3>${doc.titulo}</h3>
+    <small>${doc.file.split('/').pop()}</small>
+  </div>
+`;
+
+                grid.appendChild(card);
+            });
+
+            docsContainer.appendChild(grid);
+            docsContainer.setAttribute('aria-busy', 'false');
+        }
+
+        // Inicial
+        renderDocs('francisco');
+
+        // Cambio de papa
+        document.getElementById('popesBar').addEventListener('click', (e) => {
+            const btn = e.target.closest('.pope-chip');
+            if (!btn || btn.disabled) return;
+            document.querySelectorAll('.pope-chip').forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            renderDocs(btn.dataset.pope);
+        });
+    </script>
+</body>
+
+</html>

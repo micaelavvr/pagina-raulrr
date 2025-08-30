@@ -71,92 +71,189 @@
   <!-- PARROQUIA CR -->
   <section class="parroquia-cr">
     <a href="https://www.lourdes-france.org/es/" target="_blank" rel="noopener">
-    <img src="img/cristosalvador.jpg" alt="Parroquia Cristo Salvador">
+      <img src="img/cristosalvador.jpg" alt="Parroquia Cristo Salvador">
     </a>
   </section>
 
-<!-- ========================  PAPA LEÓN XIV  ======================== -->
-<section id="papa" class="anchor-section papa-bloque">
-  <!-- Título (más grande y con separación superior) -->
-  <h2 class="section-banner xl"><span>PAPA LEÓN XIV</span></h2>
+  <!-- ========================  PAPA LEÓN XIV  ======================== -->
+  <section id="papa" class="anchor-section papa-bloque">
+    <!-- Título (más grande y con separación superior) -->
+    <h2 class="section-banner xl"><span>PAPA LEÓN XIV</span></h2>
 
-  <!-- Grid 3 columnas: foto | escudo | tweet -->
-  <div class="papa-grid">
-    <!-- Foto -->
-    <figure class="papa-card">
-      <img class="papa-foto"
-           src="img/papa.png"
-           alt="Papa León XIV">
-    </figure>
+    <!-- Grid 3 columnas: foto | escudo | tweet -->
+    <div class="papa-grid">
+      <!-- Foto -->
+      <figure class="papa-card">
+        <img class="papa-foto" src="img/papa.png" alt="Papa León XIV">
+      </figure>
 
-    <!-- Escudo -->
-    <figure class="papa-card">
-      <img class="papa-escudo"
-           src="img/emblema.png"
-           alt="Escudo del Papa León XIV">
-    </figure>
+      <!-- Escudo -->
+      <figure class="papa-card">
+        <img class="papa-escudo" src="img/emblema.png" alt="Escudo del Papa León XIV">
+      </figure>
 
-    <!-- Tweet (usa blockquote oficial de Twitter/X) -->
-    <div class="papa-card tweet">
-      <blockquote class="twitter-tweet"
-                  data-theme="light" data-lang="es" data-conversation="none">
-        <p lang="es" dir="ltr">
-          Hoy vuelvo a hacer un fuerte llamamiento tanto a las partes implicadas
-          como a la comunidad internacional para que pongan fin al conflicto en Tierra Santa,
-          que ha causado tanto terror, destrucción y muerte.
-        </p>
-        &mdash; Papa León XIV (@Pontifex_es)
-        <a href="https://twitter.com/Pontifex_es/status/1960674247832944775">27 ago 2025</a>
-      </blockquote>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <!-- Tweet (usa blockquote oficial de Twitter/X) -->
+      <div class="papa-card tweet">
+        <blockquote class="twitter-tweet" data-theme="light" data-lang="es" data-conversation="none">
+          <p lang="es" dir="ltr">
+            Hoy vuelvo a hacer un fuerte llamamiento tanto a las partes implicadas
+            como a la comunidad internacional para que pongan fin al conflicto en Tierra Santa,
+            que ha causado tanto terror, destrucción y muerte.
+          </p>
+          &mdash; Papa León XIV (@Pontifex_es)
+          <a href="https://twitter.com/Pontifex_es/status/1960674247832944775">27 ago 2025</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-dd]').forEach(dd => {
-    const trigger = dd.querySelector('.dd-trigger');
-    const menu    = dd.querySelector('.dd-menu');
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-dd]').forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu = dd.querySelector('.dd-menu');
 
-    const setOpen = (on) => {
-      dd.classList.toggle('open', on);
-      menu.hidden = !on;
-      trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-    };
+        const setOpen = (on) => {
+          dd.classList.toggle('open', on);
+          menu.hidden = !on;
+          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        };
 
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      setOpen(!dd.classList.contains('open'));
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setOpen(!dd.classList.contains('open'));
+        });
+
+        // cerrar al clicar cualquier opción del menú
+        menu.addEventListener('click', (e) => {
+          if (e.target.closest('a')) setOpen(false);
+        });
+
+        // cerrar al clicar fuera
+        document.addEventListener('click', (e) => {
+          if (!dd.contains(e.target)) setOpen(false);
+        });
+      });
     });
+  </script>
 
-    // cerrar al clicar cualquier opción del menú
-    menu.addEventListener('click', (e) => {
-      if (e.target.closest('a')) setOpen(false);
+  <script>
+    // Ocultar preloader cuando todo esté listo
+    window.addEventListener('load', () => {
+      // pequeño delay para que se aprecie el latido una vez
+      setTimeout(() => {
+        document.getElementById('preloader')?.classList.add('hide');
+        document.body.classList.remove('loading');
+      }, 600);
     });
+  </script>
+</body>
 
-    // cerrar al clicar fuera
-    document.addEventListener('click', (e) => {
-      if (!dd.contains(e.target)) setOpen(false);
-    });
-  });
-});
-</script>
+<!-- =======  Anuncio ======= -->
+<div id="anuncioModal" class="anuncio-modal">
+  <div class="anuncio-content">
+    <button class="anuncio-close" aria-label="Cerrar">✖</button>
+    <a href="https://wa.link/hvqksg" target="_blank" rel="noopener">
+      <img src="img/retirosept.jpg" alt="Encuentro para varones - EPCA" />
+    </a>
+  </div>
+</div>
 
+<!-- ======= Estilos del modal ======= -->
+<style>
+  .anuncio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .anuncio-content {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    max-width: 380px;
+    /* 👉 más pequeño */
+    width: 90%;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.4s ease;
+  }
+
+  .anuncio-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .anuncio-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #333;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .anuncio-close:hover {
+    background: #d33;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<!-- ======= Script del modal ======= -->
 <script>
-  // Ocultar preloader cuando todo esté listo
-  window.addEventListener('load', () => {
-    // pequeño delay para que se aprecie el latido una vez
-    setTimeout(() => {
-      document.getElementById('preloader')?.classList.add('hide');
-      document.body.classList.remove('loading');
-    }, 600);
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("anuncioModal");
+    const closeBtn = document.querySelector(".anuncio-close");
+
+    // Mostrar modal al cargar
+    modal.style.display = "flex";
+
+    // Cerrar al dar clic en X
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Cerrar al dar clic fuera del contenido
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
   });
 </script>
-</body>
 
 
+
 </body>
+
 </html>
