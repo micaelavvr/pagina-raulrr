@@ -100,3 +100,56 @@ body {
   font-size: 1.6rem;
   padding: .45rem 1rem;
 }
+
+/* Contenedor centrado */
+.lourdes-cta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  margin: 24px auto 36px;
+}
+
+
+/* ---------- Logo Lourdes con latido ---------- */
+.lourdes-rosary{
+  max-width: 900px;
+  margin: 1.5rem auto 3rem;
+  text-align: center;
+}
+
+.lourdes-card{
+  display: inline-block;
+  background: #fff;
+  border-radius: 26px;
+  padding: 1.6rem 2rem;
+  box-shadow: 0 18px 38px rgba(0,0,0,.12);
+}
+
+.lourdes-card img{
+  width: 220px;               /* más pequeño */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  animation: heartbeat 2.4s ease-in-out infinite;
+}
+
+.lourdes-caption{
+  margin-top: .75rem;
+  color: #6d5239;
+  font-size: 1.05rem;
+}
+
+/* animación “latido” */
+@keyframes heartbeat{
+  0%, 100% { transform: scale(1); }
+  14%      { transform: scale(1.06); }
+  28%      { transform: scale(1); }
+  42%      { transform: scale(1.06); }
+  70%      { transform: scale(1); }
+}
+
+/* Respeto por usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce){
+  .lourdes-card img { animation: none; }
+}

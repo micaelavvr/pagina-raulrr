@@ -55,25 +55,32 @@
     <img src="img/maria.jpg" alt="Virgen María" class="titulo-img derecha">
   </header>
 
-  <!-- PÁGINAS RECOMENDADAS -->
-  <section class="paginas-recomendadas">
-    <a href="https://www.romereports.com/" target="_blank" rel="noopener">
-      <img src="img/romereports.png" alt="Rome Reports">
-    </a>
-    <a href="https://www.ewtn.com/es" target="_blank" rel="noopener">
-      <img src="img/ewtn.jpg" alt="EWTN">
-    </a>
-    <a href="https://www.lourdes-france.org/es/" target="_blank" rel="noopener">
-      <img src="img/santuariolourdes.jpg" alt="Lourdes">
-    </a>
-  </section>
+<!-- ===== PÁGINAS RECOMENDADAS ===== -->
+<section class="paginas-recomendadas">
+  <a href="https://www.romereports.com/" class="logo-card" target="_blank" rel="noopener">
+    <img src="img/romereports.png" alt="Rome Reports">
+  </a>
 
-  <!-- PARROQUIA CR -->
-  <section class="parroquia-cr">
-    <a href="https://www.lourdes-france.org/es/" target="_blank" rel="noopener">
-      <img src="img/cristosalvador.jpg" alt="Parroquia Cristo Salvador">
-    </a>
-  </section>
+  <a href="https://www.ewtn.com/es" class="logo-card" target="_blank" rel="noopener">
+    <img src="img/ewtn.jpg" alt="EWTN">
+  </a>
+
+  <a href="https://www.lourdes-france.org/es/" class="logo-card" target="_blank" rel="noopener">
+    <img src="img/santuariolourdes.jpg" alt="Lourdes">
+  </a>
+
+  <!-- Fila 2 -->
+  <a href="https://www.facebook.com/parroquiacristosalvador.chama" class="logo-card" target="_blank" rel="noopener">
+    <img src="img/cristosalvador.jpg" alt="Parroquia Cristo Salvador">
+  </a>
+
+  <a href=" https://whatsapp.com/channel/0029Vb4BmY82P59sWaIwKs02 " class="logo-card" target="_blank" rel="noopener">
+    <img src="img/hospitalitos.jpg" alt="Hospitalitos de la Fe">
+  </a>
+</section>
+
+
+
 
   <!-- ========================  PAPA LEÓN XIV  ======================== -->
   <section id="papa" class="anchor-section papa-bloque">
@@ -152,105 +159,7 @@
   </script>
 </body>
 
-<!-- =======  Anuncio ======= -->
-<div id="anuncioModal" class="anuncio-modal">
-  <div class="anuncio-content">
-    <button class="anuncio-close" aria-label="Cerrar">✖</button>
-    <a href="https://wa.link/hvqksg" target="_blank" rel="noopener">
-      <img src="img/retirosept.jpg" alt="Encuentro para varones - EPCA" />
-    </a>
-  </div>
-</div>
 
-<!-- ======= Estilos del modal ======= -->
-<style>
-  .anuncio-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-
-  .anuncio-content {
-    position: relative;
-    background: #fff;
-    border-radius: 12px;
-    max-width: 380px;
-    /* 👉 más pequeño */
-    width: 90%;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    animation: fadeIn 0.4s ease;
-  }
-
-  .anuncio-content img {
-    display: block;
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-  }
-
-  .anuncio-close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: #333;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-    line-height: 30px;
-    text-align: center;
-    transition: background 0.3s;
-  }
-
-  .anuncio-close:hover {
-    background: #d33;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-</style>
-
-<!-- ======= Script del modal ======= -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("anuncioModal");
-    const closeBtn = document.querySelector(".anuncio-close");
-
-    // Mostrar modal al cargar
-    modal.style.display = "flex";
-
-    // Cerrar al dar clic en X
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    // Cerrar al dar clic fuera del contenido
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    });
-  });
-</script>
 
 
 
