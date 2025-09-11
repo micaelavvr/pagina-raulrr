@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EPCA</title>
   <link rel="stylesheet" href="css/epca.css?v=3" />
 </head>
@@ -30,43 +31,410 @@
     </div>
   </nav>
 
-  <!-- ====== Descarga: Manual de Servicio EPCA ====== -->
-  <section class="manual-epca" aria-labelledby="doc-epca-title">
-    <h2 id="doc-epca-title" class="manual-title">Documentos EPCA</h2>
+  <!-- ====== GALERÍA EPCA ====== -->
+  <section class="epca-section" id="integrantes">
+    <h2 class="section-title">EPCA</h2>
+
+    <!-- SUBTABS de EPCA -->
+<nav class="subtabs" aria-label="Secciones de EPCA">
+  <a class="subtab is-active" href="#integrantes">Nuevos integrantes del retiro 2025</a>
+  <a class="subtab" href="#docs">Documentos</a>
+</nav>
 
 
-    <!-- Opción 2 (si mantienes el nombre con espacios) -->
-    <a class="manual-card" href="docs/MANUAL%20DE%20SERVICIO.pptx" download
-       aria-label="Descargar Manual de Servicio EPCA">
-      <img src="img/epca.png" alt="Logo EPCA" />
-      <span class="manual-name">Manual de Servicio EPCA</span>
-              <small>PDF manual.pdf</small>
-    </a>
+    <!-- Foto de cocina centrada -->
+    <figure class="epca-hero">
+      <img src="img/epca-retiro/cocina.jpg" alt="Equipo de cocina durante el retiro">
+      <figcaption>El equipo durante el Retiro 2025</figcaption>
+    </figure>
+
+    <!-- Subtítulo para los integrantes -->
+    <div class="subheading-wrap">
+      <h3 class="subheading">Nuevos Integrantes del Retiro Setiembre 2025</h3>
+      <p class="subtext">
+        "Sé fuerte y valiente. No tengas miedo; el Señor tu Dios estará contigo dondequiera que vayas" - Josué 1:9
+      </p>
+    </div>
+
+    <!-- Miniaturas con nombre (agrega todas las que quieras) -->
+    <ul class="people-grid" id="peopleGrid">
+      <!-- Ejemplos: duplica los <li> y cambia data-name y src -->
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/AlanSalome.jpg" data-name="Alan Salomé">
+          <img src="img/epca-retiro/AlanSalome.jpg" alt="Alan Salomé">
+          <span>Alan Salomé</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/AlejandroFanantes.jpg" data-name="Alejandro Fanantes">
+          <img src="img/epca-retiro/AlejandroFanantes.jpg" alt="Alejandro Fanantes">
+          <span>Alejandro Fanantes</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/AlexanderLobaton.jpg" data-name="Alexander Lobaton">
+          <img src="img/epca-retiro/AlexanderLobaton.jpg" alt="Alexander Lobaton">
+          <span>Alexander Lobaton</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/AlfredoGordillo.jpg" data-name="Alfredo Gordillo">
+          <img src="img/epca-retiro/AlfredoGordillo.jpg" alt="Alfredo Gordillo">
+          <span>Alfredo Gordillo</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/AlfredoSantivañez.jpg" data-name="Alfredo Santivañez">
+          <img src="img/epca-retiro/AlfredoSantivañez.jpg" alt="Alfredo Santivañez">
+          <span>Alfredo Santivañez</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/AngeloPoma.jpg" data-name="Angelo Poma">
+          <img src="img/epca-retiro/AngeloPoma.jpg" alt="Angelo Poma">
+          <span>Angelo Poma</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/BrunoHelguero.jpg" data-name="Bruno Helguero">
+          <img src="img/epca-retiro/BrunoHelguero.jpg" alt="Bruno Helguero">
+          <span>Bruno Helguero</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CarlosAcojale.jpg" data-name="Carlos Acojale">
+          <img src="img/epca-retiro/CarlosAcojale.jpg" alt="Carlos Acojale">
+          <span>Carlos Acojale</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CarlosAlonso.jpg" data-name="Carlos Alonso">
+          <img src="img/epca-retiro/CarlosAlonso.jpg" alt="Carlos Alonso">
+          <span>Carlos Alonso</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CarlosAlva.jpg" data-name="Carlos Alva">
+          <img src="img/epca-retiro/CarlosAlva.jpg" alt="Carlos Alva">
+          <span>Carlos Alva</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CarlosCarranza.jpg" data-name="Carlos Carranza">
+          <img src="img/epca-retiro/CarlosCarranza.jpg" alt="Carlos Carranza">
+          <span>Carlos Carranza</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CarlosDeLaCua.jpg" data-name="Carlos De La Cua">
+          <img src="img/epca-retiro/CarlosDeLaCua.jpg" alt="Carlos De La Cua">
+          <span>Carlos De La Cua</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CarlosVillalobos.jpg" data-name="Carlos Villalobos">
+          <img src="img/epca-retiro/CarlosVillalobos.jpg" alt="Carlos Villalobos">
+          <span>Carlos Villalobos</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CesarAnza.jpg" data-name="Cesar Anza">
+          <img src="img/epca-retiro/CesarAnza.jpg" alt="Cesar Anza">
+          <span>Cesar Anza</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CristianCarranza.jpg" data-name="Cristian Carranza">
+          <img src="img/epca-retiro/CristianCarranza.jpg" alt="Cristian Carranza">
+          <span>Cristian Carranza</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/CristianOrtiz.jpg" data-name="Cristian Ortiz">
+          <img src="img/epca-retiro/CristianOrtiz.jpg" alt="Cristian Ortiz">
+          <span>Cristian Ortiz</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/DanielFajardo.jpg" data-name="Daniel Fajardo">
+          <img src="img/epca-retiro/DanielFajardo.jpg" alt="Daniel Fajardo">
+          <span>Daniel Fajardo</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/DavidSilva.jpg" data-name="David Silva">
+          <img src="img/epca-retiro/DavidSilva.jpg" alt="David Silva">
+          <span>David Silva</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/DiegoQuiroz.jpg" data-name="Diego Quiroz">
+          <img src="img/epca-retiro/DiegoQuiroz.jpg" alt="Diego Quiroz">
+          <span>Diego Quiroz</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/EmilioMorales.jpg" data-name="Emilio Morales">
+          <img src="img/epca-retiro/EmilioMorales.jpg" alt="Emilio Morales">
+          <span>Emilio Morales</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/FranciscoDavila.jpg" data-name="Francisco Davila">
+          <img src="img/epca-retiro/FranciscoDavila.jpg" alt="Francisco Davila">
+          <span>Francisco Davila</span>
+        </button>
+      </li>
+      <li>
+        <button class="thumb" data-src="img/epca-retiro/FrancoBacigalupo.jpg" data-name="Franco Bacigalupo">
+          <img src="img/epca-retiro/FrancoBacigalupo.jpg" alt="Franco Bacigalupo">
+          <span>Franco Bacigalupo</span>
+        </button>
+      </li>
+            <li>
+        <button class="thumb" data-src="img/epca-retiro/FredyHernandez.jpg" data-name="Fredy Hernandez">
+          <img src="img/epca-retiro/FredyHernandez.jpg" alt="Fredy Hernandez">
+          <span>Fredy Hernandez</span>
+        </button>
+      </li>
+                <li>
+        <button class="thumb" data-src="img/epca-retiro/JacintoEspinoza.jpg" data-name="Jacinto Espinoza">
+          <img src="img/epca-retiro/JacintoEspinoza.jpg" alt="Jacinto Espinoza">
+          <span>Jacinto Espinoza</span>
+        </button>
+      </li>
+                      <li>
+        <button class="thumb" data-src="img/epca-retiro/JorgeMorales.jpg" data-name="Jorge Morales">
+          <img src="img/epca-retiro/JorgeMorales.jpg" alt="Jorge Morales">
+          <span>Jorge Morales</span>
+        </button>
+      </li>
+                            <li>
+        <button class="thumb" data-src="img/epca-retiro/JoseLuisUrbina.jpg" data-name="Jose Luis Urbina">
+          <img src="img/epca-retiro/JoseLuisUrbina.jpg" alt="Jose Luis Urbina">
+          <span>Jose Luis Urbina</span>
+        </button>
+      </li>
+                                  <li>
+        <button class="thumb" data-src="img/epca-retiro/KarlaAlvarado.jpg" data-name="Karla Alvarado">
+          <img src="img/epca-retiro/KarlaAlvarado.jpg" alt="Karla Alvarado">
+          <span>Karla Alvarado</span>
+        </button>
+      </li>
+                                        <li>
+        <button class="thumb" data-src="img/epca-retiro/LuisCarpena.jpg" data-name="Luis Carpena">
+          <img src="img/epca-retiro/LuisCarpena.jpg" alt="Luis Carpena">
+          <span>Luis Carpena</span>
+        </button>
+      </li>
+                                              <li>
+        <button class="thumb" data-src="img/epca-retiro/LuisLoayza.jpg" data-name="Luis Loayza">
+          <img src="img/epca-retiro/LuisLoayza.jpg" alt="Luis Loayza">
+          <span>Luis Loayza</span>
+        </button>
+      </li>
+                                                    <li>
+        <button class="thumb" data-src="img/epca-retiro/LuisMartin.jpg" data-name="Luis Martin">
+          <img src="img/epca-retiro/LuisMartin.jpg" alt="Luis Martin">
+          <span>Luis Martin</span>
+        </button>
+      </li>
+                                                          <li>
+        <button class="thumb" data-src="img/epca-retiro/ManuelTorres.jpg" data-name="Manuel Torres">
+          <img src="img/epca-retiro/ManuelTorres.jpg" alt="Manuel Torres">
+          <span>Manuel Torres</span>
+        </button>
+      </li>
+                                                                <li>
+        <button class="thumb" data-src="img/epca-retiro/MarcoAntonioSuarez.jpg" data-name="Marco Antonio Suarez">
+          <img src="img/epca-retiro/MarcoAntonioSuarez.jpg" alt="Marco Antonio Suarez">
+          <span>Marco Antonio Suarez</span>
+        </button>
+      </li>
+                                                                <li>
+        <button class="thumb" data-src="img/epca-retiro/MarcoMedina.jpg" data-name="Marco Medina">
+          <img src="img/epca-retiro/MarcoMedina.jpg" alt="Marco Medina">
+          <span>Marco Medina</span>
+        </button>
+      </li>
+                                                                      <li>
+        <button class="thumb" data-src="img/epca-retiro/MarioRuiz.jpg" data-name="Mario Ruiz">
+          <img src="img/epca-retiro/MarioRuiz.jpg" alt="Mario Ruiz">
+          <span>Mario Ruiz</span>
+        </button>
+      </li>
+                                                                            <li>
+        <button class="thumb" data-src="img/epca-retiro/MiguelAngelPinedo.jpg" data-name="Miguel Angel Pinedo">
+          <img src="img/epca-retiro/MiguelAngelPinedo.jpg" alt="Miguel Angel Pinedo">
+          <span>Miguel Angel Pinedo</span>
+        </button>
+      </li>
+                                                                            <li>
+        <button class="thumb" data-src="img/epca-retiro/MiguelCordova.jpg" data-name="Miguel Cordova">
+          <img src="img/epca-retiro/MiguelCordova.jpg" alt="Miguel Cordova">
+          <span>Miguel Cordova</span>
+        </button>
+      </li>
+                                                                                  <li>
+        <button class="thumb" data-src="img/epca-retiro/MiguelinaAnaya.jpg" data-name="Miguelina Anaya">
+          <img src="img/epca-retiro/MiguelinaAnaya.jpg" alt="Miguelina Anaya">
+          <span>Miguelina Anaya</span>
+        </button>
+      </li>
+                                                                                        <li>
+        <button class="thumb" data-src="img/epca-retiro/NestorRomero.jpg" data-name="Nestor Romero">
+          <img src="img/epca-retiro/NestorRomero.jpg" alt="Nestor Romero">
+          <span>Nestor Romero</span>
+        </button>
+      </li>
+                                                                                            <li>
+        <button class="thumb" data-src="img/epca-retiro/OrlandoAcosta.jpg" data-name="Orlando Acosta">
+          <img src="img/epca-retiro/OrlandoAcosta.jpg" alt="Orlando Acosta">
+          <span>Orlando Acosta</span>
+        </button>
+      </li>
+                                                                                                  <li>
+        <button class="thumb" data-src="img/epca-retiro/PercyJara.jpg" data-name="Percy Jara">
+          <img src="img/epca-retiro/PercyJara.jpg" alt="Percy Jara">
+          <span>Percy Jara</span>
+        </button>
+      </li>
+                                                                                                        <li>
+        <button class="thumb" data-src="img/epca-retiro/RaulRamirez.jpg" data-name="Raul Ramirez">
+          <img src="img/epca-retiro/RaulRamirez.jpg" alt="Raul Ramirez">
+          <span>Raul Ramirez</span>
+        </button>
+      </li>
+                                                                                                              <li>
+        <button class="thumb" data-src="img/epca-retiro/RestoBarreda.jpg" data-name="Resto Barreda">
+          <img src="img/epca-retiro/RestoBarreda.jpg" alt="Resto Barreda">
+          <span>Resto Barreda</span>
+        </button>
+      </li>
+                                                                                                                   <li>
+        <button class="thumb" data-src="img/epca-retiro/RicardoCaballero.jpg" data-name="Ricardo Caballero">
+          <img src="img/epca-retiro/RicardoCaballero.jpg" alt="Ricardo Caballero">
+          <span>Ricardo Caballero</span>
+        </button>
+      </li>
+                                                                                                                         <li>
+        <button class="thumb" data-src="img/epca-retiro/RicardoCarrazco.jpg" data-name="Ricardo Carrazco">
+          <img src="img/epca-retiro/RicardoCarrazco.jpg" alt="Ricardo Carrazco">
+          <span>Ricardo Carrazco</span>
+        </button>
+      </li>
+                                                                                                                               <li>
+        <button class="thumb" data-src="img/epca-retiro/RichardRuiz.jpg" data-name="Richard Ruiz">
+          <img src="img/epca-retiro/RichardRuiz.jpg" alt="Richard Ruiz">
+          <span>Richard Ruiz</span>
+        </button>
+      </li>
+                                                                                                                               <li>
+        <button class="thumb" data-src="img/epca-retiro/RinoMacedo.jpg" data-name="Rino Macedo">
+          <img src="img/epca-retiro/RinoMacedo.jpg" alt="Rino Macedo">
+          <span>Rino Macedo</span>
+        </button>
+      </li>
+                                                                                                                                     <li>
+        <button class="thumb" data-src="img/epca-retiro/RubenLlave.jpg" data-name="Ruben Llave">
+          <img src="img/epca-retiro/RubenLlave.jpg" alt="Ruben Llave">
+          <span>Ruben Llave</span>
+        </button>
+      </li>
+                                                                                                                                           <li>
+        <button class="thumb" data-src="img/epca-retiro/SergioNajar.jpg" data-name="Sergio Najar">
+          <img src="img/epca-retiro/SergioNajar.jpg" alt="Sergio Najar">
+          <span>Sergio Najar</span>
+        </button>
+      </li>
+                                                                                                                                                 <li>
+        <button class="thumb" data-src="img/epca-retiro/WalterSalazar.jpg" data-name="Walter Salazar">
+          <img src="img/epca-retiro/WalterSalazar.jpg" alt="Walter Salazar">
+          <span>Walter Salazar</span>
+        </button>
+      </li>
+                                                                                                                                                       <li>
+        <button class="thumb" data-src="img/epca-retiro/WilliamMelgar.jpg" data-name="William Melgar">
+          <img src="img/epca-retiro/WilliamMelgar.jpg" alt="William Melgar">
+          <span>William Melgar</span>
+        </button>
+      </li>
+
+
+
+
+    </ul>
   </section>
 
-  <!-- ====== Galería ====== -->
-  <section class="galeria-wrap">
-    <h1 class="galeria-title">Galería EPCA</h1>
+  <!-- Lightbox / visor -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">×</button>
+    <img id="lbImg" alt="">
+    <p id="lbCaption"></p>
+  </div>
 
-    <div class="galeria">
-      <figure class="gal-item">
-        <img src="img/retiro1.jpeg" alt="Retiro EPCA 1" />
-      </figure>
-      <figure class="gal-item">
-        <img src="img/retiro2.jpeg" alt="Retiro EPCA 2" />
-      </figure>
-      <figure class="gal-item">
-        <img src="img/retiro3.jpeg" alt="Retiro EPCA 3" />
-      </figure>
+  <!-- ====== DOCUMENTOS EPCA ====== -->
+  <section class="epca-section" id="docs">
+    <h2 class="section-title">Documentos</h2>
+
+    <div class="docs-grid">
+      <a class="doc-card" href="docs/MANUAL DE SERVICIO.pptx" download>
+        <div class="doc-icon">
+          <img src="img/epca.png" alt="EPCA">
+        </div>
+        <div class="doc-meta">
+          <h3>Manual de Servicio EPCA</h3>
+          <small>PPT manual</small>
+        </div>
+      </a>
+
+      <a class="doc-card" href="docs/cuadrante_por_decuria 2025.xlsx" download>
+        <div class="doc-icon">
+          <img src="img/epca.png" alt="EPCA">
+        </div>
+        <div class="doc-meta">
+          <h3>Cuadrante por decuria 2025</h3>
+          <small>Excel cuadrante</small>
+        </div>
+      </a>
     </div>
   </section>
+
+  <script>
+    // Lightbox simple
+    const box = document.getElementById('lightbox');
+    const img = document.getElementById('lbImg');
+    const caption = document.getElementById('lbCaption');
+    const closeBtn = document.getElementById('lbClose');
+
+    document.getElementById('peopleGrid').addEventListener('click', e => {
+      const btn = e.target.closest('.thumb');
+      if (!btn) return;
+      img.src = btn.dataset.src;
+      img.alt = btn.dataset.name || '';
+      caption.textContent = btn.dataset.name || '';
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeLb() {
+      box.hidden = true;
+      img.src = '';
+      document.body.style.overflow = '';
+    }
+    box.addEventListener('click', (e) => { if (e.target === box) closeLb(); });
+    closeBtn.addEventListener('click', closeLb);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) closeLb(); });
+  </script>
+
+
 
   <!-- JS del dropdown (mismo comportamiento del resto del sitio) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('[data-dd]').forEach(dd => {
         const trigger = dd.querySelector('.dd-trigger');
-        const menu    = dd.querySelector('.dd-menu');
+        const menu = dd.querySelector('.dd-menu');
         const setOpen = on => {
           dd.classList.toggle('open', on);
           menu.hidden = !on;
@@ -86,4 +454,5 @@
     });
   </script>
 </body>
+
 </html>
