@@ -251,3 +251,62 @@
   color:#3b271a;
   letter-spacing:.2px;
 }
+
+/* ===== Layout base ===== */
+:root{
+  --bg: #efd0a3;            /* tu beige */
+  --paper: #fff8ec;         /* claro de tarjetas/nav */
+  --ink: #3c2415;           /* texto */
+  --brand: #c97a33;         /* acento */
+  --muted: #7c5b3d;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(60,36,21,.08);
+}
+
+html,body{ background: var(--bg); color: var(--ink); }
+
+/* Centrado y ancho máximo uniforme */
+.container{
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+/* ===== NAV (pestañas) ===== */
+.tabs-wrap{
+  position: sticky; top: 0; z-index: 20;
+  background: var(--paper);
+  box-shadow: 0 4px 18px rgba(60,36,21,.06);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+.tabs{
+  display: flex; gap: clamp(14px, 2.6vw, 28px);
+  align-items: center;
+  height: 62px;                   /* más compacto */
+  padding-inline: clamp(14px, 4vw, 28px);
+  font-weight: 700;
+}
+.tab{
+  padding: 0 2px;
+  position: relative;
+  text-decoration: none; color: var(--ink);
+  white-space: nowrap;
+}
+.tab.is-active::after{
+  content: ""; position: absolute; left: 0; right: 0; bottom: -10px;
+  height: 4px; border-radius: 4px;
+  background: var(--brand);
+}
+
+/* Dropdown en tabs */
+.tab.dd{ position: relative; }
+.dd-trigger{ margin-left: 6px; border: 0; background: none; cursor: pointer; }
+.dd-menu{
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--paper); box-shadow: var(--shadow);
+  border-radius: 14px; padding: 10px 8px; min-width: 250px;
+}
+.dd-menu li a{ display:block; padding:10px 12px; border-radius:10px; }
+.dd-menu li a:hover{ background:#f6e8d5; }
+
+/* Para que anclas no queden escondidas bajo el nav sticky */
+[id]{ scroll-margin-top: 90px; }

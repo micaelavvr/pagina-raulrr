@@ -563,3 +563,172 @@ body.loading{ overflow: hidden; }
 @media (max-width: 620px){
   .paginas-recomendadas{ grid-template-columns: 1fr; }
 }
+
+/* ===== Coronilla y Hora Santa (compacto + elegante) ===== */
+:root{
+  --chs-max: 980px;
+  --chs-gap: 1.125rem;
+  --chs-bg: #fff;
+  --chs-shadow: 0 10px 24px rgba(0,0,0,.08);
+  --chs-shadow-h: 0 14px 28px rgba(0,0,0,.12);
+  --chs-pill: #d7823e; /* tu naranja */
+}
+
+.chs{
+  max-width: var(--chs-max);
+  margin: 0 auto;
+  padding: 1.75rem 1rem 2.75rem; /* <— menos alto */
+}
+
+.chs-head{
+  text-align: center;
+  margin: .25rem auto 1.25rem;   /* <— menos espacio */
+}
+.chs-head h1{
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.4rem);
+  line-height: 1.2;
+  margin: 0 0 .4rem;
+  position: relative;
+  display: inline-block;
+}
+.chs-head h1::after{
+  content:"";
+  display:block;
+  width: 140px;
+  height: 6px;
+  margin:.6rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--chs-pill), #e7a15e);
+  opacity:.9;
+}
+.chs-head .lead{
+  margin: 0;
+  font-size: .98rem;
+  opacity:.8;
+}
+
+/* Grid compacto */
+.chs-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: var(--chs-gap);
+}
+@media (min-width: 680px){
+  .chs-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Tarjeta */
+.chs-card{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center;
+  gap: .9rem;
+  padding: .9rem 1rem;
+  background: var(--chs-bg);
+  border-radius: 18px;
+  box-shadow: var(--chs-shadow);
+  text-decoration:none;
+  color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.chs-card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--chs-shadow-h);
+}
+.chs-icon{
+  width:56px; height:56px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0,0,0,.06);
+}
+.chs-meta h3{
+  font-size: 1.02rem;
+  margin:0 0 .15rem;
+  line-height:1.25;
+}
+.chs-meta small{
+  display:block;
+  opacity:.65;
+  font-size:.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 44ch;
+}
+
+.chs-cta{
+  font-size:.9rem;
+  padding:.5rem .75rem;
+  border-radius:999px;
+  background: #f3f0eb;
+  color:#5f452e;
+  border:1px solid #e5d8ca;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.chs-card:hover .chs-cta{
+  background: var(--chs-pill);
+  color:#fff;
+  border-color: transparent;
+}
+
+/* Un poco menos de espacio después del main */
+.chs + *{ margin-top: 1.25rem; }
+
+/* ===== Layout base ===== */
+:root{
+  --bg: #efd0a3;            /* tu beige */
+  --paper: #fff8ec;         /* claro de tarjetas/nav */
+  --ink: #3c2415;           /* texto */
+  --brand: #c97a33;         /* acento */
+  --muted: #7c5b3d;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(60,36,21,.08);
+}
+
+html,body{ background: var(--bg); color: var(--ink); }
+
+/* Centrado y ancho máximo uniforme */
+.container{
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+/* ===== NAV (pestañas) ===== */
+.tabs-wrap{
+  position: sticky; top: 0; z-index: 20;
+  background: var(--paper);
+  box-shadow: 0 4px 18px rgba(60,36,21,.06);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+.tabs{
+  display: flex; gap: clamp(14px, 2.6vw, 28px);
+  align-items: center;
+  height: 62px;                   /* más compacto */
+  padding-inline: clamp(14px, 4vw, 28px);
+  font-weight: 700;
+}
+.tab{
+  padding: 0 2px;
+  position: relative;
+  text-decoration: none; color: var(--ink);
+  white-space: nowrap;
+}
+.tab.is-active::after{
+  content: ""; position: absolute; left: 0; right: 0; bottom: -10px;
+  height: 4px; border-radius: 4px;
+  background: var(--brand);
+}
+
+/* Dropdown en tabs */
+.tab.dd{ position: relative; }
+.dd-trigger{ margin-left: 6px; border: 0; background: none; cursor: pointer; }
+.dd-menu{
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--paper); box-shadow: var(--shadow);
+  border-radius: 14px; padding: 10px 8px; min-width: 250px;
+}
+.dd-menu li a{ display:block; padding:10px 12px; border-radius:10px; }
+.dd-menu li a:hover{ background:#f6e8d5; }
+
+/* Para que anclas no queden escondidas bajo el nav sticky */
+[id]{ scroll-margin-top: 90px; }

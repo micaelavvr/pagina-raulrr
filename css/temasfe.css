@@ -126,3 +126,177 @@ body{
   .doc-icon{ width:72px; height:72px; flex-basis:72px; }
   .doc-card{ padding: .9rem 1rem; }
 }
+
+/* Temas de Fe – títulos */
+.tf-section { margin: 4rem auto; max-width: 1200px; padding: 0 1rem; }
+.tf-h2 { font-family: 'Crimson Text', serif; font-size: 2.4rem; text-align:center; margin-bottom: .25rem; }
+.tf-sub { text-align:center; color:#6b4e2e; margin-bottom: 1.75rem; }
+
+/* Grid reutilizable */
+.tf-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+
+/* Card reutilizada (si ya la tienes, omite) */
+.doc-card{display:flex;align-items:center;gap:14px;background:#fff;border-radius:18px;padding:14px 16px;
+box-shadow:0 8px 24px rgba(0,0,0,.08);text-decoration:none;color:#2b2b2b;transition:transform .15s ease, box-shadow .15s ease}
+.doc-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.doc-card .doc-icon{width:64px;height:64px;object-fit:contain;border-radius:12px;flex-shrink:0}
+.doc-card .doc-content h3{font-size:1.05rem;margin:.15rem 0 .25rem 0}
+.doc-card .doc-content small{color:#7a6c61}
+
+/* ===== Layout base ===== */
+:root{
+  --bg: #efd0a3;            /* tu beige */
+  --paper: #fff8ec;         /* claro de tarjetas/nav */
+  --ink: #3c2415;           /* texto */
+  --brand: #c97a33;         /* acento */
+  --muted: #7c5b3d;
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(60,36,21,.08);
+}
+
+html,body{ background: var(--bg); color: var(--ink); }
+
+/* Centrado y ancho máximo uniforme */
+.container{
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+/* ===== NAV (pestañas) ===== */
+.tabs-wrap{
+  position: sticky; top: 0; z-index: 20;
+  background: var(--paper);
+  box-shadow: 0 4px 18px rgba(60,36,21,.06);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+.tabs{
+  display: flex; gap: clamp(14px, 2.6vw, 28px);
+  align-items: center;
+  height: 62px;                   /* más compacto */
+  padding-inline: clamp(14px, 4vw, 28px);
+  font-weight: 700;
+}
+.tab{
+  padding: 0 2px;
+  position: relative;
+  text-decoration: none; color: var(--ink);
+  white-space: nowrap;
+}
+.tab.is-active::after{
+  content: ""; position: absolute; left: 0; right: 0; bottom: -10px;
+  height: 4px; border-radius: 4px;
+  background: var(--brand);
+}
+
+/* Dropdown en tabs */
+.tab.dd{ position: relative; }
+.dd-trigger{ margin-left: 6px; border: 0; background: none; cursor: pointer; }
+.dd-menu{
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--paper); box-shadow: var(--shadow);
+  border-radius: 14px; padding: 10px 8px; min-width: 250px;
+}
+.dd-menu li a{ display:block; padding:10px 12px; border-radius:10px; }
+.dd-menu li a:hover{ background:#f6e8d5; }
+
+/* Para que anclas no queden escondidas bajo el nav sticky */
+[id]{ scroll-margin-top: 90px; }
+
+/* ===== Espaciado de cabecera ya compacto (mantén lo que añadimos antes) ===== */
+
+/* ====== GRIDS Y TARJETAS UNIFICADOS ====== */
+
+/* Fila de "León XIV" (3 por fila en desktop) */
+.tf-grid{
+  max-width: 1200px;
+  margin: 0 auto 22px;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+.tf-grid > a{ grid-column: span 4; }          /* 12/4 = 3 por fila */
+@media (max-width: 1100px){ .tf-grid > a{ grid-column: span 6; } }  /* 2 por fila */
+@media (max-width: 680px){  .tf-grid > a{ grid-column: span 12; } } /* 1 por fila */
+
+/* Bloque inferior de documentos (2 por fila en desktop) */
+.tf-container{
+  max-width: 1200px;
+  margin: 8px auto 60px;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+.tf-container .doc-card{ grid-column: span 6; }                     /* 12/6 = 2 por fila */
+@media (max-width: 900px){ .tf-container .doc-card{ grid-column: span 12; } } /* 1 por fila */
+
+/* Tarjeta base */
+.doc-card{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  text-decoration: none;
+  color: inherit;
+
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.doc-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+/* Icono de la tarjeta */
+.doc-icon{
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* Texto de la tarjeta */
+.doc-content h3{
+  margin: 0 0 6px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+.doc-content small{
+  display: block;
+  color: #7c5b3d; /* tono suave */
+}
+
+/* Asegurar que no haya márgenes “fantasma” en títulos/subtítulos */
+.tf-hero h1, .tf-hero p,
+.tf-section h2, .tf-section p{ margin-block: 0; }
+
+/* Afinar el subtítulo que está bajo "Temas y Archivos de Fe" y "León XIV" */
+.tf-sub{
+  margin: 4px auto 12px;
+  max-width: 820px;
+  line-height: 1.35;
+  color: #7c5b3d;
+  text-align: center;
+}
+.tf-h2{ margin: 8px 0 6px; }
+
+/* Encabezado dentro del grid (que ocupe toda la fila) */
+.tf-container .tf-divider{
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 8px 0 0;
+}
+.tf-container .tf-divider-sub{
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 2px 0 12px;
+  color: #7c5b3d;
+}

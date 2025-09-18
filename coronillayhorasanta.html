@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coronilla y Hora Santa</title>
+  <link rel="stylesheet" href="css/styles.css?v=1"/>
+  <link rel="stylesheet" href="css/coronillayhorasanta.css"/>
+</head>
+<body>
+
+  <!-- NAV (igual que el resto, con la pestaña activa aquí) -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs">
+      <a class="tab" href="index.html">Inicio</a>
+      <a class="tab" href="epca.html">Sobre EPCA…</a>
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false">▾</button>
+        <ul class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas de Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab" href="rosario.html">El Rosario</a>
+      <a class="tab is-active" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
+    </div>
+  </nav>
+
+
+<main class="chs">
+  <header class="chs-head">
+    <h1>Coronilla y Hora Santa</h1>
+    <p class="lead">Recursos breves para la oración y la adoración.</p>
+  </header>
+
+  <section class="chs-grid">
+    <!-- Coronilla (descarga) -->
+    <a class="chs-card" href="docs/Coronilla de la Divina Misericordia.pptx" download>
+      <img class="chs-icon" src="img/jesus.jpg" alt="Coronilla de la Divina Misericordia">
+      <div class="chs-meta">
+        <h3>Coronilla de la Divina Misericordia</h3>
+        <small>PPTX — Coronilla de la Divina Misericordia.pptx</small>
+      </div>
+      <span class="chs-cta">Descargar</span>
+    </a>
+
+    <!-- Hora Santa (abrir en pestaña nueva) -->
+    <a class="chs-card" href="docs/Hora Santa.pdf" target="_blank" rel="noopener">
+      <img class="chs-icon" src="img/logo-vatican.png" alt="Hora Santa">
+      <div class="chs-meta">
+        <h3>Hora Santa</h3>
+        <small>PDF — Hora Santa.pdf</small>
+      </div>
+      <span class="chs-cta">Abrir</span>
+    </a>
+  </section>
+</main>
+
+
+  <!-- JS del dropdown (si lo usas) -->
+  <script>
+    document.querySelectorAll('[data-dd]').forEach(dd => {
+      const t = dd.querySelector('.dd-trigger'); const m = dd.querySelector('.dd-menu');
+      const open = (on)=>{ dd.classList.toggle('open', on); m.hidden=!on; t.setAttribute('aria-expanded', on?'true':'false'); };
+      t.addEventListener('click', e=>{ e.stopPropagation(); open(!dd.classList.contains('open')); });
+      m.addEventListener('click', e=>{ if(e.target.closest('a')) open(false); });
+      document.addEventListener('click', e=>{ if(!dd.contains(e.target)) open(false); });
+    });
+  </script>
+</body>
+</html>
