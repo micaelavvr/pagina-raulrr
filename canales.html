@@ -13,29 +13,29 @@
 
 <body>
 
-  <!-- Navegación -->
-  <nav class="tabs-wrap" aria-label="Navegación de secciones">
-    <div class="tabs">
-      <a class="tab" href="index.html">Inicio</a>
+<!-- Navegación -->
+<nav class="tabs-wrap" aria-label="Navegación de secciones">
+  <div class="tabs">
+    <a class="tab" href="index.html">Inicio</a>
 
-      <!-- Canales con desplegable -->
-      <div class="tab dd is-active" data-dd>
-        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
-        <ul id="dd-menu-1" class="dd-menu" hidden>
-          <li><a href="#milagros-eucaristicos">Milagros eucarísticos</a></li>
-        </ul>
-
-      </div>
-
-
-      <a class="tab" href="noticias.html">Noticias</a>
-      <a class="tab" href="temasfe.html">Temas de Fe</a>
-      <a class="tab" href="catecismo.html">Catecismo</a>
-      <a class="tab" href="rosario.html">El Rosario</a>
-      <a class="tab" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
+    <!-- Canales con desplegable -->
+    <div class="tab is-active" data-dd>
+      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+      <ul id="dd-menu-1" class="dd-menu" hidden>
+        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+      </ul>
     </div>
-  </nav>
+
+    <a class="tab" href="noticias.html">Noticias</a>
+    <a class="tab" href="temasfe.html">Temas de Fe</a>
+    <a class="tab" href="catecismo.html">Catecismo</a>
+    <a class="tab" href="rosario.html">El Rosario</a>
+    <a class="tab" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
+    <a class="tab" href="apps.html">Apps Católicas</a>
+  </div>
+</nav>
+
 
 
   <!-- Título -->
@@ -112,7 +112,7 @@
       <!-- Voz Católica -->
       <div class="channel-card">
         <div class="video">
-          <iframe src="https://www.youtube.com/watch?v=qvEWYOATxzs" title="La Voz Del Catolico" loading="lazy"
+          <iframe src="https://www.youtube.com/embed/qvEWYOATxzs" title="La Voz Del Catolico" loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
@@ -165,28 +165,50 @@
         </a>
       </div>
 
-      <div class="video-grid container">
-        <article class="video-card">
-          <div class="frame">
-            <iframe src="https://www.youtube.com/embed/kZFBMti00Gk" title="Robert Barron" allowfullscreen></iframe>
-          </div>
-          <a class="cta" href="https://www.youtube.com/@WOF-ES/featured" target="_blank" rel="noopener">📺 Canal Robert
-            Barron</a>
-        </article>
 
-        <article class="video-card">
-          <div class="frame">
-            <iframe src="https://www.youtube.com/embed/U-voI3a4dr8" title="P. Gabriel Romanelli"
-              allowfullscreen></iframe>
-          </div>
-          <a class="cta" href="https://www.youtube.com/@P.GabrielRomanelli" target="_blank" rel="noopener">📺 Canal
-            Padre Gabriel Romanelli</a>
-        </article>
+      <!-- Hablar con Jesus-->
+      <div class="channel-card">
+        <div class="yt-responsive">
+          <iframe src="https://www.youtube.com/embed/-s95Z8mvYGg" title="Hablar con Jesús" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+
+        <a class="channel-button" href="https://www.youtube.com/@hablarconjesus" target="_blank" rel="noopener"
+          aria-label="Abrir canal de Hablar con Jesus en YouTube">
+          📺 Canal Padre Juan Carlos Vásconez
+        </a>
       </div>
 
+      <div class="channel-card">
+        <div class="yt-responsive">
+          <iframe src="https://www.youtube.com/embed/kZFBMti00Gk" title="Robert Barron" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+
+        <a class="channel-button" href="https://www.youtube.com/@WOF-ES/featured" target="_blank" rel="noopener"
+          aria-label="Abrir canal de Robert Barron en YouTube">
+          📺 Canal Robert Barron
+        </a>
+      </div>
+
+      <div class="channel-card">
+        <div class="yt-responsive">
+          <iframe src="https://www.youtube.com/embed/U-voI3a4dr8" title="P. Gabriel Romanelli" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+
+        <a class="channel-button" href="https://www.youtube.com/@P.GabrielRomanelli" target="_blank" rel="noopener"
+          aria-label="Abrir canal de P. Gabriel Romanelli en YouTube">
+          📺 Canal P. Gabriel Romanelli
+        </a>
+      </div>
 
     </section>
   </main>
+
 
   <!-- Tarjeta especial EWTN -->
   <section id="milagros-eucaristicos" class="single-feature">
@@ -203,18 +225,19 @@
   </section>
 
   <!-- Carlo Acutis: Un hijo para el cielo -->
-  <section class="video-block" id="carlo-acutis">
-    <h2>Carlo Acutis: Un hijo para el cielo</h2>
+  
+      <section id="carlo-acutis" class="single-feature">
+    <div class="card">
+      <h3>PLAYLIST: Carlo Acutis: Un hijo para el cielo</h3>
 
-    <div class="yt-responsive">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLfGiZYFJHOqkm1rnMqi5peGXXba2O-WIs"
-        title="Carlo Acutis: Un hijo para el cielo (Playlist)" loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <p class="video-note">
+      <div class="video-responsive">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLfGiZYFJHOqkm1rnMqi5peGXXba2O-WIs" title="Carlo Acutis: Un hijo para el cielo (Playlist)"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+          
+      </div>
+          <p class="video-note">
       Haz clic para reproducir. <a href="https://youtube.com/playlist?list=PLfGiZYFJHOqkm1rnMqi5peGXXba2O-WIs"
         target="_blank" rel="noopener">Ver lista completa en YouTube</a>.
     </p>

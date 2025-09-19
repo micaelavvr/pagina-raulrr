@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apps Católicas</title>
+
+  <!-- Estilos globales y específicos -->
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/apps.css?v=1">
+</head>
+
+<body>
+
+<!-- Navegación -->
+<nav class="tabs-wrap" aria-label="Navegación de secciones">
+  <div class="tabs">
+    <a class="tab" href="index.html">Inicio</a>
+
+    <!-- Canales con desplegable -->
+    <div class="tab dd" data-dd>
+      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+      <ul id="dd-menu-1" class="dd-menu" hidden>
+        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+      </ul>
+    </div>
+
+    <a class="tab" href="noticias.html">Noticias</a>
+    <a class="tab" href="temasfe.html">Temas de Fe</a>
+    <a class="tab" href="catecismo.html">Catecismo</a>
+    <a class="tab" href="rosario.html">El Rosario</a>
+    <a class="tab" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
+    <a class="tab is-active" href="apps.html">Apps Católicas</a>
+  </div>
+</nav>
+
+
+  <!-- Hero -->
+  <header class="apps-hero">
+    <h1 class="apps-title">Apps recomendadas de la última generación</h1>
+    <p class="apps-sub">
+      Estos aplicativos demuestran que la fe se adapta a los tiempos digitales sin perder profundidad.
+    </p>
+  </header>
+
+  <!-- Grid de Apps -->
+  <main class="apps-container">
+    <!-- Biblia Católica -->
+    <a class="app-card" href="https://play.google.com/store/apps/details?id=com.futuresoft.spanishbible&hl=es_PE" target="_blank">
+      <img class="app-icon" src="img/biblia.png" alt="Biblia Católica">
+      <div class="app-content">
+        <h3>Biblia Católica</h3>
+        <small>Disponible en Google Play</small>
+      </div>
+    </a>
+
+    <!-- Laudate -->
+    <a class="app-card" href="https://play.google.com/store/apps/details?id=com.aycka.apps.MassReadings&hl=es_PE" target="_blank">
+      <img class="app-icon" src="img/laudate.png" alt="Laudate App">
+      <div class="app-content">
+        <h3>Laudate</h3>
+        <small>Disponible en Google Play</small>
+      </div>
+    </a>
+
+    <!-- Hallow -->
+    <a class="app-card" href="https://play.google.com/store/apps/details?id=app.hallow.android&hl=es_PE" target="_blank">
+      <img class="app-icon" src="img/hallow.png" alt="Hallow App">
+      <div class="app-content">
+        <h3>Hallow</h3>
+        <small>Disponible en Google Play</small>
+      </div>
+    </a>
+  </main>
+  
+</body>
+</html>

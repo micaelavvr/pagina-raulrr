@@ -280,45 +280,63 @@ html,body{ background: var(--bg); color: var(--ink); }
   margin-inline: auto;
 }
 
-/* ===== NAV (pestañas) ===== */
+/* ===== NAV centrado ===== */
 .tabs-wrap{
-  position: sticky; top: 0; z-index: 20;
-  background: var(--paper);
-  box-shadow: 0 4px 18px rgba(60,36,21,.06);
-  backdrop-filter: saturate(120%) blur(6px);
+  position: sticky; 
+  top: 0; 
+  z-index: 50;
+  background: var(--bg-2);
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--line, transparent);
 }
+
 .tabs{
-  display: flex; gap: clamp(14px, 2.6vw, 28px);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;   /* 🔹 centra los tabs */
+  gap: .75rem;
+  padding: .75rem 1rem;
   align-items: center;
-  height: 62px;                   /* más compacto */
-  padding-inline: clamp(14px, 4vw, 28px);
-  font-weight: 700;
+  flex-wrap: wrap;
 }
+
 .tab{
-  padding: 0 2px;
-  position: relative;
-  text-decoration: none; color: var(--ink);
-  white-space: nowrap;
+  padding: .65rem 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
 }
+.tab:hover{ background: rgba(0,0,0,.05); }
+.tab.is-active{ position: relative; }
 .tab.is-active::after{
-  content: ""; position: absolute; left: 0; right: 0; bottom: -10px;
-  height: 4px; border-radius: 4px;
-  background: var(--brand);
+  content: "";
+  position: absolute;
+  left: 1rem; right: 1rem; bottom: -9px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 /* Dropdown en tabs */
 .tab.dd{ position: relative; }
 .dd-trigger{ margin-left: 6px; border: 0; background: none; cursor: pointer; }
 .dd-menu{
-  position: absolute; top: calc(100% + 8px); left: 0;
-  background: var(--paper); box-shadow: var(--shadow);
-  border-radius: 14px; padding: 10px 8px; min-width: 250px;
+  position: absolute; 
+  top: calc(100% + 8px); 
+  left: 0;
+  background: var(--bg-2); 
+  box-shadow: var(--shadow);
+  border-radius: 14px; 
+  padding: 10px 8px; 
+  min-width: 250px;
 }
 .dd-menu li a{ display:block; padding:10px 12px; border-radius:10px; }
 .dd-menu li a:hover{ background:#f6e8d5; }
 
-/* Para que anclas no queden escondidas bajo el nav sticky */
-[id]{ scroll-margin-top: 90px; }
+
+
 
 .video-grid{
   display: grid;

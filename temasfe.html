@@ -7,280 +7,247 @@
 
   <!-- Estilos globales y locales -->
   <link rel="stylesheet" href="css/styles.css?v=3">
-  <link rel="stylesheet" href="css/temasfe.css?v=2">
+  <link rel="stylesheet" href="css/temasfe.css?v=3">
 </head>
 
 <body>
 
-    <!-- Barra de navegación -->
-  <nav class="tabs-wrap" aria-label="Navegación de secciones">
-    <div class="tabs">
-      <a class="tab" href="index.html">Inicio</a>
+<!-- Navegación -->
+<nav class="tabs-wrap" aria-label="Navegación de secciones">
+  <div class="tabs">
+    <a class="tab" href="index.html">Inicio</a>
 
-      <!-- Canales con desplegable -->
-      <div class="tab dd" data-dd>
-        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
-        <ul id="dd-menu-1" class="dd-menu" hidden>
-          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-        </ul>
-      </div>
-
-      <a class="tab" href="noticias.html">Noticias</a>
-      <a class="tab is-active" href="temasfe.html">Temas de Fe</a>
-      <a class="tab" href="catecismo.html">Catecismo</a>
-      <a class="tab" href="rosario.html">El Rosario</a>
-      <a class="tab" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
-
+    <!-- Canales con desplegable -->
+    <div class="tab dd" data-dd>
+      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
+      <ul id="dd-menu-1" class="dd-menu" hidden>
+        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+      </ul>
     </div>
-  </nav>
 
-  <!-- Título estilo “cinta” como el de El Rosario -->
+    <a class="tab" href="noticias.html">Noticias</a>
+    <a class="tab is-active" href="temasfe.html">Temas de Fe</a>
+    <a class="tab" href="catecismo.html">Catecismo</a>
+    <a class="tab" href="rosario.html">El Rosario</a>
+    <a class="tab" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
+    <a class="tab" href="apps.html">Apps Católicas</a>
+  </div>
+</nav>
+
+
+  <!-- ====== HERO ====== -->
   <header class="tf-hero">
     <h1 class="tf-title">Temas y Archivos de Fe</h1>
-    <p class="tf-sub">
-    Notas y archivos para descargar clickeando en la tarjeta
-  </p>
-      </header>
+    <p class="tf-sub">Notas y archivos para descargar cliqueando en la tarjeta</p>
+  </header>
 
-
+  <!-- ====== CONTENIDO ====== -->
   <main class="tf-container">
-<!-- Carlo Acutis -->
-<a class="doc-card" href="docs/temasfe/Carlo Acutis EWTN.pdf" target="_blank" rel="noopener">
-  <img class="doc-icon" src="img/carlosacutis.png" alt="Carlo Acutis">
-  <div class="doc-content">
-    <h3>Carlo Acutis: Un hijo para el cielo</h3>
-    <small>PDF — Carlo Acutis EWTN.pdf</small>
-  </div>
-</a>
 
+    <!-- === E-BOOKS / Obras clásicas === -->
+    <section aria-labelledby="ebooks-title">
+      <h2 id="ebooks-title" class="tf-h2 tf-divider">E-BOOKS</h2>
+      <p class="tf-sub tf-divider-sub">Selección de libros en PDF para leer o descargar.</p>
 
-  <!-- Adviento 2024 (PDF: abrir en otra pestaña) -->
-  <a class="doc-card" href="docs/temasfe/adviento2024.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/adviento.png" alt="Adviento 2024">
-    <div class="doc-content">
-      <h3>Adviento 2024</h3>
-      <small>PDF — adviento2024.pdf</small>
-    </div>
-  </a>
+      <div class="tf-grid">
+        <!-- Confesiones -->
+        <a class="doc-card" href="docs/obras/confesiones-san-agustin.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/confesiones.png" alt="Libro">
+          <div class="doc-content">
+            <h3>Confesiones</h3>
+            <small>San Agustín — PDF</small>
+          </div>
+        </a>
 
-  <!-- Benedicto XVI (EWTN España) -->
-  <a class="doc-card" href="docs/temasfe/BXVI EWTN Spain.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/benedicto.png" alt="Benedicto XVI">
-    <div class="doc-content">
-      <h3>Benedicto XVI (EWTN España)</h3>
-      <small>PDF — BXVI EWTN Spain.pdf</small>
-    </div>
-  </a>
+        <!-- La ciudad de Dios -->
+        <a class="doc-card" href="docs/obras/la-ciudad-de-dios-san-agustin.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/ciudaddedios.png" alt="Libro">
+          <div class="doc-content">
+            <h3>La ciudad de Dios</h3>
+            <small>San Agustín — PDF</small>
+          </div>
+        </a>
 
-  <!-- Epifanía 2024 -->
-  <a class="doc-card" href="docs/temasfe/EPIFANIA 2024.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/epifania.png" alt="Epifanía">
-    <div class="doc-content">
-      <h3>Epifanía 2024</h3>
-      <small>PDF — EPIFANIA 2024.pdf</small>
-    </div>
-  </a>
+        <!-- El hombre eterno -->
+        <a class="doc-card" href="docs/obras/g-k-chesterton-el-hombre-eterno.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/hombreeterno.png" alt="Libro">
+          <div class="doc-content">
+            <h3>El hombre eterno</h3>
+            <small>G. K. Chesterton — PDF</small>
+          </div>
+        </a>
 
-  <!-- Jubileo 2025 (EWTN España) -->
-  <a class="doc-card" href="docs/temasfe/JUBILEO 2025 EWTN ESPAÑA.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/jubileo.png" alt="Jubileo 2025">
-    <div class="doc-content">
-      <h3>Jubileo 2025 (EWTN España)</h3>
-      <small>PDF — JUBILEO 2025 EWTN ESPAÑA.pdf</small>
-    </div>
-  </a>
+        <!-- Pensamiento y corazón -->
+        <a class="doc-card" href="docs/obras/pensamiento-y-corazon-john-newman.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/pensamientoycorazon.png" alt="Libro">
+          <div class="doc-content">
+            <h3>Pensamiento y corazón</h3>
+            <small>John Henry Newman — PDF</small>
+          </div>
+        </a>
 
-  <!-- La Visitación de María -->
-  <a class="doc-card" href="docs/temasfe/la visitacion de maria.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/visitacion.png" alt="La Visitación de María">
-    <div class="doc-content">
-      <h3>La Visitación de María</h3>
-      <small>PDF — la visitacion de maria.pdf</small>
-    </div>
-  </a>
-
-  <!-- Memorial del Papa Francisco -->
-  <a class="doc-card" href="docs/temasfe/MEMORIAL PAPA FRANCISCO.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/memorial.png" alt="Memorial Papa Francisco">
-    <div class="doc-content">
-      <h3>Memorial del Papa Francisco</h3>
-      <small>PDF — MEMORIAL PAPA FRANCISCO.pdf</small>
-    </div>
-  </a>
-
-  <!-- Pentecostés 2023 -->
-  <a class="doc-card" href="docs/temasfe/Pentecostes2023.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/pentecostes.png" alt="Pentecostés 2023">
-    <div class="doc-content">
-      <h3>Pentecostés 2023</h3>
-      <small>PDF — Pentecostes2023.pdf</small>
-    </div>
-  </a>
-
-  <!-- San Pedro y San Pablo -->
-  <a class="doc-card" href="docs/temasfe/San Pedro y San Pablo.pdf" target="_blank">
-    <img class="doc-icon" src="docs/temasfe/sanpedrosanpablo.png" alt="San Pedro y San Pablo">
-    <div class="doc-content">
-      <h3>San Pedro y San Pablo</h3>
-      <small>PDF — San Pedro y San Pablo.pdf</small>
-    </div>
-  </a>
-
-</main>
-
-<!-- ---- Obras clásicas / recomendadas ---- -->
-<h2 class="tf-h2 tf-divider">Obras clásicas</h2>
-<p class="tf-sub tf-divider-sub">Selección de libros en PDF para leer o descargar.</p>
-
-<a class="doc-card" href="docs/obras/confesiones-san-agustin.pdf" target="_blank" rel="noopener">
-  <img class="doc-icon" src="img/book.png" alt="Libro">
-  <div class="doc-content">
-    <h3>Confesiones</h3>
-    <small>San Agustín — PDF</small>
-  </div>
-</a>
-
-<a class="doc-card" href="docs/obras/la-ciudad-de-dios-san-agustin.pdf" target="_blank" rel="noopener">
-  <img class="doc-icon" src="img/book.png" alt="Libro">
-  <div class="doc-content">
-    <h3>La ciudad de Dios</h3>
-    <small>San Agustín — PDF</small>
-  </div>
-</a>
-
-<a class="doc-card" href="docs/obras/g-k-chesterton-el-hombre-eterno.pdf" target="_blank" rel="noopener">
-  <img class="doc-icon" src="img/book.png" alt="Libro">
-  <div class="doc-content">
-    <h3>El hombre eterno</h3>
-    <small>G. K. Chesterton — PDF</small>
-  </div>
-</a>
-
-<a class="doc-card" href="docs/obras/pensamiento-y-corazon-john-newman.pdf" target="_blank" rel="noopener">
-  <img class="doc-icon" src="img/book.png" alt="Libro">
-  <div class="doc-content">
-    <h3>Pensamiento y corazón</h3>
-    <small>John Henry Newman — PDF</small>
-  </div>
-</a>
-
-
-<!-- ====== León XIV – Notas y artículos ====== -->
-<section class="tf-section" id="leon-xiv">
-  <h2 class="tf-h2">León XIV</h2>
-  <p class="tf-sub">
-    Selección de notas sobre la vida y el pontificado de León XIV.
-  </p>
-
-  <div class="tf-grid">
-    <!-- EWTN -->
-    <a class="doc-card" href="https://ewtn.es/noticias_destacadas/leon-xiv-un-papa-que-teje-puentes-entre-el-pasado-y-el-futuro-de-la-iglesia/"
-       target="_blank" rel="noopener">
-      <img class="doc-icon" src="img/ewtn.jpg" alt="EWTN España">
-      <div class="doc-content">
-        <h3>León XIV: Puentes entre pasado y futuro</h3>
-        <small>EWTN España</small>
+        <!-- Niños rezando el Rosario (usa nombre URL-encoded por la Ñ) -->
+        <a class="doc-card" href="docs/obras/EBOOK%20NI%C3%91OS%20REZANDO%20EL%20ROSARIO.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/rosario.png" alt="Libro">
+          <div class="doc-content">
+            <h3>Niños rezando el Rosario</h3>
+            <small>E-BOOK — PDF</small>
+          </div>
+        </a>
       </div>
-    </a>
+    </section>
 
-    <!-- VN: Sábado Santo -->
-    <a class="doc-card" href="https://www.vaticannews.va/es/papa/news/2025-09/papa-leon-xiv-catequesis-17-septiembre-sabado-santo.html"
-       target="_blank" rel="noopener">
-      <img class="doc-icon" src="img/logo-vatican.png" alt="Vatican News">
-      <div class="doc-content">
-        <h3>León XIV: Catequesis sobre el Sábado Santo</h3>
-        <small>Vatican News — 17 de septiembre de 2025</small>
+    <!-- === Archivos y notas sueltas (tarjetas pares) === -->
+    <section aria-labelledby="archivos-title" class="tf-block">
+      <h2 id="archivos-title" class="sr-only">Archivos y notas</h2>
+
+      <div class="tf-grid">
+        <!-- Carlo Acutis -->
+        <a class="doc-card" href="docs/temasfe/Carlo Acutis EWTN.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/carlosacutis.png" alt="Carlo Acutis">
+          <div class="doc-content">
+            <h3>Carlo Acutis: Un hijo para el cielo</h3>
+            <small>PDF — Carlo Acutis EWTN.pdf</small>
+          </div>
+        </a>
+
+        <!-- Adviento -->
+        <a class="doc-card" href="docs/temasfe/adviento2024.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/adviento.png" alt="Adviento 2024">
+          <div class="doc-content">
+            <h3>Adviento 2024</h3>
+            <small>PDF — adviento2024.pdf</small>
+          </div>
+        </a>
+
+        <!-- Benedicto XVI -->
+        <a class="doc-card" href="docs/temasfe/BXVI EWTN Spain.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/benedicto.png" alt="Benedicto XVI (EWTN España)">
+          <div class="doc-content">
+            <h3>Benedicto XVI (EWTN España)</h3>
+            <small>PDF — BXVI EWTN Spain.pdf</small>
+          </div>
+        </a>
+
+        <!-- Epifanía -->
+        <a class="doc-card" href="docs/temasfe/EPIFANIA 2024.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/epifania.png" alt="Epifanía 2024">
+          <div class="doc-content">
+            <h3>Epifanía 2024</h3>
+            <small>PDF — EPIFANIA 2024.pdf</small>
+          </div>
+        </a>
+
+        <!-- Jubileo 2025 -->
+        <a class="doc-card" href="docs/temasfe/JUBILEO 2025 EWTN ESPAÑA.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/jubileo.png" alt="Jubileo 2025">
+          <div class="doc-content">
+            <h3>Jubileo 2025 (EWTN España)</h3>
+            <small>PDF — JUBILEO 2025 EWTN ESPAÑA.pdf</small>
+          </div>
+        </a>
+
+        <!-- Visitación -->
+        <a class="doc-card" href="docs/temasfe/la visitacion de maria.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/visitacion.png" alt="La Visitación de María">
+          <div class="doc-content">
+            <h3>La Visitación de María</h3>
+            <small>PDF — la visitacion de maria.pdf</small>
+          </div>
+        </a>
+
+        <!-- Memorial Papa Francisco -->
+        <a class="doc-card" href="docs/temasfe/MEMORIAL PAPA FRANCISCO.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/memorial.png" alt="Memorial Papa Francisco">
+          <div class="doc-content">
+            <h3>Memorial del Papa Francisco</h3>
+            <small>PDF — MEMORIAL PAPA FRANCISCO.pdf</small>
+          </div>
+        </a>
+
+        <!-- Pentecostés 2023 -->
+        <a class="doc-card" href="docs/temasfe/Pentecostes2023.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/pentecostes.png" alt="Pentecostés 2023">
+          <div class="doc-content">
+            <h3>Pentecostés 2023</h3>
+            <small>PDF — Pentecostes2023.pdf</small>
+          </div>
+        </a>
+
+        <!-- San Pedro y San Pablo -->
+        <a class="doc-card" href="docs/temasfe/San Pedro y San Pablo.pdf" target="_blank" rel="noopener">
+          <img class="doc-icon" src="docs/temasfe/sanpedrosanpablo.png" alt="San Pedro y San Pablo">
+          <div class="doc-content">
+            <h3>San Pedro y San Pablo</h3>
+            <small>PDF — San Pedro y San Pablo.pdf</small>
+          </div>
+        </a>
       </div>
-    </a>
+    </section>
 
-    <!-- VN: Jóvenes peruanos -->
-    <a class="doc-card" href="https://www.vaticannews.va/es/papa/news/2025-07/papa-leon-xiv-jovenes-peruanos-jubileo-28-jul-25.html"
-       target="_blank" rel="noopener">
-      <img class="doc-icon" src="img/logo-vatican.png" alt="Vatican News">
-      <div class="doc-content">
-        <h3>Mensaje a los jóvenes peruanos</h3>
-        <small>Vatican News — 28 de julio de 2025</small>
+    <!-- === León XIV === -->
+    <section class="tf-section" id="leon-xiv" aria-labelledby="leonxiv-title">
+      <h2 id="leonxiv-title" class="tf-h2">León XIV</h2>
+      <p class="tf-sub">Selección de notas sobre la vida y el pontificado de León XIV.</p>
+
+      <div class="tf-grid">
+        <!-- EWTN -->
+        <a class="doc-card" href="https://ewtn.es/noticias_destacadas/leon-xiv-un-papa-que-teje-puentes-entre-el-pasado-y-el-futuro-de-la-iglesia/" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/ewtn.jpg" alt="EWTN España">
+          <div class="doc-content">
+            <h3>León XIV: Puentes entre pasado y futuro</h3>
+            <small>EWTN España</small>
+          </div>
+        </a>
+
+        <!-- VN: Sábado Santo -->
+        <a class="doc-card" href="https://www.vaticannews.va/es/papa/news/2025-09/papa-leon-xiv-catequesis-17-septiembre-sabado-santo.html" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/logo-vatican.png" alt="Vatican News">
+          <div class="doc-content">
+            <h3>León XIV: Catequesis sobre el Sábado Santo</h3>
+            <small>Vatican News — 17 de septiembre de 2025</small>
+          </div>
+        </a>
+
+        <!-- VN: Jóvenes peruanos -->
+        <a class="doc-card" href="https://www.vaticannews.va/es/papa/news/2025-07/papa-leon-xiv-jovenes-peruanos-jubileo-28-jul-25.html" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/logo-vatican.png" alt="Vatican News">
+          <div class="doc-content">
+            <h3>Mensaje a los jóvenes peruanos</h3>
+            <small>Vatican News — 28 de julio de 2025</small>
+          </div>
+        </a>
+
+        <!-- ACI -->
+        <a class="doc-card" href="https://www.aciprensa.com/noticias/117229/peruanos-de-chiclayo-homenajean-al-papa-leon-xiv-en-su-70-cumpleanos" target="_blank" rel="noopener">
+          <img class="doc-icon" src="img/noticias/santa-rosa.jpg" alt="ACI Prensa">
+          <div class="doc-content">
+            <h3>Homenaje en Chiclayo por su 70° cumpleaños</h3>
+            <small>ACI Prensa</small>
+          </div>
+        </a>
       </div>
-    </a>
+    </section>
 
-    <!-- ACI Prensa -->
-    <a class="doc-card" href="https://www.aciprensa.com/noticias/117229/peruanos-de-chiclayo-homenajean-al-papa-leon-xiv-en-su-70-cumpleanos"
-       target="_blank" rel="noopener">
-      <img class="doc-icon" src="img/noticias/santa-rosa.jpg" alt="ACI Prensa">
-      <div class="doc-content">
-        <h3>Homenaje en Chiclayo por su 70° cumpleaños</h3>
-        <small>ACI Prensa</small>
-      </div>
-    </a>
-  </div>
-</section>
+  </main>
 
-
-
-
-  <!-- Script para el dropdown del nav -->
+  <!-- ====== JS: dropdown nav ====== -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[data-dd]').forEach(dd => {
-        const trigger = dd.querySelector('.dd-trigger');
-        const menu = dd.querySelector('.dd-menu');
-
-        const setOpen = (on) => {
-          dd.classList.toggle('open', on);
-          menu.hidden = !on;
-          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-        };
-
-        trigger.addEventListener('click', (e) => {
-          e.stopPropagation();
-          setOpen(!dd.classList.contains('open'));
-        });
-
-        menu.addEventListener('click', (e) => {
-          if (e.target.closest('a')) setOpen(false);
-        });
-
-        document.addEventListener('click', (e) => {
-          if (!dd.contains(e.target)) setOpen(false);
-        });
+    document.querySelectorAll('[data-dd]').forEach(dd => {
+      const trigger = dd.querySelector('.dd-trigger');
+      const menu = dd.querySelector('.dd-menu');
+      const setOpen = on => {
+        dd.classList.toggle('open', on);
+        menu.hidden = !on;
+        trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+      };
+      trigger.addEventListener('click', e => {
+        e.stopPropagation();
+        setOpen(!dd.classList.contains('open'));
       });
-    });
-  </script>
-
-  <!-- Forzar DESCARGA (sin salir de la página) -->
-  <script>
-    // Descargador universal para las tarjetas
-    document.addEventListener('click', async (e) => {
-      const card = e.target.closest('.tf-card');
-      if (!card) return;
-
-      e.preventDefault();
-
-      const url = card.getAttribute('data-file');
-      // nombre sugerido para guardar (opcional)
-      let filename = card.getAttribute('data-name') || url.split('/').pop();
-
-      try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('No se pudo descargar');
-        const blob = await res.blob();
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        URL.revokeObjectURL(link.href);
-      } catch (err) {
-        // Plan B: si fetch falla (rutas/servidor), redirige y usa el atributo download del navegador
-        const fallback = document.createElement('a');
-        fallback.href = url;
-        fallback.download = filename;
-        document.body.appendChild(fallback);
-        fallback.click();
-        fallback.remove();
-      }
+      menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
     });
   </script>
 </body>
