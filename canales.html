@@ -28,9 +28,9 @@
     </div>
 
     <a class="tab" href="noticias.html">Noticias</a>
-    <a class="tab" href="temasfe.html">Temas de Fe</a>
+    <a class="tab" href="temasfe.html">Temas Fe</a>
     <a class="tab" href="catecismo.html">Catecismo</a>
-    <a class="tab" href="rosario.html">El Rosario</a>
+    <a class="tab" href="rosario.html">Rosario</a>
     <a class="tab" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
     <a class="tab" href="apps.html">Apps Católicas</a>
   </div>
@@ -243,36 +243,21 @@
     </p>
   </section>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[data-dd]').forEach(dd => {
-        const trigger = dd.querySelector('.dd-trigger');
-        const menu = dd.querySelector('.dd-menu');
-
-        const setOpen = (on) => {
-          dd.classList.toggle('open', on);
-          menu.hidden = !on;
-          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-        };
-
-        trigger.addEventListener('click', (e) => {
-          e.stopPropagation();
-          setOpen(!dd.classList.contains('open'));
-        });
-
-        // cerrar al clicar cualquier opción del menú
-        menu.addEventListener('click', (e) => {
-          if (e.target.closest('a')) setOpen(false);
-        });
-
-        // cerrar al clicar fuera
-        document.addEventListener('click', (e) => {
-          if (!dd.contains(e.target)) setOpen(false);
-        });
-      });
-    });
-  </script>
+<script>
+  document.querySelectorAll('[data-dd]').forEach(dd => {
+    const trig = dd.querySelector('.dd-trigger');
+    const menu = dd.querySelector('.dd-menu');
+    if (!trig || !menu) return;
+    const setOpen = on => {
+      dd.classList.toggle('open', on);
+      menu.hidden = !on;
+      trig.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
+    trig.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
+    menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
+  });
+</script>
 
 
 </body>

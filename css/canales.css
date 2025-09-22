@@ -1,267 +1,6 @@
 /* ===============================
-   Estilos solo para canales.html
+   Paleta y base
    =============================== */
-
-/* Contenedor principal */
-.channels-header {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.page-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #5b3a2a;
-}
-
-.page-subtitle {
-  font-size: 1rem;
-  color: #7a5a4a;
-  margin-top: 0.5rem;
-}
-
-/* Grid de tarjetas */
-.channels-container {
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
-  max-width: 1200px;
-  padding: 0 1rem;
-}
-
-.channels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-/* Tarjeta individual */
-.channel-card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.channel-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.18);
-}
-
-.channel-card iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-}
-
-/* Botón de canal */
-.channel-button {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.6rem 1.2rem;
-  background: #e6954a;
-  color: white;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.channel-button:hover {
-  background: #c77428;
-}
-
-/* ========================
-   Sección especial EWTN
-   ======================== */
-.single-feature {
-  display: flex;
-  justify-content: center;
-  margin: 3rem auto;
-  padding: 1rem;
-}
-
-.card {
-  width: 100%;
-  max-width: 900px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  padding: 2rem;
-  text-align: center;
-}
-
-.card h3 {
-  margin-bottom: 1.5rem;
-  color: #5b3a2a;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-/* Video responsivo */
-.video-responsive {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 */
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Botón dentro de la tarjeta */
-.card .btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  background: #e6954a;
-  color: white;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.card .btn:hover {
-  background: #c77428;
-}
-
-/* scroll suave global */
-html { scroll-behavior: smooth; }
-
-/* compensar header fijo */
-#milagros-eucaristicos { scroll-margin-top: 110px; }
-
-/* Grupo genérico de secciones de video */
-.channels-group {
-  margin: 3rem auto 2rem;
-  max-width: 1200px;
-  padding: 0 1rem;
-}
-
-.group-title {
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  color: #4b2f24;
-  text-align: center;
-  margin: 0 0 1rem;
-}
-
-/* Embed responsivo de YouTube */
-.yt-embed {
-  position: relative;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto 1rem;
-  padding-top: 56.25%; /* 16:9 */
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
-}
-.yt-embed iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* Botón bajo el embed */
-.channel-button {
-  display: inline-block;
-  background: #e18a3b;
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  padding: .8rem 1.2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 18px rgba(225, 138, 59, .25);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.channel-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(225, 138, 59, .35);
-}
-
-
-
-/* ====== Bloque de video embebido (como Milagros) ====== */
-.video-block{
-  max-width: 1100px;
-  margin: 2.5rem auto 4rem;
-  text-align: center;
-}
-
-.video-block h2{
-  font-family: "Crimson Text", serif;
-  font-size: clamp(1.6rem, 2.2vw + .6rem, 2.25rem);
-  font-weight: 700;
-  color: #3a2a1a;
-  margin: 0 0 1.2rem 0;
-}
-
-/* Contenedor responsivo 16:9 con esquinas redondeadas y sombra */
-.yt-responsive{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #000;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 22px 46px rgba(0,0,0,.14);
-}
-
-.yt-responsive iframe{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.video-note{
-  margin-top: .8rem;
-  color: #6f533a;
-  font-size: 0.98rem;
-}
-
-.video-note a{
-  color: #b56a2b;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.video-note a:hover{ color: #8e4f1c; }
-
-.yt-responsive{
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #000;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 22px 46px rgba(0,0,0,.14);
-}
-.yt-responsive iframe{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-
-/* ===== Layout base ===== */
 :root{
   --bg: #efd0a3;            /* tu beige */
   --paper: #fff8ec;         /* claro de tarjetas/nav */
@@ -270,83 +9,189 @@ html { scroll-behavior: smooth; }
   --muted: #7c5b3d;
   --radius: 18px;
   --shadow: 0 10px 30px rgba(60,36,21,.08);
+  --accent: #e69a52;
+  --line: #ecd7b9;
 }
 
-html,body{ background: var(--bg); color: var(--ink); }
+html,body{
+  background: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+}
+html { scroll-behavior: smooth; }
+[id]{ scroll-margin-top: 90px; }
 
-/* Centrado y ancho máximo uniforme */
 .container{
   width: min(1180px, 92vw);
   margin-inline: auto;
 }
 
-/* ===== NAV centrado ===== */
-.tabs-wrap{
-  position: sticky; 
-  top: 0; 
-  z-index: 50;
-  background: var(--bg-2);
-  box-shadow: var(--shadow);
-  border-bottom: 1px solid var(--line, transparent);
+
+
+/* ===============================
+   Cabecera de la página
+   =============================== */
+.channels-header {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+.page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #5b3a2a;
+  margin: 0;
+}
+.page-subtitle {
+  font-size: 1rem;
+  color: #7a5a4a;
+  margin: .5rem 0 0;
 }
 
-.tabs{
+/* ===============================
+   Grid principal de tarjetas (forzado)
+   =============================== */
+.channels-container{
   max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;   /* 🔹 centra los tabs */
-  gap: .75rem;
-  padding: .75rem 1rem;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.tab{
-  padding: .65rem 1rem;
+.channels-grid{
+  display: grid !important; /* 🔸 fuerza el grid ante cualquier sobre-escritura */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Tarjeta */
+.channel-card{
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+.channel-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.18);
+}
+.channel-card iframe{
+  width: 100% !important;   /* 🔸 asegura que el video llene la tarjeta */
+  height: 200px !important;
   border-radius: 12px;
-  font-weight: 700;
+  display: block;
+}
+
+/* Botón de canal */
+.channel-button{
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  background: #e6954a;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
   text-decoration: none;
-  color: var(--ink);
+  transition: background 0.3s ease, transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 8px 18px rgba(225,138,59,.25);
 }
-.tab:hover{ background: rgba(0,0,0,.05); }
-.tab.is-active{ position: relative; }
-.tab.is-active::after{
-  content: "";
-  position: absolute;
-  left: 1rem; right: 1rem; bottom: -9px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--accent);
+.channel-button:hover{
+  background: #c77428;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(225,138,59,.35);
 }
 
-/* Dropdown en tabs */
-.tab.dd{ position: relative; }
-.dd-trigger{ margin-left: 6px; border: 0; background: none; cursor: pointer; }
-.dd-menu{
-  position: absolute; 
-  top: calc(100% + 8px); 
-  left: 0;
-  background: var(--bg-2); 
-  box-shadow: var(--shadow);
-  border-radius: 14px; 
-  padding: 10px 8px; 
-  min-width: 250px;
+/* ========================
+   Sección especial EWTN
+   ======================== */
+.single-feature{
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+  padding: 1rem;
 }
-.dd-menu li a{ display:block; padding:10px 12px; border-radius:10px; }
-.dd-menu li a:hover{ background:#f6e8d5; }
+.card{
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  text-align: center;
+}
+.card h3{
+  margin-bottom: 1.5rem;
+  color: #5b3a2a;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.video-responsive{
+  position: relative; width: 100%; padding-top: 56.25%;
+  border-radius: 12px; overflow: hidden; margin-bottom: 1rem;
+}
+.video-responsive iframe{
+  position: absolute; top:0; left:0; width:100%; height:100%;
+}
+.card .btn{
+  display: inline-block; margin-top: 1rem; padding: 0.7rem 1.5rem;
+  background: #e6954a; color: white; font-weight: 600;
+  border-radius: 8px; text-decoration: none; transition: background .3s ease;
+}
+.card .btn:hover{ background: #c77428; }
 
+/* ========================
+   Bloque de video embebido
+   ======================== */
+.video-block{
+  max-width: 1100px;
+  margin: 2.5rem auto 4rem;
+  text-align: center;
+}
+.video-block h2{
+  font-family: "Crimson Text", serif;
+  font-size: clamp(1.6rem, 2.2vw + .6rem, 2.25rem);
+  font-weight: 700;
+  color: #3a2a1a;
+  margin: 0 0 1.2rem;
+}
+.yt-responsive{
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  background: #000; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 22px 46px rgba(0,0,0,.14);
+}
+.yt-responsive iframe{
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
+.video-note{
+  margin-top: .8rem; color: #6f533a; font-size: 0.98rem;
+}
+.video-note a{
+  color: #b56a2b; text-decoration: underline; text-underline-offset: 3px;
+}
+.video-note a:hover{ color: #8e4f1c; }
 
-
-
+/* ========================
+   Grid auxiliar de videos
+   ======================== */
 .video-grid{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(14px, 2.2vw, 22px);
   margin: 10px auto 28px;
 }
-.video-card{ grid-column: span 6; background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); padding: 12px; }
-@media (max-width:900px){ .video-card{ grid-column: span 12; } }
-
+.video-card{
+  grid-column: span 6;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+@media (max-width:900px){
+  .video-card{ grid-column: span 12; }
+}
 .video-card .frame{
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -355,12 +200,8 @@ html,body{ background: var(--bg); color: var(--ink); }
   box-shadow: inset 0 0 0 1px rgba(60,36,21,.06);
 }
 .video-card iframe{ width:100%; height:100%; border:0; display:block; }
-
 .video-card .cta{
-  margin-top: 12px;
-  display: inline-block;
-  font-weight: 700;
-  background: var(--brand);
-  color: white; padding: 10px 14px; border-radius: 12px;
+  margin-top: 12px; display: inline-block; font-weight: 700;
+  background: var(--brand); color: #fff; padding: 10px 14px; border-radius: 12px;
 }
 .video-card .cta:hover{ filter: brightness(1.05); }
