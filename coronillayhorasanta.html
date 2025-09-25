@@ -6,6 +6,8 @@
   <title>Coronilla y Hora Santa</title>
   <link rel="stylesheet" href="css/styles.css?v=1"/>
   <link rel="stylesheet" href="css/coronillayhorasanta.css"/>
+  <link rel="icon" href="img/cruz.png" type="image/png">
+
 </head>
 <body>
 
@@ -26,7 +28,7 @@
     <a class="tab" href="noticias.html">Noticias</a>
     <a class="tab" href="temasfe.html">Temas Fe</a>
     <a class="tab" href="catecismo.html">Catecismo</a>
-    <a class="tab" href="rosario.html">Rosario</a>
+    <a class="tab" href="rosario.html">El Rosario</a>
     <a class="tab is-active" href="coronillayhorasanta.html">Coronilla-Hora Santa</a>
     <a class="tab" href="apps.html">Apps Católicas</a>
   </div>
@@ -73,15 +75,20 @@
 </main>
 
 
-  <!-- JS del dropdown (si lo usas) -->
-  <script>
-    document.querySelectorAll('[data-dd]').forEach(dd => {
-      const t = dd.querySelector('.dd-trigger'); const m = dd.querySelector('.dd-menu');
-      const open = (on)=>{ dd.classList.toggle('open', on); m.hidden=!on; t.setAttribute('aria-expanded', on?'true':'false'); };
-      t.addEventListener('click', e=>{ e.stopPropagation(); open(!dd.classList.contains('open')); });
-      m.addEventListener('click', e=>{ if(e.target.closest('a')) open(false); });
-      document.addEventListener('click', e=>{ if(!dd.contains(e.target)) open(false); });
-    });
-  </script>
+<script>
+  // Dropdown accesible (déjalo una sola vez por página)
+  document.querySelectorAll('[data-dd]').forEach(dd => {
+    const btn = dd.querySelector('.dd-trigger');
+    const menu = dd.querySelector('.dd-menu');
+    const setOpen = on => {
+      dd.classList.toggle('open', on);
+      menu.hidden = !on;
+      btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+    };
+    btn.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
+    menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
+  });
+</script>
 </body>
 </html>
