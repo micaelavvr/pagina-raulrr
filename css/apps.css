@@ -1,13 +1,13 @@
 /* Paleta consistente con el sitio */
 :root {
   --bg: #efd0a3;
-  --paper: #fffdf8;
+  --paper: #fffaf0;              /* más cálido que el anterior */
   --ink: #3c2415;
   --muted: #7c5b3d;
   --brand: #c97a33;
   --shadow: 0 10px 30px rgba(60,36,21,.08);
-  --accent: #e69a52;
-  --line: #ecd7b9;
+  --accent: #d6802e;             /* naranja más intenso para el nav */
+  --line: #d9b78c;
 }
 
 /* Base */
@@ -40,8 +40,8 @@ body {
 /* Grid */
 .apps-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
   max-width: 1100px;
   margin: 0 auto 3rem;
   padding: 0 1rem;
@@ -51,38 +51,52 @@ body {
 .app-card {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  gap: 1.5rem;
+  padding: 1.4rem 1.6rem;
   text-decoration: none;
   color: var(--ink);
   background: var(--paper);
-  border-radius: 18px;
+  border-radius: 20px;
   box-shadow: var(--shadow);
   transition: transform .18s ease, box-shadow .18s ease, background .18s;
 }
 .app-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.12);
-  background: #fff9f1;
+  box-shadow: 0 14px 28px rgba(0,0,0,.14);
+  background: #fff3e2;
 }
 
 /* Icono */
 .app-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 14px;
+  width: 140px;           /* mucho más grande */
+  height: 140px;
+  border-radius: 18px;
   object-fit: cover;
-  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+  flex-shrink: 0;
 }
 
 /* Texto */
 .app-content h3 {
-  margin: 0 0 0.3rem;
-  font-size: 1.2rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 .app-content small {
   color: var(--muted);
-  font-size: .95rem;
+  font-size: 1rem;
 }
 
+/* Responsive */
+@media (max-width: 720px) {
+  .app-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+  .app-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
