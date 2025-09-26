@@ -68,8 +68,8 @@ body {
 
 /* Icono */
 .app-icon {
-  width: 140px;           /* mucho más grande */
-  height: 140px;
+  width: 180px;           /* mucho más grande */
+  height: 180px;
   border-radius: 18px;
   object-fit: cover;
   box-shadow: 0 8px 18px rgba(0,0,0,.15);
