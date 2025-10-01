@@ -16,28 +16,37 @@
 
 <body>
 
-<!-- Navegación -->
-<nav class="tabs-wrap" aria-label="Navegación de secciones">
-  <div class="tabs">
-    <a class="tab" href="index.html">Inicio</a>
+  <!-- NAV -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs" id="navTabs">
+      <a class="tab" href="index.html" data-fixed="1">Inicio</a>
 
-    <!-- Canales con desplegable -->
-    <div class="tab dd" data-dd>
-      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
-      <ul id="dd-menu-1" class="dd-menu" hidden>
-        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-      </ul>
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1" aria-label="Abrir menú">▾</button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab is-active" href="rosario.html">El Rosario</a>
+
+      <!-- MÁS -->
+      <div class="tab dd more" data-dd>
+        <span class="dd-link">Más</span>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-more" aria-label="Abrir menú">▾</button>
+        <ul id="dd-menu-more" class="dd-menu" hidden>
+          <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
+          <li><a href="apps.html">Apps Católicas</a></li>
+          <li><a href="biblia.html">Biblia</a></li>
+        </ul>
+      </div>
     </div>
-
-    <a class="tab" href="noticias.html">Noticias</a>
-    <a class="tab" href="temasfe.html">Temas Fe</a>
-    <a class="tab" href="catecismo.html">Catecismo</a>
-    <a class="tab is-active" href="rosario.html">El Rosario</a>
-    <a class="tab" href="coronillayhorasanta.html">Coronilla - Hora Santa - Liturgia de las Horas</a>
-    <a class="tab" href="apps.html">Apps Católicas</a>
-  </div>
-</nav>
+  </nav>
 
 
 
@@ -51,6 +60,62 @@
   </header>
 
 
+    <!-- Mensajes De Dios -->
+  <section id="mensajesdedios" class="single-feature">
+    <div class="card">
+      <h3>Mensajes de Dios - El Santo Rosario</h3>
+
+      <div class="video-responsive">
+        <iframe src="https://www.youtube.com/embed/ckYOvp1fL5E?rel=0" title="Mensajes De Dios"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Título -->
+  <header class="chs-head">
+    <h1>Santo Rosario con Benedicto XVI</h1>
+    <p class="page-subtitle">
+     Los MISTERIOS  con Benedicto XVI - Latín traducido al español</p>
+  </header>
+
+  <!-- Grid de canales -->
+  <main class="channels-container">
+    <section class="channels-grid">
+
+      <!-- GOZOSOS -->
+      <div class="channel-card">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/OpwbtN6DVZY?rel=0" title="MISTERIOS GOZOSOS con Benedicto XVI"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- GLORIOSOS -->
+      <div class="channel-card">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/8jrxzmN9R98?rel=0" title="MISTERIOS GLORIOSOS con Benedicto XVI"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- DOLOROSOS -->
+      <div class="channel-card">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/hBI8-HGQT2Q?rel=0" title="TERIOS DOLOROSOS con Benedicto XVI"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+
+            <!-- LUMINOSOS -->
+      <div class="channel-card">
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/YAni9_8J_Fg?rel=0" title="MISTERIOS LUMINOSOS con Benedicto XVI"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    </section>
+  </main>
+
+
+  <header class="chs-head">
+    <h1>Rosario desde Lourdes</h1>
+  </header>
 <!-- Rosario desde Lourdes -->
 <section class="lourdes-rosary">
   <a class="lourdes-card"

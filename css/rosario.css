@@ -173,3 +173,129 @@ html,body{ background: var(--bg); color: var(--ink); }
   margin-inline: auto;
 }
 
+/* ========================
+   Sección especial EWTN
+   ======================== */
+.single-feature{
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+.card{
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  text-align: center;
+}
+.card h3{
+  margin-bottom: 1.5rem;
+  color: #5b3a2a;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.video-responsive{
+  position: relative; width: 100%; padding-top: 56.25%;
+  border-radius: 12px; overflow: hidden; margin-bottom: 1rem;
+}
+.video-responsive iframe{
+  position: absolute; top:0; left:0; width:100%; height:100%;
+}
+.card .btn{
+  display: inline-block; margin-top: 1rem; padding: 0.7rem 1.5rem;
+  background: #e6954a; color: white; font-weight: 600;
+  border-radius: 8px; text-decoration: none; transition: background .3s ease;
+}
+.card .btn:hover{ background: #c77428; }
+
+
+
+/* ===============================
+   Grid principal de tarjetas (forzado)
+   =============================== */
+.channels-container{
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.channels-grid{
+  display: grid !important; /* 🔸 fuerza el grid ante cualquier sobre-escritura */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Tarjeta */
+.channel-card{
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+.channel-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.18);
+}
+.channel-card iframe{
+  width: 100% !important;   /* 🔸 asegura que el video llene la tarjeta */
+  height: 200px !important;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Botón de canal */
+.channel-button{
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  background: #e6954a;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 8px 18px rgba(225,138,59,.25);
+}
+.channel-button:hover{
+  background: #c77428;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(225,138,59,.35);
+}
+
+/* ========================
+   Bloque de video embebido
+   ======================== */
+.video-block{
+  max-width: 1100px;
+  margin: 2.5rem auto 4rem;
+  text-align: center;
+}
+.video-block h2{
+  font-family: "Crimson Text", serif;
+  font-size: clamp(1.6rem, 2.2vw + .6rem, 2.25rem);
+  font-weight: 700;
+  color: #3a2a1a;
+  margin: 0 0 1.2rem;
+}
+.yt-responsive{
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  background: #000; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 22px 46px rgba(0,0,0,.14);
+}
+.yt-responsive iframe{
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
+.video-note{
+  margin-top: .8rem; color: #6f533a; font-size: 0.98rem;
+}
+.video-note a{
+  color: #b56a2b; text-decoration: underline; text-underline-offset: 3px;
+}
+.video-note a:hover{ color: #8e4f1c; }

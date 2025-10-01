@@ -41,28 +41,39 @@
     <p class="santa-nombre">— Santa Teresita del Niño Jesús</p>
   </section>
 
-<!-- Navegación -->
-<nav class="tabs-wrap" aria-label="Navegación de secciones">
-  <div class="tabs">
-    <a class="tab is-active" href="index.html">Inicio</a>
 
-    <!-- Canales con desplegable -->
-    <div class="tab dd" data-dd>
-      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▾</button>
-      <ul id="dd-menu-1" class="dd-menu" hidden>
-        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-      </ul>
+  <!-- NAV -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs" id="navTabs">
+      <a class="tab is-active" href="index.html" data-fixed="1">Inicio</a>
+
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1" aria-label="Abrir menú">▾</button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab" href="rosario.html">El Rosario</a>
+
+      <!-- MÁS -->
+      <div class="tab dd more" data-dd>
+        <span class="dd-link">Más</span>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-more" aria-label="Abrir menú">▾</button>
+        <ul id="dd-menu-more" class="dd-menu" hidden>
+          <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
+          <li><a href="apps.html">Apps Católicas</a></li>
+          <li><a href="biblia.html">Biblia</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <a class="tab" href="noticias.html">Noticias</a>
-    <a class="tab" href="temasfe.html">Temas Fe</a>
-    <a class="tab" href="catecismo.html">Catecismo</a>
-    <a class="tab" href="rosario.html">El Rosario</a>
-    <a class="tab" href="coronillayhorasanta.html">Coronilla - Hora Santa - Liturgia de las Horas</a>
-    <a class="tab" href="apps.html">Apps Católicas</a>
-  </div>
-</nav>
 
 
   <!-- TÍTULO PRINCIPAL -->
@@ -94,6 +105,16 @@
   <a href=" https://whatsapp.com/channel/0029Vb4BmY82P59sWaIwKs02 " class="logo-card" target="_blank" rel="noopener">
     <img src="img/hospitalitos.jpg" alt="Hospitalitos de la Fe">
   </a>
+
+  <a href="https://www.youtube.com/@MensajerosdeDios95/videos" class="logo-card" target="_blank" rel="noopener">
+    <img src="img/sanjuanpablo.jpeg" alt="Mensajeros de Dios - San Juan Pablo II">
+  </a>
+
+  <a href="https://www.youtube.com/embed/videoseries?list=PLG9U5ZZjFpUqeurH3AeCty-GJ5XY7s3Ix" class="logo-card" target="_blank" rel="noopener">
+    <img src="img/benedicto-logo.jpeg" alt="Mensajeros de Dios - Benedicto XVI">
+  </a>
+
+
 </section>
 
 <!-- ======================  PAPA LEÓN XIV  ====================== -->
@@ -131,51 +152,60 @@
 
 
 
+<!-- JS: dropdowns + preloader -->
   <script>
+    // Dropdown accesible
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[data-dd]').forEach(dd => {
+      const DDLISTS = document.querySelectorAll('[data-dd]');
+      function setOpen(dd, on) {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu = dd.querySelector('.dd-menu');
+        dd.classList.toggle('open', on);
+        if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        if (menu) menu.hidden = !on;
+      }
+      DDLISTS.forEach(dd => {
         const trigger = dd.querySelector('.dd-trigger');
         const menu = dd.querySelector('.dd-menu');
 
-        const setOpen = (on) => {
-          dd.classList.toggle('open', on);
-          menu.hidden = !on;
-          trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-        };
+        if (trigger) {
+          trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setOpen(dd, !dd.classList.contains('open'));
+          });
+        }
+        if (menu) {
+          menu.addEventListener('click', (e) => {
+            if (e.target.closest('a')) setOpen(dd, false);
+          });
+        }
+      });
 
-        trigger.addEventListener('click', (e) => {
-          e.stopPropagation();
-          setOpen(!dd.classList.contains('open'));
-        });
+      // Cerrar al hacer clic fuera
+      document.addEventListener('click', () => {
+        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      });
 
-        // cerrar al clicar cualquier opción del menú
-        menu.addEventListener('click', (e) => {
-          if (e.target.closest('a')) setOpen(false);
-        });
-
-        // cerrar al clicar fuera
-        document.addEventListener('click', (e) => {
-          if (!dd.contains(e.target)) setOpen(false);
-        });
+      // Cerrar con Esc
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+        }
       });
     });
-  </script>
 
-  <script>
-    // Ocultar preloader cuando todo esté listo
+    // Preloader
     window.addEventListener('load', () => {
-      // pequeño delay para que se aprecie el latido una vez
       setTimeout(() => {
         document.getElementById('preloader')?.classList.add('hide');
         document.body.classList.remove('loading');
       }, 600);
     });
   </script>
+
+
+
 </body>
-
-
-
-
 
 </body>
 

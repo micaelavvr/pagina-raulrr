@@ -1,0 +1,103 @@
+/* ====== Colores base (hereda de styles.css) ====== */
+:root{
+  --bg: #efd0a3;
+  --paper: #fff8ec;
+  --ink: #3c2415;
+  --muted: #7a5a4a;
+  --accent: #e6954a;
+  --accent-700: #c7742b;
+  --line: #ecd7b9;
+  --shadow: 0 10px 24px rgba(60,36,21,.10);
+  --shadow-2: 0 16px 34px rgba(60,36,21,.16);
+}
+
+/* ====== Hero ====== */
+.biblia-hero{
+  text-align:center;
+  max-width: 980px;
+  margin: 1.6rem auto 1.6rem;
+  padding: 0 1rem;
+}
+.biblia-title{
+  font-size: clamp(1.8rem, 1.2rem + 2.4vw, 2.7rem);
+  margin: 0 0 .5rem;
+  font-weight: 800;
+}
+.biblia-sub{
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+/* ====== Grid de documentos ====== */
+.biblia-container{
+  max-width: 1200px;
+  margin: 0 auto 2.2rem;
+  padding: 0 1rem;
+}
+
+.docs-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.doc-card{
+  display:flex; align-items:center; gap:14px;
+  padding: 14px 16px;
+  background:#fff; border:1px solid #f1d8bd;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.doc-icon{
+  width:58px; height:58px; border-radius:14px;
+  background:#fff1e4; border:1px solid #f1d8bd;
+  display:grid; place-items:center; overflow:hidden;
+}
+.doc-icon img{ width:72%; height:72%; object-fit:contain; }
+.doc-meta h3{ margin:.1rem 0 .2rem; font-size:1.05rem; font-weight:800; }
+.doc-meta small{ color:var(--muted); }
+.doc-actions{ margin-top:.45rem; display:flex; gap:.5rem; }
+
+.btn{
+  display:inline-flex; align-items:center; gap:.35rem;
+  padding:.52rem .85rem; border-radius:10px;
+  background: var(--accent); color:#fff; font-weight:800;
+  box-shadow: 0 6px 16px rgba(230,149,74,.28);
+  text-decoration:none;
+}
+.btn:hover{ filter:brightness(1.04); transform: translateY(-1px); }
+.btn.ghost{
+  background:#fff; color:#5a3b29; border:1px solid #efc89e; box-shadow:none;
+}
+.btn.ghost:hover{ background:#fff7ed; }
+
+/* ====== Visor PDF ====== */
+.pdf-viewer{
+  margin-top: 1.6rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+.viewer-head{
+  display:flex; align-items:baseline; gap:.6rem; margin:0 0 .5rem;
+}
+.viewer-head h2{ margin:0; font-size:1.1rem; font-weight:800; }
+.viewer-head small{ color:var(--muted); }
+
+.viewer-frame{
+  border-radius: 12px; overflow:hidden;
+  border:1px solid #f0dac1; background:#fff;
+  height: clamp(420px, 56vw, 680px);
+}
+.viewer-frame iframe{
+  width:100%; height:100%; border:0; display:block;
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .doc-card{ padding: 12px; }
+  .doc-icon{ width:52px; height:52px; }
+}
