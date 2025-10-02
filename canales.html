@@ -23,7 +23,8 @@
       <!-- Canales con desplegable -->
       <div class="tab is-active" data-dd>
         <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1" aria-label="Abrir menú">▾</button>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
+          aria-label="Abrir menú">▾</button>
         <ul id="dd-menu-1" class="dd-menu" hidden>
           <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
         </ul>
@@ -37,16 +38,18 @@
       <!-- MÁS -->
       <div class="tab dd more" data-dd>
         <span class="dd-link">Más</span>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-more" aria-label="Abrir menú">▾</button>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-more"
+          aria-label="Abrir menú">▾</button>
         <ul id="dd-menu-more" class="dd-menu" hidden>
           <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
           <li><a href="apps.html">Apps Católicas</a></li>
           <li><a href="biblia.html">Biblia</a></li>
+          <li><a href="kids.html">Para niños</a></li>
         </ul>
       </div>
     </div>
   </nav>
-</nav>
+  </nav>
 
 
 
@@ -239,39 +242,39 @@
 
 
   <!-- Carlo Acutis: Un hijo para el cielo -->
-  
-      <section id="carlo-acutis" class="single-feature">
+
+  <section id="carlo-acutis" class="single-feature">
     <div class="card">
       <h3>PLAYLIST: Carlo Acutis: Un hijo para el cielo</h3>
 
       <div class="video-responsive">
-        <iframe src="https://www.youtube.com/embed/videoseries?list=PLfGiZYFJHOqkm1rnMqi5peGXXba2O-WIs" title="Carlo Acutis: Un hijo para el cielo (Playlist)"
-          frameborder="0"
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLfGiZYFJHOqkm1rnMqi5peGXXba2O-WIs"
+          title="Carlo Acutis: Un hijo para el cielo (Playlist)" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
-          
+
       </div>
-          <p class="video-note">
-      Haz clic para reproducir. <a href="https://youtube.com/playlist?list=PLfGiZYFJHOqkm1rnMqi5peGXXba2O-WIs"
-        target="_blank" rel="noopener">Ver lista completa en YouTube</a>.
-    </p>
+      <p class="video-note">
+        Haz clic para reproducir. <a href="https://youtube.com/playlist?list=PLfGiZYFJHOqkm1rnMqi5peGXXba2O-WIs"
+          target="_blank" rel="noopener">Ver lista completa en YouTube</a>.
+      </p>
   </section>
 
-<script>
-  document.querySelectorAll('[data-dd]').forEach(dd => {
-    const trig = dd.querySelector('.dd-trigger');
-    const menu = dd.querySelector('.dd-menu');
-    if (!trig || !menu) return;
-    const setOpen = on => {
-      dd.classList.toggle('open', on);
-      menu.hidden = !on;
-      trig.setAttribute('aria-expanded', on ? 'true' : 'false');
-    };
-    trig.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
-    menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
-    document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
-  });
-</script>
+  <script>
+    document.querySelectorAll('[data-dd]').forEach(dd => {
+      const trig = dd.querySelector('.dd-trigger');
+      const menu = dd.querySelector('.dd-menu');
+      if (!trig || !menu) return;
+      const setOpen = on => {
+        dd.classList.toggle('open', on);
+        menu.hidden = !on;
+        trig.setAttribute('aria-expanded', on ? 'true' : 'false');
+      };
+      trig.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
+      menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
+    });
+  </script>
 
 
 </body>

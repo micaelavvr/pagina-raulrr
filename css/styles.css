@@ -138,7 +138,9 @@ body.loading{ overflow:hidden; }
 .tab.more:hover .dd-link{ background:#f1e6d8; }
 
 
-/* =================== PAPA LEÓN XIV =================== */
+/* =====================================================
+   PAPA LEÓN XIV — rejilla y tamaños
+   ===================================================== */
 .papa-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -146,10 +148,8 @@ body.loading{ overflow:hidden; }
   max-width: 1200px;
   margin: 0 auto 3rem;
   padding: 0 1rem;
-  align-items: stretch;
+  align-items: start;
 }
-
-/* Tarjeta base */
 .papa-card{
   background: var(--card, #fff);
   border-radius: 18px;
@@ -160,10 +160,8 @@ body.loading{ overflow:hidden; }
   justify-content: center;
   overflow: hidden;
 }
-
-/* Verticales (foto y escudo) */
 .papa-card.vertical{
-  aspect-ratio: 3 / 4;    /* más altos que anchos */
+  aspect-ratio: 3 / 4;
 }
 .papa-card.vertical img{
   width: 100%;
@@ -172,45 +170,223 @@ body.loading{ overflow:hidden; }
   border-radius: 12px;
 }
 
-/* Tweet horizontal */
-.papa-card.tweet.horizontal{
-  aspect-ratio: 4 / 3;    /* más ancho que alto */
-  padding: 0;
+/* Tweet: más pequeño pero completo */
+.papa-card.tweet{
+  /* dejamos altura auto y controlamos el tamaño por escala */
+  padding: 12px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: visible;
 }
-.papa-card.tweet blockquote{
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0;
+.papa-card.tweet .twitter-tweet{
+  margin: 0 !important;
+  /* limitar el ancho visual del widget */
+  max-width: 520px;
+}
+.papa-card.tweet iframe{
+  /* la X suele renderizar un iframe grande; lo escalamos */
+  transform: scale(.85);
+  transform-origin: top left;
+  width: 118%;           /* compensación de la escala */
+  height: 118%;
 }
 
 
 
-
-
-/* ============ RECOMENDADOS ========= */
+/* =====================================================
+   PÁGINAS RECOMENDADAS
+   ===================================================== */
 .paginas-recomendadas{
-  max-width:1200px; margin:1rem auto 2rem; padding:0 1rem;
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:1.4rem; place-items:center;
+  max-width: 1200px;
+  margin: 1rem auto 2rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  place-items: center;
 }
-.logo-card{
+.paginas-recomendadas a{
   width: clamp(180px, 22vw, 240px);
-  background: var(--card); padding:18px; border-radius:20px;
-  box-shadow:var(--shadow);
-  transition: transform .2s, box-shadow .2s;
+  background: var(--card);
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.logo-card img{ width:100%; height:120px; object-fit:contain; }
-.logo-card:hover{ transform: translateY(-5px); box-shadow:0 16px 30px rgba(84,48,23,.16); }
-
-/* ============ MEDIA ============ */
-@media (max-width:1024px){ .titulo-img{ width:80px; } }
-@media (max-width:720px){
-  .tab{ padding:.6rem .85rem; border-radius:10px; font-size:.95rem; }
-  .dd-trigger{ width:1.9rem; height:1.9rem; }
-  .titulo-img{ width:72px; }
+.paginas-recomendadas a img{
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+.paginas-recomendadas a:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(84,48,23,.16);
 }
 
-/* Utils */
-.muted{ color:var(--muted); }
-.center{ text-align:center; }
-.container{ width:min(1180px,92vw); margin-inline:auto; }
+
+
+/* =====================================================
+   BANDERAS / TÍTULOS DE SECCIÓN
+   ===================================================== */
+.section-banner{
+  display: grid; place-items: center;
+  margin: 0 auto .8rem;
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-align: center;
+}
+.section-banner span{
+  display: inline-block;
+  padding: .35rem .85rem;
+  border-bottom: 4px solid var(--accent);
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,.35), transparent);
+}
+.section-banner.xl {
+  margin-top: 2.2rem;
+  margin-bottom: 1.1rem;
+}
+.section-banner.xl span{
+  display:inline-block;
+  font-size: clamp(1.6rem, 1rem + 2.6vw, 2.35rem);
+  padding: .45rem .95rem;
+  border-bottom: 5px solid var(--accent);
+  border-radius: 0 0 10px 10px;
+}
+
+
+/* =====================================================
+   EMBEDS DE VIDEO (genéricos)
+   ===================================================== */
+.channels-group {
+  margin: 3rem auto 2rem;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+.group-title {
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: #4b2f24;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+.yt-embed {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 1rem;
+  padding-top: 56.25%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+.yt-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =====================================================
+   CORONILLA / HORA SANTA — layout limpio
+   ===================================================== */
+:root{
+  --chs-max: 980px;
+  --chs-gap: 1.125rem;
+  --chs-bg: #fff;
+  --chs-shadow: 0 10px 24px rgba(0,0,0,.08);
+  --chs-shadow-h: 0 14px 28px rgba(0,0,0,.12);
+  --chs-pill: #d7823e;
+}
+.chs{
+  max-width: var(--chs-max);
+  margin: 0 auto;
+  padding: 1.75rem 1rem 2.75rem;
+}
+.chs-head{ text-align: center; margin: .25rem auto 1.25rem; }
+.chs-head h1{
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.4rem);
+  line-height: 1.2;
+  margin: 0 0 .4rem;
+  position: relative;
+  display: inline-block;
+}
+.chs-head h1::after{
+  content:"";
+  display:block;
+  width: 140px;
+  height: 6px;
+  margin:.6rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--chs-pill), #e7a15e);
+  opacity:.9;
+}
+.chs-head .lead{ margin: 0; font-size: .98rem; opacity:.8; }
+.chs-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: var(--chs-gap);
+}
+@media (min-width: 680px){ .chs-grid{ grid-template-columns: 1fr 1fr; } }
+.chs-card{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center;
+  gap: .9rem;
+  padding: .9rem 1rem;
+  background: var(--chs-bg);
+  border-radius: 18px;
+  box-shadow: var(--chs-shadow);
+  text-decoration:none;
+  color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.chs-card:hover{ transform: translateY(-2px); box-shadow: var(--chs-shadow-h); }
+.chs-icon{
+  width:56px; height:56px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0,0,0,.06);
+}
+.chs-meta h3{ font-size: 1.02rem; margin:0 0 .15rem; line-height:1.25; text-align:left; }
+.chs-meta small{
+  display:block; opacity:.65; font-size:.92rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 44ch;
+}
+.chs-cta{
+  font-size:.9rem; padding:.5rem .75rem; border-radius:999px;
+  background: #f3f0eb; color:#5f452e; border:1px solid #e5d8ca;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.chs-card:hover .chs-cta{ background: var(--chs-pill); color:#fff; border-color: transparent; }
+.chs + *{ margin-top: 1.25rem; }
+
+
+
+
+/* =====================================================
+   MEDIA QUERIES (ajustes finos)
+   ===================================================== */
+@media (max-width: 1024px){
+  .titulo-img{ width: 80px; }
+}
+@media (max-width: 900px){
+  /* El tweet cabrá mejor en tablets */
+  .papa-card.tweet iframe{ transform: scale(.8); width: 125%; height:125%; }
+}
+@media (max-width: 720px){
+  .tabs{ gap: .5rem; }
+  .tab{ padding: .6rem .85rem; border-radius: 10px; font-size: .95rem; }
+  .dd-link{ padding: .6rem .4rem .6rem .85rem; }
+  .dd-trigger{ padding: .6rem .7rem; }
+  .titulo-img{ width: 72px; }
+
+  .pdf-frame{ height: 70vh; }
+}
+
+/* Utilidades */
+.muted{ color: var(--muted); }
+.center{ text-align: center; }
+.container{ width: min(1180px, 92vw); margin-inline: auto; }

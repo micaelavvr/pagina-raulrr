@@ -1,103 +1,122 @@
-/* ====== Colores base (hereda de styles.css) ====== */
-:root{
-  --bg: #efd0a3;
-  --paper: #fff8ec;
-  --ink: #3c2415;
-  --muted: #7a5a4a;
-  --accent: #e6954a;
-  --accent-700: #c7742b;
-  --line: #ecd7b9;
-  --shadow: 0 10px 24px rgba(60,36,21,.10);
-  --shadow-2: 0 16px 34px rgba(60,36,21,.16);
-}
+/* ===========================
+   BIBLIA — HOJA COMPLETA
+   (sin dependencias de styles.css)
+   =========================== */
 
-/* ====== Hero ====== */
-.biblia-hero{
-  text-align:center;
-  max-width: 980px;
-  margin: 1.6rem auto 1.6rem;
-  padding: 0 1rem;
-}
-.biblia-title{
-  font-size: clamp(1.8rem, 1.2rem + 2.4vw, 2.7rem);
-  margin: 0 0 .5rem;
+/* Base local */
+.page-title {
+  margin: 0 auto .35rem;
+  text-align: center;
   font-weight: 800;
+  line-height: 1.2;
+  color: #3f241e;
+  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.3rem);
 }
-.biblia-sub{
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.04rem;
-}
-
-/* ====== Grid de documentos ====== */
-.biblia-container{
-  max-width: 1200px;
-  margin: 0 auto 2.2rem;
-  padding: 0 1rem;
+.section-sub {
+  margin: 0 auto 1.2rem;
+  text-align: center;
+  color: #7a5a4a;
+  font-size: clamp(.95rem, .9rem + .2vw, 1.05rem);
 }
 
-.docs-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
+/* Grid de tarjetas */
+.bib-grid {
+  width: min(1160px, 92vw);
+  margin: 24px auto 32px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+}
+@media (max-width: 1024px) {
+  .bib-grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+@media (max-width: 640px) {
+  .bib-grid { grid-template-columns: 1fr; }
 }
 
-.doc-card{
-  display:flex; align-items:center; gap:14px;
-  padding: 14px 16px;
-  background:#fff; border:1px solid #f1d8bd;
+/* Tarjeta */
+.bib-card {
+  background: #ffffff;
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  padding: 16px;
+  box-shadow: 0 10px 26px rgba(60,36,21,.10);
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 10px;
+  align-items: center;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
-.doc-icon{
-  width:58px; height:58px; border-radius:14px;
-  background:#fff1e4; border:1px solid #f1d8bd;
-  display:grid; place-items:center; overflow:hidden;
+.bib-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(60,36,21,.16);
 }
-.doc-icon img{ width:72%; height:72%; object-fit:contain; }
-.doc-meta h3{ margin:.1rem 0 .2rem; font-size:1.05rem; font-weight:800; }
-.doc-meta small{ color:var(--muted); }
-.doc-actions{ margin-top:.45rem; display:flex; gap:.5rem; }
 
-.btn{
-  display:inline-flex; align-items:center; gap:.35rem;
-  padding:.52rem .85rem; border-radius:10px;
-  background: var(--accent); color:#fff; font-weight:800;
+/* Ícono */
+.bib-ico {
+  width: 56px;
+  height: 56px;
+  grid-row: 1 / span 2;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff7ea;
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  padding: 6px;
+}
+
+/* Título dentro de la tarjeta */
+.bib-card > div strong {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #3f241e;
+}
+
+/* Acciones */
+.bib-actions {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Botón */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .55rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  background: #e6954a;       /* acento */
+  color: #fff;
   box-shadow: 0 6px 16px rgba(230,149,74,.28);
-  text-decoration:none;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
 }
-.btn:hover{ filter:brightness(1.04); transform: translateY(-1px); }
-.btn.ghost{
-  background:#fff; color:#5a3b29; border:1px solid #efc89e; box-shadow:none;
+.btn:hover {
+  transform: translateY(-1px);
+  background: #c7742b;
+  box-shadow: 0 10px 22px rgba(230,149,74,.34);
 }
-.btn.ghost:hover{ background:#fff7ed; }
 
-/* ====== Visor PDF ====== */
-.pdf-viewer{
-  margin-top: 1.6rem;
-  background: var(--paper);
-  border: 1px solid var(--line);
+/* Visor */
+#bib-viewer-wrap {
+  width: min(1160px, 92vw);
+  margin: 0 auto 56px;
+  background: #fffdf8;
+  border: 1px solid #ecd7b9;
   border-radius: 16px;
-  box-shadow: var(--shadow);
-  padding: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 26px rgba(60,36,21,.08);
 }
-.viewer-head{
-  display:flex; align-items:baseline; gap:.6rem; margin:0 0 .5rem;
-}
-.viewer-head h2{ margin:0; font-size:1.1rem; font-weight:800; }
-.viewer-head small{ color:var(--muted); }
-
-.viewer-frame{
-  border-radius: 12px; overflow:hidden;
-  border:1px solid #f0dac1; background:#fff;
-  height: clamp(420px, 56vw, 680px);
-}
-.viewer-frame iframe{
-  width:100%; height:100%; border:0; display:block;
-}
-
-/* Responsive */
-@media (max-width:720px){
-  .doc-card{ padding: 12px; }
-  .doc-icon{ width:52px; height:52px; }
+#bib-viewer {
+  display: block;
+  width: 100%;
+  height: clamp(420px, 62vh, 780px);
+  border: 0;
+  border-radius: 12px;
+  background: #faf6ef;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06) inset;
 }
