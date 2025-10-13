@@ -1,0 +1,158 @@
+/* =====================  MATRIMONIO  ===================== */
+
+:root{
+  --ink: #3f241e;
+  --paper: #fff8ec;
+  --accent: #e6954a;
+  --accent-700: #c7742b;
+  --shadow: 0 16px 38px rgba(84,48,23,.18);
+}
+
+/* HERO */
+.mat-hero{
+  background: radial-gradient(1200px 360px at 50% -80px, rgba(255,255,255,.6), transparent),
+              linear-gradient(180deg, #f7e2c5, #e8c99f);
+  padding: 42px 16px 24px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.04);
+}
+.mat-hero__inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.page-title{
+  margin: 0 auto .35rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 1.1rem + 2vw, 2.6rem);
+}
+.page-subtitle{
+  color: #7a5a4a;
+  margin: 0 auto;
+  font-size: clamp(.98rem, .9rem + .25vw, 1.1rem);
+}
+
+/* INTRO */
+.mat-intro{
+  padding: 22px 16px 6px;
+}
+.mat-intro__card{
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 22px 22px;
+  box-shadow: var(--shadow);
+}
+.mat-intro__title{
+  margin: 0 0 .5rem;
+  font-size: clamp(1.2rem, 1rem + .9vw, 1.6rem);
+  color: var(--ink);
+  font-weight: 800;
+}
+.mat-intro__card p{
+  margin: 0 0 .8rem;
+  color: #4d372d;
+  line-height: 1.65;
+}
+.mat-intro__cta{
+  font-weight: 800;
+  color: var(--ink);
+}
+.mat-intro__source{
+  margin-top: .4rem;
+  font-size: .95rem;
+}
+.mat-intro__source a{ color: var(--accent-700); text-decoration: underline; }
+
+/* CANALES */
+.mat-channels{
+  padding: 10px 16px 36px;
+}
+.mat-channels .page-title{
+  text-align: center;
+  margin-bottom: 14px;
+}
+.mat-channels__grid{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+  padding: 0 2px;
+}
+.mat-channel{
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.mat-channel__media{
+  position: relative;
+  min-height: 160px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.35)),
+    var(--bg, radial-gradient(circle at 30% 40%, #e9c9a0, #d8b48a));
+  background-size: cover;
+  background-position: center;
+}
+.mat-channel__overlay{
+  position: absolute; inset: 0;
+  box-shadow: inset 0 -80px 120px rgba(0,0,0,.35);
+}
+.mat-channel__avatar{
+  position: absolute; left: 18px; bottom: -28px;
+  width: 64px; height: 64px;
+  background: #fff; border-radius: 16px;
+  display: grid; place-items: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,.28);
+}
+.mat-channel__avatar img{ width: 42px; height: 42px; object-fit: contain; }
+
+.mat-channel__body{
+  padding: 42px 18px 16px;
+}
+.mat-channel__title{
+  margin: 0 0 .35rem;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1rem + .4vw, 1.25rem);
+  font-weight: 800;
+}
+.mat-channel__desc{
+  color: #4d372d;
+  margin: 0 0 .8rem;
+  line-height: 1.6;
+}
+.mat-channel__actions{
+  display: flex; gap: .6rem; flex-wrap: wrap;
+}
+.btn{
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: #fff; font-weight: 800;
+  padding: .55rem 1.05rem; border-radius: 999px; text-decoration: none;
+  box-shadow: 0 8px 18px rgba(230,149,74,.28);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn:hover{ background: var(--accent-700); transform: translateY(-2px); }
+
+/* Videos opcionales */
+.mat-videos{
+  max-width: 1200px; margin: 1.4rem auto 0; padding: 0 1rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem;
+}
+.mat-video-card{
+  background: #fff; border-radius: 14px; padding: 14px; box-shadow: var(--shadow); text-align: center;
+}
+.mat-video-card iframe{
+  width: 100%; aspect-ratio: 16/9; height: auto; border: 0; border-radius: 12px; display: block;
+}
+.video-title{ margin-top: 8px; font-weight: 800; }
+
+/* Responsive fino */
+@media (max-width: 640px){
+  .mat-channel__avatar{ left: 12px; bottom: -24px; width: 56px; height: 56px; }
+  .mat-channel__avatar img{ width: 36px; height: 36px; }
+}

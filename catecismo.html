@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +8,8 @@
 
   <!-- Estilos de esta página -->
   <link rel="stylesheet" href="css/catecismo.css?v=1" />
-    <link rel="stylesheet" href="css/styles.css?v=3">
-    <link rel="icon" href="img/cruz.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="icon" href="img/cruz.png" type="image/png">
 
 
   <!-- Fuente opcional para títulos -->
@@ -27,7 +28,8 @@
       <!-- Canales con desplegable -->
       <div class="tab dd" data-dd>
         <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1" aria-label="Abrir menú">▾</button>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
+          aria-label="Abrir menú">▾</button>
         <ul id="dd-menu-1" class="dd-menu" hidden>
           <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
         </ul>
@@ -41,12 +43,13 @@
       <!-- MÁS -->
       <div class="tab dd more" data-dd>
         <span class="dd-link">Más</span>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-more" aria-label="Abrir menú">▾</button>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-more"
+          aria-label="Abrir menú">▾</button>
         <ul id="dd-menu-more" class="dd-menu" hidden>
           <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
           <li><a href="apps.html">Apps Católicas</a></li>
           <li><a href="biblia.html">Biblia</a></li>
-                    <li><a href="kids.html">Para niños</a></li>
+          <li><a href="matrimonio.html">Sobre El Matrimonio</a></li>
         </ul>
       </div>
     </div>
@@ -64,6 +67,13 @@
     <h2 class="sr-only">Sumos Pontífices</h2>
 
     <div class="popes-scroll" id="popesBar">
+
+      <!-- Leon XIV -->
+      <button class="pope-chip is-active" data-pope="leon" title="Leon XIV">
+        <img src="img/papa.png" alt="Leon XIV">
+        <span>Leon XIV</span>
+      </button>
+
       <!-- Francisco -->
       <button class="pope-chip is-active" data-pope="francisco" title="Francisco">
         <img src="img/francisco.png" alt="Francisco">
@@ -109,60 +119,67 @@
 
     // Avatares por papa (imagen grande decorativa)
     const POPE_AVATAR = {
-      francisco : "img/francisco.png",
-      benedicto : "img/benedicto_XVI.png",
+      leon: "img/papa.png",
+      francisco: "img/francisco.png",
+      benedicto: "img/benedicto_XVI.png",
       juanpabloii: "img/juan-pabloii.png",
-      juanxx    : "img/juan_XXIII.png"
+      juanxx: "img/juan_XXIII.png"
     };
 
     const POPE_NAME = {
-      francisco : "Francisco",
-      benedicto : "Benedicto XVI",
+      leon: "Leon XIV",
+      francisco: "Francisco",
+      benedicto: "Benedicto XVI",
       juanpabloii: "Juan Pablo II",
-      juanxx    : "Juan XXIII"
+      juanxx: "Juan XXIII"
     };
 
     // === Encíclicas por Papa ===
     const ENCICLICAS = {
+
+      leon: [
+        { titulo: "Dilexi te (09 de octubre de 2025)", file: "docs/catecismo/leon/Dilexi te del Santo Padre Leon XIV sobre el amor a los pobres.pdf" }
+      ],
+
       francisco: [
         { titulo: "Dilexit nos (24 de octubre de 2024)", file: "docs/catecismo/20241024-enciclica-dilexit-nos.pdf" },
         { titulo: "Fratelli tutti (3 de octubre de 2020)", file: "docs/catecismo/papa-francesco_20201003_enciclica-fratelli-tutti.pdf" },
-        { titulo: "Laudato si' (24 de mayo de 2015)",   file: "docs/catecismo/papa-francesco_20150524_enciclica-laudato-si_sp.pdf" },
-        { titulo: "Lumen Fidei (29 de junio de 2013)",  file: "docs/catecismo/papa-francesco_20130629_enciclica-lumen-fidei_sp.pdf" }
+        { titulo: "Laudato si' (24 de mayo de 2015)", file: "docs/catecismo/papa-francesco_20150524_enciclica-laudato-si_sp.pdf" },
+        { titulo: "Lumen Fidei (29 de junio de 2013)", file: "docs/catecismo/papa-francesco_20130629_enciclica-lumen-fidei_sp.pdf" }
       ],
 
       benedicto: [
         { titulo: "Deus caritas est (25 de diciembre de 2005)", file: "docs/catecismo/deus_caritas_est.pdf" },
-        { titulo: "Spe salvi (30 de noviembre de 2007)",        file: "docs/catecismo/spe_salvi.pdf" },
-        { titulo: "Caritas in veritate (29 de junio de 2009)",  file: "docs/catecismo/caritas_in_veritate.pdf" }
+        { titulo: "Spe salvi (30 de noviembre de 2007)", file: "docs/catecismo/spe_salvi.pdf" },
+        { titulo: "Caritas in veritate (29 de junio de 2009)", file: "docs/catecismo/caritas_in_veritate.pdf" }
       ],
 
       // --- Juan Pablo II (docs/catecismo/juanpabloii/*.pdf) ---
       juanpabloii: [
-        { titulo: "Centesimus Annus (1 de mayo de 1991)",               file: "docs/catecismo/juanpabloii/Centesimus Annus (1 de mayo de 1991).pdf" },
-        { titulo: "Dives in Misericordia (30 de noviembre de 1980)",     file: "docs/catecismo/juanpabloii/Dives in Misericordia (30 de noviembre de 1980).pdf" },
-        { titulo: "Dominum et Vivificantem (18 de mayo de 1986)",        file: "docs/catecismo/juanpabloii/Dominum et Vivificantem (18 de mayo de 1986).pdf" },
-        { titulo: "Ecclesia de Eucharistia (17 de abril de 2003)",       file: "docs/catecismo/juanpabloii/Ecclesia de Eucharistia (17 de abril de 2003).pdf" },
-        { titulo: "Evangelium Vitae (25 de marzo de 1995)",              file: "docs/catecismo/juanpabloii/Evangelium Vitae (25 de marzo de 1995).pdf" },
-        { titulo: "Fides et Ratio (14 de septiembre de 1998)",           file: "docs/catecismo/juanpabloii/Fides et Ratio (14 de septiembre de 1998).pdf" },
-        { titulo: "Laborem Exercens (14 de septiembre de 1981)",         file: "docs/catecismo/juanpabloii/Laborem Exercens (14 de septiembre de 1981).pdf" },
-        { titulo: "Redemptor Hominis (4 de marzo de 1979)",              file: "docs/catecismo/juanpabloii/Redemptor hominis (4 de marzo de 1979).pdf" },
-        { titulo: "Redemptoris Missio (7 de diciembre de 1990)",         file: "docs/catecismo/juanpabloii/Redemptoris Missio (7 de diciembre de 1990).pdf" },
-        { titulo: "Slavorum Apostoli (2 de junio de 1985)",              file: "docs/catecismo/juanpabloii/Slavorum Apostoli (2 de junio de 1985).pdf" },
-        { titulo: "Sollicitudo Rei Socialis (30 de diciembre de 1987)",  file: "docs/catecismo/juanpabloii/Sollicitudo Rei Socialis (30 de diciembre de 1987).pdf" },
-        { titulo: "Ut Unum Sint (25 de mayo de 1995)",                   file: "docs/catecismo/juanpabloii/Ut Unum Sint (25 de mayo de 1995).pdf" },
-        { titulo: "Veritatis Splendor (6 de agosto de 1993)",            file: "docs/catecismo/juanpabloii/Veritatis Splendor (6 de agosto de 1993).pdf" }
+        { titulo: "Centesimus Annus (1 de mayo de 1991)", file: "docs/catecismo/juanpabloii/Centesimus Annus (1 de mayo de 1991).pdf" },
+        { titulo: "Dives in Misericordia (30 de noviembre de 1980)", file: "docs/catecismo/juanpabloii/Dives in Misericordia (30 de noviembre de 1980).pdf" },
+        { titulo: "Dominum et Vivificantem (18 de mayo de 1986)", file: "docs/catecismo/juanpabloii/Dominum et Vivificantem (18 de mayo de 1986).pdf" },
+        { titulo: "Ecclesia de Eucharistia (17 de abril de 2003)", file: "docs/catecismo/juanpabloii/Ecclesia de Eucharistia (17 de abril de 2003).pdf" },
+        { titulo: "Evangelium Vitae (25 de marzo de 1995)", file: "docs/catecismo/juanpabloii/Evangelium Vitae (25 de marzo de 1995).pdf" },
+        { titulo: "Fides et Ratio (14 de septiembre de 1998)", file: "docs/catecismo/juanpabloii/Fides et Ratio (14 de septiembre de 1998).pdf" },
+        { titulo: "Laborem Exercens (14 de septiembre de 1981)", file: "docs/catecismo/juanpabloii/Laborem Exercens (14 de septiembre de 1981).pdf" },
+        { titulo: "Redemptor Hominis (4 de marzo de 1979)", file: "docs/catecismo/juanpabloii/Redemptor hominis (4 de marzo de 1979).pdf" },
+        { titulo: "Redemptoris Missio (7 de diciembre de 1990)", file: "docs/catecismo/juanpabloii/Redemptoris Missio (7 de diciembre de 1990).pdf" },
+        { titulo: "Slavorum Apostoli (2 de junio de 1985)", file: "docs/catecismo/juanpabloii/Slavorum Apostoli (2 de junio de 1985).pdf" },
+        { titulo: "Sollicitudo Rei Socialis (30 de diciembre de 1987)", file: "docs/catecismo/juanpabloii/Sollicitudo Rei Socialis (30 de diciembre de 1987).pdf" },
+        { titulo: "Ut Unum Sint (25 de mayo de 1995)", file: "docs/catecismo/juanpabloii/Ut Unum Sint (25 de mayo de 1995).pdf" },
+        { titulo: "Veritatis Splendor (6 de agosto de 1993)", file: "docs/catecismo/juanpabloii/Veritatis Splendor (6 de agosto de 1993).pdf" }
       ],
 
       // --- Juan XXIII (docs/catecismo/juanxx/*.pdf) ---
       juanxx: [
-        { titulo: "Ad Petri Cathedram (29 de junio de 1959)",          file: "docs/catecismo/juanxx/Ad Petri Cathedram (29 de junio de 1959).pdf" },
-        { titulo: "Aeterna Dei Sapientia (11 de noviembre de 1961)",   file: "docs/catecismo/juanxx/Aeterna Dei Sapientia (11 de noviembre de 1961).pdf" },
-        { titulo: "Grata Recordatio (26 de septiembre de 1959)",       file: "docs/catecismo/juanxx/Grata Recordatio (26 de septiembre de 1959).pdf" },
-        { titulo: "Mater et Magistra (15 de mayo de 1961)",            file: "docs/catecismo/juanxx/Mater et Magistra (15 de mayo de 1961).pdf" },
-        { titulo: "Pacem in terris (11 de abril de 1963)",             file: "docs/catecismo/juanxx/Pacem in terris (11 de abril de 1963).pdf" },
-        { titulo: "Paenitentiam Agere (1 de julio de 1962)",           file: "docs/catecismo/juanxx/Paenitentiam Agere (1 de julio de 1962).pdf" },
-        { titulo: "Princeps Pastorum (28 de noviembre de 1959)",       file: "docs/catecismo/juanxx/Princeps Pastorum (28 de noviembre de 1959).pdf" }
+        { titulo: "Ad Petri Cathedram (29 de junio de 1959)", file: "docs/catecismo/juanxx/Ad Petri Cathedram (29 de junio de 1959).pdf" },
+        { titulo: "Aeterna Dei Sapientia (11 de noviembre de 1961)", file: "docs/catecismo/juanxx/Aeterna Dei Sapientia (11 de noviembre de 1961).pdf" },
+        { titulo: "Grata Recordatio (26 de septiembre de 1959)", file: "docs/catecismo/juanxx/Grata Recordatio (26 de septiembre de 1959).pdf" },
+        { titulo: "Mater et Magistra (15 de mayo de 1961)", file: "docs/catecismo/juanxx/Mater et Magistra (15 de mayo de 1961).pdf" },
+        { titulo: "Pacem in terris (11 de abril de 1963)", file: "docs/catecismo/juanxx/Pacem in terris (11 de abril de 1963).pdf" },
+        { titulo: "Paenitentiam Agere (1 de julio de 1962)", file: "docs/catecismo/juanxx/Paenitentiam Agere (1 de julio de 1962).pdf" },
+        { titulo: "Princeps Pastorum (28 de noviembre de 1959)", file: "docs/catecismo/juanxx/Princeps Pastorum (28 de noviembre de 1959).pdf" }
       ]
     };
 
@@ -229,22 +246,23 @@
     });
   </script>
 
-<script>
-  // Dropdown accesible (déjalo una sola vez por página)
-  document.querySelectorAll('[data-dd]').forEach(dd => {
-    const btn = dd.querySelector('.dd-trigger');
-    const menu = dd.querySelector('.dd-menu');
-    const setOpen = on => {
-      dd.classList.toggle('open', on);
-      menu.hidden = !on;
-      btn.setAttribute('aria-expanded', on ? 'true' : 'false');
-    };
-    btn.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
-    menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
-    document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
-  });
-</script>
+  <script>
+    // Dropdown accesible (déjalo una sola vez por página)
+    document.querySelectorAll('[data-dd]').forEach(dd => {
+      const btn = dd.querySelector('.dd-trigger');
+      const menu = dd.querySelector('.dd-menu');
+      const setOpen = on => {
+        dd.classList.toggle('open', on);
+        menu.hidden = !on;
+        btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+      };
+      btn.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
+      menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
+    });
+  </script>
 
 
 </body>
+
 </html>
