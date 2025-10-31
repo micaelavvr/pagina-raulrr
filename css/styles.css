@@ -664,3 +664,74 @@ body { line-height: 1.5; }
   background: #fff;
   box-shadow: 0 16px 34px rgba(84,48,23,.16);
 }
+
+/* ===================== */
+/* AJUSTES MOVILES EXTRA */
+/* ===================== */
+
+/* --- Sección PAPA LEÓN XIV --- */
+@media (max-width: 768px){
+  .papa-bloque{
+    padding: 0 1rem;
+  }
+
+  /* Los cards del papa (foto, escudo, tweet) en columna */
+  .papa-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .papa-card.vertical{
+    width: 100%;
+    max-width: 360px;
+  }
+
+  /* Imagen del Papa y escudo ajustadas */
+  .papa-card img{
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  /* Corrige el tweet de X */
+  .twitter-tweet{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* --- Menú "Otros" / dropdown --- */
+@media (max-width: 768px){
+  .tabs .dd.more{
+    position: relative;
+  }
+
+  .tabs .dd.more .dd-menu{
+    left: 0;
+    right: auto;
+    width: max-content;
+    min-width: 180px;
+    max-width: 92vw;
+    overflow-x: auto;
+    border-radius: 12px;
+  }
+
+  /* Espaciado del trigger y etiqueta */
+  .tabs .dd.more .dd-link{
+    padding-right: .25rem;
+  }
+  .tabs .dd.more .dd-trigger{
+    padding-left: .25rem;
+  }
+}
+
+/* --- Ajuste visual del dropdown en pantallas pequeñas --- */
+.dd-menu a{
+  font-size: 0.95rem;
+  padding: .45rem .75rem;
+  display: block;
+  white-space: nowrap;
+}
