@@ -279,6 +279,29 @@
     });
   </script>
 
+<script>
+  (function(){
+    const tabs = document.getElementById('navTabs');
+    if(!tabs) return;
+
+    /* Rueda/touch vertical => se convierte a scroll horizontal */
+    tabs.addEventListener('wheel', (e) => {
+      // si el movimiento vertical domina, desplaza en X
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        tabs.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    /* Cuando un enlace del nav recibe foco, lo centramos */
+    tabs.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('focus', () => {
+        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+    });
+  })();
+</script>
+
 
 </body>
 
