@@ -138,6 +138,47 @@ body.loading{ overflow:hidden; }
 .tab.more:hover .dd-link{ background:#f1e6d8; }
 
 
+/* ============ NAV MOVIL ============ */
+
+/* Modo compacto: reduce paddings y tamaño de fuente */
+@media (max-width: 980px){
+  .tabs { gap: .4rem; }
+  .tab, .dd > .dd-link, .dd > .dd-trigger{
+    padding: .55rem .75rem;                /* más compacto */
+    font-size: clamp(.9rem, 1vw + .8rem, 1rem);
+    line-height: 1.1;
+  }
+}
+
+/* Hacer la barra deslizable en horizontal */
+@media (max-width: 980px){
+  .tabs-wrap{ position: sticky; top: 0; z-index: 50; }  /* opcional: fija el nav */
+  .tabs{
+    display: flex;
+    gap: .5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;                  /* que no baje de línea */
+    -webkit-overflow-scrolling: touch;    /* inercia en iOS */
+    scroll-snap-type: x proximity;
+    padding-bottom: .4rem;
+    /* bordes degradados para indicar que hay más */
+    mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
+  }
+  .tabs > *{ flex: 0 0 auto; scroll-snap-align: start; }
+  .tabs::-webkit-scrollbar{ height: 0; }  /* oculta scrollbar en webkit */
+}
+
+/* Accesibilidad: hit area */
+.tab, .dd > .dd-link, .dd > .dd-trigger{
+  min-height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* Botón desplegable sigue compacto */
+.dd .dd-trigger{ padding-left: .5rem; padding-right: .5rem; }
+
+
 /* =====================================================
    PAPA LEÓN XIV — rejilla y tamaños
    ===================================================== */
@@ -570,4 +611,56 @@ body.loading{ overflow:hidden; }
 /* Responsive fino */
 @media (max-width: 640px){
   .kids-grid{ grid-template-columns: 1fr; }
+}
+
+/* ==== Ajustes responsive globales MOVILES ==== */
+:root{
+  --container: min(1200px, 92vw);
+  --radius: 18px;
+}
+
+/* Imágenes y iframes escalables */
+img, svg, video { max-width: 100%; height: auto; display: block; }
+iframe { max-width: 100%; border: 0; }
+
+/* Contenedores */
+.container { width: var(--container); margin-inline: auto; }
+
+/* Tipografía y legibilidad */
+html { font-size: 100%; }
+body { line-height: 1.5; }
+
+/* Titulares fluidos */
+.page-title{
+  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.3rem);
+}
+.section-sub{
+  font-size: clamp(.95rem, .9rem + .2vw, 1.05rem);
+}
+
+/* Botones y tabs accesibles */
+.btn, .tab, .dd-trigger{
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* ==== Visores / iframes responsivos ==== */
+.video-16x9{
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.pdf-viewer{
+  width: 100%;
+  height: min(78vh, 860px);
+  border: 0;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(84,48,23,.16);
 }
