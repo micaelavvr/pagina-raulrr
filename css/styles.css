@@ -10,11 +10,21 @@
   --line:#e8caa2;
   --shadow: 0 10px 24px rgba(84,48,23,.10);
   --shadow-2: 0 16px 34px rgba(84,48,23,.16);
+
+  --container: min(1200px, 92vw);
+  --radius: 18px;
+
+  --chs-max: 980px;
+  --chs-gap: 1.125rem;
+  --chs-bg: #fff;
+  --chs-shadow: 0 10px 24px rgba(0,0,0,.08);
+  --chs-shadow-h: 0 14px 28px rgba(0,0,0,.12);
+  --chs-pill: #d7823e;
 }
 
 /* ============ BASE ============ */
 *{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+html{ scroll-behavior: smooth; font-size: 100%; }
 body{
   margin:0;
   background:var(--bg);
@@ -22,9 +32,14 @@ body{
   font-family: ui-serif, Georgia, "Times New Roman", serif;
   line-height:1.5;
 }
-img{ max-width:100%; height:auto; display:block; }
+img, svg, video { max-width: 100%; height:auto; display:block; }
+iframe { max-width: 100%; border: 0; }
 a{ color:inherit; text-decoration:none; }
 :target{ scroll-margin-top: 110px; }
+
+.container { width: var(--container); margin-inline: auto; }
+.muted{ color: var(--muted); }
+.center{ text-align: center; }
 
 /* ============ PRELOADER ============ */
 #preloader{
@@ -60,7 +75,7 @@ body.loading{ overflow:hidden; }
 }
 .frase-teresita .santa-nombre{ font-weight:800; color:var(--muted); margin-top:.35rem; }
 
-/* ============ TÍTULO ========= */
+/* ============ TÍTULO ============ */
 .nuevo-header{
   max-width:1200px; margin:1.8rem auto 1rem; padding:0 1rem;
   display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1rem;
@@ -74,7 +89,7 @@ body.loading{ overflow:hidden; }
 .titulo-img{ width:90px; border-radius:50%; box-shadow:var(--shadow); justify-self:center; }
 .izquierda{ grid-column:1/2; } .derecha{ grid-column:3/4; }
 
-/* ============ NAV ============ */
+/* ============ NAV (DESKTOP/BASE) ============ */
 .tabs-wrap{
   position: sticky; top:0;
   z-index: 1500;
@@ -83,21 +98,22 @@ body.loading{ overflow:hidden; }
   box-shadow: 0 6px 18px rgba(60,36,21,.06);
   backdrop-filter: saturate(115%) blur(6px);
   padding-bottom: 6px;
-  overflow: visible;              /* MUY IMPORTANTE */
+  overflow: visible;
 }
 .tabs{
   max-width:1200px; margin:0 auto;
   display:flex; align-items:center; justify-content:center;
   gap:.75rem; padding:.75rem 1rem;
-  flex-wrap: nowrap;               /* una sola línea */
+  flex-wrap: nowrap;
   white-space: nowrap;
-  overflow: visible;               /* MUY IMPORTANTE */
+  overflow: visible;
 }
 .tab{
   position:relative; display:inline-flex; align-items:center;
   padding:.65rem 1rem; border-radius:12px; font-weight:700;
   color:var(--ink);
   flex-shrink:0;
+  min-height: 44px;
 }
 .tab:hover{ background: rgba(0,0,0,.05); }
 .tab.is-active::after{
@@ -105,7 +121,7 @@ body.loading{ overflow:hidden; }
   height:4px; border-radius:999px; background:var(--accent);
 }
 
-/* Dropdown genérico */
+/* Dropdown (DESKTOP) */
 .tab.dd{ position: relative; }
 .dd-link{ cursor:pointer; }
 .dd-trigger{
@@ -113,13 +129,19 @@ body.loading{ overflow:hidden; }
   font-weight:700; color:inherit; border-radius:10px;
   width:2rem; height:2rem; display:inline-grid; place-items:center;
   box-shadow:0 1px 0 rgba(0,0,0,.08), 0 2px 14px rgba(0,0,0,.06);
+  min-height: 44px;
 }
 .dd-trigger:hover{ background:#faf4eb; }
 .dd-menu{
-  position:absolute; top: calc(100% + 8px);
-  left:0; min-width:260px; background:var(--paper);
-  border:1px solid var(--line); border-radius:14px;
-  padding:8px; box-shadow:0 16px 30px rgba(60,36,21,.12);
+  position:absolute;
+  top: calc(100% + 8px);
+  left:0;
+  min-width:260px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:8px;
+  box-shadow:0 16px 30px rgba(60,36,21,.12);
   z-index: 1600;
 }
 .dd-menu li a{
@@ -127,61 +149,13 @@ body.loading{ overflow:hidden; }
 }
 .dd-menu li a:hover{ background:#f6e8d5; }
 
-/* Centrar el menú del botón “Más” */
-.tab.more .dd-menu{
-  left:50%; transform: translateX(-50%);
-}
+/* Centrar “Más/Otros” */
+.tab.more .dd-menu{ left:50%; transform: translateX(-50%); }
 .tab.more .dd-link,
-.tab.more .dd-trigger{
-  background:#f6efe6;
-}
+.tab.more .dd-trigger{ background:#f6efe6; }
 .tab.more:hover .dd-link{ background:#f1e6d8; }
 
-
-/* ============ NAV MOVIL ============ */
-
-/* Modo compacto: reduce paddings y tamaño de fuente */
-@media (max-width: 980px){
-  .tabs { gap: .4rem; }
-  .tab, .dd > .dd-link, .dd > .dd-trigger{
-    padding: .55rem .75rem;                /* más compacto */
-    font-size: clamp(.9rem, 1vw + .8rem, 1rem);
-    line-height: 1.1;
-  }
-}
-
-/* Hacer la barra deslizable en horizontal */
-@media (max-width: 980px){
-  .tabs-wrap{ position: sticky; top: 0; z-index: 50; }  /* opcional: fija el nav */
-  .tabs{
-    display: flex;
-    gap: .5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;                  /* que no baje de línea */
-    -webkit-overflow-scrolling: touch;    /* inercia en iOS */
-    scroll-snap-type: x proximity;
-    padding-bottom: .4rem;
-    /* bordes degradados para indicar que hay más */
-    mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
-  }
-  .tabs > *{ flex: 0 0 auto; scroll-snap-align: start; }
-  .tabs::-webkit-scrollbar{ height: 0; }  /* oculta scrollbar en webkit */
-}
-
-/* Accesibilidad: hit area */
-.tab, .dd > .dd-link, .dd > .dd-trigger{
-  min-height: 44px;
-  display: inline-flex; align-items: center; justify-content: center;
-}
-
-/* Botón desplegable sigue compacto */
-.dd .dd-trigger{ padding-left: .5rem; padding-right: .5rem; }
-
-
-/* =====================================================
-   PAPA LEÓN XIV — rejilla y tamaños
-   ===================================================== */
+/* ============ PAPA LEÓN XIV ============ */
 .papa-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -201,42 +175,28 @@ body.loading{ overflow:hidden; }
   justify-content: center;
   overflow: hidden;
 }
-.papa-card.vertical{
-  aspect-ratio: 3 / 4;
-}
+.papa-card.vertical{ aspect-ratio: 3 / 4; }
 .papa-card.vertical img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
 }
-
-/* Tweet: más pequeño pero completo */
 .papa-card.tweet{
-  /* dejamos altura auto y controlamos el tamaño por escala */
   padding: 12px;
   justify-content: flex-start;
   align-items: flex-start;
   overflow: visible;
 }
-.papa-card.tweet .twitter-tweet{
-  margin: 0 !important;
-  /* limitar el ancho visual del widget */
-  max-width: 520px;
-}
+.papa-card.tweet .twitter-tweet{ margin: 0 !important; max-width: 520px; }
 .papa-card.tweet iframe{
-  /* la X suele renderizar un iframe grande; lo escalamos */
   transform: scale(.85);
   transform-origin: top left;
-  width: 118%;           /* compensación de la escala */
+  width: 118%;
   height: 118%;
 }
 
-
-
-/* =====================================================
-   PÁGINAS RECOMENDADAS
-   ===================================================== */
+/* ============ PÁGINAS RECOMENDADAS ============ */
 .paginas-recomendadas{
   max-width: 1200px;
   margin: 1rem auto 2rem;
@@ -264,11 +224,7 @@ body.loading{ overflow:hidden; }
   box-shadow: 0 16px 30px rgba(84,48,23,.16);
 }
 
-
-
-/* =====================================================
-   BANDERAS / TÍTULOS DE SECCIÓN
-   ===================================================== */
+/* ============ BANDERAS / TÍTULOS DE SECCIÓN ============ */
 .section-banner{
   display: grid; place-items: center;
   margin: 0 auto .8rem;
@@ -284,22 +240,15 @@ body.loading{ overflow:hidden; }
   border-radius: 0 0 8px 8px;
   background: linear-gradient(180deg, rgba(255,255,255,.35), transparent);
 }
-.section-banner.xl {
-  margin-top: 2.2rem;
-  margin-bottom: 1.1rem;
-}
+.section-banner.xl { margin-top: 2.2rem; margin-bottom: 1.1rem; }
 .section-banner.xl span{
-  display:inline-block;
   font-size: clamp(1.6rem, 1rem + 2.6vw, 2.35rem);
   padding: .45rem .95rem;
   border-bottom: 5px solid var(--accent);
   border-radius: 0 0 10px 10px;
 }
 
-
-/* =====================================================
-   EMBEDS DE VIDEO (genéricos)
-   ===================================================== */
+/* ============ EMBEDS DE VIDEO ============ */
 .channels-group {
   margin: 3rem auto 2rem;
   max-width: 1200px;
@@ -327,20 +276,9 @@ body.loading{ overflow:hidden; }
   inset: 0;
   width: 100%;
   height: 100%;
-  border: 0;
 }
 
-/* =====================================================
-   CORONILLA / HORA SANTA — layout limpio
-   ===================================================== */
-:root{
-  --chs-max: 980px;
-  --chs-gap: 1.125rem;
-  --chs-bg: #fff;
-  --chs-shadow: 0 10px 24px rgba(0,0,0,.08);
-  --chs-shadow-h: 0 14px 28px rgba(0,0,0,.12);
-  --chs-pill: #d7823e;
-}
+/* ============ CORONILLA / HORA SANTA ============ */
 .chs{
   max-width: var(--chs-max);
   margin: 0 auto;
@@ -404,37 +342,7 @@ body.loading{ overflow:hidden; }
 .chs-card:hover .chs-cta{ background: var(--chs-pill); color:#fff; border-color: transparent; }
 .chs + *{ margin-top: 1.25rem; }
 
-
-
-
-/* =====================================================
-   MEDIA QUERIES (ajustes finos)
-   ===================================================== */
-@media (max-width: 1024px){
-  .titulo-img{ width: 80px; }
-}
-@media (max-width: 900px){
-  /* El tweet cabrá mejor en tablets */
-  .papa-card.tweet iframe{ transform: scale(.8); width: 125%; height:125%; }
-}
-@media (max-width: 720px){
-  .tabs{ gap: .5rem; }
-  .tab{ padding: .6rem .85rem; border-radius: 10px; font-size: .95rem; }
-  .dd-link{ padding: .6rem .4rem .6rem .85rem; }
-  .dd-trigger{ padding: .6rem .7rem; }
-  .titulo-img{ width: 72px; }
-
-  .pdf-frame{ height: 70vh; }
-}
-
-/* Utilidades */
-.muted{ color: var(--muted); }
-.center{ text-align: center; }
-.container{ width: min(1180px, 92vw); margin-inline: auto; }
-
-/* ====== Para niños (home) ====== */
-
-/* Títulos locales (acompañan look&feel) */
+/* ============ KIDS (HOME + VISOR + MODAL IMAGEN) ============ */
 #kids-home .page-title{
   margin: 0 auto .35rem;
   text-align: center;
@@ -449,8 +357,6 @@ body.loading{ overflow:hidden; }
   color: #7a5a4a;
   font-size: clamp(.95rem, .9rem + .2vw, 1.05rem);
 }
-
-/* Grid/cards de recursos */
 .kids-grid{
   max-width: 1200px;
   margin: 1rem auto 2rem;
@@ -502,13 +408,12 @@ body.loading{ overflow:hidden; }
   text-decoration: none;
   box-shadow: 0 8px 18px rgba(230,149,74,.28);
   transition: transform .15s ease, background .15s ease;
+  min-height: 44px;
 }
 .kids-actions .btn:hover{
   background: var(--accent-700, #c7742b);
   transform: translateY(-2px);
 }
-
-/* Visor */
 #kids-viewer-wrap{
   max-width: 1200px;
   margin: 0 auto 3rem;
@@ -523,8 +428,6 @@ body.loading{ overflow:hidden; }
   background: #fff;
   box-shadow: 0 16px 34px rgba(84,48,23,.16);
 }
-
-/* Centrado de imagen y zoom */
 .kids-bloque .kids-grid.one{
   display: grid;
   grid-template-columns: 1fr;
@@ -549,12 +452,10 @@ body.loading{ overflow:hidden; }
   box-shadow: 0 10px 24px rgba(0,0,0,.15);
   cursor: zoom-in;
 }
-
-/* Modal de imagen */
 .img-modal{
   position: fixed;
   inset: 0;
-  display: none;                 /* visible con .open */
+  display: none;
   align-items: center;
   justify-content: center;
   background: rgba(0,0,0,.85);
@@ -578,7 +479,7 @@ body.loading{ overflow:hidden; }
 }
 .img-modal__close:hover{ background: rgba(255,255,255,.28); }
 
-/* Videos */
+/* Videos kids */
 .kids-video-grid{
   max-width: 1200px;
   margin: 2rem auto;
@@ -598,7 +499,6 @@ body.loading{ overflow:hidden; }
   width: 100%;
   aspect-ratio: 16/9;
   height: auto;
-  border: 0;
   border-radius: 12px;
   display: block;
 }
@@ -608,135 +508,7 @@ body.loading{ overflow:hidden; }
   font-size: 1.1rem;
 }
 
-/* Responsive fino */
-@media (max-width: 640px){
-  .kids-grid{ grid-template-columns: 1fr; }
-}
-
-/* ==== Ajustes responsive globales MOVILES ==== */
-:root{
-  --container: min(1200px, 92vw);
-  --radius: 18px;
-}
-
-/* Imágenes y iframes escalables */
-img, svg, video { max-width: 100%; height: auto; display: block; }
-iframe { max-width: 100%; border: 0; }
-
-/* Contenedores */
-.container { width: var(--container); margin-inline: auto; }
-
-/* Tipografía y legibilidad */
-html { font-size: 100%; }
-body { line-height: 1.5; }
-
-/* Titulares fluidos */
-.page-title{
-  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.3rem);
-}
-.section-sub{
-  font-size: clamp(.95rem, .9rem + .2vw, 1.05rem);
-}
-
-/* Botones y tabs accesibles */
-.btn, .tab, .dd-trigger{
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-/* ==== Visores / iframes responsivos ==== */
-.video-16x9{
-  aspect-ratio: 16/9;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-.pdf-viewer{
-  width: 100%;
-  height: min(78vh, 860px);
-  border: 0;
-  border-radius: var(--radius);
-  background: #fff;
-  box-shadow: 0 16px 34px rgba(84,48,23,.16);
-}
-
-/* ===================== */
-/* AJUSTES MOVILES EXTRA */
-/* ===================== */
-
-/* --- Sección PAPA LEÓN XIV --- */
-@media (max-width: 768px){
-  .papa-bloque{
-    padding: 0 1rem;
-  }
-
-  /* Los cards del papa (foto, escudo, tweet) en columna */
-  .papa-grid{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .papa-card.vertical{
-    width: 100%;
-    max-width: 360px;
-  }
-
-  /* Imagen del Papa y escudo ajustadas */
-  .papa-card img{
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-  }
-
-  /* Corrige el tweet de X */
-  .twitter-tweet{
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-  }
-}
-
-/* --- Menú "Otros" / dropdown --- */
-@media (max-width: 768px){
-  .tabs .dd.more{
-    position: relative;
-  }
-
-  .tabs .dd.more .dd-menu{
-    left: 0;
-    right: auto;
-    width: max-content;
-    min-width: 180px;
-    max-width: 92vw;
-    overflow-x: auto;
-    border-radius: 12px;
-  }
-
-  /* Espaciado del trigger y etiqueta */
-  .tabs .dd.more .dd-link{
-    padding-right: .25rem;
-  }
-  .tabs .dd.more .dd-trigger{
-    padding-left: .25rem;
-  }
-}
-
-/* --- Ajuste visual del dropdown en pantallas pequeñas --- */
-.dd-menu a{
-  font-size: 0.95rem;
-  padding: .45rem .75rem;
-  display: block;
-  white-space: nowrap;
-}
-
-/* --- 1 --- */
+/* Live counter (base) */
 .live-counter{
   max-width:1200px;
   margin:.6rem auto 0;
@@ -757,229 +529,62 @@ body { line-height: 1.5; }
   box-shadow:var(--shadow);
 }
 
-/* =========================
-   LIVE COUNTER – BURBUJA
-   ========================= */
+/* LIVE BUBBLE (BASE) */
 .live-bubble{
   position: fixed;
   bottom: 22px;
   right: 22px;
   z-index: 9999;
-
   display: flex;
   align-items: center;
   gap: .45rem;
-
   padding: .55rem .75rem;
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(10px) saturate(120%);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
-
   border: 1px solid rgba(255,255,255,.6);
   box-shadow:
     0 10px 30px rgba(0,0,0,.18),
     inset 0 1px 0 rgba(255,255,255,.6);
-
   font-weight: 700;
   color: var(--ink);
-
   animation: live-float 4s ease-in-out infinite;
 }
-
-/* Ojito */
-.live-bubble .live-eye{
-  font-size: 1rem;
-  opacity: .85;
-}
-
-/* Número */
+.live-bubble .live-eye{ font-size: 1rem; opacity: .85; }
 .live-bubble #liveCount{
   min-width: 1.4rem;
   text-align: center;
   font-weight: 900;
   color: var(--accent-700);
 }
-
-/* Texto */
 .live-bubble .live-text{
   font-size: .85rem;
   opacity: .8;
   white-space: nowrap;
 }
-
-/* Botón cerrar */
 .live-bubble .live-close{
   margin-left: .35rem;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 0;
-
   background: rgba(0,0,0,.08);
   color: var(--ink);
-
   font-size: 16px;
   line-height: 18px;
   cursor: pointer;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+.live-bubble .live-close:hover{ background: rgba(0,0,0,.15); }
+@keyframes live-float{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-6px); } }
 
-.live-bubble .live-close:hover{
-  background: rgba(0,0,0,.15);
+/* ============ Ajustes finos desktop/tablet ============ */
+@media (max-width: 1024px){
+  .titulo-img{ width: 80px; }
 }
-
-/* Animación flotante sutil */
-@keyframes live-float{
-  0%,100%{ transform: translateY(0); }
-  50%{ transform: translateY(-6px); }
-}
-
-/* Móvil: un poco más arriba */
-@media (max-width: 600px){
-  .live-bubble{
-    bottom: 16px;
-    right: 16px;
-    font-size: .9rem;
-  }
-}
-
-/* =========================================
-   DROPDOWN MÓVIL – MODAL TIPO BURBUJA
-   ========================================= */
-
-/* Backdrop */
-.dd-backdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.22);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 10000;
-}
-.dd-backdrop[hidden]{ display:none !important; }
-
-/* Bloquea scroll cuando está abierto */
-body.dd-open{
-  overflow: hidden;
-  touch-action: none;
-}
-
-/* Desktop: comportamiento normal */
-.tabs-wrap{ overflow: visible; }
-.tabs{ overflow: visible; }
-
-/* ===============================
-   MÓVIL
-   =============================== */
-@media (max-width: 980px){
-
-  /* el carril del nav sigue scrolleable */
-  .tabs{
-    overflow-x: auto;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Menú flotante centrado */
-  .dd-menu{
-    position: fixed !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    top: 120px;                 /* fallback si JS no calcula */
-    width: min(92vw, 420px);
-    max-height: 60vh;
-    overflow: auto;
-
-    padding: 12px;
-    border-radius: 18px;
-
-    background: rgba(255, 246, 226, 0.95);
-    backdrop-filter: blur(12px) saturate(120%);
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
-
-    border: 1px solid rgba(232,202,162,.9);
-    box-shadow: 0 18px 40px rgba(84,48,23,.22);
-
-    z-index: 10001 !important;
-  }
-
-  .dd-menu li a{
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    display: block;
-    color: var(--ink);
-  }
-
-  .dd-menu li a:active{
-    background: rgba(0,0,0,.06);
-  }
-}
-
-/* ================================
-   FIX DROPDOWN iOS: menú visible
-   (pegar al FINAL de styles.css)
-   ================================ */
-
-@media (max-width: 980px){
-  /* fuerza que el menú no herede “opacity:0 / pointer-events:none” de reglas viejas */
-  .dd-menu{
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    z-index: 10001 !important;
-
-    /* iPhone safe area + que no se vaya arriba */
-    top: calc(env(safe-area-inset-top) + 110px) !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-
-  /* cuando está abierto, asegúralo visible */
-  [data-dd].open .dd-menu{
-    display: block !important;
-  }
-
-  /* backdrop debajo del menú sí o sí */
-  .dd-backdrop{
-    z-index: 10000 !important;
-  }
-}
-
-/* ===== EMERGENCIA iOS: que el menú SIEMPRE quede arriba ===== */
-@media (max-width: 980px){
-  .dd-backdrop{
-    position: fixed !important;
-    inset: 0 !important;
-    z-index: 999998 !important;
-  }
-
-  .dd-menu{
-    position: fixed !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-
-    width: min(92vw, 420px) !important;
-    max-height: 65vh !important;
-    overflow: auto !important;
-
-    display: none;               /* cerrado */
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-
-    z-index: 999999 !important;  /* encima del blur */
-  }
-
-  [data-dd].open .dd-menu{
-    display: block !important;   /* abierto */
-  }
+@media (max-width: 900px){
+  .papa-card.tweet iframe{ transform: scale(.8); width: 125%; height:125%; }
 }

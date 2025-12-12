@@ -1,64 +1,107 @@
-/* ==============================
-(mobile.css)
-   ============================== */
+/* =========================
+   NAV MÓVIL
+   ========================= */
 
-/* Ajustes para pantallas más pequeñas (menos de 980px) */
+/* Modo compacto */
 @media (max-width: 980px){
+  .tabs { gap: .4rem; }
+  .tab, .dd > .dd-link, .dd > .dd-trigger{
+    padding: .55rem .75rem;
+    font-size: clamp(.9rem, 1vw + .8rem, 1rem);
+    line-height: 1.1;
+  }
+}
+
+/* Barra deslizable horizontal */
+@media (max-width: 980px){
+  .tabs-wrap{ position: sticky; top: 0; z-index: 1500; }
   .tabs{
     display: flex;
     gap: .5rem;
-
     overflow-x: auto;
-    overflow-y: visible;          /* permite que el dropdown se vea */
+    overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
-
     padding-bottom: .4rem;
-
     mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
   }
-
   .tabs > *{ flex: 0 0 auto; scroll-snap-align: start; }
   .tabs::-webkit-scrollbar{ height: 0; }
-
-  /* ✅ Para que el menú quede encima de todo */
-  .dd-menu{ z-index: 99999; }
 }
 
-
-/* === Para pantallas menores a 600px === */
+/* =========================
+   LIVE BUBBLE (móvil)
+   ========================= */
 @media (max-width: 600px){
-  .titulo-principal {
-    font-size: clamp(1.2rem, 1.2rem + 2.4vw, 2.2rem);
-  }
-
-  .tabs a {
-    padding: 10px 12px;
-  }
-
-  .tabs-wrap {
-    padding: 6px 0;
-  }
-
-  .titulo-img {
-    width: 70px;
-  }
-
-  .papa-card.vertical {
-    aspect-ratio: 3 / 4;
-  }
-
-  .img-modal__content {
-    max-width: 90%;
-  }
-
-  .tabs .dd-link {
-    font-size: .85rem;
-  }
-
-  .tabs .dd-trigger {
-    padding: .4rem .6rem;
+  .live-bubble{
+    bottom: 16px;
+    right: 16px;
+    font-size: .9rem;
   }
 }
 
+/* ================================
+   DROPDOWN “BURBUJA MODAL” (MÓVIL)
+   ================================ */
+
+/* Backdrop SIN blur fuerte (evita el “todo borroso” en iPhone Safari) */
+.dd-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.18);
+  z-index: 10000;
+}
+.dd-backdrop[hidden]{ display:none !important; }
+
+/* Bloquea scroll cuando está abierto */
+body.dd-open{
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* IMPORTANTE: mantener visible el overflow del nav */
+@media (max-width: 980px){
+  .tabs-wrap{ overflow: visible !important; }
+  .tabs{ overflow-x: auto !important; overflow-y: visible !important; }
+
+  /* Menú “burbuja” flotante centrado (el JS ajusta top) */
+  .dd-menu{
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: min(92vw, 420px);
+    max-height: 60vh;
+    overflow: auto;
+
+    padding: 12px;
+    border-radius: 18px;
+
+    background: rgba(255, 246, 226, 0.96);
+    border: 1px solid rgba(232,202,162,.9);
+    box-shadow: 0 18px 40px rgba(84,48,23,.22);
+
+    z-index: 10001 !important;
+  }
+
+  .dd-menu li a{
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    color: var(--ink);
+  }
+
+  .dd-menu li a:active{
+    background: rgba(0,0,0,.06);
+  }
+}
+
+/* ===== FIX: NO blur del fondo en iPhone (solo oscurecer) ===== */
+.dd-backdrop{
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(0,0,0,.18) !important;  /* ajusta .12 - .25 a gusto */
+}
