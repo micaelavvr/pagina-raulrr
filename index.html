@@ -83,10 +83,9 @@
     </div>
   </div>
 
-  <!-- BACKDROP (para móvil) -->
-  <div id="ddBackdrop" class="dd-backdrop" hidden></div>
 </nav>
-
+  <!-- BACKDROP (para móvil) -->
+<div id="ddBackdrop" class="dd-backdrop" hidden></div>
 
 
 <div class="live-bubble" id="liveBubble">
@@ -366,8 +365,8 @@
   })();
 </script>
 
+<<!-- ✅ JS DROPDOWNS (ÚNICO) + móvil tipo burbuja/overlay -->
 <script>
-  // Dropdown accesible + modo móvil tipo "modal"
   document.addEventListener('DOMContentLoaded', () => {
     const DDLISTS   = document.querySelectorAll('[data-dd]');
     const backdrop  = document.getElementById('ddBackdrop');
@@ -381,6 +380,7 @@
       const trigger = dd.querySelector('.dd-trigger');
       const menu    = dd.querySelector('.dd-menu');
 
+      // Cierra otros
       if(on){
         document.querySelectorAll('[data-dd].open').forEach(x => {
           if(x !== dd) setOpen(x, false);
@@ -391,7 +391,8 @@
       if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
       if (menu) menu.hidden = !on;
 
-      if(isMobile()){
+      // Backdrop + bloqueo scroll SOLO en móvil + ubicar menú debajo del nav
+      if(isMobile() && menu){
         if(on){
           backdrop.hidden = false;
           document.body.classList.add('dd-open');
@@ -402,7 +403,7 @@
         }else{
           backdrop.hidden = true;
           document.body.classList.remove('dd-open');
-          if(menu) menu.style.top = '';
+          menu.style.top = '';
         }
       }
     }
@@ -418,6 +419,7 @@
           setOpen(dd, !dd.classList.contains('open'));
         });
 
+        // iOS a veces “come” el click: esto ayuda
         trigger.addEventListener('touchstart', (e) => {
           e.stopPropagation();
         }, { passive: true });
@@ -431,10 +433,12 @@
       }
     });
 
+    // Cerrar al hacer click fuera
     document.addEventListener('click', () => {
       document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
     });
 
+    // Cerrar con backdrop
     if(backdrop){
       backdrop.addEventListener('click', () => {
         document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
@@ -444,23 +448,19 @@
       }, { passive: true });
     }
 
+    // Cerrar con Esc
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
       }
     });
 
+    // Si cambias tamaño (rotación), recalcula posición
     window.addEventListener('resize', () => {
       document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, true));
     });
   });
 </script>
-
-</body>
-</html>
-
-
-
 
 </body>
 
