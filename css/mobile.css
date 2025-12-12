@@ -1,0 +1,244 @@
+/* ==============================
+(mobile.css)
+   ============================== */
+
+/* Ajustes para pantallas más pequeñas (menos de 980px) */
+@media (max-width: 980px){
+
+  /* Contenedores principales (evitar márgenes amplios) */
+  .tabs, .tabs-wrap, .papa-grid, .paginas-recomendadas, .kids-grid, .kids-video-grid, .papa-card, .kids-card, .kids-video-card{
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Barra de navegación */
+  .tabs {
+    display: flex;
+    gap: .5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-bottom: .4rem;
+  }
+
+  .tabs > *{
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .tabs-wrap{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--paper);
+    box-shadow: 0 6px 18px rgba(60,36,21,.06);
+    backdrop-filter: saturate(115%) blur(6px);
+    padding-bottom: 6px;
+  }
+
+  /* Filtro para los botones de nav */
+  .tab, .dd > .dd-link, .dd > .dd-trigger{
+    padding: .55rem .75rem;
+    font-size: clamp(.9rem, 1vw + .8rem, 1rem);
+    line-height: 1.1;
+  }
+
+  /* Hacer el menú deslizable */
+  .tabs-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    box-shadow: 0 6px 18px rgba(60,36,21,.06);
+    backdrop-filter: saturate(115%) blur(6px);
+  }
+  .tabs {
+    display: flex;
+    gap: .5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-bottom: .4rem;
+  }
+  
+  /* Sección principal */
+  .nuevo-header{
+    max-width: 100%;
+    margin: 1.8rem auto 1rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .titulo-img {
+    width: 80px;
+    margin: 0 auto;
+  }
+
+  .titulo-principal {
+    font-size: clamp(1.6rem, 1.2rem + 2.4vw, 3rem);
+    line-height: 1.2;
+    text-align: center;
+    color: var(--ink);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+  }
+
+  /* Imágenes y vídeos se ajustan mejor */
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Tarjetas de recursos */
+  .paginas-recomendadas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    place-items: center;
+  }
+
+  .paginas-recomendadas a {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    background: var(--card);
+    padding: 12px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .paginas-recomendadas a img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+  }
+
+  .paginas-recomendadas a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(84,48,23,.16);
+  }
+
+  /* Layout para la sección de recursos para niños */
+  .kids-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  /* Títulos de videos ajustados */
+  .video-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* Modificar diseño de las cards del papa */
+  .papa-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  .papa-card.vertical {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .papa-card.tweet iframe {
+    transform: scale(.8);
+    width: 125%;
+    height: 125%;
+  }
+
+  /* Ajustes en la visualización del modal */
+  .img-modal {
+    padding: 12px;
+    background: rgba(0, 0, 0, .85);
+  }
+
+  .img-modal__close {
+    top: 12px;
+    right: 12px;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .img-modal__content {
+    width: 90%;
+    max-height: 80vh;
+  }
+
+  .kids-bloque .kids-card.vertical {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* Hacer que los botones se estiren en móviles */
+  .btn {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Modificaciones para la funcionalidad de los dropdowns */
+  .tabs .dd .dd-trigger {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  /* Filtros para mejorar la accesibilidad de los botones */
+  .tab, .dd > .dd-link, .dd > .dd-trigger {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ajuste de margenes y paddings */
+  section {
+    padding: 12px 0;
+  }
+}
+
+/* === Para pantallas menores a 600px === */
+@media (max-width: 600px){
+  .titulo-principal {
+    font-size: clamp(1.2rem, 1.2rem + 2.4vw, 2.2rem);
+  }
+
+  .tabs a {
+    padding: 10px 12px;
+  }
+
+  .tabs-wrap {
+    padding: 6px 0;
+  }
+
+  .titulo-img {
+    width: 70px;
+  }
+
+  .papa-card.vertical {
+    aspect-ratio: 3 / 4;
+  }
+
+  .img-modal__content {
+    max-width: 90%;
+  }
+
+  .tabs .dd-link {
+    font-size: .85rem;
+  }
+
+  .tabs .dd-trigger {
+    padding: .4rem .6rem;
+  }
+}
+
