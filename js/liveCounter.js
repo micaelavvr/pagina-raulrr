@@ -53,3 +53,13 @@ try {
   console.error("Firebase init/write error:", err);
   paint("ERR");
 }
+
+// Cerrar burbuja
+const bubble = document.getElementById("liveBubble");
+const closeBtn = bubble?.querySelector(".live-close");
+
+if (closeBtn && bubble) {
+  closeBtn.addEventListener("click", () => {
+    bubble.style.display = "none";
+  });
+}
