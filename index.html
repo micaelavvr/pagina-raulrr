@@ -48,16 +48,22 @@
   </section>
 
 
-<!-- NAV -->
+<!-- ===== NAV ===== -->
 <nav class="tabs-wrap" aria-label="Navegación de secciones">
   <div class="tabs" id="navTabs">
+
     <a class="tab is-active" href="index.html" data-fixed="1">Inicio</a>
 
     <!-- Canales con desplegable -->
     <div class="tab dd" data-dd>
       <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
-        aria-label="Abrir menú">▾</button>
+      <button class="dd-trigger" type="button"
+              aria-expanded="false"
+              aria-controls="dd-menu-1"
+              aria-label="Abrir menú">
+        ▼
+      </button>
+
       <ul id="dd-menu-1" class="dd-menu" hidden>
         <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
       </ul>
@@ -71,21 +77,28 @@
     <!-- OTROS -->
     <div class="tab dd more" data-dd>
       <span class="dd-link">Otros</span>
-      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros"
-        aria-label="Abrir menú">▾</button>
+      <button class="dd-trigger" type="button"
+              aria-expanded="false"
+              aria-controls="dd-menu-otros"
+              aria-label="Abrir menú">
+        ▼
+      </button>
+
       <ul id="dd-menu-otros" class="dd-menu" hidden>
-        <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
+        <li><a href="coronillahorasanta.html">Coronilla 🙏 Hora Santa 🙏 Liturgia de las Horas</a></li>
         <li><a href="apps.html">Apps Católicas</a></li>
         <li><a href="biblia.html">Biblia</a></li>
-        <li><a href="matrimonio.html">Sobre El Matrimonio</a></li>
+        <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
         <li><a href="jovenes.html">Jóvenes</a></li>
       </ul>
     </div>
-  </div>
 
+  </div>
 </nav>
-  <!-- BACKDROP (para móvil) -->
+
+<!-- BACKDROP (para móvil) -->
 <div id="ddBackdrop" class="dd-backdrop" hidden></div>
+
 
 
 <div class="live-bubble" id="liveBubble">
@@ -365,101 +378,80 @@
   })();
 </script>
 
-<<!-- ✅ JS DROPDOWNS (ÚNICO) + móvil tipo burbuja/overlay -->
+<!-- ✅ JS DROPDOWNS (ÚNICO) -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const DDLISTS   = document.querySelectorAll('[data-dd]');
-    const backdrop  = document.getElementById('ddBackdrop');
-    const navWrap   = document.querySelector('.tabs-wrap');
+document.addEventListener('DOMContentLoaded', () => {
+  const DDLISTS  = document.querySelectorAll('[data-dd]');
+  const backdrop = document.getElementById('ddBackdrop');
 
-    function isMobile(){
-      return window.matchMedia('(max-width: 980px)').matches;
-    }
+  function setOpen(dd, on){
+    const trigger = dd.querySelector('.dd-trigger');
+    const menu    = dd.querySelector('.dd-menu');
 
-    function setOpen(dd, on) {
-      const trigger = dd.querySelector('.dd-trigger');
-      const menu    = dd.querySelector('.dd-menu');
-
-      // Cierra otros
-      if(on){
-        document.querySelectorAll('[data-dd].open').forEach(x => {
-          if(x !== dd) setOpen(x, false);
-        });
-      }
-
-      dd.classList.toggle('open', on);
-      if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-      if (menu) menu.hidden = !on;
-
-      // Backdrop + bloqueo scroll SOLO en móvil + ubicar menú debajo del nav
-      if(isMobile() && menu){
-        if(on){
-          backdrop.hidden = false;
-          document.body.classList.add('dd-open');
-
-          const navRect = navWrap?.getBoundingClientRect();
-          const top = navRect ? (navRect.bottom + 10) : 110;
-          menu.style.top = `${Math.min(top, window.innerHeight * 0.35)}px`;
-        }else{
-          backdrop.hidden = true;
-          document.body.classList.remove('dd-open');
-          menu.style.top = '';
-        }
-      }
-    }
-
-    DDLISTS.forEach(dd => {
-      const trigger = dd.querySelector('.dd-trigger');
-      const menu    = dd.querySelector('.dd-menu');
-
-      if (trigger) {
-        trigger.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          setOpen(dd, !dd.classList.contains('open'));
-        });
-
-        // iOS a veces “come” el click: esto ayuda
-        trigger.addEventListener('touchstart', (e) => {
-          e.stopPropagation();
-        }, { passive: true });
-      }
-
-      if (menu) {
-        menu.addEventListener('click', (e) => {
-          const a = e.target.closest('a');
-          if (a) setOpen(dd, false);
-        });
-      }
-    });
-
-    // Cerrar al hacer click fuera
-    document.addEventListener('click', () => {
-      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-    });
-
-    // Cerrar con backdrop
-    if(backdrop){
-      backdrop.addEventListener('click', () => {
-        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+    // cerrar otros
+    if(on){
+      document.querySelectorAll('[data-dd].open').forEach(x => {
+        if(x !== dd) setOpen(x, false);
       });
-      backdrop.addEventListener('touchstart', () => {
-        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+    }
+
+    dd.classList.toggle('open', on);
+    if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+    if (menu) menu.hidden = !on;
+
+    // backdrop
+    if(backdrop){
+      backdrop.hidden = !on;
+    }
+
+    // bloquear scroll cuando está abierto
+    document.body.classList.toggle('dd-open', on);
+  }
+
+  DDLISTS.forEach(dd => {
+    const trigger = dd.querySelector('.dd-trigger');
+    if(trigger){
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setOpen(dd, !dd.classList.contains('open'));
+      });
+      trigger.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
       }, { passive: true });
     }
 
-    // Cerrar con Esc
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-      }
-    });
-
-    // Si cambias tamaño (rotación), recalcula posición
-    window.addEventListener('resize', () => {
-      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, true));
-    });
+    // cerrar al elegir un item
+    const menu = dd.querySelector('.dd-menu');
+    if(menu){
+      menu.addEventListener('click', (e) => {
+        if(e.target.closest('a')) setOpen(dd, false);
+      });
+    }
   });
+
+  // cerrar tocando fuera
+  document.addEventListener('click', () => {
+    document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+  });
+
+  // cerrar con backdrop
+  if(backdrop){
+    backdrop.addEventListener('click', () => {
+      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+    });
+    backdrop.addEventListener('touchstart', () => {
+      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+    }, { passive: true });
+  }
+
+  // ESC
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){
+      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+    }
+  });
+});
 </script>
 
 </body>

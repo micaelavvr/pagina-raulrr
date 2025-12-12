@@ -952,3 +952,34 @@ body.dd-open{
     z-index: 10000 !important;
   }
 }
+
+/* ===== EMERGENCIA iOS: que el menú SIEMPRE quede arriba ===== */
+@media (max-width: 980px){
+  .dd-backdrop{
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999998 !important;
+  }
+
+  .dd-menu{
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    width: min(92vw, 420px) !important;
+    max-height: 65vh !important;
+    overflow: auto !important;
+
+    display: none;               /* cerrado */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    z-index: 999999 !important;  /* encima del blur */
+  }
+
+  [data-dd].open .dd-menu{
+    display: block !important;   /* abierto */
+  }
+}
