@@ -302,90 +302,69 @@
 
 
 
-
-
-
-  <!-- JS: dropdowns + preloader -->
-  <script>
-    // Dropdown accesible
-    document.addEventListener('DOMContentLoaded', () => {
-      const DDLISTS = document.querySelectorAll('[data-dd]');
-      function setOpen(dd, on) {
-        const trigger = dd.querySelector('.dd-trigger');
-        const menu = dd.querySelector('.dd-menu');
-        dd.classList.toggle('open', on);
-        if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-        if (menu) menu.hidden = !on;
-      }
-      DDLISTS.forEach(dd => {
-        const trigger = dd.querySelector('.dd-trigger');
-        const menu = dd.querySelector('.dd-menu');
-
-        if (trigger) {
-          trigger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            setOpen(dd, !dd.classList.contains('open'));
-          });
-        }
-        if (menu) {
-          menu.addEventListener('click', (e) => {
-            if (e.target.closest('a')) setOpen(dd, false);
-          });
-        }
-      });
-
-      // Cerrar al hacer clic fuera
-      document.addEventListener('click', () => {
-        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-      });
-
-      // Cerrar con Esc
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-        }
-      });
-    });
-
-    // Preloader
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('preloader')?.classList.add('hide');
-        document.body.classList.remove('loading');
-      }, 600);
-    });
-  </script>
-
-
+<!-- JS: preloader (solo este) -->
 <script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('preloader')?.classList.add('hide');
+      document.body.classList.remove('loading');
+    }, 600);
+  });
+</script>
+
+<!-- JS: visor kids + modal (si lo usas en index, déjalo tal cual lo tenías) -->
+<script>
+  // Visor PDFs (cards -> iframe)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-view]');
+    if (!link) return;
+
+    e.preventDefault();
+    const src    = link.getAttribute('data-view');
+    const wrap   = document.getElementById('kids-viewer-wrap');
+    const iframe = document.getElementById('kids-viewer');
+
+    try {
+      iframe.src = src;
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+      console.warn('No se pudo cargar en el visor. Usa "Abrir".');
+    }
+  });
+
+  // Zoom de imágenes (modal)
   (function(){
-    const tabs = document.getElementById('navTabs');
-    if(!tabs) return;
+    const modal    = document.getElementById('imgModal');
+    if(!modal) return;
+    const modalImg = document.getElementById('imgModalContent');
+    const closeBtn = modal.querySelector('.img-modal__close');
 
-    /* Rueda/touch vertical => se convierte a scroll horizontal */
-    tabs.addEventListener('wheel', (e) => {
-      // si el movimiento vertical domina, desplaza en X
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        tabs.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
-    }, { passive: false });
+    function open(src){
+      modalImg.src = src;
+      modal.classList.add('open');
+      modal.removeAttribute('hidden');
+    }
+    function close(){
+      modal.classList.remove('open');
+      modal.setAttribute('hidden','');
+      modalImg.removeAttribute('src');
+    }
 
-    /* Cuando un enlace del nav recibe foco, lo centramos */
-    tabs.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('focus', () => {
-        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      });
+    document.addEventListener('click', (e)=>{
+      const img = e.target.closest('.zoomable');
+      if(img) open(img.src);
     });
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
+    closeBtn?.addEventListener('click', close);
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
   })();
 </script>
 
-
-  <script>
+<!-- ✅ JS DROPDOWNS (ÚNICO / reemplaza todos los otros) -->
+<script>
   document.addEventListener('DOMContentLoaded', () => {
     const DDLISTS = document.querySelectorAll('[data-dd]');
-
-    const isMobileNav = () => window.matchMedia('(max-width: 980px)').matches;
+    const isMobile = () => window.matchMedia('(max-width: 980px)').matches;
 
     function setOpen(dd, on) {
       const trigger = dd.querySelector('.dd-trigger');
@@ -395,63 +374,84 @@
       if (menu) menu.hidden = !on;
     }
 
+    function closeAll(except = null) {
+      document.querySelectorAll('[data-dd].open').forEach(d => {
+        if (d !== except) setOpen(d, false);
+      });
+    }
+
     DDLISTS.forEach(dd => {
       const trigger = dd.querySelector('.dd-trigger');
       const menu = dd.querySelector('.dd-menu');
       const link = dd.querySelector('.dd-link');
 
-      // Flecha: siempre abre/cierra (PC + móvil)
       if (trigger) {
-        trigger.addEventListener('click', (e) => {
+        trigger.addEventListener('pointerdown', (e) => {
           e.preventDefault();
           e.stopPropagation();
-          setOpen(dd, !dd.classList.contains('open'));
+          const open = !dd.classList.contains('open');
+          closeAll(dd);
+          setOpen(dd, open);
         });
       }
 
-      // Texto:
-      // - En PC: navega normal (NO prevenimos)
-      // - En móvil: abre/cierra (sí prevenimos)
-      if (link) {
-        link.addEventListener('click', (e) => {
-          if (!menu) return;                 // si no hay menú, que navegue normal
-          if (!isMobileNav()) return;        // PC/tablet grande: navega normal
+      if (link && menu) {
+        link.addEventListener('pointerdown', (e) => {
+          // PC: dejar navegar normal si es link real
+          if (!isMobile() && link.tagName === 'A') return;
 
-          // móvil: desplegar
-          e.preventDefault();
-          e.stopPropagation();
-          setOpen(dd, !dd.classList.contains('open'));
+          // móvil: abrir/cerrar
+          if (isMobile()) {
+            e.preventDefault();
+            e.stopPropagation();
+            const open = !dd.classList.contains('open');
+            closeAll(dd);
+            setOpen(dd, open);
+          }
         });
       }
 
-      // Click en opción del menú => cerrar
       if (menu) {
-        menu.addEventListener('click', (e) => {
+        menu.addEventListener('pointerdown', (e) => {
           if (e.target.closest('a')) setOpen(dd, false);
         });
       }
     });
 
-    // Cerrar tocando fuera
-    document.addEventListener('click', (e) => {
+    document.addEventListener('pointerdown', (e) => {
       if (e.target.closest('[data-dd]')) return;
-      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      closeAll();
     });
 
-    // Cerrar con Esc
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-      }
+      if (e.key === 'Escape') closeAll();
     });
   });
 </script>
 
+<!-- JS scroll horizontal nav (déjalo si te gusta) -->
+<script>
+  (function(){
+    const tabs = document.getElementById('navTabs');
+    if(!tabs) return;
 
+    tabs.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        tabs.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }, { passive: false });
 
-
+    tabs.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('focus', () => {
+        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+    });
+  })();
+</script>
 
 </body>
+</html>
 
 
 
