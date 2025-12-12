@@ -735,3 +735,24 @@ body { line-height: 1.5; }
   display: block;
   white-space: nowrap;
 }
+
+/* --- 1 --- */
+.live-counter{
+  max-width:1200px;
+  margin:.6rem auto 0;
+  padding:0 1rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:.45rem;
+  font-weight:800;
+  color:var(--muted);
+}
+.live-counter #liveCount{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:.2rem .55rem;
+  border-radius:999px;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+}
