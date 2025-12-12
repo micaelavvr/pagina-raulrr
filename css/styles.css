@@ -848,192 +848,77 @@ body { line-height: 1.5; }
   }
 }
 
+/* =========================================
+   DROPDOWN MÓVIL – MODAL TIPO BURBUJA
+   ========================================= */
 
-@media (max-width: 980px){
-
-  [data-dd]{
-    position: relative;
-  }
-
-  .dd-menu{
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-
-    min-width: 220px;
-    padding: .4rem 0;
-
-    border-radius: 14px;
-    background: rgba(255,255,255,.85);
-    backdrop-filter: blur(12px) saturate(120%);
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
-
-    box-shadow:
-      0 20px 40px rgba(0,0,0,.18),
-      inset 0 1px 0 rgba(255,255,255,.6);
-
-    transform: translateY(-6px) scale(.98);
-    opacity: 0;
-    pointer-events: none;
-    transition: all .25s ease;
-  }
-
-  [data-dd].open > .dd-menu{
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .dd-menu a{
-    padding: .65rem 1rem;
-    display: block;
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  .dd-menu a:active{
-    background: rgba(0,0,0,.06);
-  }
-}
-
-@media (max-width: 980px){
-  .tabs-wrap{ overflow: visible !important; }
-  .tabs{ overflow-x: auto !important; overflow-y: visible !important; }
-  [data-dd]{ position: relative; }
-
-  /* Menú tipo glass (estético) */
-  .dd-menu{
-    z-index: 99999 !important;
-    background: rgba(255,255,255,.88) !important;
-    backdrop-filter: blur(14px) saturate(120%);
-    -webkit-backdrop-filter: blur(14px) saturate(120%);
-    border: 1px solid rgba(232,202,162,.7) !important;
-    box-shadow: 0 20px 44px rgba(0,0,0,.18) !important;
-  }
-}
-
-/* ================================
-   DROPDOWN “MODAL” EN MÓVIL
-   (evita que se corte dentro del scroll)
-   ================================ */
-
+/* Backdrop */
 .dd-backdrop{
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.22);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 1999;
+  z-index: 10000;
+}
+.dd-backdrop[hidden]{ display:none !important; }
+
+/* Bloquea scroll cuando está abierto */
+body.dd-open{
+  overflow: hidden;
+  touch-action: none;
 }
 
+/* Desktop: comportamiento normal */
+.tabs-wrap{ overflow: visible; }
+.tabs{ overflow: visible; }
+
+/* ===============================
+   MÓVIL
+   =============================== */
 @media (max-width: 980px){
 
-  /* el menú ya NO vive “visual” dentro del carril scrolleable */
+  /* el carril del nav sigue scrolleable */
+  .tabs{
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Menú flotante centrado */
   .dd-menu{
     position: fixed !important;
     left: 50% !important;
-    top: 120px; /* el JS lo recalcula según el nav */
     transform: translateX(-50%) !important;
 
+    top: 120px;                 /* fallback si JS no calcula */
     width: min(92vw, 420px);
     max-height: 60vh;
     overflow: auto;
 
-    border-radius: 18px;
-    padding: 10px;
-    box-shadow: 0 20px 55px rgba(0,0,0,.22);
-    z-index: 2000;
-  }
-
-  .dd-menu li a{
-    padding: 12px 12px;
-    border-radius: 12px;
-    font-size: 1rem;
-  }
-
-  /* Evita que el dropdown “se pegue” al scroll horizontal */
-  .tabs{
-    overflow: auto;
-    position: relative;
-  }
-
-  /* opcional: cuando está abierto, bloquea scroll del body */
-  body.dd-open{
-    overflow: hidden;
-    touch-action: none;
-  }
-}
-
-/* ===== Dropdown “burbuja” en móvil ===== */
-.dd-backdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.18);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  z-index: 999;
-}
-
-body.dd-open{
-  overflow: hidden;
-}
-
-/* IMPORTANTE: permitir que el menú “salga” del nav */
-.tabs-wrap, nav, .nav, .tabs{
-  overflow: visible;
-}
-
-[data-dd]{
-  position: relative;
-}
-
-.dd-menu{
-  /* base: que no empuje el layout */
-  position: absolute;
-  z-index: 1000;
-}
-
-/* MÓVIL: menú tipo “modal burbuja” centrado */
-@media (max-width: 980px){
-  .dd-menu{
-    position: fixed;                 /* clave: ya no queda dentro del scroll horizontal */
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(92vw, 420px);
-    max-height: 60vh;
-    overflow: auto;
-
-    padding: 10px;
+    padding: 12px;
     border-radius: 18px;
 
-    background: rgba(255, 246, 226, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 246, 226, 0.95);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
 
     border: 1px solid rgba(232,202,162,.9);
     box-shadow: 0 18px 40px rgba(84,48,23,.22);
+
+    z-index: 10001 !important;
   }
-}
 
-/* ===== FIX: asegurar que el dropdown se muestre cuando está abierto ===== */
-.dd-menu[hidden] { display: none !important; }
+  .dd-menu li a{
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    color: var(--ink);
+  }
 
-[data-dd].open .dd-menu{
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-/* Si tu CSS viejo lo deja “muerto” */
-.dd-menu{
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-@media (max-width: 980px){
-  .dd-menu{
-    top: 120px; /* fallback */
+  .dd-menu li a:active{
+    background: rgba(0,0,0,.06);
   }
 }
