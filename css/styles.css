@@ -1014,3 +1014,26 @@ body.dd-open{
     box-shadow: 0 18px 40px rgba(84,48,23,.22);
   }
 }
+
+/* ===== FIX: asegurar que el dropdown se muestre cuando está abierto ===== */
+.dd-menu[hidden] { display: none !important; }
+
+[data-dd].open .dd-menu{
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Si tu CSS viejo lo deja “muerto” */
+.dd-menu{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 980px){
+  .dd-menu{
+    top: 120px; /* fallback */
+  }
+}
