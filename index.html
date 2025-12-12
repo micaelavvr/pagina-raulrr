@@ -305,17 +305,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   <!-- JS: dropdowns + preloader -->
   <script>
     // Dropdown accesible
@@ -390,6 +379,77 @@
     });
   })();
 </script>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const DDLISTS = document.querySelectorAll('[data-dd]');
+
+    const isMobileNav = () => window.matchMedia('(max-width: 980px)').matches;
+
+    function setOpen(dd, on) {
+      const trigger = dd.querySelector('.dd-trigger');
+      const menu = dd.querySelector('.dd-menu');
+      dd.classList.toggle('open', on);
+      if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+      if (menu) menu.hidden = !on;
+    }
+
+    DDLISTS.forEach(dd => {
+      const trigger = dd.querySelector('.dd-trigger');
+      const menu = dd.querySelector('.dd-menu');
+      const link = dd.querySelector('.dd-link');
+
+      // Flecha: siempre abre/cierra (PC + móvil)
+      if (trigger) {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setOpen(dd, !dd.classList.contains('open'));
+        });
+      }
+
+      // Texto:
+      // - En PC: navega normal (NO prevenimos)
+      // - En móvil: abre/cierra (sí prevenimos)
+      if (link) {
+        link.addEventListener('click', (e) => {
+          if (!menu) return;                 // si no hay menú, que navegue normal
+          if (!isMobileNav()) return;        // PC/tablet grande: navega normal
+
+          // móvil: desplegar
+          e.preventDefault();
+          e.stopPropagation();
+          setOpen(dd, !dd.classList.contains('open'));
+        });
+      }
+
+      // Click en opción del menú => cerrar
+      if (menu) {
+        menu.addEventListener('click', (e) => {
+          if (e.target.closest('a')) setOpen(dd, false);
+        });
+      }
+    });
+
+    // Cerrar tocando fuera
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-dd]')) return;
+      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+    });
+
+    // Cerrar con Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      }
+    });
+  });
+</script>
+
+
+
+
 
 </body>
 
