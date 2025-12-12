@@ -911,3 +911,55 @@ body { line-height: 1.5; }
     box-shadow: 0 20px 44px rgba(0,0,0,.18) !important;
   }
 }
+
+/* ================================
+   DROPDOWN “MODAL” EN MÓVIL
+   (evita que se corte dentro del scroll)
+   ================================ */
+
+.dd-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1999;
+}
+
+@media (max-width: 980px){
+
+  /* el menú ya NO vive “visual” dentro del carril scrolleable */
+  .dd-menu{
+    position: fixed !important;
+    left: 50% !important;
+    top: 120px; /* el JS lo recalcula según el nav */
+    transform: translateX(-50%) !important;
+
+    width: min(92vw, 420px);
+    max-height: 60vh;
+    overflow: auto;
+
+    border-radius: 18px;
+    padding: 10px;
+    box-shadow: 0 20px 55px rgba(0,0,0,.22);
+    z-index: 2000;
+  }
+
+  .dd-menu li a{
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  /* Evita que el dropdown “se pegue” al scroll horizontal */
+  .tabs{
+    overflow: auto;
+    position: relative;
+  }
+
+  /* opcional: cuando está abierto, bloquea scroll del body */
+  body.dd-open{
+    overflow: hidden;
+    touch-action: none;
+  }
+}

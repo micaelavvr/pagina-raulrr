@@ -82,7 +82,11 @@
       </ul>
     </div>
   </div>
+
+  <!-- BACKDROP (para móvil) -->
+  <div id="ddBackdrop" class="dd-backdrop" hidden></div>
 </nav>
+
 
 
 <div class="live-bubble" id="liveBubble">
@@ -302,6 +306,7 @@
 
 
 
+
 <!-- JS: preloader (solo este) -->
 <script>
   window.addEventListener('load', () => {
@@ -311,6 +316,7 @@
     }, 600);
   });
 </script>
+
 
 <!-- JS: visor kids + modal (si lo usas en index, déjalo tal cual lo tenías) -->
 <script>
@@ -360,94 +366,94 @@
   })();
 </script>
 
-<!-- ✅ JS DROPDOWNS (ÚNICO / reemplaza todos los otros) -->
 <script>
+  // Dropdown accesible + modo móvil tipo "modal"
   document.addEventListener('DOMContentLoaded', () => {
-    const DDLISTS = document.querySelectorAll('[data-dd]');
-    const isMobile = () => window.matchMedia('(max-width: 980px)').matches;
+    const DDLISTS   = document.querySelectorAll('[data-dd]');
+    const backdrop  = document.getElementById('ddBackdrop');
+    const navWrap   = document.querySelector('.tabs-wrap');
+
+    function isMobile(){
+      return window.matchMedia('(max-width: 980px)').matches;
+    }
 
     function setOpen(dd, on) {
       const trigger = dd.querySelector('.dd-trigger');
-      const menu = dd.querySelector('.dd-menu');
+      const menu    = dd.querySelector('.dd-menu');
+
+      if(on){
+        document.querySelectorAll('[data-dd].open').forEach(x => {
+          if(x !== dd) setOpen(x, false);
+        });
+      }
+
       dd.classList.toggle('open', on);
       if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
       if (menu) menu.hidden = !on;
-    }
 
-    function closeAll(except = null) {
-      document.querySelectorAll('[data-dd].open').forEach(d => {
-        if (d !== except) setOpen(d, false);
-      });
+      if(isMobile()){
+        if(on){
+          backdrop.hidden = false;
+          document.body.classList.add('dd-open');
+
+          const navRect = navWrap?.getBoundingClientRect();
+          const top = navRect ? (navRect.bottom + 10) : 110;
+          menu.style.top = `${Math.min(top, window.innerHeight * 0.35)}px`;
+        }else{
+          backdrop.hidden = true;
+          document.body.classList.remove('dd-open');
+          if(menu) menu.style.top = '';
+        }
+      }
     }
 
     DDLISTS.forEach(dd => {
       const trigger = dd.querySelector('.dd-trigger');
-      const menu = dd.querySelector('.dd-menu');
-      const link = dd.querySelector('.dd-link');
+      const menu    = dd.querySelector('.dd-menu');
 
       if (trigger) {
-        trigger.addEventListener('pointerdown', (e) => {
+        trigger.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
-          const open = !dd.classList.contains('open');
-          closeAll(dd);
-          setOpen(dd, open);
+          setOpen(dd, !dd.classList.contains('open'));
         });
-      }
 
-      if (link && menu) {
-        link.addEventListener('pointerdown', (e) => {
-          // PC: dejar navegar normal si es link real
-          if (!isMobile() && link.tagName === 'A') return;
-
-          // móvil: abrir/cerrar
-          if (isMobile()) {
-            e.preventDefault();
-            e.stopPropagation();
-            const open = !dd.classList.contains('open');
-            closeAll(dd);
-            setOpen(dd, open);
-          }
-        });
+        trigger.addEventListener('touchstart', (e) => {
+          e.stopPropagation();
+        }, { passive: true });
       }
 
       if (menu) {
-        menu.addEventListener('pointerdown', (e) => {
-          if (e.target.closest('a')) setOpen(dd, false);
+        menu.addEventListener('click', (e) => {
+          const a = e.target.closest('a');
+          if (a) setOpen(dd, false);
         });
       }
     });
 
-    document.addEventListener('pointerdown', (e) => {
-      if (e.target.closest('[data-dd]')) return;
-      closeAll();
+    document.addEventListener('click', () => {
+      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
     });
+
+    if(backdrop){
+      backdrop.addEventListener('click', () => {
+        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      });
+      backdrop.addEventListener('touchstart', () => {
+        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      }, { passive: true });
+    }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeAll();
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, true));
     });
   });
-</script>
-
-<!-- JS scroll horizontal nav (déjalo si te gusta) -->
-<script>
-  (function(){
-    const tabs = document.getElementById('navTabs');
-    if(!tabs) return;
-
-    tabs.addEventListener('wheel', (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        tabs.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    tabs.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('focus', () => {
-        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      });
-    });
-  })();
 </script>
 
 </body>
