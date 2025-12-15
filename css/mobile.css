@@ -140,50 +140,75 @@
 }
 
 /* =========================================
-   NAV MÓVIL: scroll horizontal sin cortar dropdown
-   (pegar al FINAL de mobile.css)
+   NAV MÓVIL: deslizable + dropdown estable
+   (Pegar al FINAL de css/mobile.css)
    ========================================= */
+
 @media (max-width: 980px){
 
-  /* el contenedor del nav NO debe recortar */
+  /* 1) El nav debe poder scrollear horizontal */
   .tabs-wrap{
-    overflow: visible !important;
+    overflow: hidden;               /* el carril es el que scrollea */
   }
 
-  /* el carril que se mueve es .tabs */
   .tabs{
-    justify-content: flex-start !important;
+    justify-content: flex-start;    /* no centrar en móvil */
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    gap: .5rem;
 
-    overflow-x: auto !important;
-    overflow-y: visible !important;      /* permite que el dropdown “salga” */
-    -webkit-overflow-scrolling: touch !important;
+    padding: .7rem 1rem .9rem;
 
-    white-space: nowrap !important;
-    flex-wrap: nowrap !important;
-
-    gap: .55rem !important;
-    padding: .65rem .75rem .55rem !important;
-
-    touch-action: pan-x !important;      /* clave para que iOS deje arrastrar */
-  }
-
-  .tabs > *{
-    flex: 0 0 auto !important;
+    /* importante para que el swipe funcione en iOS */
+    touch-action: pan-x;
   }
 
   .tabs::-webkit-scrollbar{ height: 0; }
 
-  /* si algún tab quedaba con “bloqueo” */
   .tab, .dd-link, .dd-trigger{
-    pointer-events: auto !important;
+    flex: 0 0 auto;
   }
-}
 
-@media (max-width: 980px){
-  .tab.dd, [data-dd]{
-    position: relative !important;
+  /* 2) Mejora el “hit area” y reduce delay */
+  .dd-trigger, .tab, .dd-link{
+    touch-action: manipulation;
   }
+
+  /* 3) Dropdown en móvil como “burbuja flotante”
+        (para que NO se recorte ni quede raro dentro del carril) */
   .dd-menu{
-    z-index: 99999 !important;
+    position: fixed !important;
+    left: 50% !important;
+    top: 92px !important;           /* ajusta si tu nav es más alto/bajo */
+    transform: translateX(-50%) !important;
+
+    width: min(92vw, 420px);
+    max-height: 65vh;
+    overflow: auto;
+
+    background: rgba(255, 246, 226, .96);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    backdrop-filter: blur(12px) saturate(120%);
+
+    border: 1px solid rgba(232, 202, 162, .9);
+    border-radius: 18px;
+    box-shadow: 0 18px 44px rgba(84,48,23,.22);
+
+    padding: 10px;
+    z-index: 999999;                /* arriba de todo */
   }
+
+  /* 4) Cuando está cerrado (hidden), que desaparezca sí o sí */
+  .dd-menu[hidden]{ display:none !important; }
+
+  /* 5) Items del menú más “tocables” */
+  .dd-menu li a{
+    display:block;
+    padding: 12px 12px;
+    border-radius: 12px;
+  }
+
+  /* 6) Evita que el dropdown “empuje” o choque con el carril */
+  [data-dd]{ position: static; }
 }
