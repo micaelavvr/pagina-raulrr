@@ -178,3 +178,12 @@
     pointer-events: auto !important;
   }
 }
+
+@media (max-width: 980px){
+  .tab.dd, [data-dd]{
+    position: relative !important;
+  }
+  .dd-menu{
+    z-index: 99999 !important;
+  }
+}
