@@ -17,41 +17,41 @@
 
 <body>
 
-<!-- NAV -->
-<nav class="tabs-wrap" aria-label="Navegación de secciones">
-  <div class="tabs" id="navTabs">
-    <a class="tab" href="index.html" data-fixed="1">Inicio</a>
+  <!-- NAV -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs" id="navTabs">
+      <a class="tab" href="index.html" data-fixed="1">Inicio</a>
 
-    <!-- Canales con desplegable -->
-    <div class="tab is-active" data-dd>
-      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
-        aria-label="Abrir menú">▾</button>
-      <ul id="dd-menu-1" class="dd-menu" hidden>
-        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-      </ul>
+      <!-- Canales con desplegable -->
+      <div class="tab is-active" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
+          aria-label="Abrir menú">▾</button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
+
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+      <a class="tab" href="rosario.html">El Rosario</a>
+
+      <!-- OTROS -->
+      <div class="tab dd more" data-dd>
+        <span class="dd-link">Otros</span>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros"
+          aria-label="Abrir menú">▾</button>
+        <ul id="dd-menu-otros" class="dd-menu" hidden>
+          <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
+          <li><a href="apps.html">Apps Católicas</a></li>
+          <li><a href="biblia.html">Biblia</a></li>
+          <li><a href="matrimonio.html">Sobre El Matrimonio</a></li>
+          <li><a href="jovenes.html">Jóvenes</a></li>
+        </ul>
+      </div>
     </div>
-
-    <a class="tab" href="noticias.html">Noticias</a>
-    <a class="tab" href="temasfe.html">Temas Fe</a>
-    <a class="tab" href="catecismo.html">Catecismo</a>
-    <a class="tab" href="rosario.html">El Rosario</a>
-
-    <!-- OTROS -->
-    <div class="tab dd more" data-dd>
-      <span class="dd-link">Otros</span>
-      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros"
-        aria-label="Abrir menú">▾</button>
-      <ul id="dd-menu-otros" class="dd-menu" hidden>
-        <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
-        <li><a href="apps.html">Apps Católicas</a></li>
-        <li><a href="biblia.html">Biblia</a></li>
-        <li><a href="matrimonio.html">Sobre El Matrimonio</a></li>
-        <li><a href="jovenes.html">Jóvenes</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
 
 
@@ -68,6 +68,20 @@
   <!-- Grid de canales -->
   <main class="channels-container">
     <section class="channels-grid">
+
+
+      <!--  NOVEDAD DESTACADA -->
+      <div class="channel-card featured">
+        <span class="badge-nuevo">NOVEDAD</span>
+
+        <iframe src="https://www.youtube.com/embed/nXujJenhXAU?rel=0" title="Novedad – Canal Católico" allowfullscreen>
+        </iframe>
+
+        <a class="channel-button" target="_blank" rel="noopener" href="https://www.youtube.com/@paxtvonline/videos">
+          📺 Canal Padre Roberto Pasolini
+        </a>
+      </div>
+
 
       <!-- Padre Carlos Rosell -->
       <div class="channel-card">
@@ -89,15 +103,7 @@
         </a>
       </div>
 
-      <!-- Padre Santiago Martín -->
-      <div class="channel-card">
-        <iframe width="350" height="200" src="https://www.youtube.com/embed/ySsOuBCtzgk" title="Padre Santiago Martín"
-          frameborder="0" allowfullscreen></iframe>
-        <a class="channel-button" target="_blank" rel="noopener"
-          href="https://www.youtube.com/@Magnificat.tv-FM/videos">
-          📺 Canal Magnificat
-        </a>
-      </div>
+
     </section>
   </main>
 
@@ -111,21 +117,18 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
-        <a class="channel-button" target="_blank" rel="noopener" 
-        href="https://www.youtube.com/@gerardoastesj/featured">
+        <a class="channel-button" target="_blank" rel="noopener" href="https://www.youtube.com/@gerardoastesj/featured">
           📺 Canal Gerardo Aste, SJ
         </a>
       </div>
 
-      <!-- Océano de la Misericordia -->
+      <!-- Padre Santiago Martín -->
       <div class="channel-card">
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/jjo0GEHWthg" title="Océano de la Misericordia" loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <a class="channel-button" target="_blank" rel="noopener" href="https://www.youtube.com/@PadreAngelLC">
-          📺 Canal Océano de la Misericordia
+        <iframe width="350" height="200" src="https://www.youtube.com/embed/ySsOuBCtzgk" title="Padre Santiago Martín"
+          frameborder="0" allowfullscreen></iframe>
+        <a class="channel-button" target="_blank" rel="noopener"
+          href="https://www.youtube.com/@Magnificat.tv-FM/videos">
+          📺 Canal Magnificat
         </a>
       </div>
 
@@ -271,20 +274,21 @@
       <h3>Curso Bíblico: Historia de la Salvación</h3>
 
       <div class="video-responsive">
-        <iframe src="https://www.youtube.com/embed/N381ivQJkx4?rel=0"
-          title="Curso Bíblico: Historia de la Salvación" frameborder="0"
+        <iframe src="https://www.youtube.com/embed/N381ivQJkx4?rel=0" title="Curso Bíblico: Historia de la Salvación"
+          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
 
       </div>
       <p class="video-note">
-        Haz clic para reproducir. <a href="https://youtube.com/playlist?list=PLCyDyk98rFwcafI3T27fbhNzbU2c-Yaxq&si=7KuXV6iOle39yNHm"
+        Haz clic para reproducir. <a
+          href="https://youtube.com/playlist?list=PLCyDyk98rFwcafI3T27fbhNzbU2c-Yaxq&si=7KuXV6iOle39yNHm"
           target="_blank" rel="noopener">Ver lista completa en YouTube</a>.
       </p>
   </section>
 
 
-    <!-- Peregrinación Virtual: Recorriendo la Tierra Santa de la mano de San Mateo -->
+  <!-- Peregrinación Virtual: Recorriendo la Tierra Santa de la mano de San Mateo -->
   <section id="peregrinacion-magdala" class="single-feature">
     <div class="card">
       <h3>Peregrinación Virtual: Recorriendo la Tierra Santa de la mano de San Mateo </h3>
@@ -297,7 +301,8 @@
 
       </div>
       <p class="video-note">
-        Haz clic para reproducir. <a href="https://youtube.com/playlist?list=PLCyDyk98rFwfrgdKMKW4OWApICJtdBjy7&si=UPOVshHtyoqvl0kV"
+        Haz clic para reproducir. <a
+          href="https://youtube.com/playlist?list=PLCyDyk98rFwfrgdKMKW4OWApICJtdBjy7&si=UPOVshHtyoqvl0kV"
           target="_blank" rel="noopener">Ver lista completa en YouTube</a>.
       </p>
   </section>
@@ -321,28 +326,28 @@
     });
   </script>
 
-<script>
-  (function(){
-    const tabs = document.getElementById('navTabs');
-    if(!tabs) return;
+  <script>
+    (function () {
+      const tabs = document.getElementById('navTabs');
+      if (!tabs) return;
 
-    /* Rueda/touch vertical => se convierte a scroll horizontal */
-    tabs.addEventListener('wheel', (e) => {
-      // si el movimiento vertical domina, desplaza en X
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        tabs.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
-    }, { passive: false });
+      /* Rueda/touch vertical => se convierte a scroll horizontal */
+      tabs.addEventListener('wheel', (e) => {
+        // si el movimiento vertical domina, desplaza en X
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          tabs.scrollLeft += e.deltaY;
+          e.preventDefault();
+        }
+      }, { passive: false });
 
-    /* Cuando un enlace del nav recibe foco, lo centramos */
-    tabs.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('focus', () => {
-        el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      /* Cuando un enlace del nav recibe foco, lo centramos */
+      tabs.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('focus', () => {
+          el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
       });
-    });
-  })();
-</script>
+    })();
+  </script>
 
 
 </body>
