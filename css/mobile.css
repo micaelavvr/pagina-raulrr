@@ -29,7 +29,7 @@
     flex-wrap: nowrap;
 
     overflow-x: auto;                 /* scroll horizontal */
-    overflow-y: visible;              /* permite dropdown visual */
+    overflow-y: hidden;              /* permite dropdown visual */
     -webkit-overflow-scrolling: touch;
 
     scroll-snap-type: x proximity;
@@ -89,6 +89,7 @@
   }
 
   /* Menú flotante tipo burbuja */
+  [data-dd].open > 
   .dd-menu{
     position: fixed !important;
     left: 50% !important;
