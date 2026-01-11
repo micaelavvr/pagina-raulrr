@@ -588,3 +588,57 @@ body.loading{ overflow:hidden; }
 @media (max-width: 900px){
   .papa-card.tweet iframe{ transform: scale(.8); width: 125%; height:125%; }
 }
+
+/* ===== VIDEO DESTACADO ===== */
+.video-destacado{
+  max-width: 980px;
+  margin: 3rem auto 3.5rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.video-titulo{
+  font-family: "Crimson Text", serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 1.2rem;
+  color: #4a2f1b;
+}
+
+.video-card{
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 18px 40px rgba(84,48,23,.18);
+}
+
+/* Mantiene proporción perfecta del video */
+.video-wrapper{
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-wrapper iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Burbuja de novedad */
+.video-badge{
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  background: #c0392b;
+  color: #fff;
+  font-weight: 700;
+  font-size: .75rem;
+  padding: .35rem .65rem;
+  border-radius: 999px;
+  letter-spacing: .04em;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
