@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Inicio</title>
-<link rel="stylesheet" href="css/styles.css?v=3">
-<link rel="stylesheet" href="mobile.css?v=1">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="mobile.css?v=1">
 
 
   <link rel="icon" href="img/cruz.png" type="image/png">
@@ -49,83 +49,76 @@
   </section>
 
 
-<!-- ===== NAV ===== -->
-<nav class="tabs-wrap" aria-label="Navegación de secciones">
-  <div class="tabs" id="navTabs">
+  <!-- ===== NAV ===== -->
+  <nav class="tabs-wrap" aria-label="Navegación de secciones">
+    <div class="tabs" id="navTabs">
+      <a class="tab" href="nosotros.html">Nosotros</a>
+      <a class="tab is-active" href="index.html" data-fixed="1">Inicio</a>
 
-    <a class="tab is-active" href="index.html" data-fixed="1">Inicio</a>
+      <!-- Canales con desplegable -->
+      <div class="tab dd" data-dd>
+        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
+          aria-label="Abrir menú">
+          ▼
+        </button>
 
-    <!-- Canales con desplegable -->
-    <div class="tab dd" data-dd>
-      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-      <button class="dd-trigger" type="button"
-              aria-expanded="false"
-              aria-controls="dd-menu-1"
-              aria-label="Abrir menú">
-        ▼
-      </button>
+        <ul id="dd-menu-1" class="dd-menu" hidden>
+          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+        </ul>
+      </div>
 
-      <ul id="dd-menu-1" class="dd-menu" hidden>
-        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-      </ul>
+      <a class="tab" href="noticias.html">Noticias</a>
+      <a class="tab" href="temasfe.html">Temas Fe</a>
+      <a class="tab" href="catecismo.html">Catecismo</a>
+
+
+      <!-- OTROS -->
+      <div class="tab dd more" data-dd>
+        <span class="dd-link">Otros</span>
+        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros"
+          aria-label="Abrir menú">
+          ▼
+        </button>
+
+        <ul id="dd-menu-otros" class="dd-menu" hidden>
+          <li><a href="rosario.html">El Rosario</a></li>
+          <li><a href="coronillayhorasanta.html">Coronilla</a></li>
+          <li><a href="apps.html">Apps Católicas</a></li>
+          <li><a href="biblia.html">Biblia</a></li>
+          <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
+          <li><a href="jovenes.html">Jóvenes</a></li>
+        </ul>
+      </div>
+
     </div>
+  </nav>
 
-    <a class="tab" href="noticias.html">Noticias</a>
-    <a class="tab" href="temasfe.html">Temas Fe</a>
-    <a class="tab" href="catecismo.html">Catecismo</a>
-    <a class="tab" href="rosario.html">El Rosario</a>
 
-    <!-- OTROS -->
-    <div class="tab dd more" data-dd>
-      <span class="dd-link">Otros</span>
-      <button class="dd-trigger" type="button"
-              aria-expanded="false"
-              aria-controls="dd-menu-otros"
-              aria-label="Abrir menú">
-        ▼
-      </button>
 
-      <ul id="dd-menu-otros" class="dd-menu" hidden>
-        <li><a href="coronillayhorasanta.html">Coronilla</a></li>
-        <li><a href="apps.html">Apps Católicas</a></li>
-        <li><a href="biblia.html">Biblia</a></li>
-        <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
-        <li><a href="jovenes.html">Jóvenes</a></li>
-      </ul>
-    </div>
-
+  <div class="live-bubble" id="liveBubble">
+    <span class="live-eye">👁️</span>
+    <span id="liveCount">0</span>
+    <span class="live-text">viendo ahora</span>
+    <button class="live-close" aria-label="Cerrar contador">×</button>
   </div>
-</nav>
 
 
+  <!-- ===== VIDEO DESTACADO ===== -->
+  <section class="video-destacado">
+    <h2 class="video-titulo">Hazle un regalo a Jesús</h2>
 
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/6aDWpKcb8Tk?rel=0" title="Hazle un regalo a Jesús" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-<div class="live-bubble" id="liveBubble">
-  <span class="live-eye">👁️</span>
-  <span id="liveCount">0</span>
-  <span class="live-text">viendo ahora</span>
-  <button class="live-close" aria-label="Cerrar contador">×</button>
-</div>
-
-
-<!-- ===== VIDEO DESTACADO ===== -->
-<section class="video-destacado">
-  <h2 class="video-titulo">Hazle un regalo a Jesús</h2>
-
-  <div class="video-card">
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/6aDWpKcb8Tk?rel=0"
-        title="Hazle un regalo a Jesús"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      <span class="video-badge">NOVEDAD</span>
     </div>
-
-    <span class="video-badge">NOVEDAD</span>
-  </div>
-</section>
+  </section>
 
 
   <!-- TÍTULO PRINCIPAL -->
@@ -167,8 +160,7 @@
       <img src="img/benedicto-logo.jpeg" alt="Mensajeros de Dios - Benedicto XVI">
     </a>
 
-    <a href="https://www.youtube.com/embed/gErsRxnbBY8?rel=0" class="logo-card"
-      target="_blank" rel="noopener">
+    <a href="https://www.youtube.com/embed/gErsRxnbBY8?rel=0" class="logo-card" target="_blank" rel="noopener">
       <img src="img/francisco.png" alt="Francisco - El Papa de los pobres y marginados">
     </a>
 
@@ -205,269 +197,269 @@
   </section>
 
 
-<!-- ======================  PARA NIÑOS (HOME) ====================== -->
-<section id="kids-home" class="anchor-section kids-bloque">
-  <h2 class="section-banner xl page-title"><span>Recursos para niños</span></h2>
-  <p class="section-sub">
-    Hojas para colorear, pulseras del rosario, y materiales sencillos para rezar y aprender.
-  </p>
+  <!-- ======================  PARA NIÑOS (HOME) ====================== -->
+  <section id="kids-home" class="anchor-section kids-bloque">
+    <h2 class="section-banner xl page-title"><span>Recursos para niños</span></h2>
+    <p class="section-sub">
+      Hojas para colorear, pulseras del rosario, y materiales sencillos para rezar y aprender.
+    </p>
 
-  <!-- Cards de recursos -->
-  <section class="kids-grid">
-    <!-- Pulsera del rosario -->
-    <article class="kids-card">
-      <img class="kids-ico" src="img/book.png" alt="">
-      <div class="kids-title"><strong>Haz tu pulsera del rosario</strong></div>
-      <div class="kids-actions">
-        <a class="btn" data-view="docs/kids/HAZ TU PULSERA ROSARIO.pdf">Ver</a>
-        <a class="btn" href="docs/kids/HAZ TU PULSERA ROSARIO.pdf" target="_blank" rel="noopener">Abrir</a>
-      </div>
-    </article>
+    <!-- Cards de recursos -->
+    <section class="kids-grid">
+      <!-- Pulsera del rosario -->
+      <article class="kids-card">
+        <img class="kids-ico" src="img/book.png" alt="">
+        <div class="kids-title"><strong>Haz tu pulsera del rosario</strong></div>
+        <div class="kids-actions">
+          <a class="btn" data-view="docs/kids/HAZ TU PULSERA ROSARIO.pdf">Ver</a>
+          <a class="btn" href="docs/kids/HAZ TU PULSERA ROSARIO.pdf" target="_blank" rel="noopener">Abrir</a>
+        </div>
+      </article>
 
-    <!-- Libro: Rosario para niños -->
-    <article class="kids-card">
-      <img class="kids-ico" src="img/book.png" alt="">
-      <div class="kids-title"><strong>Libro: Rosario para niños</strong></div>
-      <div class="kids-actions">
-        <a class="btn" data-view="docs/kids/LIBRO - ROSARIO PARA NINOS.pdf">Ver</a>
-        <a class="btn" href="docs/kids/LIBRO - ROSARIO PARA NINOS.pdf" target="_blank" rel="noopener">Abrir</a>
-      </div>
-    </article>
+      <!-- Libro: Rosario para niños -->
+      <article class="kids-card">
+        <img class="kids-ico" src="img/book.png" alt="">
+        <div class="kids-title"><strong>Libro: Rosario para niños</strong></div>
+        <div class="kids-actions">
+          <a class="btn" data-view="docs/kids/LIBRO - ROSARIO PARA NINOS.pdf">Ver</a>
+          <a class="btn" href="docs/kids/LIBRO - ROSARIO PARA NINOS.pdf" target="_blank" rel="noopener">Abrir</a>
+        </div>
+      </article>
 
-    <!-- Misterios Gloriosos para pintar -->
-    <article class="kids-card">
-      <img class="kids-ico" src="img/book.png" alt="">
-      <div class="kids-title"><strong>Misterios Gloriosos (para pintar)</strong></div>
-      <div class="kids-actions">
-        <a class="btn" data-view="docs/kids/MISTERIOR GLORIOSOS - PARA PINTAR.pdf">Ver</a>
-        <a class="btn" href="docs/kids/MISTERIOR GLORIOSOS - PARA PINTAR.pdf" target="_blank" rel="noopener">Abrir</a>
-      </div>
-    </article>
-  </section>
+      <!-- Misterios Gloriosos para pintar -->
+      <article class="kids-card">
+        <img class="kids-ico" src="img/book.png" alt="">
+        <div class="kids-title"><strong>Misterios Gloriosos (para pintar)</strong></div>
+        <div class="kids-actions">
+          <a class="btn" data-view="docs/kids/MISTERIOR GLORIOSOS - PARA PINTAR.pdf">Ver</a>
+          <a class="btn" href="docs/kids/MISTERIOR GLORIOSOS - PARA PINTAR.pdf" target="_blank" rel="noopener">Abrir</a>
+        </div>
+      </article>
+    </section>
 
-  <!-- Visor -->
-  <section id="kids-viewer-wrap">
-    <h3 class="page-title" style="margin-top:0">Visor</h3>
-    <p class="section-sub">Si el visor no carga en local, usa “Abrir” o prueba en el sitio publicado.</p>
-    <iframe id="kids-viewer" title="Visor de PDFs"></iframe>
-  </section>
+    <!-- Visor -->
+    <section id="kids-viewer-wrap">
+      <h3 class="page-title" style="margin-top:0">Visor</h3>
+      <p class="section-sub">Si el visor no carga en local, usa “Abrir” o prueba en el sitio publicado.</p>
+      <iframe id="kids-viewer" title="Visor de PDFs"></iframe>
+    </section>
 
-  <!-- Imagen con zoom -->
-  <h2 class="section-banner xl page-title"><span>¿Por qué rezamos el Santo Rosario?</span></h2>
-  <div class="kids-grid one">
-    <figure class="kids-card vertical">
-      <img class="zoomable" src="docs/kids/xqrezamos.png" alt="Por qué rezamos el Rosario">
-    </figure>
-  </div>
-
-  <!-- Modal zoom imagen -->
-  <div id="imgModal" class="img-modal" aria-hidden="true" hidden>
-    <button class="img-modal__close" aria-label="Cerrar">×</button>
-    <img id="imgModalContent" class="img-modal__content" alt="">
-  </div>
-
-  <!-- Videos -->
-  <section class="anchor-section kids-videos">
-    <h2 class="section-banner xl page-title"><span>Videos para niños</span></h2>
-
-    <div class="kids-video-grid">
-      <div class="kids-video-card">
-        <iframe src="https://www.youtube.com/embed/fzgvou9u-xs?rel=0" allowfullscreen></iframe>
-        <p class="video-title">DIOS TE SALVE MARIA</p>
-      </div>
-      <div class="kids-video-card">
-        <iframe src="https://www.youtube.com/embed/WPMN_fOY_Is?rel=0" allowfullscreen></iframe>
-        <p class="video-title">JONÁS Y LA BALLENA</p>
-      </div>
+    <!-- Imagen con zoom -->
+    <h2 class="section-banner xl page-title"><span>¿Por qué rezamos el Santo Rosario?</span></h2>
+    <div class="kids-grid one">
+      <figure class="kids-card vertical">
+        <img class="zoomable" src="docs/kids/xqrezamos.png" alt="Por qué rezamos el Rosario">
+      </figure>
     </div>
+
+    <!-- Modal zoom imagen -->
+    <div id="imgModal" class="img-modal" aria-hidden="true" hidden>
+      <button class="img-modal__close" aria-label="Cerrar">×</button>
+      <img id="imgModalContent" class="img-modal__content" alt="">
+    </div>
+
+    <!-- Videos -->
+    <section class="anchor-section kids-videos">
+      <h2 class="section-banner xl page-title"><span>Videos para niños</span></h2>
+
+      <div class="kids-video-grid">
+        <div class="kids-video-card">
+          <iframe src="https://www.youtube.com/embed/fzgvou9u-xs?rel=0" allowfullscreen></iframe>
+          <p class="video-title">DIOS TE SALVE MARIA</p>
+        </div>
+        <div class="kids-video-card">
+          <iframe src="https://www.youtube.com/embed/WPMN_fOY_Is?rel=0" allowfullscreen></iframe>
+          <p class="video-title">JONÁS Y LA BALLENA</p>
+        </div>
+      </div>
+    </section>
   </section>
-</section>
 
 
 
 
 
-<script>
-  // Visor PDFs (cards -> iframe)
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('[data-view]');
-    if (!link) return;
+  <script>
+    // Visor PDFs (cards -> iframe)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('[data-view]');
+      if (!link) return;
 
-    e.preventDefault();
-    const src    = link.getAttribute('data-view');
-    const wrap   = document.getElementById('kids-viewer-wrap');
-    const iframe = document.getElementById('kids-viewer');
+      e.preventDefault();
+      const src = link.getAttribute('data-view');
+      const wrap = document.getElementById('kids-viewer-wrap');
+      const iframe = document.getElementById('kids-viewer');
 
-    try {
-      iframe.src = src; // funciona en hosting (https)
-      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (err) {
-      console.warn('No se pudo cargar en el visor. Usa "Abrir".');
-    }
-  });
-
-  // Zoom de imágenes (modal)
-  (function(){
-    const modal    = document.getElementById('imgModal');
-    if(!modal) return;
-    const modalImg = document.getElementById('imgModalContent');
-    const closeBtn = modal.querySelector('.img-modal__close');
-
-    function open(src){
-      modalImg.src = src;
-      modal.classList.add('open');
-      modal.removeAttribute('hidden');
-    }
-    function close(){
-      modal.classList.remove('open');
-      modal.setAttribute('hidden','');
-      modalImg.removeAttribute('src');
-    }
-
-    document.addEventListener('click', (e)=>{
-      const img = e.target.closest('.zoomable');
-      if(img) open(img.src);
+      try {
+        iframe.src = src; // funciona en hosting (https)
+        wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (err) {
+        console.warn('No se pudo cargar en el visor. Usa "Abrir".');
+      }
     });
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
-    closeBtn.addEventListener('click', close);
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
-  })();
-</script>
+
+    // Zoom de imágenes (modal)
+    (function () {
+      const modal = document.getElementById('imgModal');
+      if (!modal) return;
+      const modalImg = document.getElementById('imgModalContent');
+      const closeBtn = modal.querySelector('.img-modal__close');
+
+      function open(src) {
+        modalImg.src = src;
+        modal.classList.add('open');
+        modal.removeAttribute('hidden');
+      }
+      function close() {
+        modal.classList.remove('open');
+        modal.setAttribute('hidden', '');
+        modalImg.removeAttribute('src');
+      }
+
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('.zoomable');
+        if (img) open(img.src);
+      });
+      modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
 
 
 
 
-<!-- JS: preloader (solo este) -->
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('preloader')?.classList.add('hide');
-      document.body.classList.remove('loading');
-    }, 600);
-  });
-</script>
-
-
-<!-- JS: visor kids + modal (si lo usas en index, déjalo tal cual lo tenías) -->
-<script>
-  // Visor PDFs (cards -> iframe)
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('[data-view]');
-    if (!link) return;
-
-    e.preventDefault();
-    const src    = link.getAttribute('data-view');
-    const wrap   = document.getElementById('kids-viewer-wrap');
-    const iframe = document.getElementById('kids-viewer');
-
-    try {
-      iframe.src = src;
-      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (err) {
-      console.warn('No se pudo cargar en el visor. Usa "Abrir".');
-    }
-  });
-
-  // Zoom de imágenes (modal)
-  (function(){
-    const modal    = document.getElementById('imgModal');
-    if(!modal) return;
-    const modalImg = document.getElementById('imgModalContent');
-    const closeBtn = modal.querySelector('.img-modal__close');
-
-    function open(src){
-      modalImg.src = src;
-      modal.classList.add('open');
-      modal.removeAttribute('hidden');
-    }
-    function close(){
-      modal.classList.remove('open');
-      modal.setAttribute('hidden','');
-      modalImg.removeAttribute('src');
-    }
-
-    document.addEventListener('click', (e)=>{
-      const img = e.target.closest('.zoomable');
-      if(img) open(img.src);
+  <!-- JS: preloader (solo este) -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader')?.classList.add('hide');
+        document.body.classList.remove('loading');
+      }, 600);
     });
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
-    closeBtn?.addEventListener('click', close);
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
-  })();
-</script>
+  </script>
 
-<!-- ✅ JS DROPDOWNS (ÚNICO) -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const DDLISTS  = document.querySelectorAll('[data-dd]');
-  const backdrop = document.getElementById('ddBackdrop');
 
-  function setOpen(dd, on){
-    const trigger = dd.querySelector('.dd-trigger');
-    const menu    = dd.querySelector('.dd-menu');
+  <!-- JS: visor kids + modal (si lo usas en index, déjalo tal cual lo tenías) -->
+  <script>
+    // Visor PDFs (cards -> iframe)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('[data-view]');
+      if (!link) return;
 
-    // cerrar otros
-    if(on){
-      document.querySelectorAll('[data-dd].open').forEach(x => {
-        if(x !== dd) setOpen(x, false);
-      });
-    }
+      e.preventDefault();
+      const src = link.getAttribute('data-view');
+      const wrap = document.getElementById('kids-viewer-wrap');
+      const iframe = document.getElementById('kids-viewer');
 
-    dd.classList.toggle('open', on);
-    if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-    if (menu) menu.hidden = !on;
-
-    // backdrop
-    if(backdrop){
-      backdrop.hidden = !on;
-    }
-  }
-
-  DDLISTS.forEach(dd => {
-    const trigger = dd.querySelector('.dd-trigger');
-    if(trigger){
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setOpen(dd, !dd.classList.contains('open'));
-      });
-      trigger.addEventListener('touchstart', (e) => {
-        e.stopPropagation();
-      }, { passive: true });
-    }
-
-    // cerrar al elegir un item
-    const menu = dd.querySelector('.dd-menu');
-    if(menu){
-      menu.addEventListener('click', (e) => {
-        if(e.target.closest('a')) setOpen(dd, false);
-      });
-    }
-  });
-
-  // cerrar tocando fuera
-  document.addEventListener('click', () => {
-    document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-  });
-
-  // cerrar con backdrop
-  if(backdrop){
-    backdrop.addEventListener('click', () => {
-      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      try {
+        iframe.src = src;
+        wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (err) {
+        console.warn('No se pudo cargar en el visor. Usa "Abrir".');
+      }
     });
-    backdrop.addEventListener('touchstart', () => {
-      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-    }, { passive: true });
-  }
 
-  // ESC
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape'){
-      document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-    }
-  });
-});
-</script>
+    // Zoom de imágenes (modal)
+    (function () {
+      const modal = document.getElementById('imgModal');
+      if (!modal) return;
+      const modalImg = document.getElementById('imgModalContent');
+      const closeBtn = modal.querySelector('.img-modal__close');
+
+      function open(src) {
+        modalImg.src = src;
+        modal.classList.add('open');
+        modal.removeAttribute('hidden');
+      }
+      function close() {
+        modal.classList.remove('open');
+        modal.setAttribute('hidden', '');
+        modalImg.removeAttribute('src');
+      }
+
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('.zoomable');
+        if (img) open(img.src);
+      });
+      modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+      closeBtn?.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+
+  <!-- ✅ JS DROPDOWNS (ÚNICO) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DDLISTS = document.querySelectorAll('[data-dd]');
+      const backdrop = document.getElementById('ddBackdrop');
+
+      function setOpen(dd, on) {
+        const trigger = dd.querySelector('.dd-trigger');
+        const menu = dd.querySelector('.dd-menu');
+
+        // cerrar otros
+        if (on) {
+          document.querySelectorAll('[data-dd].open').forEach(x => {
+            if (x !== dd) setOpen(x, false);
+          });
+        }
+
+        dd.classList.toggle('open', on);
+        if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+        if (menu) menu.hidden = !on;
+
+        // backdrop
+        if (backdrop) {
+          backdrop.hidden = !on;
+        }
+      }
+
+      DDLISTS.forEach(dd => {
+        const trigger = dd.querySelector('.dd-trigger');
+        if (trigger) {
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setOpen(dd, !dd.classList.contains('open'));
+          });
+          trigger.addEventListener('touchstart', (e) => {
+            e.stopPropagation();
+          }, { passive: true });
+        }
+
+        // cerrar al elegir un item
+        const menu = dd.querySelector('.dd-menu');
+        if (menu) {
+          menu.addEventListener('click', (e) => {
+            if (e.target.closest('a')) setOpen(dd, false);
+          });
+        }
+      });
+
+      // cerrar tocando fuera
+      document.addEventListener('click', () => {
+        document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+      });
+
+      // cerrar con backdrop
+      if (backdrop) {
+        backdrop.addEventListener('click', () => {
+          document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+        });
+        backdrop.addEventListener('touchstart', () => {
+          document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+        }, { passive: true });
+      }
+
+      // ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+        }
+      });
+    });
+  </script>
 
 </body>
 
