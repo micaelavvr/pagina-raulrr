@@ -1,0 +1,296 @@
+/* =========================================
+   CUARESMA.CSS
+   ========================================= */
+
+.cuaresma-hero{
+  max-width: 1200px;
+  margin: 2.2rem auto 0;
+  padding: 0 1rem;
+}
+
+.cuaresma-hero__inner{
+  background:
+    linear-gradient(180deg, rgba(255,246,226,.82), rgba(255,246,226,.68));
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(84,48,23,.10);
+  text-align: center;
+  padding: 2.4rem 1.5rem 2.2rem;
+}
+
+.cuaresma-badge{
+  display: inline-block;
+  padding: .42rem .9rem;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  font-size: .8rem;
+  color: #fff;
+  background: linear-gradient(90deg, #8e5a2a, #c47d35);
+  box-shadow: 0 10px 24px rgba(84,48,23,.14);
+}
+
+.cuaresma-title{
+  margin: .9rem 0 .45rem;
+  font-size: clamp(2rem, 1.2rem + 3vw, 4rem);
+  line-height: 1.05;
+  color: var(--ink);
+  text-shadow: 0 1px 0 rgba(255,255,255,.55);
+}
+
+.cuaresma-subtitle{
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.cuaresma-quote{
+  max-width: 920px;
+  margin: 2rem auto 2.2rem;
+  padding: 0 1.2rem;
+  text-align: center;
+}
+
+.cuaresma-quote blockquote{
+  margin: 0;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.8rem);
+  font-style: italic;
+  font-weight: 700;
+  color: #5a3b22;
+  line-height: 1.7;
+}
+
+.cuaresma-quote p{
+  margin-top: .8rem;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.cuaresma-main{
+  max-width: 1200px;
+  margin: 0 auto 3.5rem;
+  padding: 0 1rem 1rem;
+}
+
+/* ===== DESTACADO ===== */
+.cuaresma-feature{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+
+.cuaresma-feature__media,
+.cuaresma-card__video{
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 18px 38px rgba(84,48,23,.16);
+}
+
+.cuaresma-feature__media{
+  min-height: 420px;
+}
+
+.cuaresma-feature__media iframe,
+.cuaresma-card__video iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.cuaresma-feature__content{
+  background: rgba(255,246,226,.82);
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 24px;
+  box-shadow: 0 16px 32px rgba(84,48,23,.10);
+  padding: 1.7rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-badge{
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: .8rem;
+  padding: .38rem .8rem;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: .78rem;
+  color: #fff;
+  background: linear-gradient(90deg, #b05c1f, #d4873f);
+  box-shadow: 0 10px 22px rgba(176,92,31,.2);
+}
+
+.cuaresma-feature__content h2{
+  margin: 0 0 .8rem;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2.15rem);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.cuaresma-feature__content p{
+  margin: 0 0 1.2rem;
+  color: #5a3b22;
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+/* ===== BOTONES ===== */
+.cuaresma-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: .8rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent-700), var(--accent));
+  box-shadow: 0 12px 26px rgba(199,107,40,.28);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.cuaresma-btn:hover{
+  transform: translateY(1px);
+  box-shadow: 0 8px 18px rgba(199,107,40,.34);
+  filter: brightness(.98);
+}
+
+.cuaresma-btn--small{
+  padding: .72rem 1.05rem;
+  font-size: .95rem;
+}
+
+/* ===== GRID SECUNDARIO ===== */
+.cuaresma-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.cuaresma-card{
+  background: rgba(255,246,226,.82);
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 24px;
+  box-shadow: 0 16px 32px rgba(84,48,23,.10);
+  overflow: hidden;
+}
+
+.cuaresma-card__video{
+  min-height: 310px;
+}
+
+.cuaresma-card__body{
+  padding: 1.25rem 1.25rem 1.35rem;
+}
+
+.mini-badge{
+  display: inline-block;
+  margin-bottom: .7rem;
+  padding: .35rem .72rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(90deg, #7d4a22, #be7d38);
+}
+
+.cuaresma-card__body h3{
+  margin: 0 0 .65rem;
+  font-size: 1.35rem;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.cuaresma-card__body p{
+  margin: 0 0 1rem;
+  color: #5a3b22;
+  line-height: 1.7;
+}
+
+/* ===== BLOQUE FINAL ===== */
+.cuaresma-footer-note{
+  margin-top: 2.1rem;
+  background: rgba(255,246,226,.76);
+  border: 1px solid rgba(232,202,162,.88);
+  border-radius: 24px;
+  box-shadow: 0 16px 32px rgba(84,48,23,.10);
+  padding: 1.7rem 1.4rem;
+  text-align: center;
+}
+
+.cuaresma-footer-note h2{
+  margin: 0 0 .7rem;
+  color: var(--ink);
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+}
+
+.cuaresma-footer-note p{
+  max-width: 780px;
+  margin: 0 auto;
+  color: #5a3b22;
+  line-height: 1.75;
+  font-size: 1.03rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px){
+  .cuaresma-feature{
+    grid-template-columns: 1fr;
+  }
+
+  .cuaresma-feature__media{
+    min-height: 340px;
+  }
+
+  .cuaresma-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .cuaresma-card__video{
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 600px){
+  .cuaresma-hero__inner{
+    padding: 1.8rem 1rem 1.7rem;
+    border-radius: 22px;
+  }
+
+  .cuaresma-subtitle{
+    font-size: 1rem;
+  }
+
+  .cuaresma-feature__media{
+    min-height: 230px;
+    border-radius: 18px;
+  }
+
+  .cuaresma-feature__content,
+  .cuaresma-card,
+  .cuaresma-footer-note{
+    border-radius: 18px;
+  }
+
+  .cuaresma-card__video{
+    min-height: 220px;
+  }
+
+  .cuaresma-card__body{
+    padding: 1rem 1rem 1.15rem;
+  }
+
+  .cuaresma-feature__content{
+    padding: 1.2rem 1rem;
+  }
+}

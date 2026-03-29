@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Cuaresma</title>
+
+    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="mobile.css?v=1">
+    <link rel="stylesheet" href="css/cuaresma.css?v=1">
+
+    <link rel="icon" href="img/cruz.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav class="tabs-wrap" aria-label="Navegación de secciones">
+        <div class="tabs" id="navTabs">
+
+            <a class="tab" href="nosotros.html">Nosotros</a>
+            <a class="tab" href="index.html" data-fixed="1">Inicio</a>
+
+            <div class="tab dd" data-dd>
+                <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+                <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
+                    aria-label="Abrir menú">▼</button>
+
+                <ul id="dd-menu-1" class="dd-menu" hidden>
+                    <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+                </ul>
+            </div>
+
+            <a class="tab" href="noticias.html">Noticias</a>
+            <a class="tab" href="temasfe.html">Temas Fe</a>
+            <a class="tab" href="catecismo.html">Catecismo</a>
+
+            <div class="tab dd more" data-dd>
+                <span class="dd-link">Otros</span>
+                <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros"
+                    aria-label="Abrir menú">▼</button>
+
+                <ul id="dd-menu-otros" class="dd-menu" hidden>
+                    <li><a href="cuaresma.html">Cuaresma</a></li>
+                    <li><a href="rosario.html">El Rosario</a></li>
+                    <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
+                    <li><a href="apps.html">Apps Católicas</a></li>
+                    <li><a href="biblia.html">Biblia</a></li>
+                    <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
+                    <li><a href="jovenes.html">Jóvenes</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="cuaresma-hero">
+        <div class="cuaresma-hero__inner">
+            <span class="cuaresma-badge">TIEMPO DE CONVERSIÓN</span>
+            <h1 class="cuaresma-title">Cuaresma</h1>
+            <p class="cuaresma-subtitle">
+                Un espacio para meditar, orar y prepararnos con más profundidad para la Pascua del Señor.
+            </p>
+        </div>
+    </header>
+
+    <!-- ===== FRASE ===== -->
+    <section class="cuaresma-quote">
+        <blockquote>
+            "Rasguen su corazón y no sus vestiduras, y vuelvan al Señor su Dios"
+        </blockquote>
+        <p> (Joel 2, 13)</p>
+    </section>
+
+    <!-- ===== CONTENIDO ===== -->
+    <main class="cuaresma-main">
+
+        <!-- Tarjeta principal destacada -->
+        <section class="cuaresma-feature">
+            <div class="cuaresma-feature__media">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLfGiZYFJHOqmI-bWsZghFajnGHxcATvfQ"
+                    title="Playlist de Cuaresma"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="cuaresma-feature__content">
+                <span class="video-badge">RECOMENDADO</span>
+                <h2>Playlist para vivir mejor la Cuaresma</h2>
+                <p>
+                    Una selección de contenidos para acompañar este tiempo litúrgico con reflexión,
+                    formación y espíritu de conversión.
+                </p>
+
+                <a class="cuaresma-btn" href="https://www.youtube.com/playlist?list=PLfGiZYFJHOqmI-bWsZghFajnGHxcATvfQ"
+                    target="_blank" rel="noopener">
+                    ▶ Ver playlist completa
+                </a>
+            </div>
+        </section>
+
+        <!-- Tarjetas secundarias -->
+        <section class="cuaresma-grid">
+
+            <article class="cuaresma-card">
+                <div class="cuaresma-card__video">
+                    <iframe src="https://www.youtube.com/embed/79HiyTPR7LE?rel=0" title="Video de Cuaresma 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="cuaresma-card__body">
+                    <span class="mini-badge">MEDITACIÓN</span>
+                    <h3>Camino espiritual de Cuaresma</h3>
+                    <p>
+                        Un contenido para profundizar en el sentido de este tiempo y disponernos mejor al encuentro con
+                        Dios.
+                    </p>
+                    <a class="cuaresma-btn cuaresma-btn--small" href="https://www.youtube.com/watch?v=79HiyTPR7LE"
+                        target="_blank" rel="noopener">
+                        Ver en YouTube
+                    </a>
+                </div>
+            </article>
+
+            <article class="cuaresma-card">
+                <div class="cuaresma-card__video">
+                    <iframe src="https://www.youtube.com/embed/n-4IADPrhIM?rel=0" title="Video de Cuaresma 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="cuaresma-card__body">
+                    <span class="mini-badge">REFLEXIÓN</span>
+                    <h3>Preparar el corazón en este tiempo</h3>
+                    <p>
+                        Una ayuda para vivir la penitencia, la oración y la caridad con un sentido más profundo y
+                        concreto.
+                    </p>
+                    <a class="cuaresma-btn cuaresma-btn--small" href="https://www.youtube.com/watch?v=n-4IADPrhIM"
+                        target="_blank" rel="noopener">
+                        Ver en YouTube
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Bloque final -->
+        <section class="cuaresma-footer-note">
+            <h2>Vivir la Cuaresma con intención</h2>
+            <p>
+                La Cuaresma no es solo una temporada, sino una oportunidad para volver a Dios,
+                ordenar el corazón y caminar con más fe, oración y esperanza.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ===== JS DROPDOWNS ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const DDLISTS = document.querySelectorAll('[data-dd]');
+
+            function setOpen(dd, on) {
+                const trigger = dd.querySelector('.dd-trigger');
+                const menu = dd.querySelector('.dd-menu');
+
+                if (on) {
+                    document.querySelectorAll('[data-dd].open').forEach(x => {
+                        if (x !== dd) setOpen(x, false);
+                    });
+                }
+
+                dd.classList.toggle('open', on);
+                if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+                if (menu) menu.hidden = !on;
+            }
+
+            DDLISTS.forEach(dd => {
+                const trigger = dd.querySelector('.dd-trigger');
+                const menu = dd.querySelector('.dd-menu');
+
+                if (trigger) {
+                    trigger.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setOpen(dd, !dd.classList.contains('open'));
+                    });
+
+                    trigger.addEventListener('touchstart', (e) => {
+                        e.stopPropagation();
+                    }, { passive: true });
+                }
+
+                if (menu) {
+                    menu.addEventListener('click', (e) => {
+                        if (e.target.closest('a')) setOpen(dd, false);
+                    });
+                }
+            });
+
+            document.addEventListener('click', () => {
+                document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

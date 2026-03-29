@@ -32,6 +32,30 @@
 <script type="module" src="js/liveCounter.js"></script>
 
 
+<!-- ===== POPUP CUARESMA ===== -->
+<div id="cuaresma-popup" class="popup-overlay">
+  <div class="popup-card">
+
+    <!-- botón cerrar -->
+    <button class="popup-close" id="cerrarPopup">✕</button>
+
+    <!-- imagen -->
+    <img src="img/cuaresma.png" alt="Cuaresma" class="popup-img">
+
+    <!-- contenido -->
+    <div class="popup-content">
+      <h2>Nueva sección disponible</h2>
+      <p>Hemos añadido un espacio especial para vivir la Cuaresma.</p>
+
+      <a href="cuaresma.html" class="popup-btn">
+        ▶ Ir a Cuaresma
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
 <body class="loading">
   <!-- PRELOADER con efecto latido -->
   <div id="preloader" aria-hidden="true">
@@ -82,6 +106,7 @@
         </button>
 
         <ul id="dd-menu-otros" class="dd-menu" hidden>
+          <li><a href="cuaresma.html">Cuaresma</a></li>
           <li><a href="rosario.html">El Rosario</a></li>
           <li><a href="coronillayhorasanta.html">Coronilla</a></li>
           <li><a href="apps.html">Apps Católicas</a></li>
@@ -460,6 +485,38 @@
       });
     });
   </script>
+
+
+  <!-- TU JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const popup = document.getElementById("cuaresma-popup");
+      const cerrar = document.getElementById("cerrarPopup");
+
+
+      if (!localStorage.getItem("popupCuaresmaVisto")) {
+        setTimeout(() => {
+          popup.classList.add("active");
+        }, 1000);
+
+        localStorage.setItem("popupCuaresmaVisto", "true");
+      }
+
+      // cerrar con la X
+      cerrar.addEventListener("click", () => {
+        popup.classList.remove("active");
+      });
+
+      // cerrar si haces clic fuera
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+          popup.classList.remove("active");
+        }
+      });
+    });
+  </script>
+
+
 
 </body>
 

@@ -642,3 +642,106 @@ body.loading{ overflow:hidden; }
   letter-spacing: .04em;
   box-shadow: 0 6px 18px rgba(0,0,0,.25);
 }
+
+/* ===== POPUP CUARESMA ===== */
+.popup-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.popup-overlay.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* tarjeta */
+.popup-card{
+  width: min(92%, 420px);
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,.3);
+  animation: popupIn .35s ease;
+  position: relative;
+}
+
+@keyframes popupIn{
+  from{
+    transform: translateY(20px) scale(.96);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* imagen */
+.popup-img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* contenido */
+.popup-content{
+  padding: 1.2rem 1.2rem 1.4rem;
+  text-align: center;
+}
+
+.popup-content h2{
+  margin: 0 0 .4rem;
+  font-size: 1.3rem;
+  color: #4a2c1a;
+}
+
+.popup-content p{
+  margin: 0 0 1rem;
+  color: #6a4a33;
+  font-size: .95rem;
+}
+
+/* botón */
+.popup-btn{
+  display: inline-block;
+  width: 100%;
+  padding: .8rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7a3db0, #9b59d1);
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 12px 24px rgba(123,63,176,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.popup-btn:hover{
+  transform: translateY(1px);
+  box-shadow: 0 8px 18px rgba(123,63,176,.4);
+}
+
+/* cerrar */
+.popup-close{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+}
