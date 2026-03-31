@@ -488,34 +488,26 @@
 
 
   <!-- TU JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const popup = document.getElementById("cuaresma-popup");
-      const cerrar = document.getElementById("cerrarPopup");
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("cuaresma-popup");
+    const cerrar = document.getElementById("cerrarPopup");
 
+    setTimeout(() => {
+      popup.classList.add("active");
+    }, 1000);
 
-      if (!localStorage.getItem("popupCuaresmaVisto")) {
-        setTimeout(() => {
-          popup.classList.add("active");
-        }, 1000);
-
-        localStorage.setItem("popupCuaresmaVisto", "true");
-      }
-
-      // cerrar con la X
-      cerrar.addEventListener("click", () => {
-        popup.classList.remove("active");
-      });
-
-      // cerrar si haces clic fuera
-      popup.addEventListener("click", (e) => {
-        if (e.target === popup) {
-          popup.classList.remove("active");
-        }
-      });
+    cerrar.addEventListener("click", () => {
+      popup.classList.remove("active");
     });
-  </script>
 
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.classList.remove("active");
+      }
+    });
+  });
+</script>
 
 
 </body>
