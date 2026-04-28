@@ -665,7 +665,7 @@ body.loading{ overflow:hidden; }
 }
 
 .popup-card{
-  width: min(92vw, 430px);
+  width: min(92vw, 480px);
   max-height: 92vh;
   overflow-y: auto;
 
@@ -704,9 +704,12 @@ body.loading{ overflow:hidden; }
 }
 
 .popup-content h2{
+  margin: 0 0 .55rem;
   text-align: center;
   width: 100%;
   line-height: 1.2;
+  font-size: 1.35rem;
+  color: #4c2f21;
 }
 
 .popup-content p{
@@ -755,9 +758,9 @@ body.loading{ overflow:hidden; }
 
 /* móvil */
 @media (max-width: 600px){
- .popup-card{
-  width: min(92vw, 480px); 
-}
+  .popup-card{
+    width: min(94vw, 390px);
+  }
 
   .popup-img{
     max-height: 58vh;
