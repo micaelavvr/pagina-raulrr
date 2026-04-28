@@ -1,10 +1,10 @@
 /* ===============================
-   PAPA LEÓN XIV
+   PAPA LEÓN XIV — PÁGINA ESPECIAL
    =============================== */
 
 .papa-hero{
   max-width: 1100px;
-  margin: 2.5rem auto 2rem;
+  margin: 3rem auto 2rem;
   padding: 0 1rem;
   text-align: center;
 }
@@ -12,193 +12,26 @@
 .papa-badge,
 .africa-badge{
   display: inline-block;
-  padding: .4rem .9rem;
+  padding: .45rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, #9a6a2e, #d8a85a);
+  background: linear-gradient(90deg, #8a4a24, #d8a85a);
   color: #fff;
   font-weight: 900;
   font-size: .78rem;
-  letter-spacing: .6px;
-  box-shadow: 0 10px 22px rgba(84,48,23,.16);
+  letter-spacing: .65px;
+  box-shadow: 0 12px 26px rgba(84,48,23,.18);
 }
 
 .papa-hero h1{
   margin: 1rem 0 .6rem;
-  font-size: clamp(2.2rem, 1.5rem + 3vw, 4.5rem);
+  font-size: clamp(2.7rem, 1.4rem + 5vw, 5.6rem);
   color: var(--ink);
-  line-height: 1.05;
+  line-height: .95;
+  text-shadow: 0 1px 0 rgba(255,255,255,.55);
 }
 
 .papa-hero p{
-  max-width: 780px;
-  margin: 0 auto;
-  color: #6a4a33;
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.papa-main{
-  max-width: 1250px;
-  margin: 0 auto 4rem;
-  padding: 0 1rem;
-}
-
-/* grid superior */
-.papa-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.25fr;
-  gap: 1.7rem;
-  align-items: stretch;
-  margin-bottom: 3rem;
-}
-
-.papa-card{
-  background: #fff;
-  border-radius: 24px;
-  padding: 16px;
-  box-shadow: 0 18px 40px rgba(84,48,23,.13);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.papa-photo{
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-}
-
-.papa-photo img{
-  width: 100%;
-  max-height: 460px;
-  object-fit: contain;
-  filter:
-    drop-shadow(0 18px 28px rgba(84,48,23,.28))
-    drop-shadow(0 0 0 rgba(255,255,255,.85));
-}
-
-.papa-shield img{
-  width: 100%;
-  height: 100%;
-  max-height: 420px;
-  object-fit: contain;
-  border-radius: 18px;
-}
-.papa-tweet{
-  min-height: 420px;
-  overflow: hidden;
-}
-
-.papa-tweet .twitter-tweet{
-  margin: 0 !important;
-  max-width: 100% !important;
-}
-
-/* playlist */
-.africa-section{
-  margin: 3rem auto 0;
-}
-
-.africa-head{
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.africa-head h2{
-  margin: 1rem 0 .5rem;
-  color: var(--ink);
-  font-size: clamp(1.9rem, 1.2rem + 2.4vw, 3.3rem);
-}
-
-.africa-head p{
-  color: #6a4a33;
-  font-size: 1.05rem;
-}
-
-.playlist-card{
-  max-width: 980px;
-  margin: 0 auto;
-  background: rgba(255,246,226,.82);
-  border: 1px solid rgba(232,202,162,.9);
-  border-radius: 26px;
-  padding: 1.2rem;
-  box-shadow: 0 18px 40px rgba(84,48,23,.13);
-  text-align: center;
-}
-
-.playlist-card iframe{
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 20px;
-  display: block;
-  background: #000;
-  box-shadow: 0 14px 30px rgba(0,0,0,.18);
-}
-
-.playlist-btn{
-  display: inline-flex;
-  margin-top: 1rem;
-  padding: .85rem 1.35rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-700), var(--accent));
-  color: #fff;
-  text-decoration: none;
-  font-weight: 900;
-  box-shadow: 0 12px 26px rgba(199,107,40,.28);
-}
-
-/* responsive */
-@media (max-width: 1000px){
-  .papa-grid{
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .papa-tweet{
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 650px){
-  .papa-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .papa-card{
-    border-radius: 20px;
-    padding: 12px;
-  }
-
-  .papa-photo img,
-  .papa-shield img{
-    max-height: 360px;
-  }
-
-  .playlist-card{
-    padding: .8rem;
-    border-radius: 20px;
-  }
-}
-
-
-/* HERO */
-.papa-hero{
-  max-width: 1050px;
-  margin: 2.8rem auto 2.6rem;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.papa-hero h1{
-  margin: 1rem 0 .6rem;
-  font-size: clamp(2.4rem, 1.5rem + 4vw, 5rem);
-  color: var(--ink);
-  line-height: 1;
-}
-
-.papa-hero p{
-  max-width: 740px;
+  max-width: 760px;
   margin: 0 auto;
   color: #6a4a33;
   font-size: 1.08rem;
@@ -209,65 +42,89 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 1.4rem auto 0;
-  padding: .9rem 1.45rem;
+  margin: 1.45rem auto 0;
+  padding: .9rem 1.5rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, #8a4a24, #d8a85a);
+  background: linear-gradient(90deg, #6d3519, #d8a85a);
   color: #fff;
   text-decoration: none;
   font-weight: 900;
-  box-shadow: 0 12px 26px rgba(84,48,23,.22);
+  box-shadow: 0 14px 30px rgba(84,48,23,.24);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-/* GRID PRINCIPAL */
+.papa-hero-btn:hover{
+  transform: translateY(1px);
+  box-shadow: 0 10px 22px rgba(84,48,23,.30);
+}
+
+.papa-main{
+  max-width: 1280px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+/* ===============================
+   BLOQUE PRINCIPAL
+   =============================== */
+
 .papa-grid{
-  max-width: 1150px;
-  margin: 0 auto 3.5rem;
+  max-width: 1180px;
+  margin: 3rem auto 4rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1.15fr;
-  gap: 1.6rem;
+  grid-template-columns: .9fr .95fr 1.18fr;
+  gap: 1.7rem;
   align-items: center;
 }
 
-/* CARDS */
+/* base */
 .papa-card{
-  min-height: 390px;
-  background: rgba(255,246,226,.78);
-  border: 1px solid rgba(232,202,162,.9);
-  border-radius: 28px;
-  padding: 1.2rem;
-  box-shadow: 0 18px 40px rgba(84,48,23,.13);
+  min-height: 410px;
+  border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* PAPA PNG SIN CUADRO BLANCO */
+/* Papa PNG */
 .papa-photo{
   background:
-    radial-gradient(circle at center, rgba(255,246,226,.95), rgba(237,204,150,.15) 65%, transparent 100%);
-  border: 0;
-  box-shadow: none;
+    radial-gradient(circle at 50% 58%, rgba(255,246,226,.95), rgba(237,204,150,.25) 55%, transparent 74%);
   padding: 0;
 }
 
 .papa-photo img{
   width: 100%;
-  max-height: 430px;
+  max-height: 440px;
   object-fit: contain;
-  filter: drop-shadow(0 22px 30px rgba(84,48,23,.32));
+  filter:
+    drop-shadow(0 24px 32px rgba(84,48,23,.32))
+    drop-shadow(0 0 18px rgba(255,246,226,.65));
 }
 
-/* ESCUDO */
+/* Escudo */
+.papa-shield{
+  background:
+    linear-gradient(180deg, rgba(255,246,226,.95), rgba(255,246,226,.72));
+  border: 1px solid rgba(232,202,162,.9);
+  box-shadow: 0 18px 40px rgba(84,48,23,.13);
+  padding: 1.5rem;
+}
+
 .papa-shield img{
   width: 100%;
-  max-height: 400px;
+  max-height: 390px;
   object-fit: contain;
 }
 
-/* TWEET */
+/* Tweet */
 .papa-tweet{
-  background: #fff;
+  background:
+    linear-gradient(180deg, #fff, #fff9ec);
+  border: 1px solid rgba(232,202,162,.85);
+  box-shadow: 0 18px 40px rgba(84,48,23,.13);
+  padding: 1.2rem;
+  overflow: hidden;
 }
 
 .papa-tweet .twitter-tweet{
@@ -275,10 +132,127 @@
   max-width: 100% !important;
 }
 
-@media (max-width: 1000px){
+/* ===============================
+   ÁFRICA 2026
+   =============================== */
+
+.africa-section{
+  max-width: 1180px;
+  margin: 2rem auto 0;
+  padding: 3rem 1rem 3.5rem;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(255,246,226,.85), transparent 34%),
+    linear-gradient(135deg, rgba(255,246,226,.42), rgba(216,168,90,.16));
+  border: 1px solid rgba(232,202,162,.75);
+  box-shadow: 0 20px 48px rgba(84,48,23,.10);
+}
+
+.africa-head{
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.africa-head h2{
+  margin: 1rem 0 .55rem;
+  color: var(--ink);
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.africa-head p{
+  max-width: 720px;
+  margin: 0 auto;
+  color: #6a4a33;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* Card playlist */
+.playlist-card{
+  max-width: 980px;
+  margin: 0 auto;
+  background:
+    linear-gradient(180deg, rgba(255,246,226,.96), rgba(255,246,226,.82));
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 30px;
+  padding: 1.35rem;
+  box-shadow: 0 22px 50px rgba(84,48,23,.16);
+  text-align: center;
+  position: relative;
+}
+
+.playlist-card::before{
+  content: "COBERTURA ESPECIAL";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #6d3519, #d8a85a);
+  color: #fff;
+  font-weight: 900;
+  font-size: .74rem;
+  letter-spacing: .6px;
+  padding: .42rem .9rem;
+  border-radius: 999px;
+  box-shadow: 0 12px 24px rgba(84,48,23,.20);
+}
+
+.playlist-card iframe{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 24px;
+  display: block;
+  background: #000;
+  box-shadow: 0 18px 36px rgba(0,0,0,.20);
+}
+
+.playlist-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+  padding: .9rem 1.55rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-700), var(--accent));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 14px 28px rgba(199,107,40,.25);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.playlist-btn:hover{
+  transform: translateY(1px);
+  box-shadow: 0 10px 22px rgba(199,107,40,.32);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 1050px){
+  .papa-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .papa-tweet{
+    grid-column: 1 / -1;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px){
+  .papa-hero{
+    margin-top: 2rem;
+  }
+
   .papa-grid{
     grid-template-columns: 1fr;
-    max-width: 560px;
+    max-width: 520px;
+    margin-top: 2rem;
   }
 
   .papa-card{
@@ -286,6 +260,24 @@
   }
 
   .papa-photo img{
-    max-height: 380px;
+    max-height: 360px;
+  }
+
+  .papa-shield img{
+    max-height: 340px;
+  }
+
+  .africa-section{
+    border-radius: 24px;
+    padding: 2.4rem .85rem 2.8rem;
+  }
+
+  .playlist-card{
+    padding: .85rem;
+    border-radius: 22px;
+  }
+
+  .playlist-card iframe{
+    border-radius: 18px;
   }
 }
