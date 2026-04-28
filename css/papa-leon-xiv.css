@@ -181,22 +181,111 @@
   }
 }
 
+
+/* HERO */
+.papa-hero{
+  max-width: 1050px;
+  margin: 2.8rem auto 2.6rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.papa-hero h1{
+  margin: 1rem 0 .6rem;
+  font-size: clamp(2.4rem, 1.5rem + 4vw, 5rem);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.papa-hero p{
+  max-width: 740px;
+  margin: 0 auto;
+  color: #6a4a33;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
 .papa-hero-btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1.4rem;
-  padding: .85rem 1.35rem;
+  margin: 1.4rem auto 0;
+  padding: .9rem 1.45rem;
   border-radius: 999px;
   background: linear-gradient(90deg, #8a4a24, #d8a85a);
   color: #fff;
   text-decoration: none;
   font-weight: 900;
   box-shadow: 0 12px 26px rgba(84,48,23,.22);
-  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-.papa-hero-btn:hover{
-  transform: translateY(1px);
-  box-shadow: 0 9px 20px rgba(84,48,23,.28);
+/* GRID PRINCIPAL */
+.papa-grid{
+  max-width: 1150px;
+  margin: 0 auto 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.15fr;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+/* CARDS */
+.papa-card{
+  min-height: 390px;
+  background: rgba(255,246,226,.78);
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 28px;
+  padding: 1.2rem;
+  box-shadow: 0 18px 40px rgba(84,48,23,.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PAPA PNG SIN CUADRO BLANCO */
+.papa-photo{
+  background:
+    radial-gradient(circle at center, rgba(255,246,226,.95), rgba(237,204,150,.15) 65%, transparent 100%);
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.papa-photo img{
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 30px rgba(84,48,23,.32));
+}
+
+/* ESCUDO */
+.papa-shield img{
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* TWEET */
+.papa-tweet{
+  background: #fff;
+}
+
+.papa-tweet .twitter-tweet{
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1000px){
+  .papa-grid{
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .papa-card{
+    min-height: auto;
+  }
+
+  .papa-photo img{
+    max-height: 380px;
+  }
 }
