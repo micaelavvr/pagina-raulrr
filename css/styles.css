@@ -700,21 +700,18 @@ body.loading{ overflow:hidden; }
 
   display: flex;
   flex-direction: column;
-  align-items: center; /* 👈 clave */
+  align-items: center;
 }
 
 .popup-content h2{
-  width: 100%;
   text-align: center;
+  width: 100%;
+  line-height: 1.2;
 }
 
 .popup-content p{
-  margin: 0 0 1rem;
-  color: #6a3f20;
-  font-size: .98rem;
-  line-height: 1.5;
-
-  max-width: 320px;   /* 👈 clave */
+  max-width: 360px;  
+  margin: 0 auto 1rem;
   text-align: center;
 }
 
@@ -758,10 +755,9 @@ body.loading{ overflow:hidden; }
 
 /* móvil */
 @media (max-width: 600px){
-  .popup-card{
-    width: min(94vw, 390px);
-    max-height: 90vh;
-  }
+ .popup-card{
+  width: min(92vw, 480px); 
+}
 
   .popup-img{
     max-height: 58vh;
