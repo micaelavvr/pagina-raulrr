@@ -1,0 +1,203 @@
+/* =========================================
+   RETIRO EPCA
+   ========================================= */
+
+.retiro-hero{
+  max-width: 1200px;
+  margin: 2.2rem auto 2rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.retiro-hero__text{
+  background: rgba(255,246,226,.78);
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 28px;
+  padding: 2.2rem;
+  box-shadow: 0 18px 40px rgba(84,48,23,.12);
+}
+
+.retiro-badge,
+.section-pill{
+  display: inline-block;
+  padding: .4rem .9rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b66a2b, #e6954a);
+  color: #fff;
+  font-weight: 900;
+  font-size: .78rem;
+  letter-spacing: .5px;
+  box-shadow: 0 10px 22px rgba(84,48,23,.16);
+}
+
+.retiro-hero h1{
+  margin: 1rem 0 .5rem;
+  color: var(--ink);
+  font-size: clamp(2rem, 1.3rem + 2.8vw, 4rem);
+  line-height: 1.08;
+}
+
+.retiro-lead{
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #6a4a33;
+  margin: 0 0 .9rem;
+}
+
+.retiro-frase{
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #5a3b22;
+  margin: 0 0 1.4rem;
+}
+
+.retiro-frase strong{
+  color: #9a3f22;
+  font-weight: 900;
+}
+
+.retiro-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .85rem 1.3rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-700), var(--accent));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(199,107,40,.28);
+}
+
+.retiro-btn:hover{
+  transform: translateY(1px);
+}
+
+.retiro-hero__poster{
+  background: #fff;
+  border-radius: 26px;
+  padding: 14px;
+  box-shadow: 0 20px 44px rgba(84,48,23,.18);
+}
+
+.retiro-hero__poster img{
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+}
+
+.retiro-main{
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+.retiro-card{
+  background: rgba(255,246,226,.82);
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 24px;
+  padding: 1.7rem 1.5rem;
+  box-shadow: 0 16px 34px rgba(84,48,23,.10);
+  margin-bottom: 1.5rem;
+}
+
+.retiro-card h2{
+  margin: 1rem 0 .8rem;
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.4rem);
+  color: var(--ink);
+}
+
+.retiro-card p{
+  color: #5a3b22;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.retiro-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+  margin: 1.5rem 0;
+}
+
+.mini-card{
+  background: rgba(255,246,226,.68);
+  border: 1px solid rgba(232,202,162,.85);
+  border-radius: 22px;
+  padding: 1.4rem;
+  box-shadow: 0 14px 28px rgba(84,48,23,.09);
+}
+
+.mini-card h3{
+  margin: 0 0 .7rem;
+  color: var(--ink);
+  font-size: 1.25rem;
+}
+
+.mini-card p{
+  margin: 0;
+  color: #6a4a33;
+  line-height: 1.65;
+}
+
+.retiro-call{
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem 1.4rem;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(76,47,33,.92), rgba(138,72,34,.86));
+  color: #fff;
+  box-shadow: 0 18px 40px rgba(84,48,23,.18);
+}
+
+.retiro-call h2{
+  margin: 0 0 .7rem;
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 3rem);
+}
+
+.retiro-call p{
+  max-width: 720px;
+  margin: 0 auto 1.3rem;
+  line-height: 1.7;
+  font-size: 1.08rem;
+}
+
+.retiro-btn--dark{
+  background: #fff;
+  color: #5a3b22;
+  box-shadow: none;
+}
+
+@media (max-width: 900px){
+  .retiro-hero{
+    grid-template-columns: 1fr;
+  }
+
+  .retiro-hero__poster{
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .retiro-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px){
+  .retiro-hero{
+    margin-top: 1.4rem;
+  }
+
+  .retiro-hero__text{
+    padding: 1.4rem;
+    border-radius: 22px;
+  }
+
+  .retiro-frase{
+    font-size: 1.08rem;
+  }
+}

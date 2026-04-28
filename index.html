@@ -13,24 +13,29 @@
 
 
   <!-- ===== META TAGS PARA COMPARTIR ===== -->
-<!-- ===== OPEN GRAPH (WhatsApp, Facebook, etc.) ===== -->
-<meta property="og:title" content="Mundo Católico ✝">
-<meta property="og:description" content="Un espacio para vivir la fe con verdad, oración y esperanza. Este proyecto ha sido compartido con el Vaticano, recibiendo una respuesta que nos anima.">
-<meta property="og:image" content="https://micaelavvr.github.io/pagina-raulrr/img/LOGO-OFICIAL.png">
-<meta property="og:url" content="https://micaelavvr.github.io/pagina-raulrr/">
-<meta property="og:type" content="website">
+  <!-- ===== OPEN GRAPH (WhatsApp, Facebook, etc.) ===== -->
+  <meta property="og:title" content="Mundo Católico">
+  <meta property="og:description"
+    content="Un espacio para vivir la fe con verdad, oración y esperanza. Este proyecto ha sido compartido con el Vaticano, recibiendo una respuesta que nos anima.">
+  <meta property="og:image" content="https://micaelavvr.github.io/pagina-raulrr/img/LOGO-OFICIAL.png">
+  <meta property="og:url" content="https://micaelavvr.github.io/pagina-raulrr/">
+  <meta property="og:type" content="website">
 
-<!-- ===== TWITTER / X ===== -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mundo Católico ✝">
-<meta name="twitter:description" content="Un espacio para vivir la fe con claridad y esperanza. Inspirado por una misión familiar y animado por una respuesta del Vaticano.">
-<meta name="twitter:image" content="https://micaelavvr.github.io/pagina-raulrr/img/LOGO-OFICIAL.png">
+  <!-- ===== TWITTER / X ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mundo Católico">
+  <meta name="twitter:description"
+    content="Un espacio para vivir la fe con claridad y esperanza. Inspirado por una misión familiar y animado por una respuesta del Vaticano.">
+  <meta name="twitter:image" content="https://micaelavvr.github.io/pagina-raulrr/img/LOGO-OFICIAL.png">
 </head>
 
 <script type="module" src="js/liveCounter.js"></script>
 
 
-<!-- ===== POPUP CUARESMA ===== -->
+<!-- ===== POPUP ===== -->
+
+<h2>Retiro Espiritual EPCA</h2>
+
 <div id="cuaresma-popup" class="popup-overlay">
   <div class="popup-card">
 
@@ -38,19 +43,20 @@
     <button class="popup-close" id="cerrarPopup">✕</button>
 
     <!-- imagen -->
-    <img src="img/cuaresma.png" alt="Cuaresma" class="popup-img">
+    <img src="img/RETIRO-EPCA-JULIO.jpeg" alt="Retiro EPCA" class="popup-img">
 
-    <!-- contenido -->
-    <div class="popup-content">
-      <h2>Nueva sección disponible</h2>
-      <p>Hemos añadido un espacio especial para vivir la Cuaresma y Semana Santa.</p>
+    <h2>Nuevo retiro espiritual</h2>
+    <p>
+      Comunidad EPCA realizará un retiro para vivir un encuentro real con Cristo.
+      ¿Quieres cambiar tu corazón? Él te espera.
+    </p>
 
-      <a href="cuaresma.html" class="popup-btn">
-        ▶ Ir a Cuaresma y Semana Santa
-      </a>
-    </div>
-
+    <a href="retiroepca.html" class="popup-btn">
+      ▶ Ver retiro EPCA
+    </a>
   </div>
+
+</div>
 </div>
 
 
@@ -104,13 +110,14 @@
         </button>
 
         <ul id="dd-menu-otros" class="dd-menu" hidden>
-                    <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
+          <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
           <li><a href="rosario.html">El Rosario</a></li>
           <li><a href="coronillayhorasanta.html">Coronilla</a></li>
           <li><a href="apps.html">Apps Católicas</a></li>
           <li><a href="biblia.html">Biblia</a></li>
           <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
           <li><a href="jovenes.html">Jóvenes</a></li>
+          <li><a href="retiroepca.html">Retiro EPCA</a></li>
         </ul>
       </div>
 
@@ -485,26 +492,26 @@
 
 
   <!-- TU JS -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("cuaresma-popup");
-    const cerrar = document.getElementById("cerrarPopup");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const popup = document.getElementById("cuaresma-popup");
+      const cerrar = document.getElementById("cerrarPopup");
 
-    setTimeout(() => {
-      popup.classList.add("active");
-    }, 1000);
+      setTimeout(() => {
+        popup.classList.add("active");
+      }, 1000);
 
-    cerrar.addEventListener("click", () => {
-      popup.classList.remove("active");
-    });
-
-    popup.addEventListener("click", (e) => {
-      if (e.target === popup) {
+      cerrar.addEventListener("click", () => {
         popup.classList.remove("active");
-      }
+      });
+
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+          popup.classList.remove("active");
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 
 </body>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Retiro EPCA</title>
+
+  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="mobile.css?v=1">
+  <link rel="stylesheet" href="css/retiroepca.css?v=1">
+
+  <link rel="icon" href="img/cruz.png" type="image/png">
+</head>
+
+<body>
+
+<nav class="tabs-wrap" aria-label="Navegación de secciones">
+  <div class="tabs" id="navTabs">
+
+    <a class="tab" href="nosotros.html">Nosotros</a>
+    <a class="tab" href="index.html">Inicio</a>
+
+    <div class="tab dd" data-dd>
+      <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▼</button>
+      <ul id="dd-menu-1" class="dd-menu" hidden>
+        <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
+      </ul>
+    </div>
+
+    <a class="tab" href="noticias.html">Noticias</a>
+    <a class="tab" href="temasfe.html">Temas Fe</a>
+    <a class="tab" href="catecismo.html">Catecismo</a>
+
+    <div class="tab dd more" data-dd>
+      <span class="dd-link">Otros</span>
+      <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros">▼</button>
+      <ul id="dd-menu-otros" class="dd-menu" hidden>
+        <li><a href="rosario.html">El Rosario</a></li>
+        <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
+        <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa</a></li>
+        <li><a href="apps.html">Apps Católicas</a></li>
+        <li><a href="biblia.html">Biblia</a></li>
+        <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
+        <li><a href="jovenes.html">Jóvenes</a></li>
+        <li><a href="retiroepca.html">Retiro EPCA</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<header class="retiro-hero">
+  <div class="retiro-hero__text">
+    <span class="retiro-badge">NUEVO RETIRO</span>
+    <h1>Retiro Espiritual EPCA</h1>
+    <p class="retiro-lead">
+      Comunidad EPCA — Varones de Cristo Salvador Chama.
+    </p>
+    <p class="retiro-frase">
+      ¿Quieres experimentar algo nuevo? ¿Cambiar tu corazón?
+      <strong>Cristo te espera.</strong>
+    </p>
+
+    <a href="#info" class="retiro-btn">Ver información del retiro</a>
+  </div>
+
+  <div class="retiro-hero__poster">
+    <img src="img/RETIRO-EPCA-JULIO.jpeg" alt="Retiro EPCA Julio">
+  </div>
+</header>
+
+<main class="retiro-main">
+
+  <section id="info" class="retiro-card">
+    <span class="section-pill">INVITACIÓN</span>
+    <h2>Una experiencia para encontrarte con Cristo</h2>
+    <p>
+      La <strong>Comunidad EPCA Varones de Cristo Salvador Chama</strong> realizará
+      un retiro espiritual dirigido a quienes desean vivir una experiencia profunda
+      de fe, oración, conversión y encuentro con Dios.
+    </p>
+    <p>
+      Este retiro es una oportunidad para detenerse, escuchar al Señor y permitir
+      que Cristo renueve el corazón.
+    </p>
+  </section>
+
+  <section class="retiro-grid">
+    <article class="mini-card">
+      <h3>¿Para quién es?</h3>
+      <p>Para varones que quieran acercarse más a Dios y vivir una experiencia espiritual diferente.</p>
+    </article>
+
+    <article class="mini-card">
+      <h3>¿Qué vivirás?</h3>
+      <p>Momentos de oración, reflexión, fraternidad, enseñanza y encuentro personal con Cristo.</p>
+    </article>
+
+    <article class="mini-card">
+      <h3>Mensaje central</h3>
+      <p>Ven y verás. Cristo puede tocar tu vida, renovar tu fe y transformar tu corazón.</p>
+    </article>
+  </section>
+
+  <section class="retiro-call">
+    <h2>Cristo te espera</h2>
+    <p>
+      No se trata solo de asistir a una actividad. Se trata de abrirle la puerta
+      al Señor y dejar que Él haga algo nuevo en ti.
+    </p>
+    <a class="retiro-btn retiro-btn--dark" href="index.html">Volver al inicio</a>
+  </section>
+
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const DDLISTS = document.querySelectorAll('[data-dd]');
+
+  function setOpen(dd, on) {
+    const trigger = dd.querySelector('.dd-trigger');
+    const menu = dd.querySelector('.dd-menu');
+
+    if (on) {
+      document.querySelectorAll('[data-dd].open').forEach(x => {
+        if (x !== dd) setOpen(x, false);
+      });
+    }
+
+    dd.classList.toggle('open', on);
+    if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
+    if (menu) menu.hidden = !on;
+  }
+
+  DDLISTS.forEach(dd => {
+    const trigger = dd.querySelector('.dd-trigger');
+    const menu = dd.querySelector('.dd-menu');
+
+    trigger?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setOpen(dd, !dd.classList.contains('open'));
+    });
+
+    menu?.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setOpen(dd, false);
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
+  });
+});
+</script>
+
+</body>
+</html>
