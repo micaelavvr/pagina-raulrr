@@ -1,30 +1,31 @@
 /* ===============================
-   PAPA LEÓN XIV — PÁGINA ESPECIAL
+   PAPA LEÓN XIV — REORGANIZADO
    =============================== */
 
 .papa-hero{
-  max-width: 1100px;
-  margin: 3rem auto 2.2rem;
+  max-width: 1050px;
+  margin: 3rem auto 1.2rem;
   padding: 0 1rem;
   text-align: center;
 }
 
 .papa-badge,
-.africa-badge{
+.africa-badge,
+.mini-label{
   display: inline-block;
-  padding: .45rem 1rem;
+  padding: .42rem .9rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, #8a4a24, #d8a85a);
+  background: linear-gradient(90deg, #7a3d1d, #d8a85a);
   color: #fff;
   font-weight: 900;
-  font-size: .78rem;
-  letter-spacing: .65px;
+  font-size: .76rem;
+  letter-spacing: .6px;
   box-shadow: 0 12px 26px rgba(84,48,23,.18);
 }
 
 .papa-hero h1{
-  margin: 1rem 0 .6rem;
-  font-size: clamp(2.7rem, 1.4rem + 5vw, 5.6rem);
+  margin: .9rem 0 .55rem;
+  font-size: clamp(2.8rem, 1.6rem + 5vw, 5.6rem);
   color: var(--ink);
   line-height: .95;
   text-shadow: 0 1px 0 rgba(255,255,255,.55);
@@ -34,16 +35,16 @@
   max-width: 760px;
   margin: 0 auto;
   color: #6a4a33;
-  font-size: 1.08rem;
-  line-height: 1.7;
+  font-size: 1.06rem;
+  line-height: 1.65;
 }
 
 .papa-hero-btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 1.45rem auto 0;
-  padding: .9rem 1.5rem;
+  margin: 1.25rem auto 0;
+  padding: .86rem 1.45rem;
   border-radius: 999px;
   background: linear-gradient(90deg, #6d3519, #d8a85a);
   color: #fff;
@@ -65,76 +66,91 @@
 }
 
 /* ===============================
-   BLOQUE PRINCIPAL
-   Escudo pequeño izquierda,
-   Papa centro,
-   tweet derecha
+   SHOWCASE PRINCIPAL
    =============================== */
 
-.papa-grid{
-  max-width: 1120px;
-  margin: 3rem auto 4rem;
+.papa-showcase{
+  max-width: 1180px;
+  margin: 1.4rem auto 0;
   display: grid;
-  grid-template-columns: 190px minmax(300px, 430px) minmax(330px, 420px);
+  grid-template-columns: minmax(280px, 360px) minmax(320px, 430px) 210px;
   gap: 2rem;
-  align-items: center;
+  align-items: end;
   justify-content: center;
+  position: relative;
 }
 
-.papa-card{
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Papa PNG protagonista */
-.papa-photo{
-  min-height: 440px;
+.papa-showcase::before{
+  content: "";
+  position: absolute;
+  inset: 8% 8% 0;
   background:
-    radial-gradient(circle at 50% 58%, rgba(255,246,226,.95), rgba(237,204,150,.22) 58%, transparent 76%);
-  padding: 0;
+    radial-gradient(circle at 50% 55%, rgba(255,246,226,.7), transparent 55%);
+  z-index: -1;
+}
+
+.papa-photo{
+  margin: 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
 }
 
 .papa-photo img{
   width: 100%;
-  max-height: 440px;
+  max-height: 520px;
   object-fit: contain;
   filter:
-    drop-shadow(0 24px 32px rgba(84,48,23,.32))
-    drop-shadow(0 0 18px rgba(255,246,226,.65));
+    drop-shadow(0 26px 34px rgba(84,48,23,.34))
+    drop-shadow(0 0 22px rgba(255,246,226,.7));
 }
 
-/* Escudo pequeño */
-.papa-shield{
-  width: 170px;
-  min-height: 170px;
-  margin: 0 auto;
-  background: rgba(255,246,226,.72);
+.papa-message-card{
+  align-self: center;
+  background: rgba(255,246,226,.86);
   border: 1px solid rgba(232,202,162,.9);
-  box-shadow: 0 14px 28px rgba(84,48,23,.10);
+  border-radius: 28px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 42px rgba(84,48,23,.13);
+}
+
+.tweet-text{
+  margin: 1rem 0 1rem;
+  color: #4c2f21;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.tweet-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .68rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(232,202,162,.9);
+  color: #6d3519;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(84,48,23,.08);
+}
+
+.papa-symbol-card{
+  align-self: center;
+  background: rgba(255,246,226,.74);
+  border: 1px solid rgba(232,202,162,.9);
+  border-radius: 26px;
   padding: 1rem;
+  text-align: center;
+  box-shadow: 0 18px 36px rgba(84,48,23,.11);
 }
 
-.papa-shield img{
-  width: 100%;
-  max-height: 150px;
-  object-fit: contain;
-}
-
-/* Tweet */
-.papa-tweet{
-  min-height: 360px;
-  background: linear-gradient(180deg, #fff, #fff9ec);
-  border: 1px solid rgba(232,202,162,.85);
-  box-shadow: 0 18px 40px rgba(84,48,23,.13);
-  padding: 1.1rem;
-  overflow: hidden;
-}
-
-.papa-tweet .twitter-tweet{
-  margin: 0 !important;
-  max-width: 100% !important;
+.papa-symbol-card img{
+  width: 150px;
+  max-width: 100%;
+  margin: .8rem auto 0;
+  display: block;
 }
 
 /* ===============================
@@ -143,20 +159,20 @@
 
 .africa-section{
   max-width: 1180px;
-  margin: 0 auto 0; 
-  padding: 3rem 1rem 3.5rem;
+  margin: 0 auto;
+  padding: 2.6rem 1rem 3.2rem;
   border-radius: 34px;
   text-align: center;
   background:
-    radial-gradient(circle at top left, rgba(255,246,226,.85), transparent 34%),
-    linear-gradient(135deg, rgba(255,246,226,.42), rgba(216,168,90,.16));
+    radial-gradient(circle at top left, rgba(255,246,226,.88), transparent 34%),
+    linear-gradient(135deg, rgba(255,246,226,.46), rgba(216,168,90,.18));
   border: 1px solid rgba(232,202,162,.75);
   box-shadow: 0 20px 48px rgba(84,48,23,.10);
 }
 
 .africa-head{
-  text-align: center;
-  margin-bottom: 1.8rem;
+  max-width: 800px;
+  margin: 0 auto 1.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,9 +181,8 @@
 .africa-head h2{
   margin: 1rem 0 .55rem;
   color: var(--ink);
-  font-size: clamp(2rem, 1.2rem + 3vw, 3.8rem);
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.7rem);
   line-height: 1.05;
-  text-align: center;
 }
 
 .africa-head p{
@@ -176,37 +191,18 @@
   color: #6a4a33;
   font-size: 1.08rem;
   line-height: 1.7;
-  text-align: center;
 }
 
-/* Card playlist */
 .playlist-card{
   max-width: 980px;
   margin: 2rem auto 0;
-  background:
-    linear-gradient(180deg, rgba(255,246,226,.96), rgba(255,246,226,.82));
+  background: linear-gradient(180deg, rgba(255,246,226,.96), rgba(255,246,226,.82));
   border: 1px solid rgba(232,202,162,.9);
   border-radius: 30px;
   padding: 1.35rem;
   box-shadow: 0 22px 50px rgba(84,48,23,.16);
   text-align: center;
   position: relative;
-}
-
-.playlist-card::before{
-  content: "COBERTURA VIAJE AFRICA 2026";
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #6d3519, #d8a85a);
-  color: #fff;
-  font-weight: 900;
-  font-size: .74rem;
-  letter-spacing: .6px;
-  padding: .42rem .9rem;
-  border-radius: 999px;
-  box-shadow: 0 12px 24px rgba(84,48,23,.20);
 }
 
 .playlist-card iframe{
@@ -231,12 +227,6 @@
   text-decoration: none;
   font-weight: 900;
   box-shadow: 0 14px 28px rgba(199,107,40,.25);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-.playlist-btn:hover{
-  transform: translateY(1px);
-  box-shadow: 0 10px 22px rgba(199,107,40,.32);
 }
 
 /* ===============================
@@ -244,25 +234,23 @@
    =============================== */
 
 @media (max-width: 1050px){
-  .papa-grid{
+  .papa-showcase{
     grid-template-columns: 1fr;
-    max-width: 520px;
+    max-width: 560px;
+    gap: 1.3rem;
   }
-.papa-main{
-  margin-bottom: 2rem;
-}
 
   .papa-photo{
     order: 1;
   }
 
-  .papa-shield{
+  .papa-message-card{
     order: 2;
   }
 
-  .papa-tweet{
+  .papa-symbol-card{
     order: 3;
-    max-width: 520px;
+    width: min(100%, 260px);
     margin: 0 auto;
   }
 }
@@ -273,32 +261,25 @@
   }
 
   .papa-hero h1{
-    font-size: clamp(2.4rem, 1.4rem + 8vw, 4rem);
-  }
-
-.papa-grid{
-  margin: 2rem auto 0; 
-}
-  .papa-photo{
-    min-height: auto;
+    font-size: clamp(2.35rem, 1.4rem + 8vw, 4rem);
   }
 
   .papa-photo img{
-    max-height: 360px;
+    max-height: 390px;
   }
 
-  .papa-shield{
-    width: 150px;
-    min-height: 150px;
+  .papa-message-card{
+    padding: 1.2rem;
+    border-radius: 22px;
   }
 
-  .papa-shield img{
-    max-height: 130px;
+  .tweet-text{
+    font-size: 1rem;
   }
 
   .africa-section{
     border-radius: 24px;
-    padding: 2.4rem .85rem 2.8rem;
+    padding: 2.3rem .85rem 2.8rem;
   }
 
   .playlist-card{
