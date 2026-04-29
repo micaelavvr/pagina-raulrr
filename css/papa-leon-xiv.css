@@ -4,7 +4,7 @@
 
 .papa-hero{
   max-width: 1100px;
-  margin: 3rem auto 2rem;
+  margin: 3rem auto 2.2rem;
   padding: 0 1rem;
   text-align: center;
 }
@@ -66,30 +66,33 @@
 
 /* ===============================
    BLOQUE PRINCIPAL
+   Escudo pequeño izquierda,
+   Papa centro,
+   tweet derecha
    =============================== */
 
 .papa-grid{
-  max-width: 1180px;
+  max-width: 1120px;
   margin: 3rem auto 4rem;
   display: grid;
-  grid-template-columns: .9fr .95fr 1.18fr;
-  gap: 1.7rem;
+  grid-template-columns: 190px minmax(300px, 430px) minmax(330px, 420px);
+  gap: 2rem;
   align-items: center;
+  justify-content: center;
 }
 
-/* base */
 .papa-card{
-  min-height: 410px;
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Papa PNG */
+/* Papa PNG protagonista */
 .papa-photo{
+  min-height: 440px;
   background:
-    radial-gradient(circle at 50% 58%, rgba(255,246,226,.95), rgba(237,204,150,.25) 55%, transparent 74%);
+    radial-gradient(circle at 50% 58%, rgba(255,246,226,.95), rgba(237,204,150,.22) 58%, transparent 76%);
   padding: 0;
 }
 
@@ -102,28 +105,30 @@
     drop-shadow(0 0 18px rgba(255,246,226,.65));
 }
 
-/* Escudo */
+/* Escudo pequeño */
 .papa-shield{
-  background:
-    linear-gradient(180deg, rgba(255,246,226,.95), rgba(255,246,226,.72));
+  width: 170px;
+  min-height: 170px;
+  margin: 0 auto;
+  background: rgba(255,246,226,.72);
   border: 1px solid rgba(232,202,162,.9);
-  box-shadow: 0 18px 40px rgba(84,48,23,.13);
-  padding: 1.5rem;
+  box-shadow: 0 14px 28px rgba(84,48,23,.10);
+  padding: 1rem;
 }
 
 .papa-shield img{
   width: 100%;
-  max-height: 390px;
+  max-height: 150px;
   object-fit: contain;
 }
 
 /* Tweet */
 .papa-tweet{
-  background:
-    linear-gradient(180deg, #fff, #fff9ec);
+  min-height: 360px;
+  background: linear-gradient(180deg, #fff, #fff9ec);
   border: 1px solid rgba(232,202,162,.85);
   box-shadow: 0 18px 40px rgba(84,48,23,.13);
-  padding: 1.2rem;
+  padding: 1.1rem;
   overflow: hidden;
 }
 
@@ -141,6 +146,7 @@
   margin: 2rem auto 0;
   padding: 3rem 1rem 3.5rem;
   border-radius: 34px;
+  text-align: center;
   background:
     radial-gradient(circle at top left, rgba(255,246,226,.85), transparent 34%),
     linear-gradient(135deg, rgba(255,246,226,.42), rgba(216,168,90,.16));
@@ -151,6 +157,9 @@
 .africa-head{
   text-align: center;
   margin-bottom: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .africa-head h2{
@@ -158,6 +167,7 @@
   color: var(--ink);
   font-size: clamp(2rem, 1.2rem + 3vw, 3.8rem);
   line-height: 1.05;
+  text-align: center;
 }
 
 .africa-head p{
@@ -166,12 +176,13 @@
   color: #6a4a33;
   font-size: 1.08rem;
   line-height: 1.7;
+  text-align: center;
 }
 
 /* Card playlist */
 .playlist-card{
   max-width: 980px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   background:
     linear-gradient(180deg, rgba(255,246,226,.96), rgba(255,246,226,.82));
   border: 1px solid rgba(232,202,162,.9);
@@ -234,12 +245,21 @@
 
 @media (max-width: 1050px){
   .papa-grid{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .papa-photo{
+    order: 1;
+  }
+
+  .papa-shield{
+    order: 2;
   }
 
   .papa-tweet{
-    grid-column: 1 / -1;
-    max-width: 620px;
+    order: 3;
+    max-width: 520px;
     margin: 0 auto;
   }
 }
@@ -249,13 +269,15 @@
     margin-top: 2rem;
   }
 
+  .papa-hero h1{
+    font-size: clamp(2.4rem, 1.4rem + 8vw, 4rem);
+  }
+
   .papa-grid{
-    grid-template-columns: 1fr;
-    max-width: 520px;
     margin-top: 2rem;
   }
 
-  .papa-card{
+  .papa-photo{
     min-height: auto;
   }
 
@@ -263,8 +285,13 @@
     max-height: 360px;
   }
 
+  .papa-shield{
+    width: 150px;
+    min-height: 150px;
+  }
+
   .papa-shield img{
-    max-height: 340px;
+    max-height: 130px;
   }
 
   .africa-section{
