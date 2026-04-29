@@ -291,3 +291,74 @@
     border-radius: 18px;
   }
 }
+
+/* ===============================
+   ANIMACIONES SUAVES
+   =============================== */
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSoft{
+  0%, 100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glowPulse{
+  0%, 100%{
+    box-shadow: 0 14px 30px rgba(84,48,23,.22);
+  }
+  50%{
+    box-shadow: 0 18px 42px rgba(216,168,90,.38);
+  }
+}
+
+.papa-hero{
+  animation: fadeUp .7s ease both;
+}
+
+.papa-message-card{
+  animation: fadeUp .8s ease .15s both;
+}
+
+.papa-photo img{
+  animation: fadeUp .9s ease .25s both, floatSoft 4.5s ease-in-out 1.2s infinite;
+}
+
+.papa-symbol-card{
+  animation: fadeUp .8s ease .3s both;
+}
+
+.papa-hero-btn{
+  animation: glowPulse 2.8s ease-in-out infinite;
+}
+
+.africa-section{
+  animation: fadeUp .9s ease .35s both;
+}
+
+.playlist-card{
+  animation: fadeUp .9s ease .45s both;
+}
+
+/* Respeta accesibilidad: si el usuario tiene animaciones reducidas */
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation: none !important;
+    transition: none !important;
+  }
+}
