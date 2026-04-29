@@ -482,6 +482,99 @@
   </script>
 
 
+
+<!-- ===== ASISTENTE VISUAL ===== -->
+<div class="mc-assistant" id="mcAssistant">
+  <div class="mc-assistant-panel" id="mcAssistantPanel" aria-hidden="true">
+    <button class="mc-assistant-close" id="mcAssistantClose" aria-label="Cerrar asistente">×</button>
+
+    <h3>¿Qué te gustaría ver?</h3>
+    <p class="mc-assistant-subtitle">Te ayudamos a encontrar rápido el contenido.</p>
+
+    <div class="mc-assistant-options">
+      <a href="temasfe.html">
+        <span>📚</span>
+        <strong>Aprender más sobre la fe</strong>
+        <small>Biblioteca, ebooks y notas</small>
+      </a>
+
+      <a href="cuaresma.html">
+        <span>✝️</span>
+        <strong>Cuaresma y Semana Santa</strong>
+        <small>Oración y preparación</small>
+      </a>
+
+      <a href="matrimonio.html">
+        <span>💍</span>
+        <strong>Sobre el matrimonio</strong>
+        <small>Para esposos y familias</small>
+      </a>
+
+      <a href="jovenes.html">
+        <span>👥</span>
+        <strong>Espacio para jóvenes</strong>
+        <small>Fe, vida y camino cristiano</small>
+      </a>
+
+      <a href="canales.html">
+        <span>▶️</span>
+        <strong>Videos católicos</strong>
+        <small>Canales recomendados</small>
+      </a>
+    </div>
+
+    <p class="mc-assistant-footer">Estoy aquí para ayudarte 🤎</p>
+  </div>
+
+  <button class="mc-assistant-button" id="mcAssistantButton" aria-label="Abrir asistente">
+    <span class="mc-assistant-icon">🤎</span>
+    <span class="mc-assistant-text">¿Necesitas ayuda?</span>
+  </button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const assistant = document.getElementById("mcAssistant");
+    const button = document.getElementById("mcAssistantButton");
+    const panel = document.getElementById("mcAssistantPanel");
+    const close = document.getElementById("mcAssistantClose");
+
+    if (!assistant || !button || !panel || !close) return;
+
+    function popupEstaAbierto() {
+      const popup = document.getElementById("cuaresma-popup");
+      return popup && popup.classList.contains("active");
+    }
+
+    function mostrarBoton() {
+      if (!popupEstaAbierto()) {
+        button.classList.add("is-visible");
+      }
+    }
+
+    // aparece suave después de unos segundos
+    setTimeout(mostrarBoton, 5500);
+
+    button.addEventListener("click", () => {
+      panel.classList.toggle("is-open");
+      panel.setAttribute("aria-hidden", panel.classList.contains("is-open") ? "false" : "true");
+    });
+
+    close.addEventListener("click", () => {
+      panel.classList.remove("is-open");
+      panel.setAttribute("aria-hidden", "true");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!assistant.contains(e.target)) {
+        panel.classList.remove("is-open");
+        panel.setAttribute("aria-hidden", "true");
+      }
+    });
+  });
+</script>
+
+
 </body>
 
 </html>
