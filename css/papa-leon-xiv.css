@@ -273,10 +273,9 @@
     font-size: clamp(2.4rem, 1.4rem + 8vw, 4rem);
   }
 
-  .papa-grid{
-    margin-top: 2rem;
-  }
-
+.papa-grid{
+  margin: 2rem auto 0; 
+}
   .papa-photo{
     min-height: auto;
   }
