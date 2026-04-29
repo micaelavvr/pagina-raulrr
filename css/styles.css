@@ -492,10 +492,10 @@ body.loading{ overflow:hidden; }
 
 /* LIVE BUBBLE (BASE) */
 .live-bubble{
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 9999;
+  left: 18px !important;
+  right: auto !important;
+  bottom: 18px !important;
+  z-index: 8000;
   display: flex;
   align-items: center;
   gap: .45rem;
