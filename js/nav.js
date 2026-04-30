@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a class="tab" href="index.html" data-page="index.html">Inicio</a>
 
         <div class="tab dd" data-dd data-page-group="canales">
-          <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
+          <a class="dd-link" href="canales.html">Canales y Videos</a>
 
           <button class="dd-trigger" type="button"
             aria-expanded="false"
