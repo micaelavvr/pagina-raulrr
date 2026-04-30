@@ -92,6 +92,7 @@ body.loading{ overflow:hidden; }
 
 /* =========================
    NAV GLOBAL — MUNDO CATÓLICO
+   Usado por js/nav.js
 ========================= */
 
 :root{
@@ -107,7 +108,10 @@ body.loading{ overflow:hidden; }
   --mc-radius: 22px;
 }
 
-/* bloque general del nav */
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+
 .tabs-wrap{
   width: 100%;
   background: linear-gradient(180deg, rgba(255,246,226,.98), rgba(241,232,216,.98));
@@ -120,7 +124,14 @@ body.loading{ overflow:hidden; }
   backdrop-filter: blur(10px);
 }
 
-/* contenedor interno */
+.tabs-wrap::after{
+  content:"";
+  display:block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183,116,49,.22), transparent);
+}
+
 .tabs{
   max-width: 1260px;
   margin: 0 auto;
@@ -133,7 +144,10 @@ body.loading{ overflow:hidden; }
   position: relative;
 }
 
-/* links normales */
+/* =========================
+   ITEMS PRINCIPALES
+========================= */
+
 .tab{
   position: relative;
   display: inline-flex;
@@ -168,7 +182,7 @@ body.loading{ overflow:hidden; }
   transform: translateY(-1px);
 }
 
-/* activo más visible para personas mayores */
+/* activo más visible */
 .tab.is-active,
 .tab.active,
 .tab[aria-current="page"]{
@@ -194,7 +208,10 @@ body.loading{ overflow:hidden; }
   box-shadow: 0 5px 12px rgba(184,116,49,.30);
 }
 
-/* dropdown wrapper */
+/* =========================
+   DROPDOWN PRINCIPAL
+========================= */
+
 .dd{
   position: relative;
   display: inline-flex;
@@ -202,7 +219,6 @@ body.loading{ overflow:hidden; }
   gap: 8px;
 }
 
-/* texto principal dentro del dropdown */
 .dd-link{
   color: var(--mc-brown);
   text-decoration: none;
@@ -210,7 +226,6 @@ body.loading{ overflow:hidden; }
   white-space: nowrap;
 }
 
-/* botón de flecha */
 .dd-trigger{
   width: 52px;
   min-width: 52px;
@@ -244,7 +259,7 @@ body.loading{ overflow:hidden; }
   transform: translateY(-1px);
 }
 
-/* estado abierto: se nota que pertenece al menú */
+/* dropdown abierto: se ve unido al botón */
 .dd.open{
   background: linear-gradient(180deg, #f7ead1, #efe0c4);
   border-radius: 18px 18px 10px 10px;
@@ -264,14 +279,17 @@ body.loading{ overflow:hidden; }
   display: none !important;
 }
 
-/* menú dropdown conectado al botón */
+/* =========================
+   MENÚ DESPLEGABLE
+========================= */
+
 .dd-menu{
   position: absolute;
   top: calc(100% - 2px);
   left: 0;
 
   min-width: 330px;
-  max-width: 380px;
+  max-width: 390px;
 
   margin: 0;
   padding: 14px 12px 12px;
@@ -286,7 +304,7 @@ body.loading{ overflow:hidden; }
   z-index: 9999;
 }
 
-/* puente visual: no queda flotando */
+/* puente visual para que no parezca flotando */
 .dd-menu::before{
   content: "";
   position: absolute;
@@ -303,14 +321,16 @@ body.loading{ overflow:hidden; }
   border-radius: 12px 12px 0 0;
 }
 
-/* opciones */
 .dd-menu li{
   margin: 0;
   padding: 0;
 }
 
+/* opciones de Canales y Otros */
 .dd-menu li a{
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
 
   padding: 14px 16px;
   border-radius: 14px;
@@ -327,47 +347,41 @@ body.loading{ overflow:hidden; }
     transform .2s ease;
 }
 
+/* flecha bonita para todos los dropdowns */
+.dd-menu-canales li a::before,
+.dd-menu-otros li a::before{
+  content: "›";
+  display: inline-grid;
+  place-items: center;
+
+  width: 19px;
+  height: 19px;
+  border-radius: 999px;
+
+  background: rgba(184,116,49,.16);
+  color: var(--mc-gold-2);
+
+  font-size: 1.18rem;
+  font-weight: 900;
+  line-height: 1;
+
+  flex: 0 0 auto;
+}
+
 .dd-menu li a:hover{
   background: rgba(215,154,69,.16);
   transform: translateX(3px);
 }
 
-/* iconito para subtemas de canales */
-.dd-menu-canales li a,
-.dd-menu-otros li a{
-  display: block;
-  padding: 14px 16px;
-  border-radius: 14px;
-  color: var(--mc-brown);
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 1.08rem;
-  line-height: 1.25;
-  transition: background .2s ease, transform .2s ease;
-}
-
-.dd-menu-canales li a:hover,
-.dd-menu-otros li a:hover{
-  background: rgba(215,154,69,.16);
-  transform: translateX(3px);
-}
-
-
 /* dropdown Otros un poco más ancho */
 .dd-menu-otros{
-  min-width: 350px;
+  min-width: 360px;
 }
 
-/* línea decorativa inferior */
-.tabs-wrap::after{
-  content:"";
-  display:block;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(183,116,49,.22), transparent);
-}
+/* =========================
+   SCROLL INTERNO
+========================= */
 
-/* salto suave a secciones */
 html{
   scroll-behavior: smooth;
 }
@@ -380,7 +394,6 @@ div[id]{
 .page-top-space{
   padding-top: 10px;
 }
-
 
 /* ============ PÁGINAS RECOMENDADAS ============ */
 .paginas-recomendadas{
