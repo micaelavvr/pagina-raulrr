@@ -89,18 +89,19 @@ body.loading{ overflow:hidden; }
 .titulo-img{ width:90px; border-radius:50%; box-shadow:var(--shadow); justify-self:center; }
 .izquierda{ grid-column:1/2; } .derecha{ grid-column:3/4; }
 
-/* ============ NAV (DESKTOP/BASE) ============ */
+
 /* =========================
-   NAV GENERAL ELEGANTE
+   NAV GLOBAL — MUNDO CATÓLICO
 ========================= */
+
 :root{
-  --mc-bg: #e6c78f;          /* fondo general */
-  --mc-cream: #f7f0e2;       /* crema claro */
-  --mc-cream-2: #efe4cf;     /* crema medio */
-  --mc-brown: #5a3421;       /* texto principal */
-  --mc-brown-2: #7a4a2b;     /* marrón medio */
-  --mc-gold: #d79a45;        /* dorado */
-  --mc-gold-2: #b87431;      /* dorado más fuerte */
+  --mc-bg: #e6c78f;
+  --mc-cream: #fff6e2;
+  --mc-cream-2: #efe4cf;
+  --mc-brown: #5a3421;
+  --mc-brown-2: #7a4a2b;
+  --mc-gold: #d79a45;
+  --mc-gold-2: #b87431;
   --mc-shadow: 0 10px 28px rgba(90, 52, 33, 0.10);
   --mc-shadow-soft: 0 6px 18px rgba(90, 52, 33, 0.08);
   --mc-radius: 22px;
@@ -109,12 +110,13 @@ body.loading{ overflow:hidden; }
 /* bloque general del nav */
 .tabs-wrap{
   width: 100%;
-  background: linear-gradient(180deg, rgba(247,240,226,.98), rgba(241,232,216,.98));
-  border-bottom: 1px solid rgba(186, 137, 78, 0.20);
-  box-shadow: 0 4px 18px rgba(90, 52, 33, 0.05);
+  background: linear-gradient(180deg, rgba(255,246,226,.98), rgba(241,232,216,.98));
+  border-bottom: 1px solid rgba(186,137,78,.22);
+  box-shadow: 0 5px 18px rgba(90,52,33,.06);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1800;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -138,32 +140,45 @@ body.loading{ overflow:hidden; }
   align-items: center;
   justify-content: center;
   gap: .45rem;
+
+  min-height: 48px;
   padding: 13px 18px;
+
   border-radius: 18px;
+  border: 2px solid transparent;
+
   text-decoration: none;
   color: var(--mc-brown);
-  font-weight: 700;
+
+  font-weight: 900;
   font-size: 1.06rem;
   line-height: 1;
-  transition: all .24s ease;
+
   background: transparent;
+  transition:
+    background .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease,
+    transform .22s ease;
 }
 
 .tab:hover{
-  background: rgba(215, 154, 69, 0.10);
+  background: rgba(215,154,69,.12);
   color: var(--mc-brown);
   transform: translateY(-1px);
 }
 
-/* item activo */
+/* activo más visible para personas mayores */
+.tab.is-active,
 .tab.active,
 .tab[aria-current="page"]{
-  background: #efe3cd;
-  color: #5a3421;
-  border: 2px solid rgba(176, 120, 58, 0.28);
-  box-shadow: 0 4px 12px rgba(90, 52, 33, 0.08);
+  background: linear-gradient(180deg, #f7ead1, #efe0c4);
+  color: var(--mc-brown);
+  border-color: rgba(176,120,58,.38);
+  box-shadow: 0 8px 18px rgba(90,52,33,.12);
 }
 
+.tab.is-active::after,
 .tab.active::after,
 .tab[aria-current="page"]::after{
   content: "";
@@ -171,10 +186,12 @@ body.loading{ overflow:hidden; }
   left: 16px;
   right: 16px;
   bottom: -12px;
+
   height: 5px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #d79a45, #b87431);
-  box-shadow: 0 4px 10px rgba(184,116,49,.28);
+
+  background: linear-gradient(90deg, var(--mc-gold), var(--mc-gold-2));
+  box-shadow: 0 5px 12px rgba(184,116,49,.30);
 }
 
 /* dropdown wrapper */
@@ -185,142 +202,170 @@ body.loading{ overflow:hidden; }
   gap: 8px;
 }
 
+/* texto principal dentro del dropdown */
+.dd-link{
+  color: var(--mc-brown);
+  text-decoration: none;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* botón de flecha */
 .dd-trigger{
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .55rem;
-  padding: 14px 18px;
+
   border-radius: 18px;
-  border: 1px solid rgba(186, 137, 78, 0.14);
-  background: rgba(255,255,255,.22);
-  color: #5a3421;
-  font-weight: 700;
-  font-size: 1.06rem;
+  border: 2px solid rgba(186,137,78,.18);
+
+  background: rgba(255,255,255,.42);
+  color: var(--mc-brown);
+
+  font-weight: 900;
+  font-size: 1.05rem;
   cursor: pointer;
-  transition: all .24s ease;
-  box-shadow: 0 4px 14px rgba(90, 52, 33, 0.06);
+
+  box-shadow: 0 7px 18px rgba(90,52,33,.08);
+  transition:
+    background .22s ease,
+    border-color .22s ease,
+    border-radius .22s ease,
+    transform .22s ease,
+    box-shadow .22s ease;
 }
 
 .dd-trigger:hover{
-  background: rgba(215,154,69,.10);
+  background: rgba(215,154,69,.14);
+  transform: translateY(-1px);
+}
+
+/* estado abierto: se nota que pertenece al menú */
+.dd.open{
+  background: linear-gradient(180deg, #f7ead1, #efe0c4);
+  border-radius: 18px 18px 10px 10px;
+  border: 2px solid rgba(176,120,58,.32);
+  box-shadow: 0 8px 18px rgba(90,52,33,.11);
 }
 
 .dd.open .dd-trigger{
+  background: rgba(255,255,255,.72);
+  border-color: rgba(176,120,58,.38);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
 
-/* flecha */
-.dd-trigger .arrow,
-.dd-trigger .caret,
-.dd-trigger .dd-caret{
-  font-size: .88rem;
-  transition: transform .24s ease;
+/* hidden real para el JS */
+.dd-menu[hidden]{
+  display: none !important;
 }
 
-.dd.open .dd-trigger .arrow,
-.dd.open .dd-trigger .caret,
-.dd.open .dd-trigger .dd-caret{
-  transform: rotate(180deg);
-}
-
-/* menú dropdown */
+/* menú dropdown conectado al botón */
 .dd-menu{
   position: absolute;
-  top: calc(100% - 4px); /* antes estaba más abajo */
+  top: calc(100% - 2px);
   left: 0;
-  min-width: 320px;
-  background: #efe5d6;
-  border: 1px solid rgba(186,137,78,.18);
-  border-radius: 0 0 20px 20px;
+
+  min-width: 330px;
+  max-width: 380px;
+
+  margin: 0;
   padding: 14px 12px 12px;
-  box-shadow: 0 10px 18px rgba(90, 52, 33, 0.10);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(0);
-  transition: all .22s ease;
+  list-style: none;
+
+  background: linear-gradient(180deg, #f7ead1, #efe0c4);
+  border: 2px solid rgba(176,120,58,.32);
+  border-top-width: 0;
+  border-radius: 0 0 22px 22px;
+
+  box-shadow: 0 14px 24px rgba(90,52,33,.12);
   z-index: 9999;
 }
 
-.dd.open .dd-menu{
-  opacity: 1;
-  visibility: visible;
-}
-
-/* links del dropdown */
-.dd-menu a,
-.dd-link{
-  display: block;
-  text-decoration: none;
-  color: var(--mc-brown);
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 13px 14px;
-  border-radius: 14px;
-  transition: all .22s ease;
-  margin-bottom: 4px;
-}
-
+/* puente visual: no queda flotando */
 .dd-menu::before{
   content: "";
   position: absolute;
   top: -10px;
-  left: 26px;
-  width: 36px;
-  height: 14px;
-  background: #efe5d6;
-  border-left: 1px solid rgba(186,137,78,.18);
-  border-right: 1px solid rgba(186,137,78,.18);
-  border-top: 1px solid rgba(186,137,78,.18);
-  border-radius: 10px 10px 0 0;
+  left: 28px;
+
+  width: 46px;
+  height: 12px;
+
+  background: #f7ead1;
+  border-left: 2px solid rgba(176,120,58,.32);
+  border-right: 2px solid rgba(176,120,58,.32);
+  border-top: 2px solid rgba(176,120,58,.32);
+  border-radius: 12px 12px 0 0;
 }
 
-.dd-menu a:last-child,
-.dd-link:last-child{
-  margin-bottom: 0;
+/* opciones */
+.dd-menu li{
+  margin: 0;
+  padding: 0;
 }
 
-.dd-menu a{
+.dd-menu li a{
   display: block;
-  text-decoration: none;
-  color: #5a3421;
-  font-weight: 700;
-  font-size: 1.08rem;
+
   padding: 14px 16px;
   border-radius: 14px;
-  transition: background .2s ease, transform .2s ease;
+
+  color: var(--mc-brown);
+  text-decoration: none;
+
+  font-weight: 900;
+  font-size: 1.08rem;
+  line-height: 1.25;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
 }
 
-.dd-menu a:hover{
-  background: rgba(215,154,69,.12);
-  transform: translateX(2px);
+.dd-menu li a:hover{
+  background: rgba(215,154,69,.16);
+  transform: translateX(3px);
 }
 
-.dd-menu .menu-title{
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #6b3f26;
-  padding: 10px 16px 14px;
-  border-bottom: 1px solid rgba(186,137,78,.16);
-  margin-bottom: 8px;
+/* iconito para subtemas de canales */
+.dd-menu-canales li a::before{
+  content: "▶ ";
+  color: var(--mc-gold-2);
+  font-size: .82rem;
 }
 
-/* línea decorativa opcional abajo del nav */
+/* dropdown Otros un poco más ancho */
+.dd-menu-otros{
+  min-width: 350px;
+}
+
+/* línea decorativa inferior */
 .tabs-wrap::after{
   content:"";
   display:block;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(183,116,49,.20), transparent);
+  background: linear-gradient(90deg, transparent, rgba(183,116,49,.22), transparent);
 }
 
-/* si quieres un poquito más de aire debajo del nav en páginas internas */
+/* salto suave a secciones */
+html{
+  scroll-behavior: smooth;
+}
+
+section[id],
+div[id]{
+  scroll-margin-top: 125px;
+}
+
 .page-top-space{
   padding-top: 10px;
 }
-
-
 /* ============ PÁGINAS RECOMENDADAS ============ */
 .paginas-recomendadas{
   max-width: 1200px;
