@@ -20,18 +20,36 @@
 <div id="site-nav"></div>
 
 
+<section class="library-guide">
+  <span class="library-badge">BIBLIOTECA CATÓLICA</span>
+  <h1>Biblioteca de fe</h1>
+  <p>Encuentra ebooks, documentos, notas y recursos para aprender y profundizar en la fe.</p>
 
-  <!-- ====== HERO ====== -->
-  <header class="tf-hero">
-    <h1 class="tf-title">Temas y Archivos de Fe</h1>
-    <p class="tf-sub">Notas y archivos para descargar cliqueando en la tarjeta</p>
-  </header>
+  <div class="library-options">
+    <a href="#ebooks" class="library-option">
+      <span>📚</span>
+      <strong>Ebooks y documentos</strong>
+      <small>Lecturas para formación católica</small>
+    </a>
 
+    <a href="#notas" class="library-option">
+      <span>📝</span>
+      <strong>Notas y recursos</strong>
+      <small>Material breve y útil</small>
+    </a>
+
+    <a href="#biblia-catolica" class="library-option">
+      <span>📖</span>
+      <strong>Biblia Católica</strong>
+      <small>Lee y visualiza recursos bíblicos</small>
+    </a>
+  </div>
+</section>
   <!-- ====== CONTENIDO ====== -->
   <main class="tf-container">
 
     <!-- === E-BOOKS / Obras clásicas === -->
-    <section aria-labelledby="ebooks-title">
+<section id="ebooks" aria-labelledby="ebooks-title">
       <h2 id="ebooks-title" class="tf-h2 tf-divider">E-BOOKS</h2>
       <p class="tf-sub tf-divider-sub">Selección de libros en PDF para leer o descargar.</p>
 
@@ -84,7 +102,7 @@
     </section>
 
     <!-- === Archivos y notas sueltas (tarjetas pares) === -->
-    <section aria-labelledby="archivos-title" class="tf-block">
+<section id="notas" aria-labelledby="archivos-title" class="tf-block">
       <h2 id="archivos-title" class="sr-only">Archivos y notas</h2>
 
       <div class="tf-grid">
@@ -214,6 +232,84 @@
         </a>
       </div>
     </section>
+
+
+
+    <!-- ===== BIBLIA CATÓLICA ===== -->
+<section id="biblia-catolica" class="library-bible-section">
+  <span class="library-badge">SAGRADA ESCRITURA</span>
+
+  <h2>Biblia Católica</h2>
+
+  <p class="biblia-intro">
+    Recursos en PDF para leer, estudiar y orar con la Palabra de Dios.
+  </p>
+
+  <!-- Cajitas -->
+  <div class="bib-grid">
+
+    <!-- Biblia sin mitos -->
+    <div class="bib-card">
+      <img class="bib-ico" src="img/book.png" alt="Libro">
+      <div class="bib-info">
+        <strong>La Biblia sin Mitos</strong>
+        <small>Introducción crítica a la Sagrada Escritura</small>
+      </div>
+      <div class="bib-actions">
+        <a class="btn" data-view="docs/biblia/La Biblia sin Mitos.pdf">Ver</a>
+        <a class="btn" href="docs/biblia/La Biblia sin Mitos.pdf" target="_blank" rel="noopener">Abrir</a>
+      </div>
+    </div>
+
+    <!-- La Biblia en su Contexto -->
+    <div class="bib-card">
+      <img class="bib-ico" src="img/book.png" alt="Libro">
+      <div class="bib-info">
+        <strong>La Biblia en su Contexto</strong>
+        <small>Guía para comprender mejor los textos bíblicos</small>
+      </div>
+      <div class="bib-actions">
+        <a class="btn" data-view="docs/biblia/La Biblia en su Contexto.pdf">Ver</a>
+        <a class="btn" href="docs/biblia/La Biblia en su Contexto.pdf" target="_blank" rel="noopener">Abrir</a>
+      </div>
+    </div>
+
+    <!-- Jesús -->
+    <div class="bib-card">
+      <img class="bib-ico" src="img/book.png" alt="Libro">
+      <div class="bib-info">
+        <strong>Jesús - Aproximación Histórica</strong>
+        <small>Estudio sobre la figura histórica de Jesús</small>
+      </div>
+      <div class="bib-actions">
+        <a class="btn" data-view="docs/biblia/Jesus.pdf">Ver</a>
+        <a class="btn" href="docs/biblia/Jesus.pdf" target="_blank" rel="noopener">Abrir</a>
+      </div>
+    </div>
+
+    <!-- La lectura eficaz -->
+    <div class="bib-card">
+      <img class="bib-ico" src="img/book.png" alt="Libro">
+      <div class="bib-info">
+        <strong>La lectura eficaz de la Biblia</strong>
+        <small>Recurso para estudiar mejor la Palabra de Dios</small>
+      </div>
+      <div class="bib-actions">
+        <a class="btn" data-view="docs/biblia/LalecturaeficazdelaBiblia2007GordonFeePDF.pdf">Ver</a>
+        <a class="btn" href="docs/biblia/LalecturaeficazdelaBiblia2007GordonFeePDF.pdf" target="_blank" rel="noopener">Abrir</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Visor -->
+  <div id="bib-viewer-wrap">
+    <span class="viewer-badge">VISOR DE LECTURA</span>
+    <h3>Vista previa del recurso</h3>
+    <p>Selecciona “Ver” en el recurso deseado para visualizarlo aquí.</p>
+    <iframe id="bib-viewer" title="Visor de PDFs"></iframe>
+  </div>
+</section>
 
   </main>
 
