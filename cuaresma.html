@@ -245,7 +245,43 @@
 
     </main>
 
+ <!-- BOTÓN SUBIR -->
+<a href="#site-nav" class="back-top" id="backTop" aria-label="Subir al menú principal">
+  <span class="back-top-arrow">↑</span>
+  <span class="back-top-text">Subir</span>
+</a>
+
 <script src="js/nav.js" defer></script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const backTop = document.getElementById("backTop");
+  if (!backTop) return;
+
+  function toggleBackTop(){
+    if (window.scrollY > 500) {
+      backTop.classList.add("is-visible");
+    } else {
+      backTop.classList.remove("is-visible");
+    }
+  }
+
+  window.addEventListener("scroll", toggleBackTop);
+
+  backTop.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  toggleBackTop();
+});
+</script>
 
 </body>
 

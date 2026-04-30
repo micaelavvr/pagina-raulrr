@@ -337,3 +337,63 @@ html { scroll-behavior: smooth; }
     font-size: 1.55rem;
   }
 }
+
+/* ===============================
+   SEPARADOR DORADO ENTRE VIDEOS
+   =============================== */
+
+.single-feature{
+  position: relative;
+  margin: 2.3rem auto !important;
+}
+
+/* a partir del segundo video grande */
+.single-feature + .single-feature{
+  margin-top: 2.6rem !important;
+}
+
+/* línea dorada */
+.single-feature + .single-feature::before{
+  content: "";
+  position: absolute;
+  top: -1.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(620px, 72vw);
+  height: 4px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184,116,49,.45),
+    #e6954a,
+    rgba(184,116,49,.45),
+    transparent
+  );
+
+  box-shadow: 0 8px 18px rgba(184,116,49,.22);
+}
+
+/* puntito decorativo central */
+.single-feature + .single-feature::after{
+  content: "✦";
+  position: absolute;
+  top: -2.05rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+
+  border-radius: 999px;
+  background: #fff6e2;
+  border: 1px solid rgba(184,116,49,.35);
+
+  color: #b87431;
+  font-size: .9rem;
+  box-shadow: 0 8px 18px rgba(84,48,23,.12);
+}

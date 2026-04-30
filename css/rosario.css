@@ -299,3 +299,90 @@ html,body{ background: var(--bg); color: var(--ink); }
   color: #b56a2b; text-decoration: underline; text-underline-offset: 3px;
 }
 .video-note a:hover{ color: #8e4f1c; }
+
+/* ===============================
+   BOTÓN SUBIR 
+   =============================== */
+
+.back-top{
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 8500;
+
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+
+  padding: .75rem 1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #6d3519, #d8a85a);
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 900;
+  font-size: 1rem;
+
+  box-shadow: 0 14px 30px rgba(84,48,23,.28);
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    box-shadow .2s ease;
+}
+
+.back-top.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-top:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(84,48,23,.35);
+}
+
+.back-top-arrow{
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+
+  border-radius: 999px;
+  background: rgba(255,255,255,.22);
+
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.back-top-text{
+  white-space: nowrap;
+}
+
+/* móvil */
+@media (max-width: 600px){
+  .back-top{
+    right: 14px;
+    bottom: 14px;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .back-top-text{
+    display: none;
+  }
+
+  .back-top-arrow{
+    width: auto;
+    height: auto;
+    background: transparent;
+    font-size: 1.55rem;
+  }
+}
