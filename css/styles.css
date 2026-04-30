@@ -927,3 +927,67 @@ body.loading{ overflow:hidden; }
     width: min(92vw, 310px);
   }
 }
+
+
+
+/* ===============================
+   POSICIÓN FINAL: VISITAS IZQ / ASISTENTE DER
+   =============================== */
+
+/* contador visitas: abajo izquierda */
+.live-bubble{
+  position: fixed !important;
+  left: 16px !important;
+  right: auto !important;
+  bottom: 16px !important;
+  top: auto !important;
+  transform: none !important;
+  z-index: 8000 !important;
+}
+
+/* asistente: abajo derecha */
+.mc-assistant{
+  position: fixed !important;
+  right: 22px !important;
+  left: auto !important;
+  bottom: 22px !important;
+  z-index: 8500 !important;
+}
+
+/* botón del asistente NO debe tener left fixed */
+.mc-assistant-button{
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+/* panel abre hacia arriba desde la derecha */
+.mc-assistant-panel{
+  position: absolute !important;
+  right: 0 !important;
+  left: auto !important;
+  bottom: 68px !important;
+}
+
+/* móvil */
+@media (max-width: 600px){
+  .live-bubble{
+    left: 12px !important;
+    right: auto !important;
+    bottom: 14px !important;
+  }
+
+  .mc-assistant{
+    right: 12px !important;
+    left: auto !important;
+    bottom: 14px !important;
+  }
+
+  .mc-assistant-panel{
+    right: 0 !important;
+    left: auto !important;
+    bottom: 66px !important;
+    width: min(92vw, 315px);
+  }
+}
