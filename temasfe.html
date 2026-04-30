@@ -265,8 +265,8 @@
             <small>Introducción crítica a la Sagrada Escritura</small>
           </div>
           <div class="bib-actions">
-            <a class="btn" data-view="docs/biblia/La Biblia sin Mitos.pdf">Ver</a>
-            <a href="#" class="btn" href="docs/biblia/La Biblia sin Mitos.pdf" target="_blank" rel="noopener">Abrir</a>
+            <button type="button" class="btn" data-view="docs/biblia/La Biblia sin Mitos.pdf">Ver</button>
+            <a class="btn" href="docs/biblia/La Biblia sin Mitos.pdf" target="_blank" rel="noopener">Abrir</a>
           </div>
         </div>
 
@@ -278,9 +278,8 @@
             <small>Guía para comprender mejor los textos bíblicos</small>
           </div>
           <div class="bib-actions">
-            <a class="btn" data-view="docs/biblia/La Biblia en su Contexto.pdf">Ver</a>
-            <a href="#" class="btn" href="docs/biblia/La Biblia en su Contexto.pdf" target="_blank"
-              rel="noopener">Abrir</a>
+            <button type="button" class="btn" data-view="docs/biblia/La Biblia en su Contexto.pdf">Ver</button>
+            <a class="btn" href="docs/biblia/La Biblia en su Contexto.pdf" target="_blank" rel="noopener">Abrir</a>
           </div>
         </div>
 
@@ -292,8 +291,8 @@
             <small>Estudio sobre la figura histórica de Jesús</small>
           </div>
           <div class="bib-actions">
-            <a class="btn" data-view="docs/biblia/Jesus.pdf">Ver</a>
-            <a href="#" class="btn" href="docs/biblia/Jesus.pdf" target="_blank" rel="noopener">Abrir</a>
+            <button type="button" class="btn" data-view="docs/biblia/Jesus.pdf">Ver</button>
+            <a class="btn" href="docs/biblia/Jesus.pdf" target="_blank" rel="noopener">Abrir</a>
           </div>
         </div>
 
@@ -305,8 +304,9 @@
             <small>Recurso para estudiar mejor la Palabra de Dios</small>
           </div>
           <div class="bib-actions">
-            <a class="btn" data-view="docs/biblia/LalecturaeficazdelaBiblia2007GordonFeePDF.pdf">Ver</a>
-            <a href="#" class="btn" href="docs/biblia/LalecturaeficazdelaBiblia2007GordonFeePDF.pdf" target="_blank"
+            <button type="button" class="btn"
+              data-view="docs/biblia/LalecturaeficazdelaBiblia2007GordonFeePDF.pdf">Ver</button>
+            <a class="btn" href="docs/biblia/LalecturaeficazdelaBiblia2007GordonFeePDF.pdf" target="_blank"
               rel="noopener">Abrir</a>
           </div>
         </div>
@@ -324,45 +324,42 @@
 
   </main>
 
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const viewer = document.getElementById("bib-viewer");
-      const wrap = document.getElementById("bib-viewer-wrap");
-
-      if (!viewer || !wrap) return;
-
-      document.querySelectorAll("[data-view]").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const rawPath = btn.getAttribute("data-view");
-          if (!rawPath) return;
-
-          const pdfUrl = new URL(rawPath, window.location.href).href;
-
-          viewer.src = encodeURI(pdfUrl);
-
-          wrap.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        });
-      });
-    });
-  </script>
-
- <!-- BOTÓN SUBIR -->
+<!-- BOTÓN SUBIR -->
 <a href="#site-nav" class="back-top" id="backTop" aria-label="Subir al menú principal">
   <span class="back-top-arrow">↑</span>
   <span class="back-top-text">Subir</span>
 </a>
-
+ 
 <script src="js/nav.js" defer></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const backTop = document.getElementById("backTop");
+  if (!backTop) return;
 
+  function toggleBackTop(){
+    if (window.scrollY > 500) {
+      backTop.classList.add("is-visible");
+    } else {
+      backTop.classList.remove("is-visible");
+    }
+  }
 
-  </script>
+  window.addEventListener("scroll", toggleBackTop);
+
+  backTop.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  toggleBackTop();
+});
+</script>
+
 
 </body>
 
