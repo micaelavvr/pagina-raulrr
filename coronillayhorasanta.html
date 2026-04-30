@@ -16,42 +16,7 @@
 <body>
 
   <!-- NAV -->
-  <nav class="tabs-wrap" aria-label="Navegación de secciones">
-    <div class="tabs" id="navTabs">
-      <a class="tab" href="nosotros.html">Nosotros</a>
-      <a class="tab" href="index.html" data-fixed="1">Inicio</a>
-
-      <!-- Canales con desplegable -->
-      <div class="tab dd" data-dd>
-        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
-          aria-label="Abrir menú">▾</button>
-        <ul id="dd-menu-1" class="dd-menu" hidden>
-          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-        </ul>
-      </div>
-
-      <a class="tab" href="noticias.html">Noticias</a>
-      <a class="tab" href="temasfe.html">Biblioteca</a>
-      <a class="tab" href="catecismo.html">Catecismo</a>
-
-      <!-- OTROS -->
-      <div class="tab dd more" data-dd>
-        <span class="dd-link">Otros</span>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros"
-          aria-label="Abrir menú">▾</button>
-        <ul id="dd-menu-otros" class="dd-menu" hidden>
-                    <li><a href="papa-leon-xiv.html">Papa León XIV</a></li>
-                    <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
-          <li><a href="rosario.html">El Rosario</a></li>
-          <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
-          <li><a href="matrimonio.html">Sobre El Matrimonio</a></li>
-          <li><a href="jovenes.html">Jóvenes</a></li>
-          <li><a href="retiroepca.html">Retiro EPCA</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<div id="site-nav"></div>
 
 
 
@@ -113,26 +78,7 @@
 
 
 
-
-
-
-
-
-  <script>
-    // Dropdown accesible (déjalo una sola vez por página)
-    document.querySelectorAll('[data-dd]').forEach(dd => {
-      const btn = dd.querySelector('.dd-trigger');
-      const menu = dd.querySelector('.dd-menu');
-      const setOpen = on => {
-        dd.classList.toggle('open', on);
-        menu.hidden = !on;
-        btn.setAttribute('aria-expanded', on ? 'true' : 'false');
-      };
-      btn.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
-      menu.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
-      document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
-    });
-  </script>
+<script src="js/nav.js" defer></script>
 </body>
 
 </html>

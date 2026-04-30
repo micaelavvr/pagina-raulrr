@@ -47,11 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
             <li><a href="rosario.html">El Rosario</a></li>
             <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
-            <li><a href="apps.html">Apps Católicas</a></li>
-            <li><a href="biblia.html">Biblia</a></li>
             <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
             <li><a href="jovenes.html">Jóvenes</a></li>
-            <li><a href="retiroepca.html">Retiro EPCA</a></li>
           </ul>
         </div>
 
@@ -98,11 +95,8 @@ function marcarPaginaActiva(){
     "cuaresma.html",
     "rosario.html",
     "coronillayhorasanta.html",
-    "apps.html",
-    "biblia.html",
     "matrimonio.html",
-    "jovenes.html",
-    "retiroepca.html"
+    "jovenes.html"
   ];
 
   if (canalesPages.includes(currentFile)) {
