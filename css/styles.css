@@ -333,11 +333,25 @@ body.loading{ overflow:hidden; }
 }
 
 /* iconito para subtemas de canales */
-.dd-menu-canales li a::before{
-  content: "▶ ";
-  color: var(--mc-gold-2);
-  font-size: .82rem;
+.dd-menu-canales li a,
+.dd-menu-otros li a{
+  display: block;
+  padding: 14px 16px;
+  border-radius: 14px;
+  color: var(--mc-brown);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.08rem;
+  line-height: 1.25;
+  transition: background .2s ease, transform .2s ease;
 }
+
+.dd-menu-canales li a:hover,
+.dd-menu-otros li a:hover{
+  background: rgba(215,154,69,.16);
+  transform: translateX(3px);
+}
+
 
 /* dropdown Otros un poco más ancho */
 .dd-menu-otros{
@@ -366,6 +380,8 @@ div[id]{
 .page-top-space{
   padding-top: 10px;
 }
+
+
 /* ============ PÁGINAS RECOMENDADAS ============ */
 .paginas-recomendadas{
   max-width: 1200px;

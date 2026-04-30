@@ -20,46 +20,7 @@
 <body>
 
     <!-- ===== NAV ===== -->
-    <nav class="tabs-wrap" aria-label="Navegación de secciones">
-        <div class="tabs" id="navTabs">
-
-            <a class="tab is-active" href="nosotros.html">Nosotros</a>
-            <a class="tab" href="index.html" data-fixed="1">Inicio</a>
-
-            <!-- Canales con desplegable -->
-            <div class="tab dd" data-dd>
-                <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-                <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1"
-                    aria-label="Abrir menú">▼</button>
-
-                <ul id="dd-menu-1" class="dd-menu" hidden>
-                    <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-                </ul>
-            </div>
-
-            <a class="tab" href="noticias.html">Noticias</a>
-            <a class="tab" href="temasfe.html">Biblioteca</a>
-            <a class="tab" href="catecismo.html">Catecismo</a>
-
-            <!-- OTROS -->
-            <div class="tab dd more" data-dd>
-                <span class="dd-link">Otros</span>
-                <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros"
-                    aria-label="Abrir menú">▼</button>
-
-                <ul id="dd-menu-otros" class="dd-menu" hidden>
-                    <li><a href="papa-leon-xiv.html">Papa León XIV</a></li>
-                    <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
-                    <li><a href="rosario.html">El Rosario</a></li>
-                    <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
-                    <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
-                    <li><a href="jovenes.html">Jóvenes</a></li>
-                    <li><a href="retiroepca.html">Retiro EPCA</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
+<div id="site-nav"></div>
 
 
     <!-- ===== HERO ===== -->
@@ -225,60 +186,7 @@
     </main>
 
 
-    <!-- ✅ JS DROPDOWNS (ÚNICO) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const DDLISTS = document.querySelectorAll('[data-dd]');
-
-            function setOpen(dd, on) {
-                const trigger = dd.querySelector('.dd-trigger');
-                const menu = dd.querySelector('.dd-menu');
-
-                if (on) {
-                    document.querySelectorAll('[data-dd].open').forEach(x => {
-                        if (x !== dd) setOpen(x, false);
-                    });
-                }
-
-                dd.classList.toggle('open', on);
-                if (trigger) trigger.setAttribute('aria-expanded', on ? 'true' : 'false');
-                if (menu) menu.hidden = !on;
-            }
-
-            DDLISTS.forEach(dd => {
-                const trigger = dd.querySelector('.dd-trigger');
-                const menu = dd.querySelector('.dd-menu');
-
-                if (trigger) {
-                    trigger.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setOpen(dd, !dd.classList.contains('open'));
-                    });
-
-                    trigger.addEventListener('touchstart', (e) => {
-                        e.stopPropagation();
-                    }, { passive: true });
-                }
-
-                if (menu) {
-                    menu.addEventListener('click', (e) => {
-                        if (e.target.closest('a')) setOpen(dd, false);
-                    });
-                }
-            });
-
-            document.addEventListener('click', () => {
-                document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    document.querySelectorAll('[data-dd].open').forEach(d => setOpen(d, false));
-                }
-            });
-        });
-    </script>
+<script src="js/nav.js" defer></script>
 
 </body>
 
