@@ -246,22 +246,33 @@
       </div>
     </div>
 
-    <div class="cristonautas-video">
-      <iframe
-        id="cristoFrame"
-        src="https://www.youtube.com/embed/oqHG4GbqEEY?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8&rel=0"
-        title="Cristonautas Temporada 1"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+<div class="cristonautas-video has-fallback" id="cristoMedia">
+  <div class="cristonautas-fallback">
+    <img src="https://img.youtube.com/vi/oqHG4GbqEEY/hqdefault.jpg" alt="Cristonautas Temporada 1">
+
+    <div>
+      <strong>Esta temporada se ve en YouTube</strong>
+      <p>
+        Por derechos de autor, esta temporada no puede reproducirse dentro de la página.
+        Puedes abrirla directamente en YouTube.
+      </p>
+
+      <a class="cristonautas-btn"
+         href="https://youtube.com/playlist?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8"
+         target="_blank"
+         rel="noopener">
+        ▶ Abrir temporada en YouTube
+      </a>
     </div>
+  </div>
+</div>
 
   </div>
 
   <div class="cristonautas-seasons" aria-label="Temporadas de Cristonautas">
 
-    <button class="season-card is-active" type="button"
+    <button class="season-card is-active" type="button" data-type="external"
+data-videoid="oqHG4GbqEEY"
       data-season="Temporada 1"
       data-title="Cristonautas — Temporada 1"
       data-desc="Inicia la primera temporada desde el capítulo 1 y continúa con la lista completa."
@@ -271,7 +282,8 @@
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button"
+    <button class="season-card" type="button" data-type="external"
+data-videoid="oqHG4GbqEEY"
       data-season="Temporada 2"
       data-title="Cristonautas — Temporada 2"
       data-desc="Continúa la serie con la segunda temporada desde el primer capítulo."
@@ -281,7 +293,8 @@
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button"
+    <button class="season-card" type="button" data-type="external"
+data-videoid="oqHG4GbqEEY"
       data-season="Temporada 3"
       data-title="Cristonautas — Temporada 3"
       data-desc="Abre la tercera temporada y reproduce la lista completa desde el capítulo 1."
@@ -291,7 +304,8 @@
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button"
+    <button class="season-card" type="button" data-type="external"
+data-videoid="oqHG4GbqEEY"
       data-season="Temporada 4"
       data-title="Cristonautas — Temporada 4"
       data-desc="Selecciona la cuarta temporada y sigue los capítulos desde YouTube."
@@ -301,7 +315,8 @@
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button"
+    <button class="season-card" type="button" data-type="external"
+data-videoid="oqHG4GbqEEY"
       data-season="Temporada 5"
       data-title="Cristonautas — Temporada 5"
       data-desc="Reproduce la quinta temporada desde el primer capítulo."
@@ -311,7 +326,8 @@
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button"
+    <button class="season-card" type="button" data-type="external"
+data-videoid="oqHG4GbqEEY"
       data-season="Temporada 6"
       data-title="Cristonautas — Temporada 6"
       data-desc="Abre la sexta temporada y continúa con todos sus capítulos."
@@ -454,33 +470,75 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".season-card");
-  const frame = document.getElementById("cristoFrame");
+  const media = document.getElementById("cristoMedia");
   const title = document.getElementById("cristoTitle");
   const desc = document.getElementById("cristoDesc");
   const label = document.getElementById("cristoSeasonLabel");
   const youtube = document.getElementById("cristoYoutube");
   const playerCard = document.querySelector(".cristonautas-player-card");
 
-  if (!buttons.length || !frame || !title || !desc || !label || !youtube) return;
+  if (!buttons.length || !media || !title || !desc || !label || !youtube) return;
+
+  function renderSeason(btn){
+    const type = btn.dataset.type;
+    const videoId = btn.dataset.videoid;
+    const embed = btn.dataset.embed;
+    const youtubeUrl = btn.dataset.youtube;
+
+    label.textContent = btn.dataset.season;
+    title.textContent = btn.dataset.title;
+    desc.textContent = btn.dataset.desc;
+    youtube.href = youtubeUrl;
+
+    media.innerHTML = "";
+
+    if (type === "embed") {
+      media.classList.remove("has-fallback");
+
+      media.innerHTML = `
+        <iframe
+          src="${embed}"
+          title="${btn.dataset.title}"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      `;
+    } else {
+      media.classList.add("has-fallback");
+
+      media.innerHTML = `
+        <div class="cristonautas-fallback">
+          <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="${btn.dataset.title}">
+
+          <div>
+            <strong>Esta temporada se ve en YouTube</strong>
+            <p>
+              Por derechos de autor, esta temporada no puede reproducirse dentro de la página.
+              Puedes abrirla directamente en YouTube.
+            </p>
+
+            <a class="cristonautas-btn"
+               href="${youtubeUrl}"
+               target="_blank"
+               rel="noopener">
+              ▶ Abrir temporada en YouTube
+            </a>
+          </div>
+        </div>
+      `;
+    }
+  }
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       buttons.forEach((b) => b.classList.remove("is-active"));
       btn.classList.add("is-active");
 
-      label.textContent = btn.dataset.season;
-      title.textContent = btn.dataset.title;
-      desc.textContent = btn.dataset.desc;
-      youtube.href = btn.dataset.youtube;
-
-      frame.src = "";
-      setTimeout(() => {
-        frame.src = btn.dataset.embed;
-      }, 80);
+      renderSeason(btn);
 
       if (playerCard) {
         playerCard.scrollIntoView({
@@ -490,6 +548,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const active = document.querySelector(".season-card.is-active") || buttons[0];
+  renderSeason(active);
 });
 </script>
 

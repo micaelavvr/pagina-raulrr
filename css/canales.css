@@ -611,3 +611,55 @@ html { scroll-behavior: smooth; }
     padding: .9rem .55rem;
   }
 }
+
+/* Estado cuando una temporada no puede mostrarse embebida */
+.cristonautas-video.has-fallback{
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.14), transparent 35%),
+    linear-gradient(135deg, #3d2417, #1f1510);
+  padding: 1rem;
+}
+
+.cristonautas-fallback{
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 1rem;
+  align-items: center;
+
+  color: #fff;
+}
+
+.cristonautas-fallback img{
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
+}
+
+.cristonautas-fallback strong{
+  display: block;
+  font-size: clamp(1.35rem, 1rem + 1.4vw, 2rem);
+  line-height: 1.08;
+  margin-bottom: .5rem;
+}
+
+.cristonautas-fallback p{
+  margin: 0 0 1rem;
+  color: rgba(255,255,255,.86);
+  line-height: 1.45;
+}
+
+@media (max-width: 720px){
+  .cristonautas-fallback{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cristonautas-fallback img{
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
