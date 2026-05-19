@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <ul id="dd-menu-canales" class="dd-menu dd-menu-canales" hidden>
             <li><a href="canales.html#canales-recomendados">Canales recomendados</a></li>
+            <li><a href="canales.html#cristonautas">Cristonautas</a></li>
             <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
             <li><a href="canales.html#carlo-acutis">Carlo Acutis</a></li>
             <li><a href="canales.html#historia-salvacion">Historia de la Salvación</a></li>
@@ -49,6 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
             <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
             <li><a href="jovenes.html">Jóvenes</a></li>
+            <li><a href="retiroepca.html">Retiro</a></li>
+
           </ul>
         </div>
 
