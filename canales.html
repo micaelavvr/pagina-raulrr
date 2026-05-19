@@ -293,8 +293,8 @@ data-videoid="oqHG4GbqEEY"
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button" data-type="external"
-data-videoid="oqHG4GbqEEY"
+    <button class="season-card" type="button"   data-type="embed"
+  data-videoid="_LgR11coljw"
       data-season="Temporada 3"
       data-title="Cristonautas — Temporada 3"
       data-desc="Abre la tercera temporada y reproduce la lista completa desde el capítulo 1."
@@ -304,8 +304,8 @@ data-videoid="oqHG4GbqEEY"
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button" data-type="external"
-data-videoid="oqHG4GbqEEY"
+    <button class="season-card" type="button"   data-type="embed"
+  data-videoid="_LgR11coljw"
       data-season="Temporada 4"
       data-title="Cristonautas — Temporada 4"
       data-desc="Selecciona la cuarta temporada y sigue los capítulos desde YouTube."
@@ -326,8 +326,8 @@ data-videoid="oqHG4GbqEEY"
       <span>Ver capítulos</span>
     </button>
 
-    <button class="season-card" type="button" data-type="external"
-data-videoid="oqHG4GbqEEY"
+    <button class="season-card" type="button"   data-type="embed"
+  data-videoid="_LgR11coljw"
       data-season="Temporada 6"
       data-title="Cristonautas — Temporada 6"
       data-desc="Abre la sexta temporada y continúa con todos sus capítulos."
@@ -483,7 +483,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!buttons.length || !media || !title || !desc || !label || !youtube) return;
 
   function renderSeason(btn){
-    const type = btn.dataset.type;
+    const type = (btn.dataset.type || "").trim().toLowerCase();
     const videoId = btn.dataset.videoid;
     const embed = btn.dataset.embed;
     const youtubeUrl = btn.dataset.youtube;
@@ -494,10 +494,9 @@ document.addEventListener("DOMContentLoaded", () => {
     youtube.href = youtubeUrl;
 
     media.innerHTML = "";
+    media.className = "cristonautas-video";
 
     if (type === "embed") {
-      media.classList.remove("has-fallback");
-
       media.innerHTML = `
         <iframe
           src="${embed}"
