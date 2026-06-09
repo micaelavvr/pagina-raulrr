@@ -213,117 +213,169 @@
     </section>
   </main>
 
-  <!-- ===== CRISTONAUTAS ===== -->
-  <section id="cristonautas" class="cristonautas-section">
+ <!-- ===== CRISTONAUTAS ===== -->
+<section id="cristonautas" class="cristonautas-section">
 
-    <div class="cristonautas-header">
-      <span class="cristonautas-badge">SERIE CATÓLICA</span>
-      <h2>Cristonautas</h2>
-      <p>
-        Una serie para aprender, reflexionar y crecer en la fe de forma sencilla.
-        Elige una temporada y comienza desde el primer capítulo.
+  <div class="cristonautas-header">
+    <span class="cristonautas-badge">SERIE CATÓLICA</span>
+    <h2>Cristonautas</h2>
+    <p>
+      Una serie para aprender, reflexionar y crecer en la fe de forma sencilla.
+      Elige una temporada y comienza desde el primer capítulo.
+    </p>
+  </div>
+
+  <div class="cristonautas-player-card">
+
+    <div class="cristonautas-info">
+      <span class="season-label" id="cristoSeasonLabel">Temporada 1</span>
+
+      <h3 id="cristoTitle">Historia de la Salvación 1</h3>
+
+      <p id="cristoDesc">
+        Inicia la primera temporada desde el capítulo 1 y continúa con la lista completa.
       </p>
+
+      <div class="cristonautas-actions">
+        <a
+          id="cristoYoutube"
+          class="cristonautas-btn"
+          href="https://youtube.com/playlist?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8"
+          target="_blank"
+          rel="noopener">
+          ▶ Ver temporada completa
+        </a>
+      </div>
     </div>
 
-    <div class="cristonautas-player-card">
+    <!-- Imagen inicial para Temporada 1 -->
+    <div class="cristonautas-video has-fallback" id="cristoMedia">
+      <div class="cristonautas-fallback">
+        <img src="img/cristonauta/temp1.png" alt="Historia de la Salvación 1">
 
-      <div class="cristonautas-info">
-        <span class="season-label" id="cristoSeasonLabel">Temporada 1</span>
-        <h3 id="cristoTitle">Cristonautas — Temporada 1</h3>
-        <p id="cristoDesc">
-          Inicia la primera temporada desde el capítulo 1 y continúa con la lista completa.
-        </p>
+        <div>
+          <strong>Esta temporada se ve en YouTube</strong>
+          <p>
+            Por derechos de autor, esta temporada no puede reproducirse dentro de la página.
+            Puedes abrirla directamente en YouTube.
+          </p>
 
-        <div class="cristonautas-actions">
-          <a id="cristoYoutube" class="cristonautas-btn"
-            href="https://youtube.com/playlist?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8" target="_blank" rel="noopener">
-            ▶ Ver temporada completa
+          <a
+            class="cristonautas-btn"
+            href="https://youtube.com/playlist?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8"
+            target="_blank"
+            rel="noopener">
+            ▶ Abrir temporada en YouTube
           </a>
         </div>
       </div>
-
-      <div class="cristonautas-video has-fallback" id="cristoMedia">
-        <div class="cristonautas-fallback">
-          <img src="https://img.youtube.com/vi/oqHG4GbqEEY/hqdefault.jpg" alt="Cristonautas Temporada 1">
-
-          <div>
-            <strong>Esta temporada se ve en YouTube</strong>
-            <p>
-              Por derechos de autor, esta temporada no puede reproducirse dentro de la página.
-              Puedes abrirla directamente en YouTube.
-            </p>
-
-            <a class="cristonautas-btn" href="https://youtube.com/playlist?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8"
-              target="_blank" rel="noopener">
-              ▶ Abrir temporada en YouTube
-            </a>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-    <div class="cristonautas-seasons" aria-label="Temporadas de Cristonautas">
+  </div>
 
-      <button class="season-card is-active" type="button" data-type="external" data-videoid="oqHG4GbqEEY"
-        data-season="Temporada 1" data-title="Historia de la Salvación 1"
-        data-desc="Inicia la primera temporada desde el capítulo 1 y continúa con la lista completa."
-        data-thumb="img/cristonauta/temp1.png"
-        data-embed="https://www.youtube.com/embed/oqHG4GbqEEY?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8&rel=0"
-        data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8">
+  <div class="cristonautas-seasons" aria-label="Temporadas de Cristonautas">
 
-        <strong>Temporada 1</strong>
-        <span>Ver capítulos</span>
-      </button>
+    <!-- TEMPORADA 1 -->
+    <button
+      class="season-card is-active"
+      type="button"
+      data-type="external"
+      data-videoid="oqHG4GbqEEY"
+      data-season="Temporada 1"
+      data-title="Historia de la Salvación 1"
+      data-desc="Inicia la primera temporada desde el capítulo 1 y continúa con la lista completa."
+      data-thumb="img/cristonauta/temp1.png"
+      data-embed="https://www.youtube.com/embed/oqHG4GbqEEY?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8&rel=0"
+      data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJo55shRZ24uHZlXZ58T_tI8">
 
-      <button class="season-card" type="button" data-type="external" data-videoid="G_QIlD62nuo"
-        data-season="Temporada 2" data-title="Historia de la Salvación 2"
-        data-desc="Continúa la serie con la segunda temporada desde el primer capítulo."
-        data-thumb="img/cristonauta/temp2.png"
-        data-embed="https://www.youtube.com/embed/G_QIlD62nuo?list=PLqYYFmgINIJqfmvOtJM_7YYrpwlIG1qqA&rel=0"
-        data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJqfmvOtJM_7YYrpwlIG1qqA">
-        <strong>Temporada 2</strong>
-        <span>Ver capítulos</span>
-      </button>
+      <strong>Temporada 1</strong>
+      <span>Ver capítulos</span>
+    </button>
 
-      <button class="season-card" type="button" data-type="embed" data-videoid="_LgR11coljw" data-season="Temporada 3"
-        data-title="Historia de la Salvación 3"
-        data-desc="Abre la tercera temporada y reproduce la lista completa desde el capítulo 1."
-        data-embed="https://www.youtube.com/embed/_LgR11coljw?list=PLqYYFmgINIJrwO9V3c8AN1AA0eswHZgVU&rel=0"
-        data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJrwO9V3c8AN1AA0eswHZgVU">
-        <strong>Temporada 3</strong>
-        <span>Ver capítulos</span>
-      </button>
+    <!-- TEMPORADA 2 -->
+    <button
+      class="season-card"
+      type="button"
+      data-type="external"
+      data-videoid="G_QIlD62nuo"
+      data-season="Temporada 2"
+      data-title="Historia de la Salvación 2"
+      data-desc="Continúa la serie con la segunda temporada desde el primer capítulo."
+      data-thumb="img/cristonauta/temp2.png"
+      data-embed="https://www.youtube.com/embed/G_QIlD62nuo?list=PLqYYFmgINIJqfmvOtJM_7YYrpwlIG1qqA&rel=0"
+      data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJqfmvOtJM_7YYrpwlIG1qqA">
 
-      <button class="season-card" type="button" data-type="embed" data-videoid="_LgR11coljw" data-season="Temporada 4"
-        data-title="Historia de la Salvación - María"
-        data-desc="Selecciona la cuarta temporada y sigue los capítulos desde YouTube."
-        data-embed="https://www.youtube.com/embed/eC5VBasyKHo?list=PLqYYFmgINIJpanKOhBFGola0rvLvvzPqx&rel=0"
-        data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJpanKOhBFGola0rvLvvzPqx">
-        <strong>Temporada 4</strong>
-        <span>Ver capítulos</span>
-      </button>
+      <strong>Temporada 2</strong>
+      <span>Ver capítulos</span>
+    </button>
 
-      <button class="season-card" type="button" data-type="external" data-videoid="oqHG4GbqEEY"
-        data-season="Temporada 5" data-title="Historia de la Salvación - Salmos"
-        data-desc="Reproduce la quinta temporada desde el primer capítulo." data-thumb="img/cristonauta/temp5.png"
-        data-embed="https://www.youtube.com/embed/r7Vnvk899Ng?list=PLqYYFmgINIJqNF6gOE_OkU9_pQZ66Twzk&rel=0"
-        data-youtube="https://www.youtube.com/playlist?list=PLqYYFmgINIJqNF6gOE_OkU9_pQZ66Twzk">
-        <strong>Temporada 5</strong>
-        <span>Ver capítulos</span>
-      </button>
+    <!-- TEMPORADA 3 -->
+    <button
+      class="season-card"
+      type="button"
+      data-type="embed"
+      data-videoid="_LgR11coljw"
+      data-season="Temporada 3"
+      data-title="Historia de la Salvación 3"
+      data-desc="Abre la tercera temporada y reproduce la lista completa desde el capítulo 1."
+      data-embed="https://www.youtube.com/embed/_LgR11coljw?list=PLqYYFmgINIJrwO9V3c8AN1AA0eswHZgVU&rel=0"
+      data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJrwO9V3c8AN1AA0eswHZgVU">
 
-      <button class="season-card" type="button" data-type="embed" data-videoid="_LgR11coljw" data-season="Temporada 6"
-        data-title="Jesús en la Biblia" data-desc="Abre la sexta temporada y continúa con todos sus capítulos."
-        data-embed="https://www.youtube.com/embed/oNnM9NMgfNQ?list=PLqYYFmgINIJrRqI2EOqXf880sbVRJu1c5&rel=0"
-        data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJrRqI2EOqXf880sbVRJu1c5">
-        <strong>Temporada 6</strong>
-        <span>Ver capítulos</span>
-      </button>
+      <strong>Temporada 3</strong>
+      <span>Ver capítulos</span>
+    </button>
 
-    </div>
-  </section>
+    <!-- TEMPORADA 4 -->
+    <button
+      class="season-card"
+      type="button"
+      data-type="embed"
+      data-videoid="eC5VBasyKHo"
+      data-season="Temporada 4"
+      data-title="Historia de la Salvación - María"
+      data-desc="Selecciona la cuarta temporada y reproduce la lista completa desde el capítulo 1."
+      data-embed="https://www.youtube.com/embed/eC5VBasyKHo?list=PLqYYFmgINIJpanKOhBFGola0rvLvvzPqx&rel=0"
+      data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJpanKOhBFGola0rvLvvzPqx">
 
+      <strong>Temporada 4</strong>
+      <span>Ver capítulos</span>
+    </button>
+
+    <!-- TEMPORADA 5 -->
+    <button
+      class="season-card"
+      type="button"
+      data-type="external"
+      data-videoid="r7Vnvk899Ng"
+      data-season="Temporada 5"
+      data-title="Historia de la Salvación - Salmos"
+      data-desc="Reproduce la quinta temporada desde el primer capítulo y continúa con la lista completa."
+      data-thumb="img/cristonauta/temp5.png"
+      data-embed="https://www.youtube.com/embed/r7Vnvk899Ng?list=PLqYYFmgINIJqNF6gOE_OkU9_pQZ66Twzk&rel=0"
+      data-youtube="https://www.youtube.com/playlist?list=PLqYYFmgINIJqNF6gOE_OkU9_pQZ66Twzk">
+
+      <strong>Temporada 5</strong>
+      <span>Ver capítulos</span>
+    </button>
+
+    <!-- TEMPORADA 6 -->
+    <button
+      class="season-card"
+      type="button"
+      data-type="embed"
+      data-videoid="oNnM9NMgfNQ"
+      data-season="Temporada 6"
+      data-title="Jesús en la Biblia"
+      data-desc="Abre la sexta temporada y continúa con todos sus capítulos."
+      data-embed="https://www.youtube.com/embed/oNnM9NMgfNQ?list=PLqYYFmgINIJrRqI2EOqXf880sbVRJu1c5&rel=0"
+      data-youtube="https://youtube.com/playlist?list=PLqYYFmgINIJrRqI2EOqXf880sbVRJu1c5">
+
+      <strong>Temporada 6</strong>
+      <span>Ver capítulos</span>
+    </button>
+
+  </div>
+</section>
 
   <!-- Tarjeta especial EWTN -->
   <section id="milagros-eucaristicos" class="single-feature">
@@ -448,7 +500,7 @@
     });
   </script>
 
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".season-card");
   const media = document.getElementById("cristoMedia");
@@ -465,7 +517,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoId = btn.dataset.videoid || "";
     const embed = btn.dataset.embed || "";
     const youtubeUrl = btn.dataset.youtube || "#";
-
     const thumb = btn.dataset.thumb || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
     label.textContent = btn.dataset.season || "";
@@ -500,10 +551,11 @@ document.addEventListener("DOMContentLoaded", () => {
               Puedes abrirla directamente en YouTube.
             </p>
 
-            <a class="cristonautas-btn"
-               href="${youtubeUrl}"
-               target="_blank"
-               rel="noopener">
+            <a
+              class="cristonautas-btn"
+              href="${youtubeUrl}"
+              target="_blank"
+              rel="noopener">
               ▶ Abrir temporada en YouTube
             </a>
           </div>
