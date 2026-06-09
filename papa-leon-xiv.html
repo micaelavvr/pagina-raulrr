@@ -4,14 +4,14 @@
 <head>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-99GWJXEDWW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-99GWJXEDWW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-99GWJXEDWW');
-</script>
+    gtag('config', 'G-99GWJXEDWW');
+  </script>
 
 
   <meta charset="UTF-8">
@@ -35,16 +35,22 @@
 <body>
 
 
-<div id="site-nav"></div>
+  <div id="site-nav"></div>
 
   <header class="papa-hero">
     <span class="papa-badge">SANTO PADRE</span>
     <h1>Papa León XIV</h1>
     <p>Un espacio dedicado a sus mensajes, su escudo pontificio y la cobertura especial de su visita a África 2026.</p>
 
-    <a href="#africa-2026" class="papa-hero-btn">
-      ✈ Ver Papa León XIV en África 2026
-    </a>
+    <div class="leo-hero-actions">
+      <a href="#africa-2026" class="papa-hero-btn">
+        ✈ Ver Papa León XIV en África 2026
+      </a>
+      <a href="#espana-2026" class="leo-main-btn leo-main-btn-light">
+        ✈ Ver Papa León XIV en España
+      </a>
+    </div>
+
   </header>
 
   <main class="papa-main">
@@ -59,9 +65,7 @@
           las divisiones entre los cristianos debilitan nuestra capacidad de ser portadores eficaces de esa paz.”
         </p>
 
-        <a class="tweet-link"
-          href="https://x.com/Pontifex_es/status/2048726355068563847?s=20"
-          target="_blank"
+        <a class="tweet-link" href="https://x.com/Pontifex_es/status/2048726355068563847?s=20" target="_blank"
           rel="noopener">
           Ver publicación en X
         </a>
@@ -86,15 +90,11 @@
       </div>
 
       <div class="playlist-card">
-        <iframe
-          src="https://www.youtube.com/embed/videoseries?list=PLovntvwjHVGhq5WWZJrJ1ou3I8Eli7tDy"
-          title="Papa León XIV en África 2026"
-          allowfullscreen>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLovntvwjHVGhq5WWZJrJ1ou3I8Eli7tDy"
+          title="Papa León XIV en África 2026" allowfullscreen>
         </iframe>
 
-        <a href="https://youtube.com/playlist?list=PLovntvwjHVGhq5WWZJrJ1ou3I8Eli7tDy"
-          target="_blank"
-          rel="noopener"
+        <a href="https://youtube.com/playlist?list=PLovntvwjHVGhq5WWZJrJ1ou3I8Eli7tDy" target="_blank" rel="noopener"
           class="playlist-btn">
           ▶ Ver playlist completa
         </a>
@@ -103,7 +103,50 @@
 
   </main>
 
-<script src="js/nav.js" defer></script>
+  <!-- ===== PAPA LEÓN XIV EN ESPAÑA ===== -->
+  <section id="espana-2026" class="leo-playlist-section leo-espana">
+
+    <div class="leo-section-head">
+      <span class="leo-pill">COBERTURA ESPECIAL</span>
+      <h2>Papa León XIV en España</h2>
+      <p>
+        Sigue la cobertura especial de la visita del Papa León XIV a España,
+        con videos seleccionados en una playlist completa.
+      </p>
+    </div>
+
+    <div class="leo-playlist-card">
+
+      <div class="leo-playlist-video">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLovntvwjHVGhsODT_b3E_offPoTqJnSoV&rel=0"
+          title="Papa León XIV en España" loading="lazy" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="leo-playlist-content">
+        <span class="leo-small-label">ESPAÑA 2026</span>
+
+        <h3>Videos sobre el Papa León XIV en España</h3>
+
+        <p>
+          Una lista especial para seguir los momentos, mensajes y noticias
+          principales relacionados con el Santo Padre en España.
+        </p>
+
+        <a class="leo-playlist-btn" href="https://youtube.com/playlist?list=PLovntvwjHVGhsODT_b3E_offPoTqJnSoV"
+          target="_blank" rel="noopener">
+          ▶ Ver playlist completa
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="js/nav.js" defer></script>
 
 </body>
+
 </html>
