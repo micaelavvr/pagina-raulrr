@@ -578,3 +578,19 @@
     border-radius: 18px;
   }
 }
+
+/* ===== Variante África ===== */
+
+.papa-trip-badge-africa{
+  background: linear-gradient(90deg, #3d6f3f 0%, #c89b36 55%, #7a4620 100%);
+  color: #fff;
+}
+
+.papa-trip-btn-africa{
+  background: linear-gradient(90deg, #2f6a3a 0%, #d2a13d 55%, #8b4d22 100%);
+  color: #fff;
+}
+
+.papa-trip-btn-africa:hover{
+  filter: brightness(1.06);
+}
