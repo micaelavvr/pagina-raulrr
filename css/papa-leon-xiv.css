@@ -588,7 +588,7 @@
 
 .papa-trip-btn-africa{
   background: linear-gradient(90deg, #2f6a3a 0%, #d2a13d 55%, #8b4d22 100%);
-  color: #fff;
+  color: #fff !important;
 }
 
 .papa-trip-btn-africa:hover{
