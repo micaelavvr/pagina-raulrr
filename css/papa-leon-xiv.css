@@ -594,3 +594,348 @@
 .papa-trip-btn-africa:hover{
   filter: brightness(1.06);
 }
+
+/* ===============================
+   PAPA LEÓN XIV — MAPA DE VIAJES
+   =============================== */
+
+.papa-travel-section{
+  width: min(1180px, 92vw);
+  margin: 3rem auto;
+  padding: 2.4rem 1.5rem;
+  border-radius: 34px;
+
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.88), transparent 36%),
+    linear-gradient(135deg, #fff7e6 0%, #f0cc8f 55%, #e6b86f 100%);
+
+  border: 1px solid rgba(181,119,55,.32);
+  box-shadow: 0 24px 54px rgba(84,48,23,.14);
+  scroll-margin-top: 130px;
+}
+
+.papa-travel-head{
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 2rem;
+}
+
+.papa-travel-pill,
+.papa-travel-region{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .42rem 1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #7a3d1f, #d39a40);
+  color: #fff;
+
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .55px;
+}
+
+.papa-travel-head h2{
+  margin: .75rem 0 .5rem;
+  color: #4a2c20;
+  font-size: clamp(2.2rem, 1.45rem + 3.2vw, 4.2rem);
+  line-height: 1.05;
+}
+
+.papa-travel-head p{
+  margin: 0 auto;
+  max-width: 740px;
+  color: #644532;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.papa-travel-layout{
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+/* Mapa visual */
+.papa-world-map{
+  position: relative;
+  min-height: 440px;
+  border-radius: 30px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.9), transparent 32%),
+    linear-gradient(145deg, #fef5df, #e8bf79);
+
+  border: 1px solid rgba(181,119,55,.28);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+}
+
+.papa-world-map::before{
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border-radius: 26px;
+  background:
+    linear-gradient(90deg, rgba(122,61,31,.06) 1px, transparent 1px),
+    linear-gradient(rgba(122,61,31,.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: .7;
+}
+
+.map-continent{
+  position: absolute;
+  border-radius: 55% 45% 60% 40%;
+  background: rgba(122,61,31,.16);
+  filter: blur(.2px);
+}
+
+.map-europe{
+  width: 180px;
+  height: 120px;
+  top: 90px;
+  left: 220px;
+  transform: rotate(-12deg);
+}
+
+.map-africa{
+  width: 210px;
+  height: 260px;
+  top: 180px;
+  left: 245px;
+  transform: rotate(8deg);
+  background: rgba(57,97,54,.16);
+}
+
+.map-point{
+  position: absolute;
+  z-index: 3;
+
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+
+  padding: .55rem .8rem;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,253,247,.94);
+  color: #4a2c20;
+
+  font-weight: 900;
+  font-size: .88rem;
+  cursor: pointer;
+
+  box-shadow: 0 12px 24px rgba(84,48,23,.16);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.map-point:hover,
+.map-point.is-active{
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(90deg, #7a3d1f, #d99a2f);
+  color: #fff;
+  box-shadow: 0 18px 34px rgba(84,48,23,.24);
+}
+
+.map-point span{
+  font-size: 1.05rem;
+}
+
+.point-spain{ top: 100px; left: 250px; }
+.point-napoles{ top: 142px; left: 335px; }
+.point-pompeya{ top: 182px; left: 350px; }
+.point-africa{ top: 230px; left: 260px; }
+.point-camerun{ top: 280px; left: 335px; }
+.point-angola{ top: 342px; left: 315px; }
+.point-guinea{ top: 315px; left: 220px; }
+.point-argelia{ top: 210px; left: 210px; }
+
+/* Panel */
+.papa-travel-panel{
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.papa-travel-info{
+  padding: 1.6rem;
+  border-radius: 28px;
+
+  background: rgba(255,253,247,.96);
+  border: 1px solid rgba(181,119,55,.24);
+  box-shadow: 0 16px 34px rgba(84,48,23,.12);
+}
+
+.papa-travel-info h3{
+  margin: .8rem 0 .6rem;
+  color: #4a2c20;
+  font-size: clamp(1.8rem, 1.2rem + 2.2vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.papa-travel-info p{
+  margin: 0 0 1.2rem;
+  color: #644532;
+  font-size: 1.02rem;
+  line-height: 1.58;
+}
+
+.papa-travel-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .9rem 1.35rem;
+  border-radius: 999px;
+
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+
+  background: linear-gradient(90deg, #7a3d1f, #d99a2f);
+  box-shadow: 0 14px 30px rgba(84,48,23,.22);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.papa-travel-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(84,48,23,.28);
+  filter: brightness(1.05);
+}
+
+.papa-travel-btn.btn-spain{
+  background: linear-gradient(90deg, #9b1c1c 0%, #f0bf3f 50%, #c71925 100%);
+}
+
+.papa-travel-btn.btn-africa{
+  background: linear-gradient(90deg, #2f6a3a 0%, #d2a13d 55%, #8b4d22 100%);
+}
+
+.papa-travel-btn.btn-italy{
+  background: linear-gradient(90deg, #2f6a3a 0%, #ffffff 48%, #bd1e1e 100%);
+  color: #4a2c20;
+}
+
+.papa-travel-video{
+  aspect-ratio: 16 / 9;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #1f1510;
+  box-shadow: 0 18px 38px rgba(0,0,0,.18);
+}
+
+.papa-travel-video iframe{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.papa-video-empty{
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+}
+
+.papa-video-empty span{
+  font-size: 2.5rem;
+}
+
+.papa-video-empty strong{
+  display: block;
+  font-size: 1.6rem;
+  margin-top: .4rem;
+}
+
+.papa-video-empty p{
+  max-width: 420px;
+  color: rgba(255,255,255,.78);
+}
+
+/* Botones inferiores */
+.papa-travel-buttons{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: 1.2rem;
+}
+
+.travel-filter{
+  border: 1px solid rgba(181,119,55,.28);
+  border-radius: 999px;
+  padding: .72rem 1rem;
+
+  background: rgba(255,253,247,.94);
+  color: #4a2c20;
+
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(84,48,23,.10);
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+
+.travel-filter:hover,
+.travel-filter.is-active{
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #7a3d1f, #d99a2f);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .papa-travel-layout{
+    grid-template-columns: 1fr;
+  }
+
+  .papa-world-map{
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 650px){
+  .papa-travel-section{
+    width: min(94vw, 520px);
+    padding: 1.5rem 1rem;
+    border-radius: 26px;
+  }
+
+  .papa-world-map{
+    min-height: 520px;
+  }
+
+  .map-europe{
+    top: 80px;
+    left: 120px;
+  }
+
+  .map-africa{
+    top: 190px;
+    left: 130px;
+  }
+
+  .point-spain{ top: 70px; left: 110px; }
+  .point-napoles{ top: 122px; left: 170px; }
+  .point-pompeya{ top: 168px; left: 165px; }
+  .point-argelia{ top: 215px; left: 80px; }
+  .point-africa{ top: 260px; left: 135px; }
+  .point-guinea{ top: 320px; left: 70px; }
+  .point-camerun{ top: 365px; left: 145px; }
+  .point-angola{ top: 430px; left: 125px; }
+
+  .papa-travel-info{
+    padding: 1.2rem;
+    text-align: center;
+  }
+}
+
+.papa-country-map{
+  background: linear-gradient(90deg, #7a3d1f, #d99a2f);
+}

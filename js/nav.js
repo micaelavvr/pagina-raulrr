@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <a class="tab" href="noticias.html" data-page="noticias.html">Noticias</a>
         <a class="tab" href="temasfe.html" data-page="temasfe.html">Biblioteca</a>
-        <a class="tab" href="catecismo.html" data-page="catecismo.html">Catecismo</a>
+        <a class="tab" href="papa-leon-xiv.html" data-page="papa-leon-xiv.html">Papa León XIV</a>
 
         <div class="tab dd more" data-dd data-page-group="otros">
           <span class="dd-link">Otros</span>
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
 
           <ul id="dd-menu-otros" class="dd-menu dd-menu-otros" hidden>
-            <li><a href="papa-leon-xiv.html">Papa León XIV</a></li>
+            <li><a href="catecismo.html">Catecismo</a></li>
             <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
             <li><a href="rosario.html">El Rosario</a></li>
             <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function getCurrentFile(){
+function getCurrentFile() {
   let file = window.location.pathname.split("/").pop();
 
   if (!file || file === "/") {
@@ -75,7 +75,7 @@ function getCurrentFile(){
 }
 
 
-function marcarPaginaActiva(){
+function marcarPaginaActiva() {
   const currentFile = getCurrentFile();
 
   document.querySelectorAll(".tab").forEach(tab => {
@@ -112,10 +112,10 @@ function marcarPaginaActiva(){
 }
 
 
-function activarDropdowns(){
+function activarDropdowns() {
   const dropdowns = document.querySelectorAll("[data-dd]");
 
-  function cerrarTodos(excepto = null){
+  function cerrarTodos(excepto = null) {
     dropdowns.forEach(dd => {
       if (dd === excepto) return;
 
@@ -129,7 +129,7 @@ function activarDropdowns(){
     });
   }
 
-  function setOpen(dd, abierto){
+  function setOpen(dd, abierto) {
     const trigger = dd.querySelector(".dd-trigger");
     const menu = dd.querySelector(".dd-menu");
 
