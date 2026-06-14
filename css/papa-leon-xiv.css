@@ -1138,3 +1138,157 @@
   top: 72%;
   left: 52%;
 }
+
+/* ===============================
+   PAPA LEÓN XIV — SHORTS
+   =============================== */
+
+.papa-shorts-section{
+  width: min(1180px, 92vw);
+  margin: 3rem auto 4rem;
+  padding: 2.4rem 1.5rem;
+
+  border-radius: 34px;
+  border: 1px solid rgba(181,119,55,.32);
+
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.9), transparent 34%),
+    linear-gradient(135deg, #fff7e6 0%, #f0cc8f 55%, #e6b86f 100%);
+
+  box-shadow: 0 24px 54px rgba(84,48,23,.14);
+}
+
+.papa-shorts-header{
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 2rem;
+}
+
+.papa-shorts-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .42rem 1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #7a3d1f, #d39a40);
+  color: #fff;
+
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .55px;
+
+  box-shadow: 0 12px 24px rgba(84,48,23,.18);
+}
+
+.papa-shorts-header h2{
+  margin: .8rem 0 .5rem;
+  color: #4a2c20;
+  font-size: clamp(2rem, 1.35rem + 2.6vw, 3.7rem);
+  line-height: 1.05;
+}
+
+.papa-shorts-header p{
+  margin: 0 auto;
+  max-width: 680px;
+  color: #644532;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.papa-shorts-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.papa-short-card{
+  padding: .85rem;
+  border-radius: 28px;
+
+  background: rgba(255,253,247,.96);
+  border: 1px solid rgba(181,119,55,.26);
+
+  box-shadow: 0 18px 38px rgba(84,48,23,.14);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.papa-short-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px rgba(84,48,23,.20);
+}
+
+.papa-short-video{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+
+  border-radius: 22px;
+  background: #1f1510;
+
+  box-shadow: 0 14px 28px rgba(0,0,0,.18);
+}
+
+.papa-short-video iframe{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.papa-short-card h3{
+  margin: .9rem .2rem .55rem;
+  color: #4a2c20;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.papa-short-card a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: .72rem 1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #8b3f1d, #d99a2f);
+  color: #fff;
+
+  text-decoration: none;
+  font-weight: 900;
+  font-size: .92rem;
+
+  box-shadow: 0 12px 24px rgba(84,48,23,.18);
+  transition: transform .18s ease, filter .18s ease;
+}
+
+.papa-short-card a:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* Responsive */
+@media (max-width: 1050px){
+  .papa-shorts-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px){
+  .papa-shorts-section{
+    width: min(94vw, 520px);
+    padding: 1.6rem 1rem;
+    border-radius: 26px;
+  }
+
+  .papa-shorts-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .papa-short-card{
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
