@@ -1292,3 +1292,80 @@
     margin: 0 auto;
   }
 }
+
+.papa-country-actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.6rem 0 2.2rem;
+}
+
+.papa-country-btn{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.08rem;
+  letter-spacing: .2px;
+
+  box-shadow:
+    0 18px 36px rgba(107,58,21,.22),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  overflow: hidden;
+}
+
+.papa-country-map{
+  background: linear-gradient(90deg, #8a3f1b 0%, #c97924 45%, #f0b43c 100%);
+}
+
+.papa-country-clips{
+  background: linear-gradient(90deg, #5b2d1d 0%, #9b4d26 45%, #d98c2f 100%);
+}
+
+.papa-country-btn::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -35%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-20deg);
+  animation: shineTravelBtn 3.2s infinite;
+}
+
+.papa-country-btn:hover{
+  transform: translateY(-3px) scale(1.02);
+  filter: brightness(1.04);
+  box-shadow:
+    0 24px 44px rgba(107,58,21,.28),
+    inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+@keyframes shineTravelBtn{
+  0%{ left: -35%; }
+  60%{ left: 120%; }
+  100%{ left: 120%; }
+}
+
+@media (max-width: 600px){
+  .papa-country-actions{
+    flex-direction: column;
+  }
+
+  .papa-country-btn{
+    width: min(100%, 360px);
+  }
+}
