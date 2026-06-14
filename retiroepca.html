@@ -27,41 +27,6 @@
 
 <body>
 
-  <nav class="tabs-wrap" aria-label="Navegación de secciones">
-    <div class="tabs" id="navTabs">
-
-      <a class="tab" href="nosotros.html">Nosotros</a>
-      <a class="tab" href="index.html">Inicio</a>
-
-      <div class="tab dd" data-dd>
-        <a class="dd-link" href="canales.html">Canales y Videos Católicos</a>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-1">▼</button>
-        <ul id="dd-menu-1" class="dd-menu" hidden>
-          <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-        </ul>
-      </div>
-
-      <a class="tab" href="noticias.html">Noticias</a>
-      <a class="tab" href="temasfe.html">Biblioteca</a>
-      <a class="tab" href="catecismo.html">Catecismo</a>
-
-      <div class="tab dd more" data-dd>
-        <span class="dd-link">Otros</span>
-        <button class="dd-trigger" type="button" aria-expanded="false" aria-controls="dd-menu-otros">▼</button>
-        <ul id="dd-menu-otros" class="dd-menu" hidden>
-
-          <li><a href="papa-leon-xiv.html">Papa León XIV</a></li>
-          <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
-                    <li><a href="rosario.html">El Rosario</a></li>
-          <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa</a></li>
-          <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
-          <li><a href="jovenes.html">Jóvenes</a></li>
-          <li><a href="retiroepca.html">Retiro EPCA</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </nav>
 
   <header class="retiro-hero">
     <div class="retiro-hero__text">
@@ -78,9 +43,16 @@
       <a href="#info" class="retiro-btn">Ver información del retiro</a>
     </div>
 
-    <div class="retiro-hero__poster">
-      <img src="img/RETIRO-EPCA-JULIO.jpeg" alt="Retiro EPCA Julio">
-    </div>
+<div class="retiro-hero__poster">
+  <video
+    class="retiro-hero__video"
+    controls
+    preload="metadata"
+    poster="img/RETIRO-EPCA-JULIO.jpeg">
+    <source src="vid/retiro-2026.mp4" type="video/mp4">
+    Tu navegador no puede reproducir este video.
+  </video>
+</div>
   </header>
 
   <main class="retiro-main">
@@ -171,6 +143,7 @@
     });
   </script>
 
+<script src="js/nav.js" defer></script>
 </body>
 
 </html>
