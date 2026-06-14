@@ -216,8 +216,8 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "ITALIA 2026",
       title: "Papa León XIV en Nápoles",
       desc: "Lista de reproducción sobre la visita del Papa León XIV a Nápoles.",
-      embed: "",
-      playlist: "",
+      embed: "https://www.youtube.com/embed/x_g_ZX6UfhU?list=PLovntvwjHVGgvBlCopvpa8H7Oys9Hl6xI&rel=0",
+      playlist: "https://youtube.com/playlist?list=PLovntvwjHVGgvBlCopvpa8H7Oys9Hl6xI&si=t5wDbfl_5SqJHSWD",
       color: "italy"
     },
 
@@ -225,8 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "ITALIA 2026",
       title: "Papa León XIV en Pompeya",
       desc: "Lista de reproducción sobre la visita del Papa León XIV a Pompeya.",
-      embed: "",
-      playlist: "",
+      embed: "https://www.youtube.com/embed/RrNDQM_oZXs?list=PLovntvwjHVGglWyPr5b3dtC7RPFOh_PaK&rel=0",
+      playlist: "https://youtube.com/playlist?list=PLovntvwjHVGglWyPr5b3dtC7RPFOh_PaK&si=qIzVAaQOD2k3Sf-g",
       color: "italy"
     },
 
@@ -234,8 +234,8 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "ÁFRICA 2026",
       title: "Papa León XIV en Camerún",
       desc: "Lista de reproducción sobre la visita del Papa León XIV a Camerún.",
-      embed: "",
-      playlist: "",
+      embed: "https://www.youtube.com/embed/g2tfCwH8FE8?list=PLovntvwjHVGg1VeZ3iBPbwr1a6h08NZht&rel=0",
+      playlist: "https://youtube.com/playlist?list=PLovntvwjHVGg1VeZ3iBPbwr1a6h08NZht&si=B1L6_JYzp_6Ho1tE",
       color: "africa"
     },
 
@@ -243,8 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "ÁFRICA 2026",
       title: "Papa León XIV en Angola",
       desc: "Lista de reproducción sobre la visita del Papa León XIV a Angola.",
-      embed: "",
-      playlist: "",
+      embed: "https://www.youtube.com/embed/UGiOWynI_jY?list=PLovntvwjHVGg7QVdxRmDuNKorJqF_IZQ5&index=2&rel=0",
+      playlist: "https://youtube.com/playlist?list=PLovntvwjHVGg7QVdxRmDuNKorJqF_IZQ5&si=4iZyNdVYLqiFptnR",
       color: "africa"
     },
 
@@ -252,8 +252,8 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "ÁFRICA 2026",
       title: "Papa León XIV en Guinea Ecuatorial",
       desc: "Lista de reproducción sobre la visita del Papa León XIV a Guinea Ecuatorial.",
-      embed: "",
-      playlist: "",
+      embed: "https://www.youtube.com/embed/WqE-itnFC9o?list=PLovntvwjHVGjzroLTAXT_EefBNc1ZqkT5&rel=0",
+      playlist: "https://youtube.com/playlist?list=PLovntvwjHVGjzroLTAXT_EefBNc1ZqkT5&si=adGN6-kcXL76d3qu",
       color: "africa"
     },
 
@@ -261,8 +261,8 @@ document.addEventListener("DOMContentLoaded", () => {
       region: "ÁFRICA 2026",
       title: "Papa León XIV en Argelia",
       desc: "Lista de reproducción sobre la visita del Papa León XIV a Argelia.",
-      embed: "",
-      playlist: "",
+      embed: "https://www.youtube.com/embed/vwcb9j2f5dA?list=PLovntvwjHVGjkUo45ajz5HhseuHtyXhZT&rel=0",
+      playlist: "https://youtube.com/playlist?list=PLovntvwjHVGjkUo45ajz5HhseuHtyXhZT&si=cq8hOy-CJZkAebMI",
       color: "africa"
     }
   };
@@ -286,39 +286,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     playlist.className = "papa-travel-btn";
     playlist.classList.add(`btn-${trip.color}`);
+    playlist.href = trip.playlist;
+    playlist.textContent = "▶ Ver playlist completa";
+    playlist.style.pointerEvents = "auto";
+    playlist.style.opacity = "1";
 
-    if (trip.playlist) {
-      playlist.href = trip.playlist;
-      playlist.textContent = "▶ Ver playlist completa";
-      playlist.style.pointerEvents = "auto";
-      playlist.style.opacity = "1";
-    } else {
-      playlist.href = "#";
-      playlist.textContent = "Playlist por agregar";
-      playlist.style.pointerEvents = "none";
-      playlist.style.opacity = ".65";
-    }
-
-    if (trip.embed) {
-      videoBox.innerHTML = `
-        <iframe
-          src="${trip.embed}"
-          title="${trip.title}"
-          loading="lazy"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      `;
-    } else {
-      videoBox.innerHTML = `
-        <div class="papa-video-empty">
-          <span>🎬</span>
-          <strong>Playlist pendiente</strong>
-          <p>Agrega aquí el enlace de YouTube cuando tengas la lista de reproducción.</p>
-        </div>
-      `;
-    }
+    videoBox.innerHTML = `
+      <iframe
+        src="${trip.embed}"
+        title="${trip.title}"
+        loading="lazy"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    `;
 
     mapPoints.forEach(btn => {
       btn.classList.toggle("is-active", btn.dataset.trip === key);
