@@ -3,60 +3,88 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!navMount) return;
 
   navMount.innerHTML = `
-    <nav class="tabs-wrap" aria-label="Navegación de secciones">
-      <div class="tabs" id="navTabs">
+<nav class="tabs-wrap" aria-label="Navegación de secciones">
+  <div class="tabs" id="navTabs">
 
-        <a class="tab" href="nosotros.html" data-page="nosotros.html">Nosotros</a>
-        <a class="tab" href="index.html" data-page="index.html">Inicio</a>
+    <a class="tab" href="/nosotros" data-page="/nosotros">Nosotros</a>
+    <a class="tab" href="/" data-page="/">Inicio</a>
 
-        <div class="tab dd" data-dd data-page-group="canales">
-          <a class="dd-link" href="canales.html">Canales y Videos</a>
+    <div class="tab dd" data-dd data-page-group="canales">
+      <a class="dd-link" href="/canales" data-page="/canales">Canales y Videos</a>
 
-          <button class="dd-trigger" type="button"
-            aria-expanded="false"
-            aria-controls="dd-menu-canales"
-            aria-label="Abrir menú de canales">
-            ▼
-          </button>
+      <button class="dd-trigger" type="button"
+        aria-expanded="false"
+        aria-controls="dd-menu-canales"
+        aria-label="Abrir menú de canales">
+        ▼
+      </button>
 
-          <ul id="dd-menu-canales" class="dd-menu dd-menu-canales" hidden>
-            <li><a href="canales.html#canales-recomendados">Canales recomendados</a></li>
-            <li><a href="canales.html#cristonautas">Cristonautas</a></li>
-            <li><a href="canales.html#milagros-eucaristicos">Milagros eucarísticos</a></li>
-            <li><a href="canales.html#carlo-acutis">Carlo Acutis</a></li>
-            <li><a href="canales.html#historia-salvacion">Historia de la Salvación</a></li>
-            <li><a href="canales.html#peregrinacion-san-mateo">Peregrinación virtual</a></li>
-          </ul>
-        </div>
+      <ul id="dd-menu-canales" class="dd-menu dd-menu-canales" hidden>
+        <li>
+          <a href="/canales" data-go-section="canales-recomendados">
+            Canales recomendados
+          </a>
+        </li>
 
-        <a class="tab" href="noticias.html" data-page="noticias.html">Noticias</a>
-        <a class="tab" href="temasfe.html" data-page="temasfe.html">Biblioteca</a>
-        <a class="tab" href="papa-leon-xiv.html" data-page="papa-leon-xiv.html">Papa León XIV</a>
+        <li>
+          <a href="/canales" data-go-section="cristonautas">
+            Cristonautas
+          </a>
+        </li>
 
-        <div class="tab dd more" data-dd data-page-group="otros">
-          <span class="dd-link">Otros</span>
+        <li>
+          <a href="/canales" data-go-section="milagros-eucaristicos">
+            Milagros eucarísticos
+          </a>
+        </li>
 
-          <button class="dd-trigger" type="button"
-            aria-expanded="false"
-            aria-controls="dd-menu-otros"
-            aria-label="Abrir menú de otros">
-            ▼
-          </button>
+        <li>
+          <a href="/canales" data-go-section="carlo-acutis">
+            Carlo Acutis
+          </a>
+        </li>
 
-          <ul id="dd-menu-otros" class="dd-menu dd-menu-otros" hidden>
-            <li><a href="catecismo.html">Catecismo</a></li>
-            <li><a href="cuaresma.html">Cuaresma y Semana Santa</a></li>
-            <li><a href="rosario.html">El Rosario</a></li>
-            <li><a href="coronillayhorasanta.html">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
-            <li><a href="matrimonio.html">Sobre el Matrimonio</a></li>
-            <li><a href="jovenes.html">Jóvenes</a></li>
-            <li><a href="retiroepca.html">Retiro</a></li>
+        <li>
+          <a href="/canales" data-go-section="historia-salvacion">
+            Historia de la Salvación
+          </a>
+        </li>
 
-          </ul>
-        </div>
+        <li>
+          <a href="/canales" data-go-section="peregrinacion-san-mateo">
+            Peregrinación virtual
+          </a>
+        </li>
+      </ul>
+    </div>
 
-      </div>
-    </nav>
+    <a class="tab" href="/noticias" data-page="/noticias">Noticias</a>
+    <a class="tab" href="/biblioteca" data-page="/biblioteca">Biblioteca</a>
+    <a class="tab" href="/papa-leon-xiv" data-page="/papa-leon-xiv">Papa León XIV</a>
+
+    <div class="tab dd more" data-dd data-page-group="otros">
+      <span class="dd-link">Otros</span>
+
+      <button class="dd-trigger" type="button"
+        aria-expanded="false"
+        aria-controls="dd-menu-otros"
+        aria-label="Abrir menú de otros">
+        ▼
+      </button>
+
+      <ul id="dd-menu-otros" class="dd-menu dd-menu-otros" hidden>
+        <li><a href="/catecismo" data-page="/catecismo">Catecismo</a></li>
+        <li><a href="/cuaresma" data-page="/cuaresma">Cuaresma y Semana Santa</a></li>
+        <li><a href="/rosario" data-page="/rosario">El Rosario</a></li>
+        <li><a href="/coronilla-hora-santa" data-page="/coronilla-hora-santa">Coronilla – Hora Santa – Liturgia de las Horas</a></li>
+        <li><a href="/matrimonio" data-page="/matrimonio">Sobre el Matrimonio</a></li>
+        <li><a href="/jovenes" data-page="/jovenes">Jóvenes</a></li>
+        <li><a href="/retiroepca" data-page="/retiroepca">Retiro</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
   `;
 
   marcarPaginaActiva();
