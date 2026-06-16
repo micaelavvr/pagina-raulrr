@@ -1369,3 +1369,150 @@
     width: min(100%, 360px);
   }
 }
+
+/* ===============================
+   PAPA LEÓN XIV — E-BOOK ESPAÑA
+   =============================== */
+
+.papa-ebook-section{
+  width: min(1180px, 92vw);
+  margin: 3rem auto 4rem;
+  padding: 2.4rem 1.5rem;
+
+  border-radius: 34px;
+  border: 1px solid rgba(181,119,55,.32);
+
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.9), transparent 34%),
+    linear-gradient(135deg, #fff7e6 0%, #f0cc8f 55%, #e6b86f 100%);
+
+  box-shadow: 0 24px 54px rgba(84,48,23,.14);
+  scroll-margin-top: 130px;
+}
+
+.papa-ebook-header{
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 1.8rem;
+}
+
+.papa-ebook-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .42rem 1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #7a3d1f, #d39a40);
+  color: #fff;
+
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .55px;
+
+  box-shadow: 0 12px 24px rgba(84,48,23,.18);
+}
+
+.papa-ebook-header h2{
+  margin: .8rem 0 .5rem;
+  color: #4a2c20;
+  font-size: clamp(2rem, 1.35rem + 2.6vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.papa-ebook-header p{
+  margin: 0 auto 1.25rem;
+  max-width: 720px;
+  color: #644532;
+  font-size: 1.06rem;
+  line-height: 1.6;
+}
+
+.papa-ebook-actions{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+
+.papa-ebook-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .9rem 1.35rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #8b3f1d, #d99a2f);
+  color: #fff;
+
+  text-decoration: none;
+  font-weight: 900;
+
+  box-shadow: 0 14px 30px rgba(84,48,23,.22);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.papa-ebook-btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 38px rgba(84,48,23,.28);
+}
+
+.papa-ebook-btn-light{
+  background: #fff;
+  color: #6a3a20;
+}
+
+.papa-ebook-btn-outline{
+  background: rgba(255,253,247,.85);
+  color: #6a3a20;
+  border: 1px solid rgba(181,119,55,.35);
+}
+
+.papa-ebook-viewer{
+  width: min(100%, 980px);
+  height: 720px;
+  margin: 1.8rem auto 0;
+
+  border-radius: 26px;
+  overflow: hidden;
+
+  background: #fff;
+  border: 1px solid rgba(181,119,55,.28);
+  box-shadow: 0 20px 44px rgba(84,48,23,.18);
+}
+
+.papa-ebook-viewer iframe{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* Botón superior del e-book */
+.papa-country-book{
+  background: linear-gradient(90deg, #70401f 0%, #b97928 48%, #e5aa3f 100%);
+}
+
+@media (max-width: 700px){
+  .papa-ebook-section{
+    width: min(94vw, 520px);
+    padding: 1.6rem 1rem;
+    border-radius: 26px;
+  }
+
+  .papa-ebook-actions{
+    flex-direction: column;
+  }
+
+  .papa-ebook-btn{
+    width: 100%;
+  }
+
+  .papa-ebook-viewer{
+    height: 560px;
+    border-radius: 22px;
+  }
+}
