@@ -1542,14 +1542,33 @@ html{
   background: linear-gradient(90deg, #7a3d1f, #d99a2f);
   color: #fff;
 
+  border: 1px solid rgba(255,255,255,.28);
+  cursor: pointer;
+
   text-decoration: none;
   font-weight: 900;
   font-size: .95rem;
 
   box-shadow: 0 16px 34px rgba(84,48,23,.28);
-  border: 1px solid rgba(255,255,255,.28);
 
-  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(14px);
+
+  transition:
+    opacity .2s ease,
+    visibility .2s ease,
+    transform .2s ease,
+    filter .18s ease,
+    box-shadow .18s ease;
+}
+
+.back-to-top.is-visible{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .back-to-top:hover{
