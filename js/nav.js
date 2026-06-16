@@ -205,3 +205,124 @@ function activarDropdowns() {
     }
   });
 }
+
+/* ===============================
+   SCROLL A SECCIONES SIN MOSTRAR #
+   =============================== */
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("[data-go-section]");
+  if (!link) return;
+
+  e.preventDefault();
+
+  const sectionId = link.dataset.goSection;
+  const targetUrl = new URL(link.getAttribute("href"), window.location.origin);
+
+  sessionStorage.setItem("goToSection", sectionId);
+
+  const cleanCurrentPath = cleanPath(window.location.pathname);
+  const cleanTargetPath = cleanPath(targetUrl.pathname);
+
+  if (cleanCurrentPath === cleanTargetPath) {
+    sessionStorage.removeItem("goToSection");
+    scrollToSection(sectionId);
+    cleanUrl();
+    return;
+  }
+
+  window.location.href = targetUrl.pathname;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sectionId = sessionStorage.getItem("goToSection");
+  if (!sectionId) return;
+
+  sessionStorage.removeItem("goToSection");
+
+  setTimeout(() => {
+    scrollToSection(sectionId);
+    cleanUrl();
+  }, 450);
+});
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function cleanUrl() {
+  history.replaceState(
+    null,
+    "",
+    window.location.pathname + window.location.search
+  );
+}
+
+function cleanPath(path) {
+  return path
+    .replace("/index.html", "/")
+    .replace(".html", "")
+    .replace(/\/$/, "") || "/";
+}
+
+/* ===============================
+   MARCAR NAV ACTIVO CON URLS LIMPIAS
+============================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = cleanNavPath(window.location.pathname);
+
+  document.querySelectorAll(".tab, .dd").forEach(item => {
+    item.classList.remove("is-active", "active");
+    item.removeAttribute("aria-current");
+  });
+
+  const navMap = [
+    { path: "/", selector: 'a[href="/"]' },
+    { path: "/nosotros", selector: 'a[href="/nosotros"]' },
+    { path: "/canales", selector: '[data-page-group="canales"]' },
+    { path: "/noticias", selector: 'a[href="/noticias"]' },
+    { path: "/biblioteca", selector: 'a[href="/biblioteca"]' },
+    { path: "/papa-leon-xiv", selector: 'a[href="/papa-leon-xiv"]' },
+    { path: "/catecismo", selector: '[data-page-group="otros"]' },
+    { path: "/cuaresma", selector: '[data-page-group="otros"]' },
+    { path: "/rosario", selector: '[data-page-group="otros"]' },
+    { path: "/coronilla-hora-santa", selector: '[data-page-group="otros"]' },
+    { path: "/matrimonio", selector: '[data-page-group="otros"]' },
+    { path: "/jovenes", selector: '[data-page-group="otros"]' },
+    { path: "/retiroepca", selector: '[data-page-group="otros"]' }
+  ];
+
+  const found = navMap.find(item => item.path === currentPath);
+
+  if (!found) return;
+
+  const activeItem = document.querySelector(found.selector);
+  if (!activeItem) return;
+
+  activeItem.classList.add("is-active");
+
+  if (activeItem.tagName === "A") {
+    activeItem.setAttribute("aria-current", "page");
+  }
+});
+
+function cleanNavPath(path) {
+  let clean = path
+    .replace("/index.html", "/")
+    .replace(".html", "")
+    .replace(/\/$/, "");
+
+  if (clean === "") clean = "/";
+
+  if (clean === "/temasfe") clean = "/biblioteca";
+  if (clean === "/coronillayhorasanta") clean = "/coronilla-hora-santa";
+
+  return clean;
+}

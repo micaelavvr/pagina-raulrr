@@ -1417,3 +1417,49 @@ div[id]{
     width: 100%;
   }
 }
+
+/* =========================
+   FIX NAV ACTIVO CON URLS LIMPIAS
+========================= */
+
+.tab.is-active,
+.tab.active,
+.dd.is-active,
+.dd.active{
+  background: linear-gradient(180deg, #f7ead1, #efe0c4);
+  color: var(--mc-brown);
+  border: 2px solid rgba(176,120,58,.38);
+  box-shadow: 0 8px 18px rgba(90,52,33,.12);
+}
+
+.tab.is-active::after,
+.tab.active::after,
+.dd.is-active::after,
+.dd.active::after{
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -12px;
+
+  height: 5px;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, var(--mc-gold), var(--mc-gold-2));
+  box-shadow: 0 5px 12px rgba(184,116,49,.30);
+}
+
+/* Que el dropdown activo se vea unido, no separado */
+.dd.is-active .dd-trigger,
+.dd.active .dd-trigger{
+  background: rgba(255,255,255,.72);
+  border-color: rgba(176,120,58,.38);
+}
+
+/* Hover más marcado para todos */
+.tab:hover,
+.dd:hover{
+  background: rgba(215,154,69,.15);
+  border-color: rgba(176,120,58,.25);
+  box-shadow: 0 8px 18px rgba(90,52,33,.10);
+}
