@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <a class="tab" href="/noticias" data-page="/noticias">Noticias</a>
     <a class="tab" href="/biblioteca" data-page="/biblioteca">Biblioteca</a>
-    <a class="tab" href="/papa-leon-xiv" data-page="/papa-leon-xiv">Papa León XIV</a>
+    <a class="tab" href="/papa-leon-xiv-nuevo" data-page="/papa-leon-xiv-nuevo">Papa León XIV</a>
 
     <div class="tab dd more" data-dd data-page-group="otros">
       <span class="dd-link">Otros</span>
