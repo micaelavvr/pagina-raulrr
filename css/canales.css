@@ -663,3 +663,184 @@ html { scroll-behavior: smooth; }
     margin: 0 auto;
   }
 }
+
+/* =========================================
+   CANALES — CONCILIO VATICANO II
+   ========================================= */
+
+.concilio-section{
+  width: min(1180px, 92vw);
+  margin: 3rem auto;
+  padding: 2.4rem 1.5rem;
+
+  border-radius: 34px;
+  border: 1px solid rgba(181,119,55,.32);
+
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.92), transparent 34%),
+    linear-gradient(135deg, #fff7e6 0%, #f0cc8f 55%, #e6b86f 100%);
+
+  box-shadow: 0 24px 54px rgba(84,48,23,.14);
+  scroll-margin-top: 130px;
+}
+
+.concilio-header{
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 2rem;
+}
+
+.concilio-badge,
+.concilio-label{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .42rem 1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #7a3d1f, #d39a40);
+  color: #fff;
+
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .55px;
+
+  box-shadow: 0 12px 24px rgba(84,48,23,.18);
+}
+
+.concilio-header h2{
+  margin: .8rem 0 .5rem;
+  color: #4a2c20;
+  font-size: clamp(2.1rem, 1.35rem + 2.8vw, 4rem);
+  line-height: 1.05;
+}
+
+.concilio-header p{
+  margin: 0 auto;
+  max-width: 720px;
+  color: #644532;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.concilio-card{
+  display: grid;
+  grid-template-columns: .9fr 1.25fr;
+  gap: 1.5rem;
+  align-items: center;
+
+  padding: 1.2rem;
+  border-radius: 30px;
+
+  background: rgba(255,253,247,.92);
+  border: 1px solid rgba(181,119,55,.26);
+  box-shadow: 0 18px 38px rgba(84,48,23,.13);
+}
+
+.concilio-info{
+  padding: 1.4rem;
+}
+
+.concilio-info h3{
+  margin: 1rem 0 .65rem;
+  color: #4a2c20;
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 3rem);
+  line-height: 1.08;
+}
+
+.concilio-info p{
+  margin: 0 0 1.25rem;
+  color: #644532;
+  font-size: 1.04rem;
+  line-height: 1.65;
+}
+
+.concilio-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+}
+
+.concilio-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .9rem 1.35rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #8b3f1d, #d99a2f);
+  color: #fff;
+
+  text-decoration: none;
+  font-weight: 900;
+
+  box-shadow: 0 14px 30px rgba(84,48,23,.22);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.concilio-btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 38px rgba(84,48,23,.28);
+}
+
+.concilio-btn-light{
+  background: #fff;
+  color: #6a3a20;
+}
+
+.concilio-video{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  border-radius: 24px;
+  background: #1f1510;
+
+  box-shadow: 0 18px 36px rgba(0,0,0,.18);
+}
+
+.concilio-video iframe{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+@media (max-width: 900px){
+  .concilio-card{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .concilio-actions{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px){
+  .concilio-section{
+    width: min(94vw, 520px);
+    padding: 1.6rem 1rem;
+    border-radius: 26px;
+  }
+
+  .concilio-card{
+    padding: .9rem;
+    border-radius: 24px;
+  }
+
+  .concilio-info{
+    padding: 1rem .5rem;
+  }
+
+  .concilio-actions{
+    flex-direction: column;
+  }
+
+  .concilio-btn{
+    width: 100%;
+  }
+}

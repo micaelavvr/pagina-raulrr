@@ -55,6 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
             Peregrinación virtual
           </a>
         </li>
+
+        <li>
+         <a href="/canales" data-go-section="concilio-vaticano-ii">
+            A la luz del Concilio Vaticano II
+         </a>
+        </li>
+
       </ul>
     </div>
 
