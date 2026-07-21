@@ -1473,11 +1473,11 @@ div[id]{
 .home-doc-banner{
   width: min(1180px, 92vw);
   margin: 2.6rem auto 3rem;
-  padding: 1.4rem;
+  padding: 1.6rem;
 
   display: grid;
-  grid-template-columns: 1fr 460px;
-  gap: 1.6rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
   align-items: center;
 
   border-radius: 34px;
@@ -1588,7 +1588,8 @@ div[id]{
   position: relative;
   z-index: 2;
 
-  width: 100%;
+  width: min(720px, 100%);
+  margin: 0 auto;
   padding: .75rem;
 
   background: rgba(255,253,247,.96);
