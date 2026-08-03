@@ -58,22 +58,121 @@ a{ color:inherit; text-decoration:none; }
 body.loading{ overflow:hidden; }
 @keyframes pulse{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
 
-/* ============ FRASE ============ */
+/* =========================================
+   FRASE SANTA TERESITA - VERSIÓN OSCURA
+   ========================================= */
+
 .frase-teresita{
-  max-width:1000px; margin:1.6rem auto 0;
-  padding:0 1rem 1.2rem; border-bottom:2px solid var(--line);
-  text-align:center;
+  position: relative;
+  overflow: hidden;
+
+  padding: 3.4rem 1.4rem 3.1rem;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at 50% 0%, rgba(218,159,73,.16), transparent 34%),
+    radial-gradient(circle at 15% 25%, rgba(255,255,255,.045), transparent 22%),
+    linear-gradient(180deg, #17100c 0%, #100c09 58%, #17100c 100%);
+
+  border-bottom: 1px solid rgba(218,159,73,.18);
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.035);
 }
+
+.frase-teresita::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(90deg, rgba(218,159,73,.08), transparent 18%, transparent 82%, rgba(218,159,73,.08)),
+    radial-gradient(circle at 50% 50%, rgba(218,159,73,.08), transparent 32%);
+
+  pointer-events: none;
+}
+
+.frase-teresita::after{
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  bottom: 1.15rem;
+  transform: translateX(-50%);
+
+  color: rgba(218,159,73,.62);
+  font-size: 1.1rem;
+  letter-spacing: .4rem;
+}
+
 .frase-teresita blockquote{
-  margin:0 auto 10px;
-  font-size:clamp(1.25rem,1.3rem + 1vw,2rem);
-  font-weight:500; font-style:italic; color:var(--ink); line-height:1.4;
+  position: relative;
+  z-index: 1;
+
+  max-width: 1050px;
+  margin: 0 auto 1.25rem;
+
+  color: #fff2dc;
+  font-size: clamp(1.85rem, 1.15rem + 2.4vw, 3.55rem);
+  line-height: 1.28;
+  font-style: italic;
+  font-weight: 500;
+
+  text-shadow: 0 8px 26px rgba(0,0,0,.42);
 }
+
+.frase-teresita blockquote::before,
+.frase-teresita blockquote::after{
+  color: rgba(218,159,73,.68);
+  font-style: normal;
+}
+
 .frase-teresita img{
-  width:84px; height:84px; margin:.3rem auto .45rem; border-radius:50%;
-  object-fit:cover; box-shadow:var(--shadow);
+  position: relative;
+  z-index: 1;
+
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+
+  margin: .35rem auto .75rem;
+  display: block;
+
+  border-radius: 50%;
+  border: 2px solid rgba(218,159,73,.62);
+
+  box-shadow:
+    0 14px 32px rgba(0,0,0,.34),
+    0 0 0 8px rgba(218,159,73,.08);
 }
-.frase-teresita .santa-nombre{ font-weight:800; color:var(--muted); margin-top:.35rem; }
+
+.frase-teresita .santa-nombre{
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+  color: rgba(255,242,220,.82);
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* Responsive */
+@media (max-width: 700px){
+  .frase-teresita{
+    padding: 2.5rem 1rem 2.7rem;
+  }
+
+  .frase-teresita blockquote{
+    font-size: clamp(1.45rem, 8vw, 2.25rem);
+  }
+
+  .frase-teresita img{
+    width: 76px;
+    height: 76px;
+  }
+
+  .frase-teresita .santa-nombre{
+    font-size: 1rem;
+  }
+}
 
 /* ============ TÍTULO ============ */
 .nuevo-header{
@@ -208,192 +307,7 @@ body.loading{ overflow:hidden; }
   box-shadow: 0 5px 12px rgba(184,116,49,.30);
 }
 
-/* =========================
-   DROPDOWN PRINCIPAL
-========================= */
 
-.dd{
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.dd-link{
-  color: var(--mc-brown);
-  text-decoration: none;
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.dd-trigger{
-  width: 52px;
-  min-width: 52px;
-  height: 52px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 18px;
-  border: 2px solid rgba(186,137,78,.18);
-
-  background: rgba(255,255,255,.42);
-  color: var(--mc-brown);
-
-  font-weight: 900;
-  font-size: 1.05rem;
-  cursor: pointer;
-
-  box-shadow: 0 7px 18px rgba(90,52,33,.08);
-  transition:
-    background .22s ease,
-    border-color .22s ease,
-    border-radius .22s ease,
-    transform .22s ease,
-    box-shadow .22s ease;
-}
-
-.dd-trigger:hover{
-  background: rgba(215,154,69,.14);
-  transform: translateY(-1px);
-}
-
-/* dropdown abierto: se ve unido al botón */
-.dd.open{
-  background: linear-gradient(180deg, #f7ead1, #efe0c4);
-  border-radius: 18px 18px 10px 10px;
-  border: 2px solid rgba(176,120,58,.32);
-  box-shadow: 0 8px 18px rgba(90,52,33,.11);
-}
-
-.dd.open .dd-trigger{
-  background: rgba(255,255,255,.72);
-  border-color: rgba(176,120,58,.38);
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-/* hidden real para el JS */
-.dd-menu[hidden]{
-  display: none !important;
-}
-
-/* =========================
-   MENÚ DESPLEGABLE
-========================= */
-
-.dd-menu{
-  position: absolute;
-  top: calc(100% - 2px);
-  left: 0;
-
-  min-width: 330px;
-  max-width: 390px;
-
-  margin: 0;
-  padding: 14px 12px 12px;
-  list-style: none;
-
-  background: linear-gradient(180deg, #f7ead1, #efe0c4);
-  border: 2px solid rgba(176,120,58,.32);
-  border-top-width: 0;
-  border-radius: 0 0 22px 22px;
-
-  box-shadow: 0 14px 24px rgba(90,52,33,.12);
-  z-index: 9999;
-}
-
-/* puente visual para que no parezca flotando */
-.dd-menu::before{
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 28px;
-
-  width: 46px;
-  height: 12px;
-
-  background: #f7ead1;
-  border-left: 2px solid rgba(176,120,58,.32);
-  border-right: 2px solid rgba(176,120,58,.32);
-  border-top: 2px solid rgba(176,120,58,.32);
-  border-radius: 12px 12px 0 0;
-}
-
-.dd-menu li{
-  margin: 0;
-  padding: 0;
-}
-
-/* opciones de Canales y Otros */
-.dd-menu li a{
-  display: flex;
-  align-items: center;
-  gap: .55rem;
-
-  padding: 14px 16px;
-  border-radius: 14px;
-
-  color: var(--mc-brown);
-  text-decoration: none;
-
-  font-weight: 900;
-  font-size: 1.08rem;
-  line-height: 1.25;
-
-  transition:
-    background .2s ease,
-    transform .2s ease;
-}
-
-/* flecha bonita para todos los dropdowns */
-.dd-menu-canales li a::before,
-.dd-menu-otros li a::before{
-  content: "›";
-  display: inline-grid;
-  place-items: center;
-
-  width: 19px;
-  height: 19px;
-  border-radius: 999px;
-
-  background: rgba(184,116,49,.16);
-  color: var(--mc-gold-2);
-
-  font-size: 1.18rem;
-  font-weight: 900;
-  line-height: 1;
-
-  flex: 0 0 auto;
-}
-
-.dd-menu li a:hover{
-  background: rgba(215,154,69,.16);
-  transform: translateX(3px);
-}
-
-/* dropdown Otros un poco más ancho */
-.dd-menu-otros{
-  min-width: 360px;
-}
-
-/* =========================
-   SCROLL INTERNO
-========================= */
-
-html{
-  scroll-behavior: smooth;
-}
-
-section[id],
-div[id]{
-  scroll-margin-top: 125px;
-}
-
-.page-top-space{
-  padding-top: 10px;
-}
 
 /* ============ PÁGINAS RECOMENDADAS ============ */
 .paginas-recomendadas{
@@ -1418,51 +1332,6 @@ div[id]{
   }
 }
 
-/* =========================
-   FIX NAV ACTIVO CON URLS LIMPIAS
-========================= */
-
-.tab.is-active,
-.tab.active,
-.dd.is-active,
-.dd.active{
-  background: linear-gradient(180deg, #f7ead1, #efe0c4);
-  color: var(--mc-brown);
-  border: 2px solid rgba(176,120,58,.38);
-  box-shadow: 0 8px 18px rgba(90,52,33,.12);
-}
-
-.tab.is-active::after,
-.tab.active::after,
-.dd.is-active::after,
-.dd.active::after{
-  content: "";
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: -12px;
-
-  height: 5px;
-  border-radius: 999px;
-
-  background: linear-gradient(90deg, var(--mc-gold), var(--mc-gold-2));
-  box-shadow: 0 5px 12px rgba(184,116,49,.30);
-}
-
-/* Que el dropdown activo se vea unido, no separado */
-.dd.is-active .dd-trigger,
-.dd.active .dd-trigger{
-  background: rgba(255,255,255,.72);
-  border-color: rgba(176,120,58,.38);
-}
-
-/* Hover más marcado para todos */
-.tab:hover,
-.dd:hover{
-  background: rgba(215,154,69,.15);
-  border-color: rgba(176,120,58,.25);
-  box-shadow: 0 8px 18px rgba(90,52,33,.10);
-}
 
 
 
@@ -2144,4 +2013,397 @@ div[id]{
   .paginas-grid{
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================================
+   PÁGINAS CATÓLICAS - VERSIÓN OSCURA
+   ========================================= */
+
+.paginas-dark-shell{
+  position: relative;
+  padding: 2.4rem 0 4rem;
+  background:
+    radial-gradient(circle at top center, rgba(194,132,39,.12), transparent 30%),
+    linear-gradient(180deg, #120d09 0%, #1a120c 36%, #21160f 70%, #281a12 100%);
+  overflow: hidden;
+}
+
+.paginas-dark-shell::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(205,145,58,.07), transparent 14%, transparent 86%, rgba(205,145,58,.07)),
+    radial-gradient(circle at 20% 20%, rgba(255,197,104,.05), transparent 20%),
+    radial-gradient(circle at 80% 10%, rgba(255,197,104,.04), transparent 18%);
+  pointer-events: none;
+}
+
+.paginas-header-fix{
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 92vw);
+  margin: 0 auto 1.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.paginas-header-fix .titulo-principal{
+  margin: 0;
+  color: #f7eddf;
+  font-size: clamp(2rem, 1.3rem + 2.4vw, 3.5rem);
+  line-height: 1.08;
+  text-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+
+.paginas-header-fix .titulo-img{
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(223,168,79,.45);
+  box-shadow: 0 10px 24px rgba(0,0,0,.30);
+}
+
+.paginas-home-card{
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 92vw);
+  margin: 0 auto;
+  padding: 2rem;
+
+  background:
+    linear-gradient(135deg, rgba(255,248,236,.08), rgba(255,255,255,.03));
+  border: 1px solid rgba(223,168,79,.26);
+  border-radius: 30px;
+  box-shadow:
+    0 24px 50px rgba(0,0,0,.30),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+  backdrop-filter: blur(2px);
+}
+
+.paginas-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.paginas-grid .logo-card{
+  min-height: 150px;
+  padding: 1.1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,.92);
+  border-radius: 22px;
+  border: 1px solid rgba(223,168,79,.18);
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.paginas-grid .logo-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(223,168,79,.45);
+  box-shadow: 0 18px 36px rgba(0,0,0,.24);
+}
+
+.paginas-grid .logo-card img{
+  width: 100%;
+  max-width: 180px;
+  max-height: 120px;
+  object-fit: contain;
+  display: block;
+}
+
+.paginas-grid .logo-card img[src*="cristosalvador"],
+.paginas-grid .logo-card img[src*="hospitalitos"]{
+  max-height: 145px;
+}
+
+@media (max-width: 980px){
+  .paginas-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px){
+  .paginas-header-fix{
+    gap: .8rem;
+  }
+
+  .paginas-header-fix .titulo-img{
+    width: 60px;
+    height: 60px;
+  }
+
+  .paginas-home-card{
+    padding: 1.2rem;
+  }
+
+  .paginas-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px){
+  .paginas-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 760px){
+  .frase-teresita{
+    padding: 2rem 1rem 2.1rem;
+  }
+
+  .frase-teresita blockquote{
+    font-size: clamp(1.35rem, 6vw, 2rem);
+    line-height: 1.35;
+  }
+
+  .frase-teresita img{
+    width: 60px;
+    height: 60px;
+  }
+
+  #site-nav .tab,
+  #site-nav .dd-link,
+  .tabs-wrap .tab,
+  .tabs-wrap .dd-link{
+    font-size: 1rem;
+  }
+
+  #site-nav .dd-trigger,
+  .tabs-wrap .dd-trigger{
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Separación visual entre nav y contenido oscuro */
+.home-dark-shell{
+  padding-top: 2.8rem;
+}
+
+/* =========================================
+   AJUSTE PERCY — TEXTO MÁS PEQUEÑO / VIDEO MÁS GRANDE
+   ========================================= */
+
+.home-percy-content{
+  grid-template-columns: .82fr 1.18fr;
+  gap: 2.6rem;
+}
+
+.home-percy-text h1{
+  font-size: clamp(2.4rem, 1.4rem + 3vw, 4.15rem);
+  line-height: 1.02;
+  max-width: 560px;
+}
+
+.home-percy-subtitle{
+  max-width: 570px;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.home-percy-media{
+  justify-content: flex-end;
+}
+
+.percy-video-card{
+  max-width: 560px;
+  width: 100%;
+}
+
+.percy-video-card img{
+  aspect-ratio: 16 / 9;
+}
+
+.percy-play-btn{
+  width: 104px;
+  height: 104px;
+  font-size: 2.35rem;
+}
+
+.percy-video-info{
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 1.05rem 1.15rem;
+}
+
+.percy-video-info strong{
+  font-size: 1.28rem;
+}
+
+.percy-video-info span{
+  font-size: .95rem;
+}
+
+/* En pantallas medianas no forzar demasiado */
+@media (max-width: 980px){
+  .home-percy-content{
+    grid-template-columns: 1fr;
+  }
+
+  .home-percy-text h1,
+  .home-percy-subtitle{
+    max-width: 100%;
+  }
+
+  .home-percy-media{
+    justify-content: center;
+  }
+
+  .percy-video-card{
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 640px){
+  .home-percy-text h1{
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .percy-play-btn{
+    width: 78px;
+    height: 78px;
+    font-size: 1.75rem;
+  }
+}
+
+/* =========================================
+   FRASE SANTA TERESITA — BANNER DESDE HTML
+   ========================================= */
+
+.frase-teresita-banner{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 0 !important;
+  background: #120d09 !important;
+}
+
+.frase-teresita-banner .frase-bg-img{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+
+  opacity: .42;
+  filter: brightness(.55) contrast(1.08) saturate(.9);
+}
+
+.frase-teresita-banner::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(90deg, rgba(14,10,7,.95), rgba(14,10,7,.62) 44%, rgba(14,10,7,.95)),
+    linear-gradient(180deg, rgba(14,10,7,.58), rgba(14,10,7,.90));
+
+  pointer-events: none;
+}
+
+.frase-teresita-banner .frase-content{
+  position: relative;
+  z-index: 2;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 1.35rem;
+  text-align: center;
+}
+
+.frase-teresita-banner blockquote{
+  max-width: 820px !important;
+  margin: 0 auto .5rem !important;
+  color: #fff3df;
+  font-size: clamp(1.1rem, 1rem + .7vw, 1.7rem) !important;
+  line-height: 1.32 !important;
+  font-style: italic;
+  font-weight: 500 !important;
+  text-shadow: 0 4px 14px rgba(0,0,0,.68);
+}
+
+.frase-teresita-banner .santa-img{
+  width: 48px !important;
+  height: 48px !important;
+  margin: .15rem auto .3rem !important;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(218,159,73,.60);
+}
+
+.frase-teresita-banner .santa-nombre{
+  margin: 0;
+  color: rgba(255,242,220,.92);
+  font-size: .86rem !important;
+  line-height: 1.2 !important;
+  font-weight: 800;
+}
+
+/* =========================================
+   INICIO — FONDO EXTERIOR DE PERCY MÁS CLARO
+   Mantiene oscuro solo el bloque interno
+   ========================================= */
+
+.home-dark-shell{
+  background:
+    radial-gradient(circle at top center, rgba(255, 248, 232, .85), transparent 36%),
+    linear-gradient(180deg, #f5d9a4 0%, #edc681 48%, #dca85a 100%) !important;
+
+  padding: 2.8rem 0 3.2rem !important;
+}
+
+/* Bloque Percy se mantiene oscuro/elegante */
+.home-percy-hero{
+  background:
+    radial-gradient(circle at 75% 20%, rgba(218,159,73,.10), transparent 30%),
+    linear-gradient(135deg, #120d0a 0%, #18100c 52%, #0c0907 100%) !important;
+
+  border: 1px solid rgba(218,159,73,.38) !important;
+
+  box-shadow:
+    0 24px 55px rgba(84,48,23,.22),
+    0 0 0 1px rgba(255,255,255,.025) inset !important;
+}
+
+/* El overlay ya no necesita oscurecer tanto */
+.home-percy-overlay{
+  background:
+    radial-gradient(circle at 70% 20%, rgba(227,173,84,.10), transparent 28%),
+    linear-gradient(90deg, rgba(10,7,5,.72) 0%, rgba(10,7,5,.48) 48%, rgba(10,7,5,.35) 100%) !important;
+}
+
+/* Separación más suave con Páginas Católicas */
+.paginas-dark-shell{
+  margin-top: 0 !important;
+}
+.home-percy-hero{
+  min-height: 430px !important;
+}
+
+.home-percy-content{
+  min-height: 430px !important;
+  padding: 2.3rem 2.8rem !important;
 }
