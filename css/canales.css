@@ -847,164 +847,139 @@ html { scroll-behavior: smooth; }
 
 
 /* =========================================
-   CANALES Y VIDEOS — TEMA OSCURO ELEGANTE
-   Mantiene nav actual
+   CANALES Y VIDEOS — NUEVA VERSIÓN OSCURA
    ========================================= */
 
-.canales-dark-page{
+body.canales-dark-page{
   background:
-    radial-gradient(circle at top left, rgba(215,145,55,.18), transparent 28%),
-    radial-gradient(circle at top right, rgba(255,229,170,.08), transparent 30%),
-    linear-gradient(180deg, #17100c 0%, #21140e 38%, #120d0a 100%);
-  color: #f8ead2;
+    radial-gradient(circle at top center, rgba(217,154,47,.12) 0%, rgba(217,154,47,0) 28%),
+    linear-gradient(180deg, #14110f 0%, #1a1512 30%, #120f0d 100%);
+  color: #f6ead6;
 }
 
-/* Mantener el nav claro sin que herede el fondo oscuro */
+/* Mantener el nav como está */
 .canales-dark-page .tabs-wrap,
-.canales-dark-page nav,
-.canales-dark-page #site-nav{
+.canales-dark-page #site-nav,
+.canales-dark-page nav{
   position: relative;
-  z-index: 20;
+  z-index: 50;
 }
 
-/* Hero superior */
+/* HERO */
 .canales-hero-dark{
-  position: relative;
   width: min(1180px, 92vw);
-  margin: 2.2rem auto 1.5rem;
-  padding: 3rem 1.4rem 2.2rem;
+  margin: 2rem auto 1.5rem;
+  padding: 3.2rem 1.5rem 2.5rem;
   text-align: center;
-  color: #fff4dc;
+  border-radius: 30px;
+  position: relative;
   overflow: hidden;
+
+  background:
+    linear-gradient(180deg, rgba(20,17,15,.92), rgba(24,20,17,.96)),
+    radial-gradient(circle at 20% 20%, rgba(217,154,47,.10), transparent 35%);
+
+  border: 1px solid rgba(214,161,84,.20);
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.04);
 }
 
 .canales-hero-dark::before{
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -2;
-  border-radius: 34px;
   background:
-    linear-gradient(135deg, rgba(255,255,255,.06), transparent 28%),
-    radial-gradient(circle at 20% 15%, rgba(219,151,55,.25), transparent 28%),
-    radial-gradient(circle at 82% 20%, rgba(255,224,168,.12), transparent 30%),
-    linear-gradient(135deg, rgba(28,18,12,.95), rgba(42,25,16,.88));
-  border: 1px solid rgba(218,159,73,.22);
-  box-shadow: 0 24px 58px rgba(0,0,0,.28);
-}
-
-.canales-hero-dark::after{
-  content: "";
-  position: absolute;
-  right: -80px;
-  top: -80px;
-  width: 290px;
-  height: 290px;
-  border-radius: 50%;
-  border: 1px solid rgba(218,159,73,.18);
-  background:
-    radial-gradient(circle, rgba(218,159,73,.12), transparent 62%);
-  z-index: -1;
+    radial-gradient(circle at 85% 20%, rgba(217,154,47,.10), transparent 20%),
+    radial-gradient(circle at 10% 80%, rgba(255,255,255,.04), transparent 22%);
+  pointer-events: none;
 }
 
 .canales-kicker{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: .44rem 1rem;
+  display: inline-block;
+  padding: .48rem 1rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, #8b421e, #d99a2f);
+  background: linear-gradient(90deg, #8d4c22, #d89a3a);
   color: #fff;
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .55px;
-  box-shadow: 0 12px 26px rgba(0,0,0,.25);
+  font-weight: 800;
+  font-size: .82rem;
+  letter-spacing: .5px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.28);
+  margin-bottom: .9rem;
 }
 
 .canales-hero-dark h1{
-  margin: .9rem 0 .55rem;
-  color: #fff4dc;
-  font-size: clamp(2.2rem, 1.4rem + 3vw, 4.4rem);
-  line-height: 1.02;
-  text-shadow: 0 6px 22px rgba(0,0,0,.34);
+  margin: 0 0 .7rem;
+  color: #fff4df;
+  font-size: clamp(2.2rem, 1.4rem + 3vw, 4.2rem);
+  line-height: 1.05;
+  text-shadow: 0 6px 18px rgba(0,0,0,.28);
 }
 
 .canales-hero-dark .page-subtitle{
-  margin: 0 auto;
   max-width: 720px;
-  color: rgba(255,244,220,.82);
+  margin: 0 auto;
+  color: rgba(255,244,223,.82);
   font-size: 1.08rem;
   line-height: 1.6;
 }
 
-/* Contenedor general */
+/* CONTENEDOR GENERAL */
 .canales-dark-container{
   width: min(1180px, 92vw);
   margin: 0 auto 3rem;
-  padding: 1.2rem;
-  border-radius: 34px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.015)),
-    rgba(24,15,10,.72);
-  border: 1px solid rgba(218,159,73,.18);
-  box-shadow: 0 24px 60px rgba(0,0,0,.28);
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-/* Grid más amplio */
+/* GRID */
 .canales-dark-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 1.3rem;
 }
 
-/* Tarjetas de videos */
+/* TARJETAS */
 .canales-dark-page .channel-card{
-  position: relative;
-  overflow: hidden;
-  padding: .7rem .7rem .9rem;
-  border-radius: 22px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025)),
-    rgba(20,13,9,.92);
-  border: 1px solid rgba(218,159,73,.24);
-  box-shadow:
-    0 18px 36px rgba(0,0,0,.30),
-    inset 0 1px 0 rgba(255,255,255,.06);
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)),
+    #1a1512;
+  border: 1px solid rgba(214,161,84,.22);
+  border-radius: 22px;
+  padding: .8rem;
+  box-shadow: 0 16px 34px rgba(0,0,0,.28);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
 .canales-dark-page .channel-card:hover{
   transform: translateY(-4px);
-  border-color: rgba(226,164,74,.55);
-  box-shadow:
-    0 24px 46px rgba(0,0,0,.38),
-    0 0 0 1px rgba(226,164,74,.14);
+  box-shadow: 0 24px 42px rgba(0,0,0,.34);
+  border-color: rgba(214,161,84,.45);
 }
 
-/* Último agregado más importante */
 .canales-dark-page .channel-card.featured{
-  border-color: rgba(226,164,74,.75);
+  border-color: rgba(228,172,88,.6);
   box-shadow:
-    0 26px 54px rgba(0,0,0,.38),
-    0 0 0 1px rgba(226,164,74,.18);
+    0 0 0 1px rgba(228,172,88,.16),
+    0 18px 42px rgba(0,0,0,.34);
 }
 
 .canales-dark-page .badge-nuevo{
-  position: absolute;
-  top: .45rem;
-  left: .75rem;
-  z-index: 3;
-  padding: .35rem .8rem;
+  display: inline-block;
+  margin-bottom: .6rem;
+  padding: .38rem .86rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, #8d3f1d, #e19a32);
+  background: linear-gradient(90deg, #99521f, #e0a03e);
   color: #fff;
+  font-size: .76rem;
   font-weight: 900;
-  font-size: .72rem;
   letter-spacing: .35px;
-  box-shadow: 0 12px 24px rgba(0,0,0,.28);
+  box-shadow: 0 8px 20px rgba(0,0,0,.22);
 }
 
-/* Videos responsivos */
+/* IFRAMES / VIDEO */
 .canales-dark-page .channel-card iframe,
 .canales-dark-page .video iframe,
 .canales-dark-page .yt-responsive iframe{
@@ -1015,121 +990,118 @@ html { scroll-behavior: smooth; }
   border: 0;
   border-radius: 16px;
   background: #000;
-  box-shadow: 0 14px 26px rgba(0,0,0,.28);
 }
 
 .canales-dark-page .video,
 .canales-dark-page .yt-responsive{
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
   overflow: hidden;
+  border-radius: 16px;
   background: #000;
 }
 
-/* Botones de canal */
+/* BOTONES */
 .canales-dark-page .channel-button{
-  width: fit-content;
-  max-width: 100%;
-  margin: .75rem auto 0;
-  min-height: 40px;
-  padding: .68rem 1.05rem;
-  border-radius: 999px;
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  background:
-    linear-gradient(90deg, rgba(139,66,30,.95), rgba(217,139,49,.95));
-  color: #fff4dc;
-
+  width: fit-content;
+  max-width: 100%;
+  margin: .8rem auto 0;
+  padding: .72rem 1.1rem;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 900;
-  font-size: .92rem;
+  font-weight: 800;
+  font-size: .94rem;
   line-height: 1.2;
-
-  border: 1px solid rgba(255,255,255,.14);
-  box-shadow: 0 12px 24px rgba(0,0,0,.24);
-  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+  color: #fff6e9;
+  background: linear-gradient(90deg, #8d4c22, #d89436);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 10px 22px rgba(0,0,0,.24);
+  transition: transform .18s ease, filter .18s ease;
 }
 
 .canales-dark-page .channel-button:hover{
   transform: translateY(-2px);
-  filter: brightness(1.08);
-  box-shadow: 0 16px 30px rgba(0,0,0,.32);
+  filter: brightness(1.06);
 }
 
-/* Cristonautas y secciones grandes dentro del fondo oscuro */
+/* SECCIONES GRANDES: CRISTONAUTAS / CONCILIO */
 .canales-dark-page .cristonautas-section,
 .canales-dark-page .concilio-section{
+  width: min(1180px, 92vw);
+  margin: 2.2rem auto 0;
+  border-radius: 30px;
+  padding: 2rem 1.4rem;
   background:
-    linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
-    rgba(25,15,10,.86);
-  border: 1px solid rgba(218,159,73,.22);
-  color: #fff2d8;
-  box-shadow: 0 24px 58px rgba(0,0,0,.30);
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)),
+    #171310;
+  border: 1px solid rgba(214,161,84,.18);
+  box-shadow: 0 18px 45px rgba(0,0,0,.28);
+  color: #f6ead6;
 }
 
 .canales-dark-page .cristonautas-header h2,
 .canales-dark-page .concilio-header h2{
-  color: #fff2d8;
+  color: #fff3df;
 }
 
 .canales-dark-page .cristonautas-header p,
 .canales-dark-page .concilio-header p{
-  color: rgba(255,242,216,.78);
+  color: rgba(255,243,223,.78);
 }
 
 .canales-dark-page .cristonautas-player-card,
 .canales-dark-page .concilio-card{
   background:
-    linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025)),
-    rgba(19,12,8,.84);
-  border: 1px solid rgba(218,159,73,.22);
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)),
+    #1d1713;
+  border: 1px solid rgba(214,161,84,.18);
+  border-radius: 24px;
+  color: #fff3df;
 }
 
 .canales-dark-page .cristonautas-info h3,
 .canales-dark-page .concilio-info h3{
-  color: #fff2d8;
+  color: #fff3df;
 }
 
 .canales-dark-page .cristonautas-info p,
 .canales-dark-page .concilio-info p{
-  color: rgba(255,242,216,.78);
+  color: rgba(255,243,223,.76);
 }
 
 .canales-dark-page .season-card{
-  background: rgba(255,255,255,.08);
-  color: #fff2d8;
-  border: 1px solid rgba(218,159,73,.22);
+  background: rgba(255,255,255,.05);
+  color: #fff2df;
+  border: 1px solid rgba(214,161,84,.18);
+  border-radius: 18px;
 }
 
 .canales-dark-page .season-card.is-active{
-  background: linear-gradient(135deg, rgba(139,66,30,.95), rgba(217,139,49,.9));
+  background: linear-gradient(90deg, #8d4c22, #d89a3a);
   color: #fff;
-  border-color: rgba(255,255,255,.28);
+  border-color: rgba(255,255,255,.10);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 1050px){
   .canales-dark-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 650px){
+@media (max-width: 680px){
   .canales-hero-dark{
-    width: min(94vw, 520px);
-    margin-top: 1.5rem;
-    padding: 2.2rem 1rem 1.7rem;
+    width: min(94vw, 560px);
+    padding: 2.2rem 1rem 1.8rem;
   }
 
-  .canales-dark-container{
-    width: min(94vw, 520px);
-    padding: .85rem;
-    border-radius: 26px;
+  .canales-dark-container,
+  .canales-dark-page .cristonautas-section,
+  .canales-dark-page .concilio-section{
+    width: min(94vw, 560px);
   }
 
   .canales-dark-grid{
@@ -1137,7 +1109,11 @@ html { scroll-behavior: smooth; }
     gap: 1rem;
   }
 
-  .canales-dark-page .channel-card{
-    border-radius: 20px;
+  .canales-hero-dark h1{
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .canales-hero-dark .page-subtitle{
+    font-size: .98rem;
   }
 }
