@@ -2407,3 +2407,65 @@ body.loading{ overflow:hidden; }
   min-height: 430px !important;
   padding: 2.3rem 2.8rem !important;
 }
+
+/* =========================================
+   FIX FINAL — BANNER MÁS VISIBLE EN FRASE
+   ========================================= */
+
+.frase-teresita.frase-teresita-banner{
+  min-height: 180px !important;
+  background: #120d09 !important;
+}
+
+/* Imagen más clara y presente */
+.frase-teresita.frase-teresita-banner > .frase-bg-img{
+  opacity: 1 !important;
+
+  filter:
+    brightness(.95)
+    contrast(1.08)
+    saturate(1.05) !important;
+
+  object-position: center 55% !important;
+}
+
+/* Oscurece solo lo necesario para leer */
+.frase-teresita.frase-teresita-banner::before{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14,10,7,.58),
+      rgba(14,10,7,.20) 42%,
+      rgba(14,10,7,.58)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(14,10,7,.20),
+      rgba(14,10,7,.48)
+    ) !important;
+}
+
+/* Caja suave detrás del texto para que lea sin matar el banner */
+.frase-teresita.frase-teresita-banner blockquote{
+  display: inline-block !important;
+
+  padding: .35rem .9rem !important;
+  border-radius: 18px !important;
+
+  background: rgba(10,7,5,.28) !important;
+  backdrop-filter: blur(2px) !important;
+
+  font-size: clamp(1.05rem, .95rem + .65vw, 1.5rem) !important;
+
+  text-shadow:
+    0 3px 12px rgba(0,0,0,.95),
+    0 0 18px rgba(0,0,0,.75) !important;
+}
+
+/* Nombre también con lectura limpia */
+.frase-teresita.frase-teresita-banner .santa-nombre{
+  display: inline-block !important;
+  padding: .18rem .65rem !important;
+  border-radius: 999px !important;
+  background: rgba(10,7,5,.34) !important;
+}

@@ -452,3 +452,83 @@
     height: 82px !important;
   }
 }
+
+/* =========================================
+   FIX NAV — TEXTO SIEMPRE LEGIBLE EN BLANCO
+   ========================================= */
+
+.mc-nav .tab,
+.mc-nav .dd-link,
+.mc-nav .tab:visited,
+.mc-nav .dd-link:visited{
+  color: #fff4df !important;
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.85),
+    0 0 12px rgba(0,0,0,.55) !important;
+}
+
+/* Hover */
+.mc-nav .tab:hover,
+.mc-nav .tab:hover .dd-link,
+.mc-nav .dd:hover .dd-link{
+  color: #ffffff !important;
+}
+
+/* Activo */
+.mc-nav .tab.is-active,
+.mc-nav .tab.active,
+.mc-nav .tab[aria-current="page"],
+.mc-nav .dd.is-active,
+.mc-nav .dd.active{
+  color: #ffffff !important;
+}
+
+.mc-nav .tab.is-active .dd-link,
+.mc-nav .tab.active .dd-link,
+.mc-nav .dd.is-active .dd-link,
+.mc-nav .dd.active .dd-link{
+  color: #ffffff !important;
+}
+
+/* Al hacer click / focus */
+.mc-nav .tab:active,
+.mc-nav .tab:focus,
+.mc-nav .dd-link:active,
+.mc-nav .dd-link:focus{
+  color: #ffffff !important;
+}
+
+/* Dropdown abierto */
+.mc-nav .dd.open,
+.mc-nav .dd.open .dd-link{
+  color: #ffffff !important;
+}
+
+/* Botón flecha siempre visible */
+.mc-nav .dd-trigger,
+.mc-nav .dd-trigger:focus,
+.mc-nav .dd-trigger:active,
+.mc-nav .dd.open .dd-trigger{
+  color: #ffd27a !important;
+}
+
+/* Items del menú desplegable */
+.mc-nav .dd-menu a,
+.mc-nav .dd-menu a:visited,
+.mc-nav .dd-menu a:hover,
+.mc-nav .dd-menu a:focus,
+.mc-nav .dd-menu a:active{
+  color: #fff4df !important;
+  text-shadow: none !important;
+}
+
+/* Mejora el fondo activo para que no tape el texto */
+.mc-nav .tab.is-active,
+.mc-nav .tab.active,
+.mc-nav .tab[aria-current="page"],
+.mc-nav .dd.is-active,
+.mc-nav .dd.active{
+  background:
+    linear-gradient(135deg, rgba(126,67,31,.68), rgba(218,154,53,.28)) !important;
+  border-color: rgba(218,159,73,.55) !important;
+}
