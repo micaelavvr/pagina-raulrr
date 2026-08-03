@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-99GWJXEDWW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-99GWJXEDWW');
-  </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-99GWJXEDWW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-99GWJXEDWW');
+    </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Nosotros | Mundo Católico</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Nosotros | Mundo Católico</title>
 
-  <!-- GLOBAL -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/nav.css?v=1">
-  <link rel="stylesheet" href="css/mobile.css">
-  <link rel="stylesheet" href="css/nosotros.css?v=3">
+    <!-- GLOBAL -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nav.css?v=1">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/nosotros.css?v=6">
 
-  <link rel="icon" href="/img/LOGO-OFICIAL.png" type="image/png">
-  <link rel="apple-touch-icon" href="/img/LOGO-OFICIAL.png">
+    <link rel="icon" href="/img/LOGO-OFICIAL.png" type="image/png">
+    <link rel="apple-touch-icon" href="/img/LOGO-OFICIAL.png">
 </head>
 
 <body>
@@ -29,175 +30,198 @@
   <!-- ===== NAV ===== -->
   <div id="site-nav"></div>
 
-  <!-- ===== HERO NOSOTROS ===== -->
-  <header class="about-hero about-hero-renew">
-    <div class="about-hero-bg"></div>
-
-    <div class="about-hero-inner">
-      <span class="about-pill">NOSOTROS</span>
+  <!-- ===== HERO ===== -->
+  <header class="nos-hero">
+    <div class="nos-hero__content">
+      <span class="nos-pill">NOSOTROS</span>
 
       <h1>Nosotros y Nuestra Misión</h1>
 
-      <p class="about-lead">
+      <p class="nos-hero__lead">
         Un espacio digital al servicio de la fe, la verdad y la evangelización.
       </p>
 
-      <blockquote class="about-main-quote">
+      <blockquote>
         “La Iglesia existe para evangelizar.”
       </blockquote>
 
-      <p class="about-quote-author">— San Pablo VI</p>
+      <p class="nos-hero__author">— San Pablo VI</p>
 
-      <div class="about-hero-actions">
-        <a class="about-soft-btn" href="#quienes-somos">
-          <span>↓</span> Desliza para conocernos más
+      <div class="nos-hero__actions">
+        <a href="#quienes-somos" class="nos-btn nos-btn--light">
+          ↓ Desliza para conocernos más
         </a>
 
-        <a class="about-gold-btn" href="#entrevista-abuelo">
+        <a href="#entrevista-abuelo" class="nos-btn nos-btn--gold">
           ▶ Ver la entrevista en EWTN
         </a>
       </div>
     </div>
   </header>
 
-  <!-- ===== CONTENIDO PRINCIPAL ===== -->
-  <main class="about-premium-layout">
+  <!-- ===== CONTENIDO ===== -->
+  <main class="nos-wrap">
 
-    <!-- QUIÉNES SOMOS / RAÚL -->
-    <section id="quienes-somos" class="about-feature-card">
-      <div class="about-feature-copy">
-        <span class="section-pill">QUIÉNES SOMOS</span>
+    <!-- COLUMNAS PRINCIPALES -->
+    <section class="nos-columns">
 
-        <h2>Una iniciativa familiar al servicio de la fe</h2>
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="nos-col nos-col--left">
 
-        <p>
-          <strong>Mundo Católico</strong> nace como una iniciativa de evangelización digital dirigida por
-          <strong>Raúl Ramírez Ramírez</strong>.
-        </p>
+        <!-- QUIÉNES SOMOS -->
+        <article id="quienes-somos" class="nos-card nos-card--dark nos-who">
+          <div class="nos-who__text">
+            <span class="nos-label">QUIÉNES SOMOS</span>
 
-        <p>
-          Es una iniciativa familiar nacida con un propósito sencillo y fuerte:
-          <strong>acercarnos a la fe con fuentes confiables, claras y católicas</strong>.
-        </p>
+            <h2>Una iniciativa familiar</h2>
 
-        <p>
-          Esta página busca reunir contenido fiel al Magisterio de la Iglesia,
-          accesible para todos y adaptado a los tiempos actuales.
-        </p>
+            <p>
+              <strong>Mundo Católico</strong> nace como una iniciativa de evangelización digital
+              dirigida por <strong>Raúl Ramírez Ramírez</strong>.
+            </p>
+
+            <p>
+              Es una iniciativa familiar nacida con un propósito sencillo y fuerte:
+              <strong>acercarnos a la fe con fuentes confiables, claras y católicas</strong>.
+            </p>
+
+            <p>
+              Esta página busca reunir contenido fiel al Magisterio de la Iglesia,
+              accesible para todos y adaptado a los tiempos actuales.
+            </p>
+          </div>
+
+          <div class="nos-who__photo">
+            <img src="img/imagen-raul.png" alt="Raúl Ramírez Ramírez">
+            <div>
+              <strong>Raúl Ramírez Ramírez</strong>
+              <span>Inspiración familiar de esta misión evangelizadora</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- MISIÓN -->
+        <article class="nos-card nos-card--light nos-mission">
+          <div class="nos-icon">✦</div>
+
+          <div>
+            <span class="nos-label">NUESTRA MISIÓN</span>
+
+            <h2>Nuestra misión</h2>
+
+            <p>
+              Facilitar el acceso a contenidos católicos auténticos: catequesis, oración,
+              formación, noticias y recursos espirituales que ayuden a crecer en la fe
+              y en la vida cristiana.
+            </p>
+          </div>
+        </article>
+
       </div>
 
-      <div class="about-feature-photo-wrap">
-        <img src="img/imagen-raul.png" alt="Raúl Ramírez Ramírez">
-        <div class="about-photo-caption">
-          <strong>Raúl Ramírez Ramírez</strong>
-          <span>Inspiración familiar de esta misión evangelizadora</span>
-        </div>
+      <!-- COLUMNA DERECHA -->
+      <div class="nos-col nos-col--right">
+
+        <!-- RAZÓN -->
+        <article id="razon" class="nos-card nos-card--light nos-reason">
+          <span class="nos-label">RAZÓN DE ESTA PÁGINA</span>
+
+          <h2>¿Por qué nace Mundo Católico?</h2>
+
+          <p>
+            Esta página nació para reunir
+            <strong>páginas, canales y recursos católicos confiables</strong>
+            en un solo lugar, procurando siempre que sean
+            <strong>fuentes oficiales</strong>.
+          </p>
+
+          <p>
+            Nuestro propósito es ayudar a más personas a
+            <strong>orar, aprender y vivir la fe</strong> con mayor claridad.
+          </p>
+
+          <p class="nos-note">
+            Si esta página te ayuda a caminar con más paz y más fe,
+            entonces nuestro esfuerzo habrá valido la pena.
+          </p>
+        </article>
+
+        <!-- CONTENIDO -->
+        <article class="nos-card nos-card--light nos-content">
+          <div class="nos-icon">📖</div>
+
+          <span class="nos-label">CONTENIDO</span>
+
+          <h2>¿Qué encontrarás aquí?</h2>
+
+          <ul>
+            <li>Catecismo y documentos de la Iglesia 📘</li>
+            <li>Canales y videos católicos recomendados 📺</li>
+            <li>Noticias confiables del mundo católico 📰</li>
+            <li>Rosario, oración y vida espiritual 🙏</li>
+            <li>Apps y recursos digitales para la fe 📱</li>
+          </ul>
+        </article>
+
       </div>
-    </section>
 
-    <!-- RAZÓN -->
-    <section id="razon" class="about-light-card about-reason-card">
-      <span class="section-pill">RAZÓN DE ESTA PÁGINA</span>
-
-      <h2>¿Por qué existe Mundo Católico?</h2>
-
-      <p>
-        Esta página fue creada por la <strong>familia Ramírez</strong>, con la finalidad de reunir y compartir
-        <strong>páginas, canales, revistas y recursos católicos verídicos</strong>, procurando siempre que sean
-        <strong>fuentes oficiales</strong>.
-      </p>
-
-      <p>
-        Nuestro propósito es ayudar a que más personas puedan orar, aprender y caminar en la fe con mayor claridad.
-      </p>
-
-      <p class="about-closing">
-        Si esta página te ayuda a orar con más paz, a aprender con más claridad y a caminar con más fe,
-        entonces nuestro esfuerzo habrá valido la pena.
-      </p>
-    </section>
-
-    <!-- MISIÓN -->
-    <section class="about-mini-card">
-      <div class="about-icon-circle">✦</div>
-
-      <span class="section-pill">NUESTRA MISIÓN</span>
-
-      <h3>Nuestra misión</h3>
-
-      <p>
-        Facilitar el acceso a contenidos católicos auténticos: catequesis, oración, formación,
-        noticias y recursos espirituales que ayuden a crecer en la fe y en la vida cristiana.
-      </p>
-    </section>
-
-    <!-- CONTENIDO -->
-    <section class="about-mini-card">
-      <div class="about-icon-circle">📖</div>
-
-      <span class="section-pill">CONTENIDO</span>
-
-      <h3>¿Qué encontrarás aquí?</h3>
-
-      <ul class="about-list-clean">
-        <li>Catecismo y documentos de la Iglesia 📘</li>
-        <li>Canales y videos católicos recomendados 📺</li>
-        <li>Noticias confiables del mundo católico 📰</li>
-        <li>Rosario, oración y vida espiritual 🙏</li>
-        <li>Apps y recursos digitales para la fe 📱</li>
-      </ul>
     </section>
 
     <!-- CARTA DEL VATICANO -->
-    <section class="about-vatican-card">
-      <div class="vatican-copy">
-        <span class="section-pill">CARTA DEL VATICANO</span>
+    <section class="nos-card nos-card--dark nos-vatican">
+      <div class="nos-vatican__text">
+        <span class="nos-label">CARTA DEL VATICANO</span>
 
-        <h3>Respuesta del Vaticano</h3>
+        <h2>Respuesta del Vaticano</h2>
 
         <p>
           Con gratitud, compartimos la respuesta recibida tras escribir sobre este proyecto.
           Un gesto que nos anima a continuar con esta misión evangelizadora.
         </p>
 
-        <button class="vatican-open-btn" type="button" id="openVaticanLetter">
+        <button class="nos-outline-btn" type="button" id="openVaticanLetter">
           👁 Ver carta del Vaticano
         </button>
       </div>
 
-      <button class="vatican-preview" type="button" id="openVaticanImage" aria-label="Ampliar carta del Vaticano">
+      <button class="nos-vatican__preview" type="button" id="openVaticanImage" aria-label="Ampliar carta del Vaticano">
         <img src="img/vaticano-cartas.jpeg" alt="Cartas del Vaticano">
       </button>
     </section>
 
     <!-- ENTREVISTA -->
-    <section id="entrevista-abuelo" class="about-interview-wide">
-      <div class="interview-symbol">✦</div>
+    <section id="entrevista-abuelo" class="nos-card nos-card--light nos-interview">
+      <div class="nos-interview__text">
+        <span class="nos-label nos-label--red">TESTIMONIO</span>
 
-      <div class="interview-copy">
-        <span class="section-pill section-pill-red">TESTIMONIO</span>
-
-        <h3>Entrevista a Raúl Ramírez por EWTN</h3>
+        <h2>Entrevista a Raúl Ramírez por EWTN</h2>
 
         <p>
-          Parte del origen de <strong>Mundo Católico</strong> nace del testimonio, la fe y la visión del abuelo Raúl,
-          quien tuvo la oportunidad de compartir su experiencia en una entrevista realizada por <strong>EWTN</strong>.
+          Parte del origen de <strong>Mundo Católico</strong> nace del testimonio, la fe
+          y la visión del abuelo Raúl, quien tuvo la oportunidad de compartir su experiencia
+          en una entrevista realizada por <strong>EWTN</strong>.
         </p>
 
-        <a class="interview-btn" href="https://www.youtube.com/watch?v=T3yyqwBHeac&t=1062s" target="_blank" rel="noopener">
+        <a class="nos-btn nos-btn--gold" href="https://www.youtube.com/watch?v=T3yyqwBHeac&t=1062s" target="_blank" rel="noopener">
           ▶ Ver la entrevista en YouTube
         </a>
 
         <small>Reproducir automáticamente desde el minuto 17:42</small>
       </div>
 
-      <div class="interview-image">
-        <img src="img/imagen-raul.png" alt="Raúl Ramírez Ramírez">
+      <div class="nos-interview__video">
+        <iframe
+          src="https://www.youtube.com/embed/T3yyqwBHeac?start=1062&rel=0"
+          title="Entrevista a Raúl Ramírez por EWTN"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
     </section>
 
     <!-- CIERRE -->
-    <section class="about-final-quote">
+    <section class="nos-final">
       <p>
         “Id, pues, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre
         y del Hijo y del Espíritu Santo.”
@@ -230,21 +254,14 @@
 
       if (backTop) {
         function toggleBackTop() {
-          if (window.scrollY > 500) {
-            backTop.classList.add("is-visible");
-          } else {
-            backTop.classList.remove("is-visible");
-          }
+          backTop.classList.toggle("is-visible", window.scrollY > 500);
         }
 
         window.addEventListener("scroll", toggleBackTop);
 
         backTop.addEventListener("click", (e) => {
           e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
         toggleBackTop();
@@ -282,4 +299,5 @@
   </script>
 
 </body>
+
 </html>
