@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <li><a href="/canales" data-go-section="milagros-eucaristicos">Milagros eucarísticos</a></li>
           <li><a href="/canales" data-go-section="carlo-acutis">Carlo Acutis</a></li>
           <li><a href="/canales" data-go-section="historia-salvacion">Historia de la Salvación</a></li>
+          <li>
+  <a href="/canales" data-go-section="curso-pablo-apostol" class="nav-new-link">
+    <span>Curso Pablo Apóstol</span>
+    <em class="nav-new-badge">¡Nuevo!</em>
+  </a>
+</li>      
           <li><a href="/canales" data-go-section="peregrinacion-san-mateo">Peregrinación virtual</a></li>
           <li><a href="/canales" data-go-section="concilio-vaticano-ii">A la luz del Concilio Vaticano II</a></li>
         </ul>

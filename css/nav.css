@@ -532,3 +532,56 @@
     linear-gradient(135deg, rgba(126,67,31,.68), rgba(218,154,53,.28)) !important;
   border-color: rgba(218,159,73,.55) !important;
 }
+
+/* =========================================
+   ETIQUETA NUEVO - DROPDOWN CANALES
+   ========================================= */
+
+.mc-nav .nav-new-link{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: .8rem !important;
+}
+
+.mc-nav .nav-new-link span{
+  line-height: 1.15;
+}
+
+.mc-nav .nav-new-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  padding: .18rem .48rem;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #f0b64a, #ffe08a);
+  color: #21130c;
+
+  font-size: .62rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 6px 14px rgba(0,0,0,.28);
+
+  animation: navNuevoPulse 1.8s ease-in-out infinite;
+}
+
+.mc-nav .nav-new-link:hover .nav-new-badge{
+  filter: brightness(1.08);
+}
+
+@keyframes navNuevoPulse{
+  0%, 100%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.06);
+  }
+}
