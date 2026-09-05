@@ -545,3 +545,49 @@ body {
     padding: .85rem;
   }
 }
+
+/* BUSCADOR BIBLIOTECA */
+
+.library-search{
+
+display:flex;
+justify-content:center;
+margin:35px auto 55px;
+
+}
+
+
+.library-search input{
+
+width:min(600px,90%);
+
+padding:18px 25px;
+
+border-radius:40px;
+
+border:1px solid rgba(100,70,40,.25);
+
+background:#fffaf0;
+
+font-family:inherit;
+
+font-size:1rem;
+
+color:#3a2115;
+
+outline:none;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+.library-search input:focus{
+
+transform:translateY(-2px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
