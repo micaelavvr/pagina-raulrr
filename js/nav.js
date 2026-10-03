@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <ul id="dd-menu-canales" class="dd-menu dd-menu-canales" hidden>
           <li><a href="/canales" data-go-section="canales-recomendados">Canales recomendados</a></li>
           <li><a href="/canales" data-go-section="cristonautas">Cristonautas</a></li>
+          <li><a href="/canales" data-go-section="voz-tierra-santa">La Voz de Tierra Santa</a></li>         
           <li><a href="/canales" data-go-section="milagros-eucaristicos">Milagros eucarísticos</a></li>
           <li><a href="/canales" data-go-section="carlo-acutis">Carlo Acutis</a></li>
           <li><a href="/canales" data-go-section="historia-salvacion">Historia de la Salvación</a></li>
