@@ -13,6 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <title>Papa León XIV | Mundo Católico</title>
 
@@ -25,10 +26,10 @@
   <link rel="apple-touch-icon" href="/img/LOGO-OFICIAL.png">
 
   <meta name="description"
-    content="Contenido especial sobre el Papa León XIV: mensajes, viajes apostólicos, e-book, clips destacados y recursos para seguir su visita.">
+    content="Viajes apostólicos del Papa León XIV: videos y mensajes desde Perú, Uruguay y Argentina; recorridos por Europa y África, e-book y clips destacados.">
   <meta property="og:title" content="Papa León XIV | Mundo Católico">
   <meta property="og:description"
-    content="Contenido especial sobre el Papa León XIV: viajes, mensajes, clips y e-book.">
+    content="Viajes del Papa León XIV: Perú, Argentina, Uruguay, Europa y África. Videos, homilías, mensajes y recursos.">
   <meta property="og:image" content="https://mundo-catolico.netlify.app/img/LOGO-OFICIAL.png">
   <meta property="og:url" content="https://mundo-catolico.netlify.app/papa-leon-xiv">
   <meta property="og:type" content="website">
@@ -99,6 +100,7 @@
           <iframe src="https://www.youtube.com/embed/8wSKzNEDFQY?rel=0"
             title="Así suena el himno oficial de la visita del Papa a Perú" loading="lazy" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen>
           </iframe>
         </div>
@@ -129,74 +131,90 @@
          =============================== -->
     <section class="papa-center-content" aria-label="Contenido principal sobre el Papa León XIV">
 
-      <!-- VIAJES -->
+      <!-- VIAJES: MISMO GLOBO Y PANEL ORIGINAL, AHORA CON SUDAMÉRICA -->
       <section id="viajes-2026" class="papa-travel-section">
         <div class="papa-section-head compact-head">
           <span class="section-kicker">VIAJES APOSTÓLICOS DESTACADOS</span>
           <h2>Viajes del Papa León XIV</h2>
-          <p>Selecciona un destino para ver videos y listas de reproducción de la visita.</p>
+          <p>Elige un destino en el globo para descubrir sus mensajes y ver los videos de la visita.</p>
         </div>
 
         <div class="travel-feature-card">
-          <div class="travel-map-card" aria-label="Mapa interactivo de viajes">
-            <div class="map-globe-wrap">
-              <img src="img/papa-leon/globo.png" alt="Mapa de viajes del Papa León XIV" class="globe-img">
-
-              <button class="map-point point-spain is-active" type="button" data-trip="espana">
-                <span>🇪🇸</span> España
-              </button>
-              <button class="map-point point-africa" type="button" data-trip="africa">
-                <span>🌍</span> África
-              </button>
-              <button class="map-point point-napoles" type="button" data-trip="napoles">
-                <span>🇮🇹</span> Nápoles
-              </button>
-              <button class="map-point point-pompeya" type="button" data-trip="pompeya">
-                <span>🇮🇹</span> Pompeya
-              </button>
-              <button class="map-point point-camerun" type="button" data-trip="camerun">
-                <span>🇨🇲</span> Camerún
-              </button>
-              <button class="map-point point-angola" type="button" data-trip="angola">
-                <span>🇦🇴</span> Angola
-              </button>
-              <button class="map-point point-guinea" type="button" data-trip="guinea">
-                <span>🇬🇶</span> Guinea E.
-              </button>
-              <button class="map-point point-argelia" type="button" data-trip="argelia">
-                <span>🇩🇿</span> Argelia
-              </button>
+          <div class="travel-map-card" id="travelMapCard" data-region="americas" aria-label="Mapa interactivo de viajes">
+            <div class="globe-region-tabs" role="group" aria-label="Zona del globo">
+              <button class="globe-region-tab is-active" type="button" data-region-view="americas" aria-pressed="true">Sudamérica</button>
+              <button class="globe-region-tab" type="button" data-region-view="oldworld" aria-pressed="false">Europa y África</button>
             </div>
+            <div class="map-globe-wrap">
+              <img id="travelGlobe" src="img/papa-leon/globo-americas.png" alt="Globo terráqueo centrado en Sudamérica" class="globe-img">
+
+              <!-- SUDAMÉRICA. Las etiquetas señalan los países sobre el globo americano. -->
+              <button class="map-point point-peru is-active" type="button" data-trip="peru" data-hemisphere="americas">
+                <span aria-hidden="true">🇵🇪</span> Perú
+              </button>
+              <button class="map-point point-uruguay" type="button" data-trip="uruguay" data-hemisphere="americas">
+                <span aria-hidden="true">🇺🇾</span> Uruguay
+              </button>
+              <button class="map-point point-argentina" type="button" data-trip="argentina" data-hemisphere="americas">
+                <span aria-hidden="true">🇦🇷</span> Argentina
+              </button>
+
+              <!-- DESTINOS YA EXISTENTES: EUROPA Y ÁFRICA -->
+              <button class="map-point point-spain" type="button" data-trip="espana" data-hemisphere="oldworld"><span aria-hidden="true">🇪🇸</span> España</button>
+              <button class="map-point point-africa" type="button" data-trip="africa" data-hemisphere="oldworld"><span aria-hidden="true">🌍</span> África</button>
+              <button class="map-point point-napoles" type="button" data-trip="napoles" data-hemisphere="oldworld"><span aria-hidden="true">🇮🇹</span> Nápoles</button>
+              <button class="map-point point-pompeya" type="button" data-trip="pompeya" data-hemisphere="oldworld"><span aria-hidden="true">🇮🇹</span> Pompeya</button>
+              <button class="map-point point-camerun" type="button" data-trip="camerun" data-hemisphere="oldworld"><span aria-hidden="true">🇨🇲</span> Camerún</button>
+              <button class="map-point point-angola" type="button" data-trip="angola" data-hemisphere="oldworld"><span aria-hidden="true">🇦🇴</span> Angola</button>
+              <button class="map-point point-guinea" type="button" data-trip="guinea" data-hemisphere="oldworld"><span aria-hidden="true">🇬🇶</span> Guinea E.</button>
+              <button class="map-point point-argelia" type="button" data-trip="argelia" data-hemisphere="oldworld"><span aria-hidden="true">🇩🇿</span> Argelia</button>
+            </div>
+            <p class="globe-caption" id="globeCaption">Viaje apostólico · 6 al 17 de noviembre de 2026</p>
           </div>
 
           <div class="travel-main-panel">
             <div class="papa-travel-info">
-              <span id="travelRegion" class="papa-travel-region">EUROPA 2026</span>
-              <h3 id="travelTitle">Papa León XIV en España</h3>
-              <p id="travelDesc">
-                Cobertura especial de la visita del Papa León XIV a España,
-                con videos seleccionados en una playlist completa.
-              </p>
-              <a id="travelPlaylist" class="papa-travel-btn btn-spain"
-                href="https://youtube.com/playlist?list=PLovntvwjHVGhsODT_b3E_offPoTqJnSoV" target="_blank"
-                rel="noopener">
-                Ver playlist completa <span>›</span>
+              <span id="travelRegion" class="papa-travel-region">SUDAMÉRICA 2026</span>
+              <h3 id="travelTitle">Papa León XIV en Perú</h3>
+              <p class="papa-travel-dates" id="travelDates">11 al 16 de noviembre de 2026</p>
+              <p id="travelDesc">Encuentros con jóvenes, comunidades, familias y fieles del Perú.</p>
+
+              <div class="papa-trip-words" id="travelWords" hidden>
+                <span class="papa-trip-words-kicker">PALABRAS DEL SANTO PADRE</span>
+                <blockquote id="travelQuote"></blockquote>
+                <p id="travelWordsContext"></p>
+                <a id="travelSource" href="https://www.vatican.va/" target="_blank" rel="noopener">Leer discurso oficial ↗</a>
+              </div>
+
+              <a id="travelPlaylist" class="papa-travel-btn btn-peru"
+                href="https://www.youtube.com/watch?v=e4dkHNPM3Sg" target="_blank" rel="noopener">
+                Ver video en YouTube <span>›</span>
               </a>
             </div>
 
             <div class="papa-travel-video" id="travelVideoBox">
-              <iframe id="travelFrame"
-                src="https://www.youtube.com/embed/videoseries?list=PLovntvwjHVGhsODT_b3E_offPoTqJnSoV&rel=0"
-                title="Papa León XIV en España" loading="lazy" frameborder="0"
+              <iframe id="travelFrame" src="https://www.youtube-nocookie.com/embed/e4dkHNPM3Sg?rel=0"
+                title="Papa León XIV en Perú" loading="lazy" frameborder="0"
+                referrerpolicy="strict-origin-when-cross-origin"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+                allowfullscreen></iframe>
             </div>
+
+            <!-- Aparece solo en países con varios videos -->
+            <div class="papa-video-episodes" id="travelEpisodes" aria-label="Videos del país" hidden></div>
+            <a class="papa-video-external" id="travelVideoExternal"
+              href="https://www.youtube.com/watch?v=e4dkHNPM3Sg" target="_blank" rel="noopener" hidden>
+              Abrir el video seleccionado en YouTube ↗
+            </a>
           </div>
         </div>
 
+        <!-- Los mismos filtros originales, ampliados con los tres destinos nuevos -->
         <div class="papa-travel-buttons" aria-label="Seleccionar destino">
-          <button class="travel-filter is-active" type="button" data-trip="espana">España</button>
+          <button class="travel-filter is-active" type="button" data-trip="peru">🇵🇪 Perú</button>
+          <button class="travel-filter" type="button" data-trip="uruguay">🇺🇾 Uruguay</button>
+          <button class="travel-filter" type="button" data-trip="argentina">🇦🇷 Argentina</button>
+          <button class="travel-filter" type="button" data-trip="espana">España</button>
           <button class="travel-filter" type="button" data-trip="africa">África</button>
           <button class="travel-filter" type="button" data-trip="napoles">Nápoles</button>
           <button class="travel-filter" type="button" data-trip="pompeya">Pompeya</button>
@@ -205,6 +223,9 @@
           <button class="travel-filter" type="button" data-trip="guinea">Guinea E.</button>
           <button class="travel-filter" type="button" data-trip="argelia">Argelia</button>
         </div>
+        <p class="travel-itinerary-source">Itinerario oficial del viaje a Sudamérica:
+          <a href="https://www.vatican.va/content/leo-xiv/es/travels/2026/documents/uruguay-argentina-peru-6-17novembre2026.html" target="_blank" rel="noopener">Santa Sede ↗</a>
+        </p>
       </section>
 
       <!-- EBOOK -->
@@ -249,6 +270,7 @@
               <iframe src="https://www.youtube.com/embed/6o8X8Hx_oGA?rel=0" title="Short Papa León XIV 1" loading="lazy"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
             </div>
             <span class="clip-label">VISITA</span>
@@ -261,6 +283,7 @@
               <iframe src="https://www.youtube.com/embed/uwrz2V9SMhg?rel=0" title="Short Papa León XIV 2" loading="lazy"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
             </div>
             <span class="clip-label">MENSAJE</span>
@@ -273,6 +296,7 @@
               <iframe src="https://www.youtube.com/embed/9QnDjf01sO0?rel=0" title="Short Papa León XIV 3" loading="lazy"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
             </div>
             <span class="clip-label">ENCUENTRO</span>
@@ -285,6 +309,7 @@
               <iframe src="https://www.youtube.com/embed/YAJ_vg-niZw?rel=0" title="Short Papa León XIV 4" loading="lazy"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
             </div>
             <span class="clip-label">FE Y ESPERANZA</span>
@@ -352,8 +377,8 @@
     <section class="papa-bottom-cta">
       <div>
         <span>📅</span>
-        <strong>¡El Papa León XIV viene a nuestro encuentro!</strong>
-        <p>Mantente informado sobre fechas, lugares y actividades de su visita al Perú.</p>
+        <strong>El Papa León XIV en Sudamérica</strong>
+        <p>Revive los encuentros de Uruguay y Argentina y acompaña la visita del Santo Padre al Perú.</p>
       </div>
       <button type="button" class="papa-final-btn" data-scroll-target="viajes-2026">
         Toda la información de la visita <span>›</span> 🇵🇪
@@ -376,103 +401,206 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Conserva todos los destinos anteriores y añade Uruguay, Argentina y Perú.
+      // Los videos de cada país están en el mismo panel, sin crear otra sección.
       const trips = {
+        peru: {
+          hemisphere: "americas", region: "SUDAMÉRICA 2026", color: "peru",
+          title: "Papa León XIV en Perú", dates: "11 al 16 de noviembre de 2026",
+          desc: "La visita recorre Lima, Chiclayo, Cusco y Pucallpa. Encuentros con jóvenes, fieles, comunidades, misioneros y representantes de los pueblos amazónicos.",
+          quote: "Pues hoy aquí en el Estadio Nacional son ustedes el signo de esperanza.",
+          context: "Mensaje a los jóvenes y universitarios durante la vigilia en el Estadio Nacional de Lima, el 12 de noviembre de 2026.",
+          source: "https://www.vatican.va/content/leo-xiv/es/speeches/2026/november/documents/20261112-peru-veglia-lima.html",
+          videos: ["e4dkHNPM3Sg", "GeEs0c8U2ic", "AtJ1zZ1lCoA", "K_4oovi4QSU", "9dZcDxJF4FQ"]
+        },
+        uruguay: {
+          hemisphere: "americas", region: "SUDAMÉRICA 2026", color: "uruguay",
+          title: "Papa León XIV en Uruguay", dates: "6 al 8 de noviembre de 2026",
+          desc: "Un recorrido por Montevideo, Paysandú y Florida, con celebraciones, encuentros con familias, educadores y comunidades.",
+          quote: "Tenemos que trabajar unidos: la Iglesia, la comunidad civil y el Estado.",
+          context: "Discurso en el barrio de Casavalle, Montevideo, el 7 de noviembre de 2026: una invitación a trabajar por el bien común.",
+          source: "https://www.vatican.va/content/leo-xiv/es/speeches/2026/november/documents/20261107-uruguay-casavalle-montevideo.html",
+          videos: ["A7goMi-5g9I", "bk9ODiJiKKA", "LRVlI9dAdFc"]
+        },
+        argentina: {
+          hemisphere: "americas", region: "SUDAMÉRICA 2026", color: "argentina",
+          title: "Papa León XIV en Argentina", dates: "8 al 11 de noviembre de 2026",
+          desc: "Visita Buenos Aires, Córdoba y Luján; comparte momentos con trabajadores, jóvenes, comunidades y fieles.",
+          quote: "No hay trabajo pequeño a los ojos de Dios.",
+          context: "Discurso al mundo del trabajo en la Universidad Católica Argentina, Buenos Aires, el 9 de noviembre de 2026.",
+          source: "https://www.vatican.va/content/leo-xiv/es/speeches/2026/november/documents/20261109-argentina-mondo-dellavoro.html",
+          videos: ["nG5cH91eGgM", "hxaVrDv-c5c", "sII19gczeoE", "qHaP5A8zoN4"]
+        },
         espana: {
-          region: "EUROPA 2026",
+          hemisphere: "oldworld", region: "EUROPA 2026", color: "spain",
           title: "Papa León XIV en España",
           desc: "Cobertura especial de la visita del Papa León XIV a España, con videos seleccionados en una playlist completa.",
           embed: "https://www.youtube.com/embed/videoseries?list=PLovntvwjHVGhsODT_b3E_offPoTqJnSoV&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGhsODT_b3E_offPoTqJnSoV",
-          color: "spain"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGhsODT_b3E_offPoTqJnSoV"
         },
         africa: {
-          region: "ÁFRICA 2026",
+          hemisphere: "oldworld", region: "ÁFRICA 2026", color: "africa",
           title: "Papa León XIV en África",
           desc: "Cobertura especial de la visita del Papa León XIV a África, con videos seleccionados en una playlist completa.",
           embed: "https://www.youtube.com/embed/KuNPIZCHLtM?list=PLovntvwjHVGhq5WWZJrJ1ou3I8Eli7tDy&start=2&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGhq5WWZJrJ1ou3I8Eli7tDy",
-          color: "africa"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGhq5WWZJrJ1ou3I8Eli7tDy"
         },
         napoles: {
-          region: "ITALIA 2026",
+          hemisphere: "oldworld", region: "ITALIA 2026", color: "italy",
           title: "Papa León XIV en Nápoles",
           desc: "Lista de reproducción sobre la visita del Papa León XIV a Nápoles.",
           embed: "https://www.youtube.com/embed/x_g_ZX6UfhU?list=PLovntvwjHVGgvBlCopvpa8H7Oys9Hl6xI&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGgvBlCopvpa8H7Oys9Hl6xI&si=t5wDbfl_5SqJHSWD",
-          color: "italy"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGgvBlCopvpa8H7Oys9Hl6xI&si=t5wDbfl_5SqJHSWD"
         },
         pompeya: {
-          region: "ITALIA 2026",
+          hemisphere: "oldworld", region: "ITALIA 2026", color: "italy",
           title: "Papa León XIV en Pompeya",
           desc: "Lista de reproducción sobre la visita del Papa León XIV a Pompeya.",
           embed: "https://www.youtube.com/embed/RrNDQM_oZXs?list=PLovntvwjHVGglWyPr5b3dtC7RPFOh_PaK&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGglWyPr5b3dtC7RPFOh_PaK&si=qIzVAaQOD2k3Sf-g",
-          color: "italy"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGglWyPr5b3dtC7RPFOh_PaK&si=qIzVAaQOD2k3Sf-g"
         },
         camerun: {
-          region: "ÁFRICA 2026",
+          hemisphere: "oldworld", region: "ÁFRICA 2026", color: "africa",
           title: "Papa León XIV en Camerún",
           desc: "Lista de reproducción sobre la visita del Papa León XIV a Camerún.",
           embed: "https://www.youtube.com/embed/g2tfCwH8FE8?list=PLovntvwjHVGg1VeZ3iBPbwr1a6h08NZht&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGg1VeZ3iBPbwr1a6h08NZht&si=B1L6_JYzp_6Ho1tE",
-          color: "africa"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGg1VeZ3iBPbwr1a6h08NZht&si=B1L6_JYzp_6Ho1tE"
         },
         angola: {
-          region: "ÁFRICA 2026",
+          hemisphere: "oldworld", region: "ÁFRICA 2026", color: "africa",
           title: "Papa León XIV en Angola",
           desc: "Lista de reproducción sobre la visita del Papa León XIV a Angola.",
           embed: "https://www.youtube.com/embed/UGiOWynI_jY?list=PLovntvwjHVGg7QVdxRmDuNKorJqF_IZQ5&index=2&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGg7QVdxRmDuNKorJqF_IZQ5&si=4iZyNdVYLqiFptnR",
-          color: "africa"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGg7QVdxRmDuNKorJqF_IZQ5&si=4iZyNdVYLqiFptnR"
         },
         guinea: {
-          region: "ÁFRICA 2026",
+          hemisphere: "oldworld", region: "ÁFRICA 2026", color: "africa",
           title: "Papa León XIV en Guinea Ecuatorial",
           desc: "Lista de reproducción sobre la visita del Papa León XIV a Guinea Ecuatorial.",
           embed: "https://www.youtube.com/embed/WqE-itnFC9o?list=PLovntvwjHVGjzroLTAXT_EefBNc1ZqkT5&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGjzroLTAXT_EefBNc1ZqkT5&si=adGN6-kcXL76d3qu",
-          color: "africa"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGjzroLTAXT_EefBNc1ZqkT5&si=adGN6-kcXL76d3qu"
         },
         argelia: {
-          region: "ÁFRICA 2026",
+          hemisphere: "oldworld", region: "ÁFRICA 2026", color: "africa",
           title: "Papa León XIV en Argelia",
           desc: "Lista de reproducción sobre la visita del Papa León XIV a Argelia.",
           embed: "https://www.youtube.com/embed/vwcb9j2f5dA?list=PLovntvwjHVGjkUo45ajz5HhseuHtyXhZT&rel=0",
-          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGjkUo45ajz5HhseuHtyXhZT&si=cq8hOy-CJZkAebMI",
-          color: "africa"
+          playlist: "https://youtube.com/playlist?list=PLovntvwjHVGjkUo45ajz5HhseuHtyXhZT&si=cq8hOy-CJZkAebMI"
         }
       };
 
-      const region = document.getElementById("travelRegion");
-      const title = document.getElementById("travelTitle");
-      const desc = document.getElementById("travelDesc");
-      const playlist = document.getElementById("travelPlaylist");
-      const videoBox = document.getElementById("travelVideoBox");
-      const mapPoints = document.querySelectorAll(".map-point");
-      const filters = document.querySelectorAll(".travel-filter");
+      const $ = id => document.getElementById(id);
+      const region = $("travelRegion");
+      const title = $("travelTitle");
+      const desc = $("travelDesc");
+      const dates = $("travelDates");
+      const playlist = $("travelPlaylist");
+      const videoBox = $("travelVideoBox");
+      const episodes = $("travelEpisodes");
+      const videoExternal = $("travelVideoExternal");
+      const words = $("travelWords");
+      const quote = $("travelQuote");
+      const context = $("travelWordsContext");
+      const source = $("travelSource");
+      const mapCard = $("travelMapCard");
+      const globe = $("travelGlobe");
+      const globeCaption = $("globeCaption");
+      const mapPoints = document.querySelectorAll(".map-point[data-trip]");
+      const filters = document.querySelectorAll(".travel-filter[data-trip]");
+      const globeTabs = document.querySelectorAll(".globe-region-tab[data-region-view]");
+      let activeTrip = "peru";
+
+      function displayHemisphere(hemisphere) {
+        mapCard.dataset.region = hemisphere;
+        const american = hemisphere === "americas";
+        globe.src = american ? "img/papa-leon/globo-americas.png" : "img/papa-leon/globo.png";
+        globe.alt = american ? "Globo terráqueo centrado en América del Sur" : "Globo terráqueo centrado en Europa y África";
+        globeCaption.textContent = american
+          ? "Uruguay · Argentina · Perú | 6 al 17 de noviembre de 2026"
+          : "Explora los destinos anteriores del viaje";
+        globeTabs.forEach(tab => {
+          const selected = tab.dataset.regionView === hemisphere;
+          tab.classList.toggle("is-active", selected);
+          tab.setAttribute("aria-pressed", String(selected));
+        });
+      }
+
+      function makeVideoFrame(src, frameTitle) {
+        videoBox.replaceChildren();
+        const frame = document.createElement("iframe");
+        frame.id = "travelFrame";
+        frame.src = src;
+        frame.title = frameTitle;
+        frame.loading = "lazy";
+        frame.referrerPolicy = "strict-origin-when-cross-origin";
+        frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.allowFullscreen = true;
+        frame.setAttribute("frameborder", "0");
+        videoBox.appendChild(frame);
+      }
+
+      function selectVideo(trip, index) {
+        const id = trip.videos[index];
+        makeVideoFrame(`https://www.youtube-nocookie.com/embed/${id}?rel=0`, `${trip.title} · Video ${index + 1}`);
+        videoExternal.href = `https://www.youtube.com/watch?v=${id}`;
+        episodes.querySelectorAll(".papa-video-tile").forEach((button, i) => {
+          const selected = i === index;
+          button.classList.toggle("is-active", selected);
+          button.setAttribute("aria-pressed", String(selected));
+        });
+      }
+
+      function makeEpisodes(trip) {
+        episodes.replaceChildren();
+        const hasVideos = Array.isArray(trip.videos) && trip.videos.length > 0;
+        episodes.hidden = !hasVideos;
+        videoExternal.hidden = !hasVideos;
+        if (!hasVideos) {
+          makeVideoFrame(trip.embed, trip.title);
+          return;
+        }
+        trip.videos.forEach((id, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "papa-video-tile";
+          button.setAttribute("aria-label", `Reproducir video ${index + 1} de ${trip.title}`);
+          button.setAttribute("aria-pressed", String(index === 0));
+
+          const image = document.createElement("img");
+          image.src = `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+          image.alt = "";
+          image.loading = "lazy";
+
+          const text = document.createElement("span");
+          text.textContent = `Video ${index + 1}`;
+          button.append(image, text);
+          button.addEventListener("click", () => selectVideo(trip, index));
+          episodes.appendChild(button);
+        });
+        selectVideo(trip, 0);
+      }
 
       function selectTrip(key) {
         const trip = trips[key];
         if (!trip) return;
-
+        activeTrip = key;
+        displayHemisphere(trip.hemisphere);
         region.textContent = trip.region;
         title.textContent = trip.title;
         desc.textContent = trip.desc;
+        dates.hidden = !trip.dates;
+        dates.textContent = trip.dates || "";
+        words.hidden = !trip.quote;
+        if (trip.quote) {
+          quote.textContent = `“${trip.quote}”`;
+          context.textContent = trip.context;
+          source.href = trip.source;
+        }
+
         playlist.className = `papa-travel-btn btn-${trip.color}`;
-        playlist.href = trip.playlist;
-        playlist.innerHTML = "Ver playlist completa <span>›</span>";
-
-        videoBox.innerHTML = `
-          <iframe
-            src="${trip.embed}"
-            title="${trip.title}"
-            loading="lazy"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        `;
-
+        playlist.href = trip.playlist || `https://www.youtube.com/watch?v=${trip.videos[0]}`;
+        playlist.innerHTML = trip.playlist ? "Ver playlist completa <span>›</span>" : "Ver video en YouTube <span>›</span>";
+        makeEpisodes(trip);
         mapPoints.forEach(btn => btn.classList.toggle("is-active", btn.dataset.trip === key));
         filters.forEach(btn => btn.classList.toggle("is-active", btn.dataset.trip === key));
       }
@@ -480,12 +608,18 @@
       [...mapPoints, ...filters].forEach(btn => {
         btn.addEventListener("click", () => selectTrip(btn.dataset.trip));
       });
-
-      selectTrip("espana");
+      globeTabs.forEach(tab => tab.addEventListener("click", () => {
+        const hemisphere = tab.dataset.regionView;
+        // Cambiar la vista mantiene el mismo globo y selecciona un destino de esa región.
+        if (hemisphere === "americas") selectTrip("peru");
+        else selectTrip("espana");
+      }));
+      // La portada abre en Perú, por ser el destino actual del viaje.
+      selectTrip("peru");
     });
   </script>
 
-  <script>
+<script>
     document.addEventListener("DOMContentLoaded", () => {
       const backToTop = document.getElementById("backToTop");
 

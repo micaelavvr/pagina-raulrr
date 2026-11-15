@@ -1,6 +1,6 @@
 /* =========================================================
    PAPA LEÓN XIV — DISEÑO TIPO PORTAL / LANDING AMPLIA
-   Reemplaza completamente css/papa-leon-xiv.css por este archivo.
+   Archivo completo: css/papa-leon-xiv-nuevo.css (actualizado Sudamérica).
    ========================================================= */
 
 :root{
@@ -1220,4 +1220,205 @@ button{
 /* Ajuste para que el scroll al himno no quede pegado al nav */
 #himno-oficial{
   scroll-margin-top: 120px;
+}
+
+
+/* =========================================================
+   ACTUALIZACIÓN SUDAMÉRICA 2026 — MISMA SECCIÓN DE VIAJES
+   Se conserva íntegro el CSS original y se amplía el selector.
+   ========================================================= */
+
+/* El mismo globo cambia de hemisferio, sin crear otro mapa. */
+.travel-map-card{
+  align-content: center;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: .55rem;
+  padding: 1rem .55rem .85rem;
+}
+.globe-region-tabs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+  width: 100%;
+}
+.globe-region-tab{
+  border: 1px solid rgba(137,79,34,.25);
+  background: rgba(255,253,247,.94);
+  border-radius: 100px;
+  padding: .46rem .65rem;
+  color: #653a20;
+  font: inherit;
+  font-size: .74rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(84,48,23,.08);
+}
+.globe-region-tab.is-active,
+.globe-region-tab:hover{
+  background: linear-gradient(100deg,#793c1d,#d69a36);
+  color: #fff;
+}
+.travel-map-card .map-globe-wrap{
+  width: min(335px,94%);
+  align-self: center;
+  justify-self: center;
+  min-width: 0;
+}
+.travel-map-card .globe-img{
+  object-fit: contain;
+  border-radius: 50%;
+  transition: opacity .2s ease;
+}
+.globe-caption{
+  text-align: center;
+  margin: 0;
+  color: #79583a;
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+/* Mostrar solo los botones que corresponden a la vista del globo. */
+.travel-map-card[data-region="americas"] .map-point[data-hemisphere="oldworld"],
+.travel-map-card[data-region="oldworld"] .map-point[data-hemisphere="americas"]{
+  display: none;
+}
+/* Posiciones sobre globo americano centrado en el meridiano -68.
+   Se dejan separadas las etiquetas para que no se tapen. */
+.travel-map-card .point-peru{top:36%;left:14%;}
+.travel-map-card .point-uruguay{top:56%;left:61%;}
+.travel-map-card .point-argentina{top:75%;left:25%;}
+.travel-map-card .map-point[data-hemisphere="americas"]{
+  border: 1px solid rgba(255,255,255,.68);
+  font-size: .82rem;
+  padding: .53rem .69rem;
+  box-shadow:0 12px 26px rgba(31,52,43,.28);
+}
+/* Distinción discreta de días e ideas centrales del discurso. */
+.papa-travel-dates{
+  font-size:.84rem;
+  font-weight: 900;
+  letter-spacing: .01em;
+  color: #9c631f !important;
+  margin: -.15rem 0 .6rem !important;
+}
+.papa-trip-words{
+  border-left: 3px solid #d29b3f;
+  border-radius: 0 12px 12px 0;
+  padding: .75rem .85rem;
+  margin: .6rem 0 1rem;
+  background: linear-gradient(105deg,rgba(247,220,166,.5),rgba(255,251,241,.86));
+}
+.papa-trip-words[hidden],
+.papa-video-episodes[hidden],
+.papa-video-external[hidden],
+.papa-travel-dates[hidden]{display:none !important;}
+.papa-trip-words-kicker{
+  font-size: .65rem;
+  letter-spacing: .07em;
+  font-weight: 900;
+  color: #8d511d;
+}
+.papa-trip-words blockquote{
+  color: #583624;
+  font-size: 1rem;
+  font-weight: 750;
+  font-style: italic;
+  line-height: 1.45;
+  margin: .45rem 0;
+}
+.papa-trip-words p{
+  color: #6f5742;
+  font-size: .8rem;
+  line-height: 1.5;
+  margin: .3rem 0 .55rem;
+}
+.papa-trip-words a,
+.travel-itinerary-source a{
+  font-size: .82rem;
+  font-weight: 900;
+  color: #9d4a18;
+  text-underline-offset: 3px;
+}
+/* Miniaturas de los videos: están debajo del iframe en el panel original. */
+.papa-video-episodes{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  gap: .55rem;
+  margin-top: -.3rem;
+}
+.papa-video-tile{
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: .38rem;
+  align-items: center;
+  padding: .38rem;
+  border-radius: 14px;
+  background: #fff9ee;
+  border: 1px solid rgba(150,87,38,.28);
+  color: #6b381d;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  font-size: .76rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.papa-video-tile img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #20150f;
+}
+.papa-video-tile:hover,
+.papa-video-tile.is-active{
+  border-color: #c28b2d;
+  background: #fbe6b7;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 18px rgba(96,57,30,.13);
+}
+.papa-video-tile:focus-visible,
+.globe-region-tab:focus-visible,
+.map-point:focus-visible,
+.travel-filter:focus-visible{
+  outline: 3px solid #a85b1f;
+  outline-offset: 3px;
+}
+.papa-video-external{
+  text-align: center;
+  color:#8d421f;
+  padding: .5rem;
+  font-size: .87rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.travel-itinerary-source{
+  color:#7b5b42;
+  font-size:.8rem;
+  margin: .9rem auto 0;
+  text-align:center;
+  line-height:1.45;
+}
+.btn-peru, .btn-uruguay, .btn-argentina{
+  background: linear-gradient(95deg, #7d3d1d 0%, #d99a2f 100%);
+}
+@media (max-width: 980px){
+  .travel-map-card .map-globe-wrap{width:min(395px,85vw);}
+  .travel-map-card{min-height:440px;}
+}
+@media (max-width: 560px){
+  .travel-map-card{min-height:410px;}
+  .travel-map-card .map-globe-wrap{width:min(315px,83vw);}
+  .travel-map-card .map-point[data-hemisphere="americas"]{font-size:.74rem;padding:.4rem .57rem;}
+  .travel-map-card .point-peru{top:35%;left:8%;}
+  .travel-map-card .point-uruguay{top:56%;left:59%;}
+  .travel-map-card .point-argentina{top:76%;left:17%;}
+  .papa-video-episodes{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .papa-trip-words blockquote{font-size: .94rem;}
 }
